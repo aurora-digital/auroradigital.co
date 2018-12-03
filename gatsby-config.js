@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://example.com",
-    title: "Gatsby base starter",
-    author: "José Francisco",
+    title: "SV Health",
+    author: "SV Health",
     description:
       "A gatsby starter with ESLint, Prettier, Stylelint, Postcss modules and analytics",
     keywords: "gatsby, starter, eslint, postcss, analytics",

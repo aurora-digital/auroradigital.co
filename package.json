@@ -3,7 +3,7 @@
   "description": "My base gatsby starter",
   "version": "1.0.0",
   "author": "José Francisco",
-  "homepage": "https://github.com/jfranciscosousa/gatsby-base-starter",
+  "homepage": "https://github.com/svhealth/website",
   "keywords": [
     "gatsby",
     "starter",
@@ -16,7 +16,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfranciscosousa/gatsby-base-starter"
+    "url": "https://github.com/svhealth/website"
   },
   "scripts": {
     "dev": "gatsby develop",
