@@ -1,10 +1,17 @@
 import React from "react";
-import Button from "../components/Button";
-
 import Layout from "../components/Layout";
+import Typography from "../components/Typography";
+import Button from "../components/Button";
 
 const IndexPage = () => (
   <Layout>
+    <Typography variant="h1" fontFamily="meta-serif">
+      h1
+    </Typography>
+    <Typography variant="h2" fontFamily="meta-serif">
+      h2
+    </Typography>
+    <Typography variant="body">body</Typography>
     <div style={{ margin: 20 }}>
       <Button>Contact us</Button>
     </div>

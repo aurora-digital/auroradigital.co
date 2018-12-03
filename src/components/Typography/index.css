@@ -1,0 +1,57 @@
+@import "../../styles/variables.css";
+@import "../../styles/breakpoints.css";
+@import "../../styles/colors.css";
+
+.h1 {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+
+  @include Breakpoint-mobileOnly {
+    font-size: $font-size-h1-mobile;
+    line-height: $line-height-h1-mobile;
+  }
+}
+
+.h2 {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+
+  @include Breakpoint-mobileOnly {
+    font-size: $font-size-h2-mobile;
+    line-height: $line-height-h2-mobile;
+  }
+}
+
+.body {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+
+  @include Breakpoint-mobileOnly {
+    font-size: $font-size-body-mobile;
+    line-height: $line-height-body-mobile;
+  }
+}
+
+.meta {
+  font-family: $font-family-meta-pro;
+}
+
+.meta-serif {
+  font-family: $font-family-meta-serif-pro;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.white {
+  color: white;
+}
+
+.dark-blue {
+  color: $dark-blue;
+}
