@@ -1,4 +1,5 @@
 @import "../../styles/colors.css";
+@import "../../styles/layout.css";
 
 .root {
   cursor: pointer;
@@ -16,7 +17,7 @@
 
 .primary {
   .content {
-    background-color: $blue;
+    background-color: $light-blue;
     box-shadow: 8px 8px 56px rgba(255, 255, 255, 0.16);
 
     color: white;
@@ -26,20 +27,20 @@
 .secondary {
   .content {
     background-color: white;
-    border: 1px solid $blue;
+    border: 1px solid $light-blue;
 
-    color: $blue;
+    color: $light-blue;
   }
 }
 
 .small {
   .content {
-    padding: 16px 28px;
+    padding: $spacing-16 $spacing-28;
   }
 }
 
 .medium {
   .content {
-    padding: 16px 32px;
+    padding: $spacing-16 $spacing-32;
   }
 }
