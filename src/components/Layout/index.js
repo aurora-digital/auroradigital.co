@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import Header from "../Header";
 
 import "./index.css";
 
@@ -56,7 +55,6 @@ class Layout extends Component {
           />
           <link rel="stylesheet" href="https://use.typekit.net/qjx0hot.css" />
         </Helmet>
-        <Header />
         <div>{this.props.children}</div>
       </div>
     );

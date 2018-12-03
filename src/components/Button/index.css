@@ -1,0 +1,46 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+.root {
+  cursor: pointer;
+
+  outline: none;
+
+  text-decoration: none;
+}
+
+.content {
+  border-radius: 4px;
+
+  outline: none;
+}
+
+.primary {
+  .content {
+    background-color: $light-blue;
+    box-shadow: 8px 8px 56px rgba(255, 255, 255, 0.16);
+
+    color: white;
+  }
+}
+
+.secondary {
+  .content {
+    background-color: white;
+    border: 1px solid $light-blue;
+
+    color: $light-blue;
+  }
+}
+
+.small {
+  .content {
+    padding: $spacing-16 $spacing-28;
+  }
+}
+
+.medium {
+  .content {
+    padding: $spacing-16 $spacing-32;
+  }
+}
