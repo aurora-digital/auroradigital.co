@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames/bind";
+import Typography from "../Typography";
 
 import roberto from "../../assets/images/roberto.png";
 import "./index.css";
@@ -14,8 +15,9 @@ const PartnerCard = ({ name, onClick, selected }) => {
     <button styleName={rootStyles} onClick={onClick} name={name}>
       <div styleName="content">
         <img alt="partner" styleName="image" src={roberto} />
-        <div>Roberto Machado</div>
-        <div>CEO @Subvisual</div>
+        <Typography weight="bold">Roberto Machado</Typography>
+        <Typography>CEO @Subvisual</Typography>
+
         <div styleName="linkedin">in</div>
       </div>
     </button>

@@ -20,6 +20,13 @@
 }
 
 .image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  width: 112px;
+  height: 112px;
   margin-bottom: $spacing-28;
 }
 
