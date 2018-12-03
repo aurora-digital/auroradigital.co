@@ -1,0 +1,32 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+.root {
+  display: flex;
+
+  cursor: pointer;
+
+  width: 254px;
+  height: 308px;
+  padding: $spacing-28;
+  box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.image {
+  margin-bottom: $spacing-28;
+}
+
+.selected {
+  background-color: rgba(87, 100, 247, 0.08);
+}
+
+.linkedin {
+  margin-top: $spacing-28;
+}
