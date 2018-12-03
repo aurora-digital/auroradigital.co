@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import Header from "../Header";
 
 import "./index.css";
 
@@ -55,7 +54,6 @@ class Layout extends Component {
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
         </Helmet>
-        <Header />
         <div>{this.props.children}</div>
       </div>
     );
