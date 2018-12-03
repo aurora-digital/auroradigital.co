@@ -1,5 +1,6 @@
 @import "../../styles/variables.css";
 @import "../../styles/breakpoints.css";
+@import "../../styles/colors.css";
 
 .h1 {
   font-size: $font-size-h1;
@@ -51,6 +52,6 @@
   color: white;
 }
 
-.black {
-  color: black;
+.dark-blue {
+  color: $dark-blue;
 }

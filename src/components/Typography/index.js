@@ -9,14 +9,14 @@ export default class Typography extends React.Component {
     children: PropTypes.node.isRequired,
     variant: PropTypes.oneOf(["h1", "h2", "body"]),
     fontFamily: PropTypes.oneOf(["meta", "meta-serif"]),
-    color: PropTypes.oneOf(["black", "white"]),
+    color: PropTypes.oneOf(["dark-blue", "white"]),
     weight: PropTypes.oneOf(["regular", "bold"]),
   };
 
   static defaultProps = {
     variant: "p",
     fontFamily: "meta",
-    color: "black",
+    color: "dark-blue",
     weight: "regular",
   };
 
