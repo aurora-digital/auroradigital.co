@@ -53,6 +53,7 @@ class Layout extends Component {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
+          <link rel="stylesheet" href="https://use.typekit.net/qjx0hot.css" />
         </Helmet>
         <div>{this.props.children}</div>
       </div>
