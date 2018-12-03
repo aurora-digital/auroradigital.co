@@ -12,6 +12,7 @@ export default class Typography extends React.Component {
     color: PropTypes.oneOf(["dark-blue", "white"]),
     weight: PropTypes.oneOf(["regular", "bold"]),
     underline: PropTypes.bool,
+    underlineColor: PropTypes.oneOf(["light-blue", "white"]),
   };
 
   static defaultProps = {
@@ -20,6 +21,7 @@ export default class Typography extends React.Component {
     color: "white",
     weight: "regular",
     underline: false,
+    underlineColor: "white",
   };
 
   render() {
@@ -30,13 +32,14 @@ export default class Typography extends React.Component {
       color,
       weight,
       underline,
+      underlineColor,
     } = this.props;
     const styles = classNames({
       [variant]: true,
       [fontFamily]: true,
       [color]: true,
       [weight]: true,
-      underline,
+      [`underline-${underlineColor}`]: underline,
     });
     const TextComponent = variant === "body" ? "p" : variant;
 

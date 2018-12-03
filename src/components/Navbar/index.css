@@ -1,17 +1,16 @@
 @import "../../styles/layout.css";
 @import "../../styles/breakpoints.css";
+@import "../../styles/colors.css";
 
 .root {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  padding: $spacing-28 0;
+  padding-top: $spacing-28;
 }
 
 .brand {
-  color: white;
-
   text-decoration: none;
 }
 
@@ -26,10 +25,26 @@
   text-decoration: none;
 }
 
+.link-logo {
+  height: 26px;
+}
+
 .link:not(:last-child) {
   margin-right: $spacing-28;
 }
 
 .contact-us {
   transform: translateY(calc($spacing-28 / -2));
+}
+
+.logo-svg-white {
+  path {
+    fill: white;
+  }
+}
+
+.logo-svg-light-blue {
+  path {
+    fill: $light-blue;
+  }
 }
