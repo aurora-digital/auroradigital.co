@@ -1,14 +1,16 @@
 import React from "react";
-import Link from "gatsby-link";
-
 import Layout from "../components/Layout";
+import Typography from "../components/Typography";
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Typography variant="h1" fontFamily="meta-serif">
+      h1
+    </Typography>
+    <Typography variant="h2" fontFamily="meta-serif">
+      h2
+    </Typography>
+    <Typography variant="body">body</Typography>
   </Layout>
 );
 
