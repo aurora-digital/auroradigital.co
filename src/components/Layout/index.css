@@ -1,0 +1,17 @@
+@import "../../styles/breakpoints.css";
+
+.root {
+  width: 100%;
+
+  @include Breakpoint-desktopOnly {
+    margin: 0 auto;
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin: 0 auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: 0 auto;
+  }
+}
