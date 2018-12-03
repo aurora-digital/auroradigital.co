@@ -3,8 +3,6 @@ import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
-import "./index.css";
-
 export default props => (
   <StaticQuery
     query={graphql`
@@ -44,7 +42,7 @@ class Layout extends Component {
     } = this.props.data.site.siteMetadata;
 
     return (
-      <div styleName="root">
+      <div>
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />

@@ -48,7 +48,7 @@ export default class BackgroundVideoText extends Component {
             muted
             autoPlay
             loop
-            playsinline
+            playsInline
             preload
           />
         </Typography>
