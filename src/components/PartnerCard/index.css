@@ -8,6 +8,7 @@
 
   box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);
   cursor: pointer;
+  outline: none;
 }
 
 .content {
