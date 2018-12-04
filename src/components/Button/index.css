@@ -2,8 +2,9 @@
 @import "../../styles/layout.css";
 
 .root {
-  cursor: pointer;
+  background-color: transparent;
 
+  cursor: pointer;
   outline: none;
 
   text-decoration: none;
