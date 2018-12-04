@@ -1,0 +1,14 @@
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
+
+.we-are {
+  max-width: $six-columns;
+
+  @include Breakpoint-tabletOnly {
+    width: $five-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+}

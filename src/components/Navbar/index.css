@@ -1,0 +1,41 @@
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: $spacing-28 0;
+
+  @include Breakpoint-desktopOnly {
+    width: $ten-columns;
+
+    margin: 0 auto;
+  }
+}
+
+.brand {
+  color: white !important;
+
+  text-decoration: none !important;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.link:not(:last-child) {
+  margin-right: $spacing-28;
+}
+
+.contact-us {
+  transform: translateY(calc($spacing-28 / -2));
+}

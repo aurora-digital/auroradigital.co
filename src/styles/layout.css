@@ -5,3 +5,18 @@ $spacing-32: 32px;
 $spacing-56: 56px;
 $spacing-112: 112px;
 $spacing-168: 168px;
+
+$column: 114px;
+$gutter: 28px;
+$column-spacing: calc(2 * $gutter + $column);
+$two-columns: calc(2 * $column + $gutter);
+$three-columns: calc(3 * $column + 2 * $gutter);
+$four-columns: calc(4 * $column + 3 * $gutter);
+$five-columns: calc(5 * $column + 4 * $gutter);
+$six-columns: calc(6 * $column + 5 * $gutter);
+$seven-columns: calc(7 * $column + 6 * $gutter);
+$eight-columns: calc(8 * $column + 7 * $gutter);
+$nine-columns: calc(9 * $column + 8 * $gutter);
+$ten-columns: calc(10 * $column + 9 * $gutter);
+
+$content-width-desktop: $ten-columns;

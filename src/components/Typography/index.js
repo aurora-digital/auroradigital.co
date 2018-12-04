@@ -11,22 +11,32 @@ export default class Typography extends React.Component {
     fontFamily: PropTypes.oneOf(["meta", "meta-serif"]),
     color: PropTypes.oneOf(["dark-blue", "white"]),
     weight: PropTypes.oneOf(["regular", "bold"]),
+    underline: PropTypes.bool,
   };
 
   static defaultProps = {
-    variant: "p",
+    variant: "body",
     fontFamily: "meta",
-    color: "dark-blue",
+    color: "white",
     weight: "regular",
+    underline: false,
   };
 
   render() {
-    const { children, variant, fontFamily, color, weight } = this.props;
+    const {
+      children,
+      variant,
+      fontFamily,
+      color,
+      weight,
+      underline,
+    } = this.props;
     const styles = classNames({
       [variant]: true,
       [fontFamily]: true,
       [color]: true,
       [weight]: true,
+      underline,
     });
     const TextComponent = variant === "body" ? "p" : variant;
 
