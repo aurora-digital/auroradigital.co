@@ -19,4 +19,4 @@ $eight-columns: calc(8 * $column + 7 * $gutter);
 $nine-columns: calc(9 * $column + 8 * $gutter);
 $ten-columns: calc(10 * $column + 9 * $gutter);
 
-$content-width-desktop: $ten-columns;
+$content-width-desktop: $eight-columns;

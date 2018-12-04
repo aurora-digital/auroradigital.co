@@ -3,7 +3,7 @@
 
 .root {
   @include Breakpoint-desktopOnly {
-    width: $ten-columns;
+    width: $content-width-desktop;
 
     margin: 0 auto;
   }

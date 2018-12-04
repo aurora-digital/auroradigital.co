@@ -7,12 +7,6 @@
   justify-content: space-between;
 
   padding: $spacing-28 0;
-
-  @include Breakpoint-desktopOnly {
-    width: $ten-columns;
-
-    margin: 0 auto;
-  }
 }
 
 .brand {
