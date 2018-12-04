@@ -14,7 +14,7 @@ const query = graphql`
     sioslife: file(relativePath: { eq: "images/sioslife.png" }) {
       image: childImageSharp {
         fluid(maxHeight: 320) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

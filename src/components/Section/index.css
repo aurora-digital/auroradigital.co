@@ -13,7 +13,10 @@
   }
 
   @include Breakpoint-mobileOnly {
-    margin: 0 calc($gutter / 2);
+    max-width: $content-width-mobile;
+
+    padding: 0 calc($gutter / 2);
+    margin: 0 auto;
   }
 }
 

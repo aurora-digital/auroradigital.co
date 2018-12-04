@@ -1,7 +1,8 @@
 import React from "react";
-import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import Project from "root/components/Project";
 
 import withQuery from "./withQuery";
 
@@ -29,49 +30,27 @@ const HomeHero = ({ data }) => (
         </Typography>
 
         <div styleName="images">
-          <div styleName="image-wrapper">
-            <div styleName="image-title">
-              <Typography
-                variant="h2"
-                color="white"
-                weight="bold"
-                fontFamily="meta-serif"
-              >
-                Oncostats
-              </Typography>
-            </div>
-            <Img styleName="image" fluid={data.oncostats.image.fluid} />
-            <div styleName="project-link">
-              <Typography variant="body" color="white" weight="bold">
-                View Project
-              </Typography>
-            </div>
-          </div>
-
-          <div styleName="image-wrapper">
-            <div styleName="image-title">
-              <Typography
-                variant="h2"
-                color="white"
-                weight="bold"
-                fontFamily="meta-serif"
-              >
-                siosLIFE
-              </Typography>
-            </div>
-            <Img styleName="image" fluid={data.sioslife.image.fluid} />
-            <div styleName="project-link">
-              <Typography variant="body" color="white" weight="bold">
-                View Project
-              </Typography>
-            </div>
-          </div>
+          <Project
+            image={data.oncostats.image.fluid}
+            projectName="Oncostats"
+            projectUrl="https://oncostats.io"
+          />
+          <Project
+            image={data.sioslife.image.fluid}
+            projectName="siosLIFE"
+            projectUrl="http://sioslife.com/"
+          />
         </div>
       </div>
 
       <div styleName="costumer-needs">
         <div styleName="left">
-          <Typography variant="h2" color="white" weight="bold">
+          <Typography
+            variant="h2"
+            color="white"
+            weight="bold"
+            fontFamily="meta-serif"
+          >
             Focus on our customers and their user needs
           </Typography>
         </div>
@@ -88,5 +67,21 @@ const HomeHero = ({ data }) => (
     </div>
   </Section>
 );
+
+HomeHero.propTypes = {
+  data: PropTypes.shape({
+    oncostats: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+
+    sioslife: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default withQuery(HomeHero);
