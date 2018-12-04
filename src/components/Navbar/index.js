@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
+import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Button from "root/components/Button";
+import Typography from "root/components/Typography";
 import brandLogo from "root/assets/images/brand.svg";
-import Typography from "../Typography";
-import capitalize from "../../utils/capitalize";
 
 import "./index.css";
 
