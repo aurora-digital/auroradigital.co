@@ -1,5 +1,14 @@
 @import "../../styles/layout.css";
 @import "../../styles/breakpoints.css";
+@import "../../styles/colors.css";
+
+.root > *:not(:last-child) {
+  padding-bottom: $spacing-168;
+
+  @include Breakpoint-mobileOnly {
+    padding-bottom: $spacing-112;
+  }
+}
 
 .we-are {
   max-width: $six-columns;
@@ -10,5 +19,123 @@
 
   @include Breakpoint-mobileOnly {
     margin-right: auto;
+  }
+}
+
+.we-design-and-develop {
+  max-width: $three-columns;
+
+  margin-top: $spacing-56;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: $spacing-56;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+  }
+}
+
+.images > *:not(:last-child) {
+  margin-right: $spacing-56;
+
+  @include Breakpoint-mobileOnly {
+    margin-right: 0;
+    margin-bottom: $spacing-28;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  height: 320px;
+}
+
+.project-link {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: none;
+
+  cursor: pointer;
+
+  transform: translate(-50%, -50%);
+}
+
+.image-title {
+  position: absolute;
+  z-index: 1;
+
+  display: inline;
+
+  height: fit-content;
+
+  transform: rotate(90deg) translateY(-50%);
+  transform-origin: top left;
+}
+
+.image {
+  width: 100%;
+
+  img {
+    filter: grayscale(100%);
+  }
+}
+
+.image::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: color($lavender alpha(84%));
+
+  mix-blend-mode: overlay;
+}
+
+.image-wrapper:hover {
+  .project-link {
+    display: block;
+  }
+
+  .image::after {
+    background-color: color($light-blue alpha(84%));
+
+    mix-blend-mode: normal;
+  }
+}
+
+.focus-on-costumers {
+  max-width: $four-columns;
+}
+
+.costumer-needs .left {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+  }
+}
+
+.costumer-needs .right {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+
+    margin-top: $spacing-56;
+    margin-left: auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
   }
 }

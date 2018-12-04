@@ -20,4 +20,9 @@
 .verticalSpacing {
   padding-top: $spacing-168;
   padding-bottom: $spacing-168;
+
+  @include Breakpoint-mobileOnly {
+    padding-top: $spacing-112;
+    padding-bottom: $spacing-112;
+  }
 }

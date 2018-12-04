@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./index.css";
+
 const Background = ({ children, image }) => (
   <div
+    styleName="root"
     style={{
       backgroundImage: `url(${image})`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
     }}
   >
     {children}

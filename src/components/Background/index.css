@@ -1,0 +1,8 @@
+@import "../../styles/colors.css";
+
+.root {
+  background-color: color($light-blue alpha(28%));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: difference;
+}
