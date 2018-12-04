@@ -1,5 +1,5 @@
 $Breakpoint-mobile: 768px;
-$Breakpoint-desktop: 1440px;
+$Breakpoint-desktop: 1268px;
 
 @mixin Breakpoint-mobileOnly {
   @media screen and (width <= $Breakpoint-mobile) {
