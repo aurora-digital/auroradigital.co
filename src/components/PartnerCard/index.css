@@ -4,12 +4,10 @@
 .root {
   display: flex;
 
-  cursor: pointer;
-
-  width: 254px;
-  height: 308px;
   padding: $spacing-28;
+
   box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .content {
@@ -20,20 +18,21 @@
 }
 
 .image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: $spacing-112;
+  height: $spacing-112;
   margin: 0 auto;
 
-  width: 112px;
-  height: 112px;
   margin-bottom: $spacing-28;
 }
 
 .selected {
   background-color: rgba(87, 100, 247, 0.08);
+  box-shadow: none;
 }
 
 .linkedin {
+  margin: 0 auto;
   margin-top: $spacing-28;
+
+  cursor: pointer;
 }
