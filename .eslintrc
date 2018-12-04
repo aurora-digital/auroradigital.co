@@ -60,6 +60,13 @@
       }
     ],
     "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["root/"]
+      }
+    ],
+    "import/extensions": ["ignorePackages"]
   }
 }

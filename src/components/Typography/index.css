@@ -55,3 +55,7 @@
 .dark-blue {
   color: $dark-blue;
 }
+
+.underline {
+  border-bottom: 2px solid white;
+}
