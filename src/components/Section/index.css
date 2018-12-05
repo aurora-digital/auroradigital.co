@@ -29,3 +29,13 @@
     padding-bottom: $spacing-112;
   }
 }
+
+.separator {
+  padding-top: $spacing-112;
+  padding-bottom: $spacing-112;
+
+  @include Breakpoint-mobileOnly {
+    padding-top: $spacing-56;
+    padding-bottom: $spacing-56;
+  }
+}

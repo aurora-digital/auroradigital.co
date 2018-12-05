@@ -1,7 +1,22 @@
 @import "../../styles/colors.css";
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
 
 .root {
   position: relative;
+}
+
+.max-width {
+  max-width: $ten-columns;
+  margin: 0 auto;
+
+  @media screen and (width < 1440px) {
+    margin: 0 $gutter;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: 0 calc($gutter / 2);
+  }
 }
 
 .background-image::after {
@@ -16,11 +31,28 @@
 
   width: 100%;
   height: 100%;
+}
 
-  background-color: color($light-blue alpha(28%));
+.blend-normal::after {
+  mix-blend-mode: normal;
+
+  @supports not (mix-blend-mode: difference) {
+    background-color: color($fallback-overlay alpha(40%));
+  }
+}
+
+.blend-difference::after {
   mix-blend-mode: difference;
 
   @supports not (mix-blend-mode: difference) {
     background-color: color($fallback-overlay alpha(40%));
   }
+}
+
+.color-lavender::after {
+  background-color: color($lavender alpha(84%));
+}
+
+.color-light-blue::after {
+  background-color: color($light-blue alpha(28%));
 }
