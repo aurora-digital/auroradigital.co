@@ -1,0 +1,73 @@
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
+
+.title {
+  @include Breakpoint-desktopOnly {
+    max-width: $four-columns;
+  }
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+  margin-bottom: $spacing-56;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include Breakpoint-mobileOnly {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: row;
+}
+
+.services:not(:last-child) {
+  margin-left: $spacing-12;
+}
+
+.service-type {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 72px;
+  margin-right: $spacing-56;
+}
+
+.asterisk {
+}
+
+.type {
+  position: absolute;
+
+  display: inline;
+  height: fit-content;
+  margin-top: $spacing-56;
+
+  transform: rotate(90deg) translateY(-70%);
+  transform-origin: top left;
+}
+
+.service-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+}
+
+.description-design {
+  max-width: calc($column + $column);
+  margin-top: $spacing-28;
+}
+
+.description-development {
+  max-width: 240px;
+  margin-top: $spacing-28;
+}
