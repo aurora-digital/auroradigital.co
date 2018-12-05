@@ -1,0 +1,28 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+.root {
+  display: flex;
+  min-width: 88px;
+  min-height: 88px;
+  padding: $spacing-16;
+
+  background-color: white;
+
+  box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  outline: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.image {
+  width: $spacing-56;
+
+  margin: 0 auto;
+}

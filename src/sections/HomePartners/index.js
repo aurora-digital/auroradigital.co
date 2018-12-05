@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import SelectedPartnerMobile from "root/components/SelectedPartnerMobile";
 import quotes from "root/assets/images/quotes.svg";
-
 import withPartnersShowcaser from "../../containers/withPartnersShowcaser";
 import partnersData from "./partnersData";
 
@@ -14,6 +13,7 @@ import "./index.css";
 export default class HomePagePartners extends Component {
   static propTypes = {
     renderPartners: PropTypes.func.isRequired,
+    renderMobileUnselectedPartners: PropTypes.func.isRequired,
     selectedPartner: PropTypes.shape({
       fullName: PropTypes.string.isRequired,
       about: PropTypes.string.isRequired,
@@ -21,7 +21,11 @@ export default class HomePagePartners extends Component {
   };
 
   render() {
-    const { renderPartners, selectedPartner } = this.props;
+    const {
+      renderPartners,
+      selectedPartner,
+      renderMobileUnselectedPartners,
+    } = this.props;
 
     return (
       <Section>
@@ -38,7 +42,11 @@ export default class HomePagePartners extends Component {
             {selectedPartner.about}
           </Typography>
         </div>
-        <div styleName="cards">{renderPartners()}</div>
+        <div styleName="cards-desktop">{renderPartners()}</div>
+        <div styleName="partners-mobile">
+          <SelectedPartnerMobile partner={selectedPartner} />
+          <div styleName="cards-mobile">{renderMobileUnselectedPartners()}</div>
+        </div>
       </Section>
     );
   }

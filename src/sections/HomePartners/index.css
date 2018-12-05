@@ -35,7 +35,7 @@
   }
 }
 
-.cards {
+.cards-desktop {
   display: grid;
 
   grid-column-gap: $spacing-28;
@@ -43,4 +43,24 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
   margin-top: $spacing-56;
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.partners-mobile {
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.cards-mobile {
+  display: grid;
+
+  grid-column-gap: $spacing-14;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin-top: $spacing-28;
 }
