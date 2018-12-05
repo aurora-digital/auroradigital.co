@@ -21,3 +21,7 @@ $ten-columns: calc(10 * $column + 9 * $gutter);
 
 $content-width-desktop: $eight-columns;
 $content-width-mobile: $four-columns;
+
+:root {
+  --sixColumns: $six-columns;
+}
