@@ -5,7 +5,6 @@
 
 $image-height: 320px;
 $image-height-mobile: calc($image-height / 2);
-$image-width-mobile: calc($image-height / 2);
 
 .root {
   position: relative;
