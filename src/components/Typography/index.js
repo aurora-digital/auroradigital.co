@@ -7,7 +7,7 @@ import "./index.css";
 export default class Typography extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    variant: PropTypes.oneOf(["h1", "h2", "body"]),
+    variant: PropTypes.oneOf(["h1", "h2", "h3", "body"]),
     fontFamily: PropTypes.oneOf(["meta", "meta-serif"]),
     color: PropTypes.oneOf(["dark-blue", "white"]),
     weight: PropTypes.oneOf(["regular", "bold"]),
