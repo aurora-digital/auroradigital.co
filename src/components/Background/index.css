@@ -2,8 +2,6 @@
 
 .root {
   position: relative;
-
-  background-blend-mode: difference;
 }
 
 .background-image::after {
