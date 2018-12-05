@@ -1,8 +1,15 @@
 @import "../../styles/variables.css";
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
 
 .root {
+  @include Breakpoint-tabletAndBelow {
+    display: none;
+  }
+
   position: relative;
 
+  width: $seven-columns;
   overflow: hidden;
 
   svg {

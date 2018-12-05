@@ -1,0 +1,22 @@
+@import "../../styles/variables.css";
+@import "../../styles/breakpoints.css";
+@import "../../styles/layout.css";
+
+.left {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+  }
+}
+
+.right {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+
+    margin-top: $spacing-56;
+    margin-left: auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}

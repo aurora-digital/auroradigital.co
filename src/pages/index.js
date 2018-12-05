@@ -9,7 +9,7 @@ import HomePagePartners from "root/sections/HomePartners";
 
 export const query = graphql`
   query {
-    heroMolecules: file(relativePath: { eq: "images/hero-molecules.png" }) {
+    heroMolecules: file(relativePath: { eq: "images/hero-molecules.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
