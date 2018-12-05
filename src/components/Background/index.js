@@ -32,12 +32,8 @@ const Background = ({ children, image }) => (
 );
 
 Background.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.shape({}).isRequired,
   children: PropTypes.node.isRequired,
-};
-
-Background.defaultProps = {
-  image: false,
 };
 
 export default Background;

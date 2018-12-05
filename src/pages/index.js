@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Navbar from "root/components/Navbar";
 import Background from "root/components/Background";
@@ -25,5 +26,15 @@ const IndexPage = ({ data }) => (
     </Background>
   </Layout>
 );
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    heroMolecules: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default IndexPage;
