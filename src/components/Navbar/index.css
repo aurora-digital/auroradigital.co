@@ -1,17 +1,50 @@
 @import "../../styles/layout.css";
 @import "../../styles/breakpoints.css";
 @import "../../styles/colors.css";
+@import "../../styles/variables.css";
 
 .root {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  align-items: center;
   justify-content: space-between;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 1fr;
 
   padding-top: $spacing-28;
+
+  a {
+    text-decoration: none;
+  }
+
+  @include Breakpoint-mobileOnly {
+    padding-top: $spacing-16;
+  }
 }
 
-.brand {
-  text-decoration: none;
+.root * {
+  z-index: 2;
+}
+
+.root.isOpen {
+  grid-row-gap: $spacing-56;
+  grid-template-rows: repeat(2, auto);
+
+  @include Breakpoint-mobileOnly {
+    max-width: $content-width-mobile;
+
+    padding-right: calc($gutter / 2);
+    padding-left: calc($gutter / 2);
+    margin: 0 auto;
+  }
+}
+
+.brand,
+.brand svg {
+  height: 26px;
+
+  @include Breakpoint-mobileOnly {
+    height: 12px;
+  }
 }
 
 .links {
@@ -19,22 +52,68 @@
   flex-direction: row;
 }
 
-.link {
-  cursor: pointer;
+.menu-toggle {
+  position: relative;
 
-  text-decoration: none;
+  height: $line-height-body-mobile;
+  min-width: 30px;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  user-select: none;
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
 }
 
-.link-logo {
-  height: 26px;
+.close-icon {
+  height: 100%;
+
+  background: url("../../assets/images/close.svg") center center no-repeat;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.navigation.isOpen {
+  display: block;
 }
 
 .link:not(:last-child) {
-  margin-right: $spacing-28;
+  display: block;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  @include Breakpoint-tabletAndAbove {
+    margin-right: $spacing-28;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-28;
+  }
 }
 
 .contact-us {
-  transform: translateY(calc($spacing-28 / -2));
+  @include Breakpoint-tabletAndAbove {
+    transform: translateY(calc($spacing-28 / -2));
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-56;
+  }
 }
 
 .logo-svg-white {
@@ -46,5 +125,30 @@
 .logo-svg-light-blue {
   path {
     fill: $light-blue;
+  }
+}
+
+.modal {
+  display: block;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: color(white alpha(93%));
+}
+
+:global {
+  .ReactModal__Overlay {
+    opacity: 0;
+
+    transition: opacity 250ms ease-in;
+  }
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
   }
 }
