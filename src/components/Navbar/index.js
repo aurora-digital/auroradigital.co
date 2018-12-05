@@ -92,7 +92,6 @@ export default class Navbar extends Component {
     const { menuOpen } = this.state;
     const rootStyles = classNames("root", {
       isOpen: menuOpen,
-      isClosed: !menuOpen,
     });
     const navigationStyles = classNames("navigation", {
       isOpen: menuOpen,
