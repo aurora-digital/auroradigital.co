@@ -71,6 +71,7 @@ export default class Navbar extends Component {
   renderPageLink = pageName => {
     const { currentPage } = this.props;
     const { color, underlineColor } = this.colors;
+    const { menuOpen } = this.state;
     const url = pageName === "home" ? `/` : `/${pageName}`;
 
     return (
@@ -79,7 +80,7 @@ export default class Navbar extends Component {
           variant="body"
           color={color}
           weight={currentPage === pageName ? "bold" : "regular"}
-          underline={currentPage === pageName}
+          underline={currentPage === pageName && menuOpen}
           underlineColor={underlineColor}
         >
           {capitalize(pageName)}
@@ -94,7 +95,7 @@ export default class Navbar extends Component {
       isOpen: menuOpen,
     });
     const navigationStyles = classNames("navigation", {
-      isOpen: menuOpen,
+      isClosed: !menuOpen,
     });
 
     return (
@@ -105,7 +106,7 @@ export default class Navbar extends Component {
           styleName="menu-toggle"
           aria-expanded="false"
           aria-controls="main-menu"
-          aria-label="Open navbar"
+          aria-label="Toggle navbar"
           onClick={this.handleMenuToggle}
         >
           {this.state.menuOpen ? (

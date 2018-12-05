@@ -3,6 +3,8 @@
 @import "../../styles/colors.css";
 @import "../../styles/variables.css";
 
+$modal-height: 402px;
+
 .root {
   display: grid;
   align-items: center;
@@ -82,12 +84,26 @@
   flex-direction: row;
 
   @include Breakpoint-mobileOnly {
-    display: none;
+    flex-direction: column;
   }
 }
 
-.navigation.isOpen {
-  display: block;
+.navigation.isClosed {
+  @include Breakpoint-mobileOnly {
+    /* Visually hidden for accessbility */
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+  }
 }
 
 .link:not(:last-child) {
@@ -132,13 +148,15 @@
   display: block;
 
   width: 100vw;
-  height: 100vh;
+  height: $modal-height;
 
-  background-color: color(white alpha(93%));
+  background-color: color(white alpha(98%));
 }
 
 :global {
   .ReactModal__Overlay {
+    background-color: transparent !important;
+
     opacity: 0;
 
     transition: opacity 250ms ease-in;
