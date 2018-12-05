@@ -49,10 +49,6 @@
   }
 }
 
-.focus-on-costumers {
-  max-width: $four-columns;
-}
-
 .costumer-needs .left {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
