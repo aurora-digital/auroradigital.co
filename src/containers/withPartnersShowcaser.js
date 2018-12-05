@@ -23,6 +23,7 @@ export default showcasePartnersData => WrappedComponent => {
     renderPartners = () =>
       showcasePartnersData.map(partner => (
         <PartnerCard
+          key={partner.name}
           name={partner.name}
           partner={partner}
           selected={this.state.selectedPartner.name === partner.name}
@@ -37,6 +38,7 @@ export default showcasePartnersData => WrappedComponent => {
 
       return unselectedPartners.map(partner => (
         <PartnerCardMobile
+          key={partner.name}
           name={partner.name}
           partner={partner}
           onClick={this.handleSelect}

@@ -3,8 +3,6 @@
 
 .root {
   display: flex;
-  min-width: 88px;
-  min-height: 88px;
   padding: $spacing-16;
 
   background-color: white;
