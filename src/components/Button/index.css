@@ -1,6 +1,8 @@
 @import "../../styles/colors.css";
 @import "../../styles/layout.css";
 
+$box-shadow: calc($spacing-16/2);
+
 .root {
   background-color: transparent;
 
@@ -19,7 +21,7 @@
 .primary {
   .content {
     background-color: $light-blue;
-    box-shadow: 8px 8px 56px rgba(255, 255, 255, 0.16);
+    box-shadow: $box-shadow $box-shadow $spacing-56 rgba(255, 255, 255, 0.16);
 
     color: white;
   }
@@ -42,6 +44,6 @@
 
 .medium {
   .content {
-    padding: $spacing-16 $spacing-32;
+    padding: $spacing-16 calc($spacing-16 * 2);
   }
 }
