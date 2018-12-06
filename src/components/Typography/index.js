@@ -9,7 +9,7 @@ export default class Typography extends React.Component {
     children: PropTypes.node.isRequired,
     variant: PropTypes.oneOf(["h1", "h2", "h3", "body"]),
     fontFamily: PropTypes.oneOf(["meta", "meta-serif"]),
-    color: PropTypes.oneOf(["dark-blue", "white"]),
+    color: PropTypes.oneOf(["dark-blue", "white", "light-blue"]),
     weight: PropTypes.oneOf(["regular", "bold"]),
     underline: PropTypes.bool,
     underlineColor: PropTypes.oneOf(["light-blue", "white"]),

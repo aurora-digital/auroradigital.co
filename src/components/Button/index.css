@@ -29,7 +29,7 @@ $box-shadow: calc($spacing-16/2);
 .secondary {
   .content {
     background-color: white;
-    border: 1px solid $light-blue;
+    border: 2px solid $light-blue;
 
     color: $light-blue;
   }
