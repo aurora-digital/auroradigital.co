@@ -65,9 +65,6 @@ $astherisk-mobile: calc($spacing-16 / 2);
   flex-direction: column;
 }
 
-.image {
-}
-
 .description {
   margin-top: $spacing-28;
 
