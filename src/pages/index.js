@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => (
       <Navbar currentPage="home" />
       <HomePageHero />
     </Background>
-    <Background image={data.heroMolecules.image.fluid}>
+    <Background image={data.heroMolecules.image.fluid} maxWidth>
       <HomePride />
     </Background>
     <HomePagePartners />
