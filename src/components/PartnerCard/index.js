@@ -2,21 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import Typography from "../Typography";
-import linkedin from "../../assets/images/in.svg";
+import linkedin from "../../assets/images/linkedin.svg";
 
 import "./index.css";
 
-const PartnerCard = ({ onClick, selected, partner }) => {
+const PartnerCard = ({ name, onClick, selected, partner }) => {
   const rootStyles = classNames("root", {
     selected,
   });
 
   return (
-    <button styleName={rootStyles} onClick={onClick}>
+    <button styleName={rootStyles} onClick={onClick} name={name}>
       <div styleName="content">
         <img alt="partner" styleName="image" src={partner.image} />
-        <Typography weight="bold">{partner.name}</Typography>
-        <Typography>{partner.position}</Typography>
+        <Typography weight="bold" color="dark-blue">
+          {partner.fullName}
+        </Typography>
+        <Typography color="dark-blue">{partner.position}</Typography>
         <a
           styleName="linkedin"
           href={partner.linkedin}
@@ -31,6 +33,7 @@ const PartnerCard = ({ onClick, selected, partner }) => {
 };
 
 PartnerCard.propTypes = {
+  name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   partner: PropTypes.shape({

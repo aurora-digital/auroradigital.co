@@ -22,6 +22,16 @@
   }
 }
 
+.h3 {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+
+  @include Breakpoint-mobileOnly {
+    font-size: $font-size-h3-mobile;
+    line-height: $line-height-h3-mobile;
+  }
+}
+
 .body {
   font-size: $font-size-body;
   line-height: $line-height-body;

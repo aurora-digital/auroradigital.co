@@ -1,0 +1,46 @@
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
+@import "../../styles/variables.css";
+
+.title {
+  @include Breakpoint-desktopOnly {
+    max-width: $four-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+}
+
+.quotes {
+  margin-top: $spacing-28;
+  margin-left: calc($three-columns - $gutter);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-56;
+    margin-left: 0;
+  }
+}
+
+.about {
+  height: calc(5 * $line-height-h3);
+  max-width: $five-columns;
+
+  margin-left: calc($three-columns + $gutter);
+
+  @include Breakpoint-mobileOnly {
+    height: calc(5 * $line-height-h3-mobile);
+    margin-top: $spacing-28;
+    margin-left: $spacing-14;
+  }
+}
+
+.cards {
+  display: grid;
+
+  grid-column-gap: $spacing-28;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  margin-top: $spacing-56;
+}
