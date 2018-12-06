@@ -5,7 +5,7 @@ import Typography from "root/components/Typography";
 import "./index.css";
 
 const HomePride = () => (
-  <Section verticalSpacing={false}>
+  <Section separator>
     <div styleName="root">
       <div styleName="left">
         <Typography variant="h2" fontFamily="meta-serif">
