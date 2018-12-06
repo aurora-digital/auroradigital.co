@@ -6,7 +6,7 @@ import "./index.css";
 const Logo = ({ color }) => (
   <svg
     alt="brand-logo"
-    width="193"
+
     height="28"
     viewBox="0 0 193 28"
     fill="none"

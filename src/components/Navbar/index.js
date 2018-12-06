@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import Link from "gatsby-link";
+import Modal from "react-modal";
 import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Button from "root/components/Button";
@@ -8,6 +10,8 @@ import Typography from "root/components/Typography";
 import Logo from "./Logo";
 
 import "./index.css";
+
+Modal.setAppElement(`#___gatsby`);
 
 export default class Navbar extends Component {
   static propTypes = {
@@ -23,8 +27,51 @@ export default class Navbar extends Component {
     logoColor: "white",
   };
 
+  state = {
+    menuOpen: false,
+  };
+
+  componentDidUpdate() {
+    const { menuOpen } = this.state;
+
+    if (menuOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }
+
+  get colors() {
+    const { menuOpen } = this.state;
+    const { color, underlineColor, logoColor } = this.props;
+    const finalColor = menuOpen ? "dark-blue" : color;
+    const finalUnderlineColor = menuOpen ? "white" : underlineColor;
+    const finalLogoColor = menuOpen ? "light-blue" : logoColor;
+
+    return {
+      color: finalColor,
+      underlineColor: finalUnderlineColor,
+      logoColor: finalLogoColor,
+    };
+  }
+
+  handleMenuToggle = () => {
+    this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
+  };
+
+  renderBrand = () => {
+    const { menuOpen } = this.state;
+    const { logoColor } = this.props;
+    const finalLogoColor = menuOpen ? "light-blue" : logoColor;
+
+    return (
+      <Link styleName="brand" to="/">
+        <Logo color={finalLogoColor} />
+      </Link>
+    );
+  };
+
   renderPageLink = pageName => {
-    const { currentPage, color, underlineColor } = this.props;
+    const { currentPage } = this.props;
+    const { color, underlineColor } = this.colors;
+    const { menuOpen } = this.state;
     const url = pageName === "home" ? `/` : `/${pageName}`;
 
     return (
@@ -33,7 +80,7 @@ export default class Navbar extends Component {
           variant="body"
           color={color}
           weight={currentPage === pageName ? "bold" : "regular"}
-          underline={currentPage === pageName}
+          underline={currentPage === pageName && menuOpen}
           underlineColor={underlineColor}
         >
           {capitalize(pageName)}
@@ -42,27 +89,71 @@ export default class Navbar extends Component {
     );
   };
 
-  render() {
-    const { logoColor } = this.props;
+  renderInner() {
+    const { color } = this.colors;
+    const { menuOpen } = this.state;
+    const rootStyles = classNames("root", {
+      isOpen: menuOpen,
+    });
+    const navigationStyles = classNames("navigation", {
+      isClosed: !menuOpen,
+    });
 
     return (
-      <Section verticalSpacing={false}>
-        <nav styleName="root">
-          <Link styleName="link-logo" to="/">
-            <Logo color={logoColor} />
-          </Link>
-          <div styleName="links">
-            {this.renderPageLink("home")}
-            {this.renderPageLink("services")}
-            {this.renderPageLink("company")}
-            <div styleName="contact-us">
-              <Button>
-                <Typography weight="bold">Contact us</Typography>
-              </Button>
-            </div>
+      <header styleName={rootStyles}>
+        {this.renderBrand()}
+
+        <button
+          styleName="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label="Toggle navbar"
+          onClick={this.handleMenuToggle}
+        >
+          {this.state.menuOpen ? (
+            <div styleName="close-icon" />
+          ) : (
+            <Typography weight="bold" color={color}>
+              Menu
+            </Typography>
+          )}
+        </button>
+
+        <nav
+          styleName={navigationStyles}
+          role="navigation"
+          aria-expanded="false"
+          aria-label="Navigation Menu"
+        >
+          {this.renderPageLink("home")}
+
+          {this.renderPageLink("services")}
+
+          {this.renderPageLink("company")}
+
+          <div styleName="contact-us">
+            <Button>
+              <Typography weight="bold">Contact us</Typography>
+            </Button>
           </div>
         </nav>
-      </Section>
+      </header>
+    );
+  }
+
+  render() {
+    const { menuOpen } = this.state;
+
+    return (
+      <>
+        {menuOpen ? <div style={{ height: "44px" }} /> : null}
+        <Modal styleName="modal" isOpen={menuOpen}>
+          {this.renderInner()}
+        </Modal>
+        {!menuOpen ? (
+          <Section verticalSpacing={false}>{this.renderInner()}</Section>
+        ) : null}
+      </>
     );
   }
 }
