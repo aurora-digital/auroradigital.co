@@ -3,11 +3,25 @@ import Section from "root/components/Section";
 import Link from "gatsby-link";
 import Typography from "root/components/Typography";
 import Button from "root/components/Button";
-import asterisk from "root/assets/images/asterisk.svg";
 import designImg from "root/assets/images/design.svg";
 import developmentImg from "root/assets/images/development.svg";
+import Service from "root/components/Service";
 
 import "./index.css";
+
+const designServices = [
+  "Research & Strategy",
+  "Brand Identity",
+  "Product Design",
+  "User Testing",
+];
+
+const developmentServices = [
+  "Hosting Solutions",
+  "Software Development",
+  "Technology Implementation",
+  "System Integration",
+];
 
 const HomeServices = () => (
   <Section>
@@ -16,68 +30,27 @@ const HomeServices = () => (
         What works best for your project
       </Typography>
     </div>
+
     <div styleName="services-container">
-      <div styleName="services">
-        <div styleName="service-type">
-          <img styleName="asterisk" src={asterisk} alt="asterisk" />
-          <div styleName="type">
-            <Typography variant="h3" color="dark-blue">
-              Design
-            </Typography>
-          </div>
-        </div>
-        <div styleName="service-description">
-          <div styleName="image">
-            <img src={designImg} alt="design" />
-          </div>
+      <Service
+        serviceName="design"
+        image={designImg}
+        specificServices={designServices}
+      />
 
-          <div styleName="description">
-            <Typography variant="body" color="dark-blue">
-              <p>Research & Strategy</p>
-              <p>Brand Identity</p>
-              <p>Product Design</p>
-              <p>User Testing</p>
-            </Typography>
-          </div>
-        </div>
-      </div>
-      <div styleName="services">
-        <div styleName="service-type">
-          <img styleName="asterisk" src={asterisk} alt="asterisk" />
-          <div styleName="type">
-            <Typography variant="h3" color="dark-blue">
-              Development
-            </Typography>
-          </div>
-        </div>
-        <div styleName="service-description">
-          <div styleName="image">
-            <img src={developmentImg} alt="development" />
-          </div>
+      <Service
+        serviceName="development"
+        image={developmentImg}
+        specificServices={developmentServices}
+      />
 
-          <div styleName="description">
-            <Typography variant="body" color="dark-blue">
-              <p>Hosting Solutions</p>
-              <p>Software Development</p>
-              <p>Technology Implementation</p>
-              <p>System Integration</p>
-            </Typography>
-          </div>
-        </div>
-      </div>
-      <div styleName="services">
-        <Link to="/services" styleName="button">
-          <Button type="secondary">
-            <Typography
-              color="light-blue"
-              fontFamily="meta-serif"
-              weight="bold"
-            >
-              View services
-            </Typography>
-          </Button>
-        </Link>
-      </div>
+      <Link to="/services" styleName="button">
+        <Button type="secondary">
+          <Typography color="light-blue" fontFamily="meta-serif" weight="bold">
+            View services
+          </Typography>
+        </Button>
+      </Link>
     </div>
   </Section>
 );

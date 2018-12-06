@@ -1,0 +1,63 @@
+@import "../../styles/layout.css";
+@import "../../styles/breakpoints.css";
+
+.services {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-56;
+  }
+}
+
+.services:not(:last-child) {
+  margin-left: $spacing-12;
+
+  @include Breakpoint-mobileOnly {
+    margin-left: 8px;
+  }
+}
+
+.service-type {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 76px;
+
+  margin-right: 40px;
+
+  @include Breakpoint-mobileOnly {
+    margin-right: 24px;
+  }
+}
+
+.asterisk {
+  width: $spacing-12;
+  @include Breakpoint-mobileOnly {
+    width: 8px;
+  }
+}
+
+.type {
+  position: absolute;
+
+  display: inline;
+  height: fit-content;
+  margin-top: 40px;
+
+  transform: rotate(90deg) translateY(-70%);
+  transform-origin: top left;
+}
+
+.service-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+}
+
+.description {
+  margin-top: $spacing-28;
+}
