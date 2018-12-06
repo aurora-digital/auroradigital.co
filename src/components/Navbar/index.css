@@ -10,7 +10,7 @@ $modal-height: 402px;
   align-items: center;
   justify-content: space-between;
   grid-template-columns: repeat(2, auto);
-  grid-template-rows: 1fr;
+  grid-template-rows: $line-height-body;
 
   padding-top: $spacing-28;
 
@@ -29,7 +29,7 @@ $modal-height: 402px;
 
 .root.isOpen {
   grid-row-gap: $spacing-56;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: $line-height-body auto;
 
   @include Breakpoint-mobileOnly {
     max-width: $content-width-mobile;
@@ -81,7 +81,11 @@ $modal-height: 402px;
 
 .navigation {
   display: flex;
-  flex-direction: row;
+
+  @include Breakpoint-tabletAndAbove {
+    flex-direction: row;
+    align-items: center;
+  }
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
@@ -123,10 +127,6 @@ $modal-height: 402px;
 }
 
 .contact-us {
-  @include Breakpoint-tabletAndAbove {
-    transform: translateY(calc($spacing-28 / -2));
-  }
-
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-56;
   }

@@ -90,6 +90,7 @@ export default class Navbar extends Component {
   };
 
   renderInner() {
+    const { color } = this.colors;
     const { menuOpen } = this.state;
     const rootStyles = classNames("root", {
       isOpen: menuOpen,
@@ -112,7 +113,9 @@ export default class Navbar extends Component {
           {this.state.menuOpen ? (
             <div styleName="close-icon" />
           ) : (
-            <Typography weight="bold">Menu</Typography>
+            <Typography weight="bold" color={color}>
+              Menu
+            </Typography>
           )}
         </button>
 
@@ -143,8 +146,8 @@ export default class Navbar extends Component {
 
     return (
       <>
-        {menuOpen ? <div style={{ height: "36px" }} /> : null}
-        <Modal styleName="modal" isOpen={menuOpen} closeTimeoutMS={500}>
+        {menuOpen ? <div style={{ height: "44px" }} /> : null}
+        <Modal styleName="modal" isOpen={menuOpen}>
           {this.renderInner()}
         </Modal>
         {!menuOpen ? (
