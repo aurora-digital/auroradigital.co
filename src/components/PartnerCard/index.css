@@ -3,7 +3,7 @@
 
 .root {
   display: flex;
-
+  max-width: $two-columns;
   padding: $spacing-28;
 
   box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);

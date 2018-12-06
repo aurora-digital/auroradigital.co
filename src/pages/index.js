@@ -5,6 +5,7 @@ import Navbar from "root/components/Navbar";
 import Background from "root/components/Background";
 import Layout from "root/components/Layout";
 import HomePageHero from "root/sections/HomeHero";
+import HomePagePartners from "root/sections/HomePartners";
 
 export const query = graphql`
   query {
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => (
       <Navbar currentPage="home" />
       <HomePageHero />
     </Background>
+    <HomePagePartners />
   </Layout>
 );
 
