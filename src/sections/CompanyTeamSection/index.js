@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import Team from "root/components/Team";
 
 import "./index.css";
 
@@ -19,6 +20,7 @@ const CompanyTeamSection = () => (
         fantastic digital experiences.
       </Typography>
     </div>
+    <Team />
   </Section>
 );
 
