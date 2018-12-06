@@ -6,6 +6,7 @@ import Background from "root/components/Background";
 import Layout from "root/components/Layout";
 import HomePageHero from "root/sections/HomeHero";
 import HomePagePartners from "root/sections/HomePartners";
+import HomePride from "root/sections/HomePride";
 
 export const query = graphql`
   query {
@@ -24,6 +25,9 @@ const IndexPage = ({ data }) => (
     <Background image={data.heroMolecules.image.fluid}>
       <Navbar currentPage="home" />
       <HomePageHero />
+    </Background>
+    <Background image={data.heroMolecules.image.fluid}>
+      <HomePride />
     </Background>
     <HomePagePartners />
   </Layout>

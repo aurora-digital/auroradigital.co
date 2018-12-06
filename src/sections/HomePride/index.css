@@ -1,0 +1,24 @@
+@import "../../styles/all.css";
+
+.root {
+  padding: $spacing-112 0;
+
+  @include Breakpoint-mobileOnly {
+    padding: $spacing-56 0;
+  }
+}
+
+.left {
+  max-width: $four-columns;
+}
+
+.right {
+  max-width: $four-columns;
+
+  margin-top: $spacing-56;
+  margin-left: auto;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}
