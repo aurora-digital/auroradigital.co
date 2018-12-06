@@ -1,5 +1,10 @@
 @import "../../styles/layout.css";
 @import "../../styles/breakpoints.css";
+@import "../../styles/variables.css";
+
+$image-height: calc($spacing-168 / 2);
+$astherisk-desktop: $spacing-12;
+$astherisk-mobile: calc($spacing-16 / 2);
 
 .services {
   display: flex;
@@ -14,7 +19,7 @@
   margin-left: $spacing-12;
 
   @include Breakpoint-mobileOnly {
-    margin-left: 8px;
+    margin-left: calc($spacing-16 / 2);
   }
 }
 
@@ -23,31 +28,36 @@
 
   display: flex;
   flex-direction: column;
-  margin-top: 76px;
+  margin-top: calc($image-height - $astherisk-desktop);
 
-  margin-right: 40px;
+  margin-right: calc($line-height-h3 / 2 + $gutter);
 
   @include Breakpoint-mobileOnly {
-    margin-right: 24px;
+    margin-top: calc($image-height - $astherisk-mobile);
+    margin-right: calc($line-height-h3-mobile / 2 + $gutter / 2);
   }
 }
 
 .asterisk {
-  width: $spacing-12;
+  width: $astherisk-desktop;
+
   @include Breakpoint-mobileOnly {
-    width: 8px;
+    width: $astherisk-mobile;
   }
 }
 
 .type {
   position: absolute;
+  top: calc($astherisk-desktop + $spacing-28);
+  left: calc($line-height-h3 / 2);
 
-  display: inline;
-  height: fit-content;
-  margin-top: 40px;
-
-  transform: rotate(90deg) translateY(-70%);
+  transform: rotate(90deg) translateY(-25%);
   transform-origin: top left;
+
+  @include Breakpoint-mobileOnly {
+    top: calc($astherisk-mobile + $spacing-16);
+    left: calc($line-height-h3-mobile / 2);
+  }
 }
 
 .service-description {
@@ -60,4 +70,8 @@
 
 .description {
   margin-top: $spacing-28;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-16;
+  }
 }

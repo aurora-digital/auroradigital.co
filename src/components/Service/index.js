@@ -25,7 +25,7 @@ const Service = ({ serviceName, image, specificServices }) => (
       <div styleName="description">
         <Typography variant="body" color="dark-blue">
           {specificServices.map(specificService => (
-            <p>{specificService}</p>
+            <p key={specificService}>{specificService}</p>
           ))}
         </Typography>
       </div>
@@ -35,7 +35,7 @@ const Service = ({ serviceName, image, specificServices }) => (
 
 Service.propTypes = {
   serviceName: PropTypes.string.isRequired,
-  image: PropTypes.shape({}).isRequired,
+  image: PropTypes.string.isRequired,
   specificServices: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
