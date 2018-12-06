@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Typography from "../Typography";
-import linkedin from "../../assets/images/in-darkBlue.svg";
+import linkedin from "../../assets/images/linkedin-darkBlue.svg";
 
 import "./index.css";
 
