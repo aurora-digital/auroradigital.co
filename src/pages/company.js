@@ -3,6 +3,7 @@ import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
 import CompanyHero from "root/sections/CompanyHero";
 import TechRevolutionSection from "root/sections/TechRevolutionSection";
+import CompanyTeamSection from "root/sections/CompanyTeamSection";
 
 const CompanyPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const CompanyPage = () => (
     />
     <CompanyHero />
     <TechRevolutionSection />
+    <CompanyTeamSection />
   </Layout>
 );
 
