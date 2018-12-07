@@ -4,6 +4,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
     options: {
       generateScopedName: `[folder]__[local]__[hash]`,
       webpackHotModuleReloading: true,
+      handleMissingStyleName: "warn",
     },
   });
 

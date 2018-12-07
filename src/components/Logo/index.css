@@ -1,0 +1,11 @@
+.logo-svg-white {
+  path {
+    fill: white;
+  }
+}
+
+.logo-svg-light-blue {
+  path {
+    fill: $light-blue;
+  }
+}

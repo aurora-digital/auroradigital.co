@@ -1,0 +1,16 @@
+@import "../../styles/all.css";
+
+.root {
+}
+
+.lets-work {
+  max-width: $five-columns;
+}
+
+.lets-work > *:first-child {
+  margin-bottom: $line-height-h3;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $line-height-h3-mobile;
+  }
+}

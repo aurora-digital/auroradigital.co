@@ -7,7 +7,7 @@ import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Button from "root/components/Button";
 import Typography from "root/components/Typography";
-import Logo from "./Logo";
+import Logo from "root/components/Logo";
 
 import "./index.css";
 

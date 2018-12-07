@@ -129,18 +129,6 @@ $modal-height: 402px;
   }
 }
 
-.logo-svg-white {
-  path {
-    fill: white;
-  }
-}
-
-.logo-svg-light-blue {
-  path {
-    fill: $light-blue;
-  }
-}
-
 .modal {
   display: block;
 
