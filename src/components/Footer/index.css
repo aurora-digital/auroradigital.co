@@ -1,5 +1,8 @@
 @import "../../styles/all.css";
 
+$social-icon-size: 28px;
+$social-icon-size-mobile: 16px;
+
 .root {
   margin-bottom: $spacing-56;
 
@@ -174,8 +177,8 @@
 
 .social-icon {
   img {
-    width: 28px;
-    height: 28px;
+    width: $social-icon-size;
+    height: $social-icon-size;
   }
 
   cursor: pointer;
@@ -184,8 +187,8 @@
     align-self: center;
 
     img {
-      width: 16px;
-      height: 16px;
+      width: $social-icon-size-mobile;
+      height: $social-icon-size-mobile;
     }
   }
 }
