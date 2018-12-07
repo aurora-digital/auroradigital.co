@@ -1,6 +1,4 @@
-@import "../../styles/variables.css";
-@import "../../styles/breakpoints.css";
-@import "../../styles/colors.css";
+@import "../../styles/all.css";
 
 .h1 {
   font-size: $font-size-h1;

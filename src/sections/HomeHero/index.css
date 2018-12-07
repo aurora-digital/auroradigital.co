@@ -1,5 +1,4 @@
-@import "../../styles/layout.css";
-@import "../../styles/breakpoints.css";
+@import "../../styles/all.css";
 
 .root > *:not(:last-child) {
   padding-bottom: $spacing-168;

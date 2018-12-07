@@ -1,7 +1,4 @@
-@import "../../styles/colors.css";
-@import "../../styles/layout.css";
-@import "../../styles/breakpoints.css";
-
+@import "../../styles/all.css";
 .root {
   position: relative;
 }
