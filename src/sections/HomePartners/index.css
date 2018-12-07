@@ -14,7 +14,12 @@
   margin-top: $spacing-28;
   margin-left: calc($three-columns - $gutter);
 
+  @include Breakpoint-tabletOnly {
+    margin-left: 0;
+  }
+
   @include Breakpoint-mobileOnly {
+    width: 24px;
     margin-top: $spacing-56;
     margin-left: 0;
   }
@@ -22,23 +27,53 @@
 
 .about {
   height: calc(5 * $line-height-h3);
-  max-width: $five-columns;
+
+  margin-top: $spacing-28;
+  margin-bottom: $spacing-56;
+
+  @include Breakpoint-desktopOnly {
+    max-width: $five-columns;
+  }
 
   margin-left: calc($three-columns + $gutter);
 
-  @include Breakpoint-mobileOnly {
+  @include Breakpoint-tabletOnly {
     height: calc(5 * $line-height-h3-mobile);
     margin-top: $spacing-28;
     margin-left: calc($gutter / 2);
   }
+
+  @include Breakpoint-mobileOnly {
+    height: calc(6 * $line-height-h3-mobile);
+    margin-bottom: $spacing-28;
+    margin-left: calc($gutter / 2);
+  }
 }
 
-.cards {
+.cards-desktop {
   display: grid;
 
-  grid-column-gap: $spacing-28;
+  grid-column-gap: calc($gutter / 2);
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  margin-top: $spacing-56;
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.partners-mobile {
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.cards-mobile {
+  display: grid;
+
+  grid-column-gap: calc($gutter / 2);
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin-top: $spacing-28;
 }

@@ -20,7 +20,7 @@ $box-shadow: calc($spacing-16/2);
 .primary {
   .content {
     background-color: $light-blue;
-    box-shadow: $box-shadow $box-shadow $spacing-56 rgba(255, 255, 255, 0.16);
+    box-shadow: 8px 8px 28px color(black alpha(8%));
 
     color: white;
   }

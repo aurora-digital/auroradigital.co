@@ -1,0 +1,31 @@
+@import "../../styles/colors.css";
+@import "../../styles/layout.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  margin-top: $spacing-28;
+  margin-left: calc($gutter / 2);
+}
+
+.image {
+  width: $spacing-56;
+  height: $spacing-56;
+
+  margin-right: calc($gutter / 2);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkedin {
+  margin-top: $spacing-16;
+
+  cursor: pointer;
+}
+
+.img {
+  width: $spacing-16;
+}
