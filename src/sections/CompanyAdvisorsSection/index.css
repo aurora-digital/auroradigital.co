@@ -1,0 +1,16 @@
+@import "../../styles/all.css";
+
+.left {
+  max-width: $four-columns;
+}
+
+.right {
+  max-width: $four-columns;
+
+  margin-top: $spacing-56;
+  margin-left: auto;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}
