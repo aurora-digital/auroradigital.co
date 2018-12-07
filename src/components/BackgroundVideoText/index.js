@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import map from "lodash/map";
 import Typography from "../../components/Typography";
 
@@ -10,7 +9,6 @@ const fontHeight = 112;
 
 export default class BackgroundVideoText extends Component {
   static propTypes = {
-    device: PropTypes.string.isRequired,
     labels: PropTypes.arrayOf(PropTypes.string).isRequired,
     video: PropTypes.string.isRequired,
     poster: PropTypes.string,
@@ -23,14 +21,10 @@ export default class BackgroundVideoText extends Component {
   };
 
   render() {
-    const { device, labels, video, poster, width, height } = this.props;
-
-    const rootStyles = classNames("root", {
-      [device]: true,
-    });
+    const { labels, video, poster, width, height } = this.props;
 
     return (
-      <div styleName={rootStyles} style={{ width, height }}>
+      <div styleName="root" style={{ width, height }}>
         <Typography weight="bold" variant="h1" fontFamily="meta-serif">
           <svg>
             <defs>
