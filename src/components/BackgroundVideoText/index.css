@@ -46,6 +46,7 @@
   @include Breakpoint-desktopOnly {
     display: none;
   }
+
   @include Breakpoint-tabletOnly {
     display: block;
   }
@@ -54,5 +55,9 @@
 .desktop {
   @include Breakpoint-tabletAndBelow {
     display: none;
+  }
+
+  @include Breakpoint-desktopOnly {
+    display: block;
   }
 }
