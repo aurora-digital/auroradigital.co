@@ -1,5 +1,4 @@
-@import "../../styles/layout.css";
-@import "../../styles/breakpoints.css";
+@import "../../styles/all.css";
 
 .title {
   @include Breakpoint-tabletAndAbove {
