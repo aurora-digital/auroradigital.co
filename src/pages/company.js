@@ -5,6 +5,7 @@ import Footer from "root/components/Footer";
 import CompanyHero from "root/sections/CompanyHero";
 import TechRevolutionSection from "root/sections/TechRevolutionSection";
 import CompanyTeamSection from "root/sections/CompanyTeamSection";
+import CompanyAdvisorsSection from "root/sections/CompanyAdvisorsSection";
 
 const CompanyPage = () => (
   <Layout>
@@ -17,6 +18,7 @@ const CompanyPage = () => (
     <CompanyHero />
     <TechRevolutionSection />
     <CompanyTeamSection />
+    <CompanyAdvisorsSection />
     <Footer />
   </Layout>
 );
