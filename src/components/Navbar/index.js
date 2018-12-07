@@ -80,7 +80,7 @@ export default class Navbar extends Component {
           variant="body"
           color={color}
           weight={currentPage === pageName ? "bold" : "regular"}
-          underline={currentPage === pageName && menuOpen}
+          underline={currentPage === pageName && !menuOpen}
           underlineColor={underlineColor}
         >
           {capitalize(pageName)}

@@ -1,10 +1,6 @@
 @import "../../styles/all.css";
 
 .root {
-  @include Breakpoint-tabletAndBelow {
-    display: none;
-  }
-
   position: relative;
 
   width: $seven-columns;
@@ -43,5 +39,20 @@
     height: auto;
     min-width: 100%;
     min-height: 100%;
+  }
+}
+
+.tablet {
+  @include Breakpoint-desktopOnly {
+    display: none;
+  }
+  @include Breakpoint-tabletOnly {
+    display: block;
+  }
+}
+
+.desktop {
+  @include Breakpoint-tabletAndBelow {
+    display: none;
   }
 }
