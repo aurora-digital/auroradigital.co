@@ -62,7 +62,7 @@ export default class Navbar extends Component {
     const finalLogoColor = menuOpen ? "light-blue" : logoColor;
 
     return (
-      <Link styleName="brand" to="/">
+      <Link to="/">
         <Logo color={finalLogoColor} />
       </Link>
     );

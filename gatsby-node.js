@@ -3,8 +3,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
     name: `babel-plugin-react-css-modules`,
     options: {
       generateScopedName: `[folder]__[local]__[hash]`,
-      webpackHotModuleReloading: true,
-      handleMissingStyleName: "warn",
     },
   });
 
