@@ -4,7 +4,9 @@
   max-width: $two-columns;
   padding: $spacing-28;
 
-  box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  box-shadow: 8px 8px 28px color(black alpha(8%));
+
   cursor: pointer;
   outline: none;
 }
