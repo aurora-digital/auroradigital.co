@@ -1,6 +1,4 @@
-@import "../../styles/layout.css";
-@import "../../styles/breakpoints.css";
-@import "../../styles/variables.css";
+@import "../../styles/all.css";
 
 .title {
   @include Breakpoint-desktopOnly {

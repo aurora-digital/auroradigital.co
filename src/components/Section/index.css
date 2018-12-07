@@ -1,5 +1,4 @@
-@import "../../styles/breakpoints.css";
-@import "../../styles/layout.css";
+@import "../../styles/all.css";
 
 .root {
   @include Breakpoint-desktopOnly {
