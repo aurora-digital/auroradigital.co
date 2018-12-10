@@ -4,9 +4,11 @@
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
   }
+
   @include Breakpoint-mobileOnly {
     margin-right: auto;
   }
+
   margin-bottom: $spacing-56;
 }
 
