@@ -133,6 +133,10 @@ $social-icon-size-mobile: 16px;
 
 .logo {
   grid-area: logo;
+
+  @include Breakpoint-mobileOnly {
+    align-self: center;
+  }
 }
 
 .contacts > *:not(:last-child) {
@@ -173,6 +177,10 @@ $social-icon-size-mobile: 16px;
   flex-direction: row;
 
   margin-left: auto;
+
+  @include Breakpoint-mobileOnly {
+    align-items: center;
+  }
 }
 
 .social-icon {
