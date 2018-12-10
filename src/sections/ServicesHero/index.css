@@ -1,0 +1,37 @@
+@import "../../styles/all.css";
+
+.title {
+  max-width: $eight-columns;
+
+  @include Breakpoint-tabletOnly {
+    width: $six-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+}
+
+.left {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+    margin-top: $spacing-168;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-168 / 2);
+  }
+}
+
+.right {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+
+    margin-top: $spacing-56;
+    margin-left: auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}
