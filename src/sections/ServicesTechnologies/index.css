@@ -15,13 +15,16 @@
 }
 
 .technology-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   max-width: $six-columns;
   margin: 0 auto;
-  margin-top: $spacing-56;
+
+  @include Breakpoint-tabletAndAbove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: $spacing-56;
+  }
 
   @include Breakpoint-mobileOnly {
     display: grid;
@@ -44,4 +47,8 @@
 .icon {
   max-height: calc($spacing-168 / 2);
   margin-bottom: $spacing-28;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-16;
+  }
 }
