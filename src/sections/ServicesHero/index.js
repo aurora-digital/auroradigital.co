@@ -2,26 +2,43 @@ import React, { Component } from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import BackgroundVideoText from "root/components/BackgroundVideoText";
+import BackgroundImageText from "root/components/BackgroundImageText";
+
+import video from "root/assets/videos/text-video.mp4";
+import textBackground from "root/assets/images/text-img.jpg";
 
 import "./index.css";
 
 const column = 114;
 const gutter = 28;
 const eightColumns = 8 * column + 7 * gutter;
-const sixColumns = 6 * column + 5 * gutter;
+const fiveColumns = 5 * column + 4 * gutter;
+
 const breakpointMobile = 768;
 const breakpointDesktop = 1268;
 
 export default class ServicesHero extends Component {
   state = {
     isJsReady: false,
+    width: undefined,
   };
 
-  componentDidMount = () => {
-    this.setState({ isJsReady: true });
+  componentDidMount() {
+    this.updateDimensions();
+
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateDimensions);
   };
 
-  getWidth = () => document.documentElement.clientWidth;
+  updateDimensions = () => {
+    this.setState({
+      width: document.documentElement.clientWidth,
+      isJsReady: true,
+    });
+  };
 
   renderCopy = () => (
     <div>
@@ -45,8 +62,8 @@ export default class ServicesHero extends Component {
       <BackgroundVideoText
         key="desktop"
         labels={["A dynamic team to design", "and develop your product"]}
-        poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/oceanshot.jpg"
-        video="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ocean-small.webm"
+        poster={textBackground}
+        video={video}
         height="195px"
         width={`${eightColumns}px`}
       />
@@ -56,12 +73,12 @@ export default class ServicesHero extends Component {
 
   renderMobile = () => (
     <Section>
-      <div styleName="title">
-        <Typography variant="h1" color="lavender" fontFamily="meta-serif">
-          A dynamic team to design and develop your product
+      <BackgroundImageText image={textBackground}>
+        <Typography weight="bold" variant="h1" fontFamily="meta-serif">
+          &#8203; A dynamic team to design and develop your product
         </Typography>
-        {this.renderCopy()}
-      </div>
+      </BackgroundImageText>
+      {this.renderCopy()}
     </Section>
   );
 
@@ -69,33 +86,27 @@ export default class ServicesHero extends Component {
     <Section>
       <BackgroundVideoText
         key="tablet"
-        labels={["A dynamic team to", "design and develop", "your product"]}
-        poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/oceanshot.jpg"
-        video="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ocean-small.webm"
-        height="330px"
-        width={`${sixColumns}px`}
+        labels={["A dynamic", "team to design", "and develop", "your product"]}
+        poster={textBackground}
+        video={video}
+        height="430px"
+        width={fiveColumns}
       />
       {this.renderCopy()}
     </Section>
   );
 
   renderNoScript = () => (
-    <noscript>
-      <Section>
-        <div styleName="title">
-          <Typography variant="h1" color="lavender" fontFamily="meta-serif">
-            A dynamic team to design and develop your product
-          </Typography>
-        </div>
-        {this.renderCopy()}
-      </Section>
-    </noscript>
+    <>
+      <noscript>{this.renderMobile()}</noscript>
+      {this.renderMobile()}
+    </>
   );
 
   render() {
     if (!this.state.isJsReady) return this.renderNoScript();
 
-    const width = this.getWidth();
+    const { width } = this.state;
 
     if (width >= breakpointDesktop) {
       return this.renderDesktop();
