@@ -1,4 +1,17 @@
 @import "../../styles/all.css";
+
+.title {
+  max-width: $eight-columns;
+
+  @include Breakpoint-tabletOnly {
+    width: $six-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+}
+
 .left {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;

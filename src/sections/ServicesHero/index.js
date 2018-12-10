@@ -45,8 +45,12 @@ const renderDesktop = () => (
 
 const renderMobile = () => (
   <Section>
-    <div>Implement Mobile</div>
-    {renderCopy()}
+    <div styleName="title">
+      <Typography variant="h1" color="dark-blue" fontFamily="meta-serif">
+        A dynamic team to design and develop your product
+      </Typography>
+      {renderCopy()}
+    </div>
   </Section>
 );
 
@@ -64,6 +68,19 @@ const renderTablet = () => (
   </Section>
 );
 
+const renderNoScript = () => (
+  <noscript>
+    <Section>
+      <div styleName="title">
+        <Typography variant="h1" color="dark-blue" fontFamily="meta-serif">
+          A dynamic team to design and develop your product
+        </Typography>
+      </div>
+      {renderCopy()}
+    </Section>
+  </noscript>
+);
+
 export default class ServicesHero extends Component {
   state = {
     isJsReady: false,
@@ -76,7 +93,7 @@ export default class ServicesHero extends Component {
   getWidth = () => document.documentElement.clientWidth;
 
   render() {
-    if (!this.state.isJsReady) return null;
+    if (!this.state.isJsReady) return renderNoScript();
 
     const width = this.getWidth();
 
