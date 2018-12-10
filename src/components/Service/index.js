@@ -22,11 +22,11 @@ const Service = ({ serviceName, image, specificServices }) => (
         <img src={image} alt={serviceName} />
       </div>
       <div styleName="description">
-        <Typography variant="body" color="dark-blue">
-          {specificServices.map(specificService => (
-            <p key={specificService}>{specificService}</p>
-          ))}
-        </Typography>
+        {specificServices.map(specificService => (
+          <Typography variant="body" color="dark-blue" key={specificService}>
+            {specificService}
+          </Typography>
+        ))}
       </div>
     </div>
   </div>
