@@ -1,0 +1,36 @@
+@import "../../styles/all.css";
+
+.title {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+
+  margin-bottom: $spacing-56;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+  }
+}
+
+.button {
+  margin-top: $spacing-112;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
