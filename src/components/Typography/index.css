@@ -60,6 +60,10 @@
   color: white;
 }
 
+.light-blue {
+  color: $light-blue;
+}
+
 .dark-blue {
   color: $dark-blue;
 }

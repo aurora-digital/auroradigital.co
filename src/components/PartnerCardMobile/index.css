@@ -1,5 +1,4 @@
-@import "../../styles/colors.css";
-@import "../../styles/layout.css";
+@import "../../styles/all.css";
 
 .root {
   display: flex;
