@@ -38,6 +38,10 @@ export default class Navbar extends Component {
     else document.body.style.overflow = "auto";
   }
 
+  componentWillUnmount() {
+    document.body.style.overflow = "auto";
+  }
+
   get colors() {
     const { menuOpen } = this.state;
     const { color, underlineColor, logoColor } = this.props;
