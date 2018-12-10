@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Navbar from "root/components/Navbar";
+import Footer from "root/components/Footer";
 import Background from "root/components/Background";
 import Layout from "root/components/Layout";
 import HomePageHero from "root/sections/HomeHero";
@@ -32,6 +33,7 @@ const IndexPage = ({ data }) => (
       <HomePride />
     </Background>
     <HomePagePartners />
+    <Footer />
   </Layout>
 );
 

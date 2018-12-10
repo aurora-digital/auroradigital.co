@@ -37,15 +37,6 @@ $modal-height: 402px;
   }
 }
 
-.brand,
-.brand svg {
-  height: 26px;
-
-  @include Breakpoint-mobileOnly {
-    height: 12px;
-  }
-}
-
 .links {
   display: flex;
   flex-direction: row;
@@ -126,18 +117,6 @@ $modal-height: 402px;
 .contact-us {
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-56;
-  }
-}
-
-.logo-svg-white {
-  path {
-    fill: white;
-  }
-}
-
-.logo-svg-light-blue {
-  path {
-    fill: $light-blue;
   }
 }
 
