@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import BackgroundVideoText from "root/components/BackgroundVideoText";
@@ -64,18 +64,30 @@ const renderTablet = () => (
   </Section>
 );
 
-const ServicesHero = () => {
-  const width = document.documentElement.clientWidth;
+export default class ServicesHero extends Component {
+  state = {
+    isJsReady: false,
+  };
 
-  if (width >= breakpointDesktop) {
-    return renderDesktop();
+  componentDidMount = () => {
+    this.setState({ isJsReady: true });
+  };
+
+  getWidth = () => document.documentElement.clientWidth;
+
+  render() {
+    if (!this.state.isJsReady) return null;
+
+    const width = this.getWidth();
+
+    if (width >= breakpointDesktop) {
+      return renderDesktop();
+    }
+
+    if (width < breakpointMobile) {
+      return renderMobile();
+    }
+
+    return renderTablet();
   }
-
-  if (width < breakpointMobile) {
-    return renderMobile();
-  }
-
-  return renderTablet();
-};
-
-export default ServicesHero;
+}
