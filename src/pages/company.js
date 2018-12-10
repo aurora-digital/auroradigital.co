@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
+import Footer from "root/components/Footer";
 import CompanyHero from "root/sections/CompanyHero";
 import TechRevolutionSection from "root/sections/TechRevolutionSection";
 import CompanyTeamSection from "root/sections/CompanyTeamSection";
@@ -16,6 +17,7 @@ const CompanyPage = () => (
     <CompanyHero />
     <TechRevolutionSection />
     <CompanyTeamSection />
+    <Footer />
   </Layout>
 );
 

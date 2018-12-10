@@ -7,7 +7,7 @@ import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Button from "root/components/Button";
 import Typography from "root/components/Typography";
-import Logo from "./Logo";
+import Logo from "root/components/Logo";
 
 import "./index.css";
 
@@ -62,7 +62,7 @@ export default class Navbar extends Component {
     const finalLogoColor = menuOpen ? "light-blue" : logoColor;
 
     return (
-      <Link styleName="brand" to="/">
+      <Link to="/">
         <Logo color={finalLogoColor} />
       </Link>
     );

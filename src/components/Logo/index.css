@@ -1,0 +1,21 @@
+@import "../../styles/all.css";
+
+.root {
+  height: 26px;
+
+  @include Breakpoint-mobileOnly {
+    height: 12px;
+  }
+}
+
+.logo-svg-white {
+  path {
+    fill: white;
+  }
+}
+
+.logo-svg-light-blue {
+  path {
+    fill: $light-blue;
+  }
+}
