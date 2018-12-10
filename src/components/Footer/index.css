@@ -1,7 +1,7 @@
 @import "../../styles/all.css";
 
-$social-icon-size: 28px;
-$social-icon-size-mobile: 16px;
+$social-icon-size: $spacing-28;
+$social-icon-size-mobile: $spacing-16;
 
 .root {
   margin-bottom: $spacing-56;
@@ -46,15 +46,12 @@ $social-icon-size-mobile: 16px;
 
 .links {
   display: flex;
+  flex-direction: row;
 
   @include Breakpoint-tabletAndAbove {
     justify-content: space-between;
     width: 100%;
     max-width: $three-columns;
-  }
-
-  @include Breakpoint-mobileOnly {
-    flex-direction: row;
   }
 }
 
