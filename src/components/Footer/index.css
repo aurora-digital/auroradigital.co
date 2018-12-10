@@ -110,6 +110,10 @@ $social-icon-size-mobile: $spacing-16;
   @media screen and (width < $separator-max-width) {
     width: calc(100vw - 2 * $gutter);
   }
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+  }
 }
 
 .contacts {
