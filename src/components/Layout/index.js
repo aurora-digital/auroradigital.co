@@ -47,8 +47,10 @@ class Layout extends Component {
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
           <meta name="keywords" content={siteKeywords} />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="https://use.typekit.net/qjx0hot.css" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          />
         </Helmet>
         <div>{this.props.children}</div>
       </div>
