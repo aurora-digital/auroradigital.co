@@ -29,11 +29,10 @@
   }
 
   @include Breakpoint-mobileOnly {
+    justify-content: center;
     grid-auto-rows: 1fr;
     grid-row-gap: $spacing-28;
     grid-template-columns: 1fr;
-
-    justify-content: center;
   }
 }
 
@@ -53,8 +52,7 @@
     padding: $spacing-28;
 
     margin-bottom: calc(
-      $spacing-28 + $spacing-12 + $line-height-h3-mobile +
-        $line-height-body-mobile
+      $spacing-28 + $spacing-12 + $line-height-h3-mobile + $line-height-body-mobile
     );
   }
 
