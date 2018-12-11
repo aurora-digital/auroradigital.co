@@ -49,7 +49,7 @@ export default class IndexPage extends Component {
           name="hero"
           autoPlay
         >
-          <Navbar currentPage="home" />
+          <Navbar currentPage="home" theme="secondary" />
           <HomePageHero />
         </Background>
         <HomePageServices />

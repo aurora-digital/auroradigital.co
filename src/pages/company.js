@@ -10,12 +10,7 @@ import CompanyAdvisorsSection from "root/sections/CompanyAdvisorsSection";
 
 const CompanyPage = () => (
   <Layout>
-    <Navbar
-      currentPage="company"
-      color="dark-blue"
-      underlineColor="light-blue"
-      logoColor="light-blue"
-    />
+    <Navbar currentPage="company" theme="primary" />
     <CompanyHero />
     <TechRevolutionSection />
     <CompanyTeamSection />

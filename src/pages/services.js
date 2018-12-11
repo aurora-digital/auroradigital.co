@@ -10,9 +10,7 @@ const ServicesPage = () => (
   <Layout>
     <Navbar
       currentPage="services"
-      color="dark-blue"
-      underlineColor="light-blue"
-      logoColor="light-blue"
+      theme="primary"
     />
     <ServicesHero />
     <ServicesWork />
