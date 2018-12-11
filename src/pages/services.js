@@ -3,6 +3,8 @@ import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
 import ServicesHero from "root/sections/ServicesHero";
 
+import ServicesTechnologies from "root/sections/ServicesTechnologies";
+
 const CompanyPage = () => (
   <Layout>
     <Navbar
@@ -12,6 +14,7 @@ const CompanyPage = () => (
       logoColor="light-blue"
     />
     <ServicesHero />
+    <ServicesTechnologies />
   </Layout>
 );
 
