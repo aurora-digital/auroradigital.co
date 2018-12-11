@@ -1,0 +1,54 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title > * {
+  text-align: center;
+}
+
+.technology-container {
+  max-width: $six-columns;
+  margin: 0 auto;
+
+  @include Breakpoint-tabletAndAbove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: $spacing-56;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: grid;
+
+    grid-row-gap: $spacing-56;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: auto;
+    margin-top: $spacing-28;
+  }
+}
+
+.technology {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  max-height: calc($spacing-168 / 2);
+  margin-bottom: $spacing-28;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-16;
+  }
+}
