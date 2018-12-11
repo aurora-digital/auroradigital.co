@@ -48,7 +48,7 @@ const renderLink = link => {
 };
 
 const Footer = () => (
-  <Section>
+  <Section verticalSpacing={false}>
     <div styleName="root">
       <div styleName="sitemap">
         <div styleName="lets-work">
