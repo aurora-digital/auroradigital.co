@@ -3,9 +3,9 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    oncostats: file(relativePath: { eq: "images/oncostats.png" }) {
+    oncostats: file(relativePath: { eq: "images/oncostats.jpg" }) {
       image: childImageSharp {
-        fluid(maxHeight: 320) {
+        fluid(maxHeight: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     sioslife: file(relativePath: { eq: "images/sioslife.png" }) {
       image: childImageSharp {
-        fluid(maxHeight: 320) {
+        fluid(maxHeight: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

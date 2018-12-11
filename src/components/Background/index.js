@@ -1,58 +1,86 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import classNames from "classnames";
+import classNames from "classnames/bind";
 
 import "./index.css";
 
-const lavenderColor = "#503875";
+const breakpointMobile = 768;
 
-const imageContainerStyle = {
-  position: `absolute`,
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: lavenderColor,
-  zIndex: -1,
-};
+export default class Background extends Component {
+  static propTypes = {
+    image: PropTypes.shape({}).isRequired,
+    children: PropTypes.node.isRequired,
+    blendMode: PropTypes.oneOf(["normal", "difference"]),
+    color: PropTypes.oneOf(["light-blue", "lavender"]),
+    maxWidth: PropTypes.bool,
+    video: PropTypes.string,
+    poster: PropTypes.string,
+  };
 
-const imageStyle = { opacity: 0.9, mixBlendMode: "normal" };
+  static defaultProps = {
+    blendMode: "difference",
+    color: "light-blue",
+    maxWidth: false,
+    video: "",
+    poster: "",
+  };
 
-const Background = ({ children, image, color, blendMode, maxWidth }) => {
-  const classnames = classNames("background-image", {
-    [`color-${color}`]: true,
-    [`blend-${blendMode}`]: true,
-  });
+  state = {
+    width: undefined,
+  };
 
-  const rootClassnames = classNames("root", { "max-width": maxWidth });
+  componentDidMount = () => {
+    window.addEventListener("resize", this.updateDimensions);
+    this.updateDimensions();
+  };
 
-  return (
-    <div styleName={rootClassnames}>
-      <Img
-        styleName={classnames}
-        style={imageContainerStyle}
-        imgStyle={imageStyle}
-        fluid={image}
-        critical
-      />
-      {children}
-    </div>
-  );
-};
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateDimensions);
+  };
 
-Background.propTypes = {
-  image: PropTypes.shape({}).isRequired,
-  children: PropTypes.node.isRequired,
-  blendMode: PropTypes.oneOf(["normal", "difference"]),
-  color: PropTypes.oneOf(["light-blue", "lavender", "magenta"]),
-  maxWidth: PropTypes.bool,
-};
+  updateDimensions = () => {
+    this.setState({ width: document.documentElement.clientWidth });
+  };
 
-Background.defaultProps = {
-  blendMode: "difference",
-  color: "light-blue",
-  maxWidth: false,
-};
+  renderBackground = () => {
+    const { width } = this.state;
+    const { video, image, poster } = this.props;
 
-export default Background;
+    if (video && width > breakpointMobile) {
+      return (
+        <video
+          styleName="video"
+          src={video}
+          poster={poster}
+          muted
+          autoPlay
+          loop
+          playsInline
+          preload
+        />
+      );
+    }
+
+    return <Img styleName="image" fluid={image} critical />;
+  };
+
+  render() {
+    const { children, maxWidth, color, blendMode } = this.props;
+
+    const rootClassnames = classNames("root", { "max-width": maxWidth });
+    const classnames = classNames("rect", {
+      [`color-${color}`]: true,
+      [`blend-${blendMode}`]: true,
+    });
+
+    return (
+      <div styleName={rootClassnames}>
+        <div styleName={classnames} />
+        {this.renderBackground()}
+
+        {children}
+      </div>
+    );
+  }
+}

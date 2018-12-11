@@ -9,6 +9,8 @@ import HomePageHero from "root/sections/HomeHero";
 import HomePagePartners from "root/sections/HomePartners";
 import HomePride from "root/sections/HomePride";
 import HomePageServices from "root/sections/HomeServices";
+import heroVideo from "root/assets/videos/Hero-vertical.mp4";
+import poster from "root/assets/images/hero-molecules.jpg";
 
 export const query = graphql`
   query {
@@ -24,7 +26,11 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Background image={data.heroMolecules.image.fluid}>
+    <Background
+      video={heroVideo}
+      poster={poster}
+      image={data.heroMolecules.image.fluid}
+    >
       <Navbar currentPage="home" />
       <HomePageHero />
     </Background>

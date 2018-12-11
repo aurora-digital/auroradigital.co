@@ -39,13 +39,11 @@
 .root:hover,
 .root:focus,
 .root:active {
-  .image {
-    @include Breakpoint-tabletAndAbove {
+  @media (hover: hover) {
+    .image img {
       filter: grayscale(0%);
     }
-  }
-  .rect {
-    @include Breakpoint-tabletAndAbove {
+    .rect {
       opacity: 0;
 
       transition: opacity 0.05s linear;
