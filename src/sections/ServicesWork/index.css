@@ -1,0 +1,55 @@
+@import "../../styles/all.css";
+
+.work {
+  margin-top: $spacing-168;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-112;
+  }
+}
+
+.left {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+  }
+}
+
+.right {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+
+    margin-top: $spacing-56;
+    margin-left: auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}
+
+.services {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $three-columns;
+
+    margin-top: $spacing-56;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-28;
+  }
+}
+
+.specific-service {
+  display: flex;
+  flex-direction: row;
+}
+
+.asterisk {
+  display: flex;
+  flex-direction: row;
+  margin-right: $spacing-28;
+
+  @include Breakpoint-mobileOnly {
+    margin-right: calc($spacing-28 / 2);
+  }
+}
