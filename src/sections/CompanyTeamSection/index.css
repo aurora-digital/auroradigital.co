@@ -32,6 +32,8 @@
     grid-auto-rows: 1fr;
     grid-row-gap: $spacing-28;
     grid-template-columns: 1fr;
+
+    justify-content: center;
   }
 }
 
@@ -43,10 +45,17 @@
   padding: $spacing-56;
 
   /* Total spacing of the team element description*/
-  margin-bottom: calc($spacing-56 + $spacing-16 + $line-height-h3 + $line-height-body);
+  margin-bottom: calc(
+    $spacing-56 + $spacing-16 + $line-height-h3 + $line-height-body
+  );
 
   @include Breakpoint-mobileOnly {
-    margin-bottom: calc($spacing-28 + $spacing-12 + $line-height-h3-mobile + $line-height-body-mobile);
+    padding: $spacing-28;
+
+    margin-bottom: calc(
+      $spacing-28 + $spacing-12 + $line-height-h3-mobile +
+        $line-height-body-mobile
+    );
   }
 
   background-color: $light-blue;
