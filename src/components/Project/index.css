@@ -80,13 +80,15 @@ $image-height-mobile: calc($image-height / 2);
 
 .root:hover,
 .root:focus {
-  .project-link {
-    display: block;
-  }
+  @media (hover: hover) {
+    .project-link {
+      display: block;
+    }
 
-  .image::after {
-    background-color: color($light-blue alpha(84%));
+    .image::after {
+      background-color: color($light-blue alpha(84%));
 
-    mix-blend-mode: normal;
+      mix-blend-mode: normal;
+    }
   }
 }
