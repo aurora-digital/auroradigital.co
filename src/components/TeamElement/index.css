@@ -6,16 +6,20 @@
   outline: none;
 }
 
-.image {
+.image-wrapper {
   position: relative;
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.image {
+  filter: grayscale(100%);
 
   overflow: hidden;
 
-  img {
-    filter: grayscale(100%);
+  @include Breakpoint-tabletAndAbove {
+    height: 320px;
   }
 }
 
@@ -40,7 +44,7 @@
 .root:hover,
 .root:focus,
 .root:active {
-  .image img {
+  .image {
     @include Breakpoint-tabletAndAbove {
       filter: grayscale(0%);
     }
@@ -55,7 +59,7 @@
 }
 
 .name {
-  margin-top: 40px;
+  margin-top: $spacing-56;
 
   text-align: left;
 
