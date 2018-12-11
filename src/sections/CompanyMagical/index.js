@@ -17,6 +17,8 @@ const CompanyMagical = ({ data }) => (
     maxWidth
     video={magicVideo}
     poster={magicPoster}
+    key="magical"
+    name="magical"
   >
     <Section separator verticalSpacing={false}>
       <div styleName="title">

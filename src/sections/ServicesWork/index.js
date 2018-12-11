@@ -85,6 +85,8 @@ const ServicesWork = ({ data }) => (
     image={data.heroMolecules.image.fluid}
     maxWidth
     video={servicesVideo}
+    key="services"
+    name="services"
   >
     <Section>
       {renderDesign()}
