@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Navbar from "root/components/Navbar";
@@ -10,6 +10,7 @@ import HomePagePartners from "root/sections/HomePartners";
 import HomePride from "root/sections/HomePride";
 import HomePageServices from "root/sections/HomeServices";
 import heroVideo from "root/assets/videos/Hero-vertical.mp4";
+import prideVideo from "root/assets/videos/pride.mp4";
 import poster from "root/assets/images/hero-molecules.jpg";
 
 export const query = graphql`
@@ -24,33 +25,49 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <Background
-      video={heroVideo}
-      poster={poster}
-      image={data.heroMolecules.image.fluid}
-    >
-      <Navbar currentPage="home" />
-      <HomePageHero />
-    </Background>
-    <HomePageServices />
-    <Background image={data.heroMolecules.image.fluid} maxWidth>
-      <HomePride />
-    </Background>
-    <HomePagePartners />
-    <Footer />
-  </Layout>
-);
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    heroMolecules: PropTypes.shape({
-      image: PropTypes.shape({
-        fluid: PropTypes.shape({}).isRequired,
+export default class IndexPage extends Component {
+  static propTypes = {
+    data: PropTypes.shape({
+      heroMolecules: PropTypes.shape({
+        image: PropTypes.shape({
+          fluid: PropTypes.shape({}).isRequired,
+        }).isRequired,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
-};
+  };
 
-export default IndexPage;
+  render() {
+    const { data } = this.props;
+
+    return (
+      <Layout>
+        <Background
+          video={heroVideo}
+          poster={poster}
+          image={data.heroMolecules.image.fluid}
+          key="hero"
+          name="hero"
+          autoPlay
+        >
+          <Navbar currentPage="home" />
+          <HomePageHero />
+        </Background>
+        <HomePageServices />
+        <Background
+          video={prideVideo}
+          poster={poster}
+          image={data.heroMolecules.image.fluid}
+          maxWidth
+          key="pride"
+          name="pride"
+          color="lavender"
+          blendMode="normal"
+        >
+          <HomePride />
+        </Background>
+        <HomePagePartners />
+        <Footer />
+      </Layout>
+    );
+  }
+}
