@@ -54,3 +54,7 @@
 .color-light-blue::after {
   background-color: color($light-blue alpha(28%));
 }
+
+.color-magenta::after {
+  background-color: color($magenta alpha(84%));
+}

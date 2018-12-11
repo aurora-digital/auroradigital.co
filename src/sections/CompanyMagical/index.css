@@ -1,0 +1,8 @@
+@import "../../styles/all.css";
+
+.title {
+  max-width: $six-columns;
+  margin: 0 auto;
+
+  text-align: center;
+}
