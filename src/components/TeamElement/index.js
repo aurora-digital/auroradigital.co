@@ -7,9 +7,14 @@ import "./index.css";
 
 const TeamElement = ({ name, position, image }) => (
   <button styleName="root">
-    <div styleName="image">
+    <div styleName="image-wrapper">
       <div styleName="rect" />
-      <Img alt={`${name.toLowerCase()} photo`} fluid={image} critical />
+      <Img
+        styleName="image"
+        alt={`${name.toLowerCase()} photo`}
+        fluid={image}
+        critical
+      />
     </div>
     <div styleName="name">
       <Typography variant="h3" color="dark-blue">
