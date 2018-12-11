@@ -5,6 +5,7 @@ import Footer from "root/components/Footer";
 import CompanyHero from "root/sections/CompanyHero";
 import TechRevolutionSection from "root/sections/TechRevolutionSection";
 import CompanyTeamSection from "root/sections/CompanyTeamSection";
+import CompanyMagical from "root/sections/CompanyMagical";
 import CompanyAdvisorsSection from "root/sections/CompanyAdvisorsSection";
 
 const CompanyPage = () => (
@@ -18,6 +19,7 @@ const CompanyPage = () => (
     <CompanyHero />
     <TechRevolutionSection />
     <CompanyTeamSection />
+    <CompanyMagical />
     <CompanyAdvisorsSection />
     <Footer />
   </Layout>

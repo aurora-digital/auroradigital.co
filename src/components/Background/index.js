@@ -45,7 +45,7 @@ Background.propTypes = {
   image: PropTypes.shape({}).isRequired,
   children: PropTypes.node.isRequired,
   blendMode: PropTypes.oneOf(["normal", "difference"]),
-  color: PropTypes.oneOf(["light-blue", "lavender"]),
+  color: PropTypes.oneOf(["light-blue", "lavender", "magenta"]),
   maxWidth: PropTypes.bool,
 };
 
