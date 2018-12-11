@@ -41,11 +41,12 @@
 
 .specific-service {
   display: flex;
+  flex-direction: row;
 }
 
 .asterisk {
   display: flex;
-
+  flex-direction: row;
   margin-right: $spacing-28;
 
   @include Breakpoint-mobileOnly {

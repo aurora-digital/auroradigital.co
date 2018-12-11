@@ -4,7 +4,6 @@ import Navbar from "root/components/Navbar";
 import Footer from "root/components/Footer";
 import ServicesHero from "root/sections/ServicesHero";
 import ServicesWork from "root/sections/ServicesWork";
-
 import ServicesTechnologies from "root/sections/ServicesTechnologies";
 
 const ServicesPage = () => (
