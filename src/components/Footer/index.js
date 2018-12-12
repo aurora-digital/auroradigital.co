@@ -16,22 +16,22 @@ const socialLinks = [
   {
     name: "facebook",
     icon: facebook,
-    url: "https://facebook.com/svhealth",
+    url: "https://www.facebook.com/svhealthsoftware",
   },
   {
     name: "linkedIn",
     icon: linkedIn,
-    url: "https://linkedin.com/svhealth",
+    url: "https://www.linkedin.com/company/svhealth",
   },
   {
     name: "twitter",
     icon: twitter,
-    url: "https://twitter.com/svhealth",
+    url: "https://twitter.com/sv_health",
   },
   {
     name: "instagram",
     icon: instagram,
-    url: "https://instagram.com/svhealth",
+    url: "https://www.instagram.com/sv_health/",
   },
 ];
 
