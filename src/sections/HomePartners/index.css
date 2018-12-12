@@ -49,20 +49,6 @@
   }
 }
 
-.fadein {
-  animation-duration: 1s;
-  animation-name: fadein;
-
-  @keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
 .cards-desktop {
   display: grid;
 
