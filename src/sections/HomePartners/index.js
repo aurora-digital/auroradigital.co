@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import posed, { PoseGroup } from "react-pose";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import SelectedPartnerMobile from "root/components/SelectedPartnerMobile";
@@ -9,6 +9,12 @@ import withPartnersShowcaser from "../../containers/withPartnersShowcaser";
 import partnersData from "./partnersData";
 
 import "./index.css";
+
+const fadeAnimation = {
+  enter: { opacity: 1, delay: 300 },
+  exit: { opacity: 0, transition: { duration: 200 } },
+};
+const FadeDiv = posed.div(fadeAnimation);
 
 @withPartnersShowcaser(partnersData)
 export default class HomePagePartners extends Component {
@@ -39,32 +45,29 @@ export default class HomePagePartners extends Component {
           <img src={quotes} alt="quotes" />
         </div>
         <div styleName="about">
-          <ReactCSSTransitionGroup
+          <PoseGroup
             transitionName="fadein-opacity"
             transitionEnterTimeout={250}
             transitionLeave={false}
           >
-            <Typography
-              key={selectedPartner.fullName}
-              color="dark-blue"
-              variant="h3"
-            >
-              {selectedPartner.about}
-            </Typography>
-          </ReactCSSTransitionGroup>
+            <FadeDiv key={selectedPartner.fullName}>
+              <Typography color="dark-blue" variant="h3">
+                {selectedPartner.about}
+              </Typography>
+            </FadeDiv>
+          </PoseGroup>
         </div>
         <div styleName="cards-desktop">{renderPartners()}</div>
         <div styleName="partners-mobile">
-          <ReactCSSTransitionGroup
+          <PoseGroup
             transitionName="fadein-opacity"
             transitionEnterTimeout={250}
             transitionLeave={false}
           >
-            <SelectedPartnerMobile
-              key={selectedPartner.fullName}
-              partner={selectedPartner}
-            />
-          </ReactCSSTransitionGroup>
+            <FadeDiv key={selectedPartner.fullName} styleName="fade-div">
+              <SelectedPartnerMobile partner={selectedPartner} />
+            </FadeDiv>
+          </PoseGroup>
           <div styleName="cards-mobile">{renderMobileUnselectedPartners()}</div>
         </div>
       </Section>

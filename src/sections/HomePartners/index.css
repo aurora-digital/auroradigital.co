@@ -79,6 +79,10 @@
   @include Breakpoint-tabletAndAbove {
     display: none;
   }
+
+  .fade-div {
+    overflow: auto;
+  }
 }
 
 .cards-mobile {
@@ -89,16 +93,4 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   margin-top: $spacing-28;
-}
-
-:global {
-  .fadein-opacity-enter {
-    opacity: 0.01;
-  }
-
-  .fadein-opacity-enter.fadein-opacity-enter-active {
-    opacity: 1;
-
-    transition: opacity 0.25s ease-in;
-  }
 }
