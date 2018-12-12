@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import SelectedPartnerMobile from "root/components/SelectedPartnerMobile";
@@ -38,13 +39,32 @@ export default class HomePagePartners extends Component {
           <img src={quotes} alt="quotes" />
         </div>
         <div styleName="about">
-          <Typography color="dark-blue" variant="h3">
-            {selectedPartner.about}
-          </Typography>
+          <ReactCSSTransitionGroup
+            transitionName="fadein-opacity"
+            transitionEnterTimeout={250}
+            transitionLeave={false}
+          >
+            <Typography
+              key={selectedPartner.fullName}
+              color="dark-blue"
+              variant="h3"
+            >
+              {selectedPartner.about}
+            </Typography>
+          </ReactCSSTransitionGroup>
         </div>
         <div styleName="cards-desktop">{renderPartners()}</div>
         <div styleName="partners-mobile">
-          <SelectedPartnerMobile partner={selectedPartner} />
+          <ReactCSSTransitionGroup
+            transitionName="fadein-opacity"
+            transitionEnterTimeout={250}
+            transitionLeave={false}
+          >
+            <SelectedPartnerMobile
+              key={selectedPartner.fullName}
+              partner={selectedPartner}
+            />
+          </ReactCSSTransitionGroup>
           <div styleName="cards-mobile">{renderMobileUnselectedPartners()}</div>
         </div>
       </Section>

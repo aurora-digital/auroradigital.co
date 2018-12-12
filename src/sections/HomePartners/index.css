@@ -30,12 +30,11 @@
 
   margin-top: $spacing-28;
   margin-bottom: $spacing-56;
+  margin-left: calc($three-columns + $gutter);
 
   @include Breakpoint-desktopOnly {
     max-width: $five-columns;
   }
-
-  margin-left: calc($three-columns + $gutter);
 
   @include Breakpoint-tabletOnly {
     height: calc(5 * $line-height-h3-mobile);
@@ -47,6 +46,20 @@
     height: calc(6 * $line-height-h3-mobile);
     margin-bottom: $spacing-28;
     margin-left: calc($gutter / 2);
+  }
+}
+
+.fadein {
+  animation-duration: 1s;
+  animation-name: fadein;
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -76,4 +89,16 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   margin-top: $spacing-28;
+}
+
+:global {
+  .fadein-opacity-enter {
+    opacity: 0.01;
+  }
+
+  .fadein-opacity-enter.fadein-opacity-enter-active {
+    opacity: 1;
+
+    transition: opacity 0.25s ease-in;
+  }
 }
