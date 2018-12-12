@@ -42,7 +42,7 @@ export default class Background extends Component {
           autoPlay
           loop
           playsInline
-          preload="true"
+          preload="auto"
         />
       );
     }

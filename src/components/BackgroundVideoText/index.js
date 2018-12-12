@@ -48,7 +48,7 @@ export default class BackgroundVideoText extends Component {
             autoPlay
             loop
             playsInline
-            preload="true"
+            preload="auto"
           />
         </Typography>
       </div>
