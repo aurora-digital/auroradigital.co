@@ -72,7 +72,7 @@ export default class ServicesHero extends Component {
     </Section>
   );
 
-  renderNoScript = () => (
+  renderDefault = () => (
     <>
       <noscript>{this.renderMobile()}</noscript>
       {this.renderMobile()}
@@ -82,7 +82,7 @@ export default class ServicesHero extends Component {
   render() {
     return (
       <ResponsiveRenderer
-        renderDefault={this.renderNoScript}
+        renderDefault={this.renderDefault}
         renderDesktop={this.renderDesktop}
         renderTablet={this.renderTablet}
         renderMobile={this.renderMobile}

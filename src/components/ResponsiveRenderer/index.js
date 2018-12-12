@@ -9,13 +9,14 @@ const breakpointDesktop = 1268;
 export default class ResponsiveRenderer extends Component {
   static propTypes = {
     width: PropTypes.number,
-    renderDefault: PropTypes.func.isRequired,
+    renderDefault: PropTypes.func,
     renderDesktop: PropTypes.func.isRequired,
     renderTablet: PropTypes.func.isRequired,
     renderMobile: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    renderDefault: null,
     width: null,
   };
 
