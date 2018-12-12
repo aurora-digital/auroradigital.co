@@ -13,9 +13,6 @@ const gutter = 28;
 const sixColumns = 6 * column + 5 * gutter;
 const fourColumns = 4 * column + 3 * gutter;
 
-const breakpointMobile = 768;
-const breakpointDesktop = 1268;
-
 export default class CompanyHero extends Component {
   renderDesktop = () => (
     <Section>
