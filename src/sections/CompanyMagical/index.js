@@ -14,7 +14,7 @@ const CompanyMagical = ({ data }) => (
     image={data.magicalPower.image.fluid}
     maxWidth
   >
-    <Section separator verticalSpacing="false">
+    <Section separator verticalSpacing={false}>
       <div styleName="title">
         <Typography variant="h2" fontFamily="meta-serif">
           The magical power happens when honesty, transparency and commitment

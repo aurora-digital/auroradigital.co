@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import classNames from "classnames/bind";
+import withWindowDimensions from "root/containers/withWindowDimensions";
 
 import "./index.css";
 
 const breakpointMobile = 768;
 
+@withWindowDimensions
 export default class Background extends Component {
   static propTypes = {
+    width: PropTypes.number.isRequired,
     image: PropTypes.shape({}).isRequired,
     children: PropTypes.node.isRequired,
     blendMode: PropTypes.oneOf(["normal", "difference"]),
@@ -26,26 +29,8 @@ export default class Background extends Component {
     poster: "",
   };
 
-  state = {
-    width: undefined,
-  };
-
-  componentDidMount = () => {
-    window.addEventListener("resize", this.updateDimensions);
-    this.updateDimensions();
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions);
-  };
-
-  updateDimensions = () => {
-    this.setState({ width: document.documentElement.clientWidth });
-  };
-
   renderBackground = () => {
-    const { width } = this.state;
-    const { video, image, poster } = this.props;
+    const { width, video, image, poster } = this.props;
 
     if (video && width > breakpointMobile) {
       return (
@@ -57,7 +42,7 @@ export default class Background extends Component {
           autoPlay
           loop
           playsInline
-          preload
+          preload="true"
         />
       );
     }

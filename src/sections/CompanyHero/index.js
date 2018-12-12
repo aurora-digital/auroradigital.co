@@ -6,6 +6,7 @@ import Typography from "root/components/Typography";
 
 import video from "root/assets/videos/text-video.mp4";
 import textBackground from "root/assets/images/text-img.jpg";
+import ResponsiveRenderer from "../../components/ResponsiveRenderer";
 
 const column = 114;
 const gutter = 28;
@@ -16,27 +17,6 @@ const breakpointMobile = 768;
 const breakpointDesktop = 1268;
 
 export default class CompanyHero extends Component {
-  state = {
-    isJsReady: false,
-  };
-
-  componentDidMount = () => {
-    this.updateDimensions();
-
-    window.addEventListener("resize", this.updateDimensions);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions);
-  };
-
-  updateDimensions = () => {
-    this.setState({
-      width: document.documentElement.clientWidth,
-      isJsReady: true,
-    });
-  };
-
   renderDesktop = () => (
     <Section>
       <BackgroundVideoText
@@ -86,18 +66,13 @@ export default class CompanyHero extends Component {
   );
 
   render() {
-    if (!this.state.isJsReady) return this.renderNoScript();
-
-    const { width } = this.state;
-
-    if (width >= breakpointDesktop) {
-      return this.renderDesktop();
-    }
-
-    if (width < breakpointMobile) {
-      return this.renderMobile();
-    }
-
-    return this.renderTablet();
+    return (
+      <ResponsiveRenderer
+        renderDefault={this.renderNoScript}
+        renderDesktop={this.renderDesktop}
+        renderTablet={this.renderTablet}
+        renderMobile={this.renderMobile}
+      />
+    );
   }
 }
