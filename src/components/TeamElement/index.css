@@ -17,6 +17,8 @@
   filter: grayscale(100%);
 
   overflow: hidden;
+
+  transition: filter 0.2s linear;
 }
 
 .rect {
@@ -40,13 +42,14 @@
 .root:focus,
 .root:active {
   @media (hover: hover) {
-    .image img {
+    .image {
       filter: grayscale(0%);
     }
+
     .rect {
       opacity: 0;
 
-      transition: opacity 0.05s linear;
+      transition: opacity 0.2s linear;
     }
   }
 }
