@@ -35,11 +35,11 @@ export default class Navbar extends Component {
     const { menuOpen } = this.state;
 
     if (menuOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "auto";
+    else document.body.style.overflow = "visible";
   }
 
   componentWillUnmount() {
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "visible";
   }
 
   get colors() {
