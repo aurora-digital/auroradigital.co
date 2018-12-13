@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import classNames from "classnames/bind";
+import VisibilitySensor from "react-visibility-sensor";
+import withWindowDimensions from "root/containers/withWindowDimensions";
 
 import "./index.css";
 
 const breakpointMobile = 768;
 
+@withWindowDimensions
 export default class Background extends Component {
   static propTypes = {
+    width: PropTypes.number.isRequired,
     image: PropTypes.shape({}).isRequired,
     children: PropTypes.node.isRequired,
     blendMode: PropTypes.oneOf(["normal", "difference"]),
@@ -16,6 +20,8 @@ export default class Background extends Component {
     maxWidth: PropTypes.bool,
     video: PropTypes.string,
     poster: PropTypes.string,
+    name: PropTypes.string,
+    autoPlay: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -24,28 +30,28 @@ export default class Background extends Component {
     maxWidth: false,
     video: "",
     poster: "",
+    name: "element",
+    autoPlay: false,
   };
 
-  state = {
-    width: undefined,
+  handleRef = name => element => {
+    this[name] = element;
   };
 
-  componentDidMount = () => {
-    window.addEventListener("resize", this.updateDimensions);
-    this.updateDimensions();
-  };
+  handleChange = isVisible => {
+    if (!this.video) {
+      return;
+    }
 
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions);
-  };
-
-  updateDimensions = () => {
-    this.setState({ width: document.documentElement.clientWidth });
+    if (isVisible) {
+      this.video.play();
+    } else {
+      this.video.pause();
+    }
   };
 
   renderBackground = () => {
-    const { width } = this.state;
-    const { video, image, poster } = this.props;
+    const { video, image, poster, autoPlay, width } = this.props;
 
     if (video && width > breakpointMobile) {
       return (
@@ -54,10 +60,13 @@ export default class Background extends Component {
           src={video}
           poster={poster}
           muted
-          autoPlay
-          loop
           playsInline
-          preload
+          preload="auto"
+          loop
+          preload="auto"
+          autoPlay={autoPlay}
+          type="video/mp4"
+          ref={this.handleRef("video")}
         />
       );
     }
@@ -66,7 +75,7 @@ export default class Background extends Component {
   };
 
   render() {
-    const { children, maxWidth, color, blendMode } = this.props;
+    const { children, maxWidth, color, blendMode, name } = this.props;
 
     const rootClassnames = classNames("root", { "max-width": maxWidth });
     const classnames = classNames("rect", {
@@ -75,12 +84,18 @@ export default class Background extends Component {
     });
 
     return (
-      <div styleName={rootClassnames}>
-        <div styleName={classnames} />
-        {this.renderBackground()}
+      <VisibilitySensor
+        partialVisibility
+        scrollCheck
+        onChange={this.handleChange}
+      >
+        <div styleName={rootClassnames} ref={this.handleRef(name)}>
+          <div styleName={classnames} />
+          {this.renderBackground()}
 
-        {children}
-      </div>
+          {children}
+        </div>
+      </VisibilitySensor>
     );
   }
 }

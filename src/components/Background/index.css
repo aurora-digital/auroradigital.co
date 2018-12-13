@@ -72,7 +72,7 @@
 .blend-normal {
   mix-blend-mode: normal;
 
-  @supports not (mix-blend-mode: difference) {
+  @supports not (mix-blend-mode: normal) {
     background-color: color($fallback-overlay alpha(40%));
   }
 }

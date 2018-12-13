@@ -3,6 +3,7 @@ import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import BackgroundVideoText from "root/components/BackgroundVideoText";
 import BackgroundImageText from "root/components/BackgroundImageText";
+import ResponsiveRenderer from "root/components/ResponsiveRenderer";
 
 import video from "root/assets/videos/text-video.mp4";
 import textBackground from "root/assets/images/text-img.jpg";
@@ -14,32 +15,7 @@ const gutter = 28;
 const eightColumns = 8 * column + 7 * gutter;
 const fiveColumns = 5 * column + 4 * gutter;
 
-const breakpointMobile = 768;
-const breakpointDesktop = 1268;
-
 export default class ServicesHero extends Component {
-  state = {
-    isJsReady: false,
-    width: undefined,
-  };
-
-  componentDidMount() {
-    this.updateDimensions();
-
-    window.addEventListener("resize", this.updateDimensions);
-  }
-
-  componentWillUnmount = () => {
-    window.removeEventListener("resize", this.updateDimensions);
-  };
-
-  updateDimensions = () => {
-    this.setState({
-      width: document.documentElement.clientWidth,
-      isJsReady: true,
-    });
-  };
-
   renderCopy = () => (
     <div>
       <div styleName="left">
@@ -75,7 +51,7 @@ export default class ServicesHero extends Component {
     <Section>
       <BackgroundImageText image={textBackground}>
         <Typography weight="bold" variant="h1" fontFamily="meta-serif">
-          &#8203; A dynamic team to design and develop your product
+          &#8203;A dynamic team to design and develop your product
         </Typography>
       </BackgroundImageText>
       {this.renderCopy()}
@@ -96,7 +72,7 @@ export default class ServicesHero extends Component {
     </Section>
   );
 
-  renderNoScript = () => (
+  renderDefault = () => (
     <>
       <noscript>{this.renderMobile()}</noscript>
       {this.renderMobile()}
@@ -104,18 +80,13 @@ export default class ServicesHero extends Component {
   );
 
   render() {
-    if (!this.state.isJsReady) return this.renderNoScript();
-
-    const { width } = this.state;
-
-    if (width >= breakpointDesktop) {
-      return this.renderDesktop();
-    }
-
-    if (width < breakpointMobile) {
-      return this.renderMobile();
-    }
-
-    return this.renderTablet();
+    return (
+      <ResponsiveRenderer
+        renderDefault={this.renderDefault}
+        renderDesktop={this.renderDesktop}
+        renderTablet={this.renderTablet}
+        renderMobile={this.renderMobile}
+      />
+    );
   }
 }
