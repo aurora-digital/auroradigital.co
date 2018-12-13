@@ -63,7 +63,6 @@ export default class Background extends Component {
           playsInline
           preload="auto"
           loop
-          preload="auto"
           autoPlay={autoPlay}
           type="video/mp4"
           ref={this.handleRef("video")}
