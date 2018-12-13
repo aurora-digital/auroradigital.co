@@ -36,11 +36,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: { id: "qjx0hot" },
-      },
-    },
   ],
 };
