@@ -18,7 +18,7 @@ const CompanyMagical = ({ data }) => (
     video={magicVideo}
     poster={magicPoster}
   >
-    <Section separator verticalSpacing="false">
+    <Section separator verticalSpacing={false}>
       <div styleName="title">
         <Typography variant="h2" fontFamily="meta-serif">
           The magical power happens when honesty, transparency and commitment
