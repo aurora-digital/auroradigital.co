@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import posed, { PoseGroup } from "react-pose";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import SelectedPartnerMobile from "root/components/SelectedPartnerMobile";
@@ -8,6 +9,12 @@ import withPartnersShowcaser from "../../containers/withPartnersShowcaser";
 import partnersData from "./partnersData";
 
 import "./index.css";
+
+const fadeAnimation = {
+  enter: { opacity: 1, delay: 300 },
+  exit: { opacity: 0, transition: { duration: 200 } },
+};
+const FadeDiv = posed.div(fadeAnimation);
 
 @withPartnersShowcaser(partnersData)
 export default class HomePagePartners extends Component {
@@ -38,13 +45,29 @@ export default class HomePagePartners extends Component {
           <img src={quotes} alt="quotes" />
         </div>
         <div styleName="about">
-          <Typography color="dark-blue" variant="h3">
-            {selectedPartner.about}
-          </Typography>
+          <PoseGroup
+            transitionName="fadein-opacity"
+            transitionEnterTimeout={250}
+            transitionLeave={false}
+          >
+            <FadeDiv key={selectedPartner.fullName}>
+              <Typography color="dark-blue" variant="h3">
+                {selectedPartner.about}
+              </Typography>
+            </FadeDiv>
+          </PoseGroup>
         </div>
         <div styleName="cards-desktop">{renderPartners()}</div>
         <div styleName="partners-mobile">
-          <SelectedPartnerMobile partner={selectedPartner} />
+          <PoseGroup
+            transitionName="fadein-opacity"
+            transitionEnterTimeout={250}
+            transitionLeave={false}
+          >
+            <FadeDiv key={selectedPartner.fullName} styleName="fade-div">
+              <SelectedPartnerMobile partner={selectedPartner} />
+            </FadeDiv>
+          </PoseGroup>
           <div styleName="cards-mobile">{renderMobileUnselectedPartners()}</div>
         </div>
       </Section>
