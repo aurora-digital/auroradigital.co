@@ -2,7 +2,8 @@
 
 $modal-height: 402px;
 $navbar-background: color(white alpha(98%));
-$navbar-height: 44px;
+$navbar-height: 68px;
+$navbar-height-mobile: 44px;
 $navbar-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
 $menu-icon-size: 30px;
 
@@ -38,32 +39,30 @@ $menu-icon-size: 30px;
 }
 
 .fixed {
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  max-height: $navbar-height;
+
+  padding-bottom: $spacing-16;
+
+  background-color: $navbar-background;
+  box-shadow: $navbar-shadow;
+
+  transition-duration: 0.4s;
+  transition-property: top;
+  transition-timing-function: ease-out;
 
   @include Breakpoint-mobileOnly {
-    position: fixed;
-    top: 0;
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-    max-height: $navbar-height;
-
-    padding-bottom: $spacing-16;
-
-    background-color: $navbar-background;
-    box-shadow: $navbar-shadow;
-
-    transition-duration: 0.4s;
-    transition-property: top;
-    transition-timing-function: ease-out;
+    max-height: $navbar-height-mobile;
   }
 }
 
 .fixed.hidden {
-  top: -64px;
+  top: -100px;
 }
 
 .links {
