@@ -30,12 +30,11 @@
 
   margin-top: $spacing-28;
   margin-bottom: $spacing-56;
+  margin-left: calc($three-columns + $gutter);
 
   @include Breakpoint-desktopOnly {
     max-width: $five-columns;
   }
-
-  margin-left: calc($three-columns + $gutter);
 
   @include Breakpoint-tabletOnly {
     height: calc(5 * $line-height-h3-mobile);
@@ -65,6 +64,10 @@
 .partners-mobile {
   @include Breakpoint-tabletAndAbove {
     display: none;
+  }
+
+  .fade-div {
+    overflow: auto;
   }
 }
 
