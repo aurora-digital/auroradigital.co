@@ -41,7 +41,6 @@ export default class BackgroundVideoText extends Component {
             </defs>
             <rect width="100%" height="100%" />
           </svg>
-          <rect width="100%" height="100%" />
           <video
             src={video}
             poster={poster}
@@ -49,7 +48,7 @@ export default class BackgroundVideoText extends Component {
             autoPlay
             loop
             playsInline
-            preload
+            preload="auto"
           />
         </Typography>
       </div>
