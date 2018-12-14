@@ -21,7 +21,7 @@ export default class CompanyHero extends Component {
         labels={["Thriving for better", "healthcare solutions"]}
         poster={textBackground}
         video={video}
-        height="195px"
+        height="240px"
         width={`${sixColumns}px`}
       />
     </Section>
@@ -49,7 +49,7 @@ export default class CompanyHero extends Component {
         labels={["Thriving for", "better", "healthcare", "solutions"]}
         poster={textBackground}
         video={video}
-        height="420px"
+        height="450px"
         width={`${fourColumns}px`}
       />
     </Section>

@@ -22,12 +22,10 @@ export default class BackgroundVideoText extends Component {
 
   render() {
     const { labels, video, poster, width, height } = this.props;
-    //           <Typography weight="bold" variant="h1" fontFamily="meta-serif">
-    const viewBox = `0 150 ${{ width }} ${height}`;
 
     return (
       <div styleName="root" style={{ width, height }}>
-        <h1>
+        <Typography weight="bold" variant="h1" fontFamily="meta-serif">
           <svg
             width={width}
             height={height}
@@ -39,7 +37,7 @@ export default class BackgroundVideoText extends Component {
                 <rect x="0" y="0" width="100%" height="100%" />
                 <text x="0" y="0">
                   {map(labels, (label, index) => (
-                    <tspan key={index} x="0" y={fontHeight * index}>
+                    <tspan key={index} x="0" y={112 * (index + 1)}>
                       {label}
                     </tspan>
                   ))}
@@ -58,7 +56,7 @@ export default class BackgroundVideoText extends Component {
             preload="auto"
             type="video/mp4"
           />
-        </h1>
+        </Typography>
       </div>
     );
   }
