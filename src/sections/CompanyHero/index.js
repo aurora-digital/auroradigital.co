@@ -3,10 +3,10 @@ import Section from "root/components/Section";
 import BackgroundVideoText from "root/components/BackgroundVideoText";
 import BackgroundImageText from "root/components/BackgroundImageText";
 import Typography from "root/components/Typography";
+import ResponsiveRenderer from "root/components/ResponsiveRenderer";
 
 import video from "root/assets/videos/text-video.mp4";
 import textBackground from "root/assets/images/text-img.jpg";
-import ResponsiveRenderer from "../../components/ResponsiveRenderer";
 
 const column = 114;
 const gutter = 28;
@@ -21,7 +21,7 @@ export default class CompanyHero extends Component {
         labels={["Thriving for better", "healthcare solutions"]}
         poster={textBackground}
         video={video}
-        height="195px"
+        height="240px"
         width={`${sixColumns}px`}
       />
     </Section>
@@ -49,7 +49,7 @@ export default class CompanyHero extends Component {
         labels={["Thriving for", "better", "healthcare", "solutions"]}
         poster={textBackground}
         video={video}
-        height="420px"
+        height="450px"
         width={`${fourColumns}px`}
       />
     </Section>

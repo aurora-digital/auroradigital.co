@@ -26,13 +26,18 @@ export default class BackgroundVideoText extends Component {
     return (
       <div styleName="root" style={{ width, height }}>
         <Typography weight="bold" variant="h1" fontFamily="meta-serif">
-          <svg>
+          <svg
+            width={width}
+            height={height}
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <defs>
               <mask id="mask" x="0" y="0" width="100%" height="100%">
                 <rect x="0" y="0" width="100%" height="100%" />
                 <text x="0" y="0">
                   {map(labels, (label, index) => (
-                    <tspan key={index} x="0" y={fontHeight * index}>
+                    <tspan key={index} x="0" y={fontHeight * (index + 1)}>
                       {label}
                     </tspan>
                   ))}
@@ -49,6 +54,7 @@ export default class BackgroundVideoText extends Component {
             loop
             playsInline
             preload="auto"
+            type="video/mp4"
           />
         </Typography>
       </div>

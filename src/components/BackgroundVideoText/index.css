@@ -4,7 +4,13 @@
   position: relative;
 
   width: $seven-columns;
+
+  margin-top: -112px;
+
   overflow: hidden;
+
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
 
   svg {
     position: absolute;
@@ -14,24 +20,20 @@
   }
 
   svg mask rect {
-    fill: rgba(255, 255, 255, 1);
+    fill: white;
   }
 
   svg mask text {
+    fill: $dark-blue;
     text-anchor: start;
 
-    alignment-baseline: hanging;
-    dominant-baseline: hanging;
+    alignment-baseline: baseline;
+    dominant-baseline: baseline;
   }
 
   svg > rect {
     fill: white;
-    -webkit-mask: url(#mask);
     mask: url(#mask);
-  }
-
-  image {
-    transform: translateX(50%);
   }
 
   video {
@@ -40,6 +42,8 @@
     min-width: 100%;
     min-height: 100%;
 
-    background-color: black;
+    background-color: $dark-blue;
+
+    backface-visibility: hidden;
   }
 }
