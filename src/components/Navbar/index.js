@@ -13,23 +13,32 @@ import "./index.css";
 
 Modal.setAppElement(`#___gatsby`);
 
+const COLOR_THEME_PRIMARY = {
+  color: "dark-blue",
+  underlineColor: "white",
+  logoColor: "light-blue",
+};
+
+const COLOR_THEME_SECONDARY = {
+  color: "white",
+  underlineColor: "white",
+  logoColor: "white",
+};
+
 export default class Navbar extends Component {
   static propTypes = {
     currentPage: PropTypes.oneOf(["home", "services", "company"]).isRequired,
-    color: PropTypes.oneOf(["white", "dark-blue"]),
-    underlineColor: PropTypes.oneOf(["white", "light-blue"]),
-    logoColor: PropTypes.oneOf(["white", "light-blue"]),
-  };
-
-  static defaultProps = {
-    color: "white",
-    underlineColor: "white",
-    logoColor: "white",
+    theme: PropTypes.oneOf(["primary", "secondary"]).isRequired,
   };
 
   state = {
     menuOpen: false,
+    showFixedNavbar: false,
   };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll, { passive: true });
+  }
 
   componentDidUpdate() {
     const { menuOpen } = this.state;
@@ -40,21 +49,32 @@ export default class Navbar extends Component {
 
   componentWillUnmount() {
     document.body.style.overflow = "visible";
+
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   get colors() {
-    const { menuOpen } = this.state;
-    const { color, underlineColor, logoColor } = this.props;
-    const finalColor = menuOpen ? "dark-blue" : color;
-    const finalUnderlineColor = menuOpen ? "white" : underlineColor;
-    const finalLogoColor = menuOpen ? "light-blue" : logoColor;
+    const { theme } = this.props;
+    const { showFixedNavbar, menuOpen } = this.state;
 
-    return {
-      color: finalColor,
-      underlineColor: finalUnderlineColor,
-      logoColor: finalLogoColor,
-    };
+    if (showFixedNavbar || menuOpen) {
+      return COLOR_THEME_PRIMARY;
+    }
+
+    return theme === "primary" ? COLOR_THEME_PRIMARY : COLOR_THEME_SECONDARY;
   }
+
+  handleScroll = () => {
+    const newScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (newScroll < 200) {
+      this.setState({ showFixedNavbar: false });
+    } else {
+      this.setState({ showFixedNavbar: newScroll < this.oldScroll });
+    }
+
+    this.oldScroll = window.pageYOffset || document.documentElement.scrollTop;
+  };
 
   handleMenuToggle = () => {
     this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
@@ -62,7 +82,7 @@ export default class Navbar extends Component {
 
   renderBrand = () => {
     const { menuOpen } = this.state;
-    const { logoColor } = this.props;
+    const { logoColor } = this.colors;
     const finalLogoColor = menuOpen ? "light-blue" : logoColor;
 
     return (
@@ -145,6 +165,20 @@ export default class Navbar extends Component {
     );
   }
 
+  renderFixedNavbar() {
+    const { menuOpen, showFixedNavbar } = this.state;
+    const fixedStyles = classNames("fixed", {
+      isOpen: menuOpen,
+      hidden: !showFixedNavbar,
+    });
+
+    return (
+      <div styleName={fixedStyles}>
+        <Section verticalSpacing={false}>{this.renderInner()}</Section>
+      </div>
+    );
+  }
+
   render() {
     const { menuOpen } = this.state;
 
@@ -155,7 +189,10 @@ export default class Navbar extends Component {
           {this.renderInner()}
         </Modal>
         {!menuOpen ? (
-          <Section verticalSpacing={false}>{this.renderInner()}</Section>
+          <>
+            {this.renderFixedNavbar()}
+            <Section verticalSpacing={false}>{this.renderInner()}</Section>
+          </>
         ) : null}
       </>
     );
