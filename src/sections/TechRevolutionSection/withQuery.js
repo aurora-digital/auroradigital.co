@@ -7,7 +7,7 @@ const query = graphql`
       relativePath: { eq: "images/team-photo-conversation.jpg" }
     ) {
       image: childImageSharp {
-        fluid(maxHeight: 664) {
+        fluid {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

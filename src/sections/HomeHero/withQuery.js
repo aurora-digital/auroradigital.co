@@ -5,7 +5,7 @@ const query = graphql`
   query {
     oncostats: file(relativePath: { eq: "images/oncostats.jpg" }) {
       image: childImageSharp {
-        fluid(maxHeight: 600) {
+        fluid {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     sioslife: file(relativePath: { eq: "images/sioslife.png" }) {
       image: childImageSharp {
-        fluid(maxHeight: 600) {
+        fluid {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
