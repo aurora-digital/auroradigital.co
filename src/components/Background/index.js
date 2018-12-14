@@ -12,24 +12,26 @@ const breakpointMobile = 768;
 @withWindowDimensions
 export default class Background extends Component {
   static propTypes = {
-    width: PropTypes.number.isRequired,
-    image: PropTypes.shape({}).isRequired,
+    width: PropTypes.number,
+    image: PropTypes.shape({
+      base64: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired,
+    }).isRequired,
     children: PropTypes.node.isRequired,
     blendMode: PropTypes.oneOf(["normal", "difference"]),
     color: PropTypes.oneOf(["light-blue", "lavender"]),
     maxWidth: PropTypes.bool,
     video: PropTypes.string,
-    poster: PropTypes.string,
     name: PropTypes.string,
     autoPlay: PropTypes.bool,
   };
 
   static defaultProps = {
+    width: null,
     blendMode: "difference",
     color: "light-blue",
     maxWidth: false,
     video: "",
-    poster: "",
     name: "element",
     autoPlay: false,
   };
@@ -51,14 +53,20 @@ export default class Background extends Component {
   };
 
   renderBackground = () => {
-    const { video, image, poster, autoPlay, width } = this.props;
+    const { video, image, autoPlay, width } = this.props;
 
     if (video && width > breakpointMobile) {
       return (
         <video
+          style={{
+            background: `url(${
+              this.props.image.base64
+            }) no-repeat center center fixed`,
+            backgroundSize: "cover",
+          }}
           styleName="video"
           src={video}
-          poster={poster}
+          poster={this.props.image.src}
           muted
           playsInline
           preload="auto"

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
 import Background from "root/components/Background";
 import magicVideo from "root/assets/videos/Magic.mp4";
-import magicPoster from "root/assets/images/magicalPower.jpg";
 import withQuery from "./withQuery";
 
 import "./index.css";
@@ -16,7 +15,6 @@ const CompanyMagical = ({ data }) => (
     image={data.magicalPower.image.fluid}
     maxWidth
     video={magicVideo}
-    poster={magicPoster}
     key="magical"
     name="magical"
   >
