@@ -37,7 +37,7 @@ export default class BackgroundVideoText extends Component {
                 <rect x="0" y="0" width="100%" height="100%" />
                 <text x="0" y="0">
                   {map(labels, (label, index) => (
-                    <tspan key={index} x="0" y={112 * (index + 1)}>
+                    <tspan key={index} x="0" y={fontHeight * (index + 1)}>
                       {label}
                     </tspan>
                   ))}
