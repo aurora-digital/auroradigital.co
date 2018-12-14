@@ -8,6 +8,7 @@ import Section from "root/components/Section";
 import Button from "root/components/Button";
 import Typography from "root/components/Typography";
 import Logo from "root/components/Logo";
+import Contact from "root/components/Contact";
 
 import "./index.css";
 
@@ -156,9 +157,11 @@ export default class Navbar extends Component {
           {this.renderPageLink("company")}
 
           <div styleName="contact-us">
-            <Button>
-              <Typography weight="bold">Contact us</Typography>
-            </Button>
+            <Contact>
+              <Button>
+                <Typography weight="bold">Contact us</Typography>
+              </Button>
+            </Contact>
           </div>
         </nav>
       </header>
