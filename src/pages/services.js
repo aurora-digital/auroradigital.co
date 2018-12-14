@@ -8,12 +8,7 @@ import ServicesTechnologies from "root/sections/ServicesTechnologies";
 
 const ServicesPage = () => (
   <Layout>
-    <Navbar
-      currentPage="services"
-      color="dark-blue"
-      underlineColor="light-blue"
-      logoColor="light-blue"
-    />
+    <Navbar currentPage="services" theme="primary" />
     <ServicesHero />
     <ServicesWork />
     <ServicesTechnologies />
