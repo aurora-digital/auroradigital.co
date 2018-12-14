@@ -9,6 +9,7 @@ import facebook from "root/assets/images/facebook.svg";
 import linkedIn from "root/assets/images/linkedin.svg";
 import twitter from "root/assets/images/twitter.svg";
 import instagram from "root/assets/images/instagram.svg";
+import Contact from "root/components/Contact";
 
 import "./index.css";
 
@@ -56,9 +57,11 @@ const Footer = () => (
             Let’s work together
           </Typography>
           <div styleName="lets-work-button">
-            <Button>
-              <Typography weight="bold">Tell us everything</Typography>
-            </Button>
+            <Contact>
+              <Button>
+                <Typography weight="bold">Tell us everything</Typography>
+              </Button>
+            </Contact>
           </div>
         </div>
 
@@ -71,7 +74,9 @@ const Footer = () => (
 
           <div styleName="links-group">
             {renderLink("blog")}
-            {renderLink("contact")}
+            <Contact>
+              <Typography color="dark-blue">{capitalize("contact")}</Typography>
+            </Contact>
           </div>
         </div>
       </div>

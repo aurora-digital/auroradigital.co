@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import TeamElement from "root/components/TeamElement";
+import Contact from "root/components/Contact";
 import withQuery from "./withQuery";
 
 import "./index.css";
@@ -65,7 +66,9 @@ const CompanyTeamSection = ({ data }) => (
           </Typography>
 
           <div styleName="challenge-email">
-            <Typography variant="body">contact@svhealth.io</Typography>
+            <Contact>
+              <Typography variant="body">contact@svhealth.io</Typography>
+            </Contact>
           </div>
         </div>
       </div>
