@@ -121,6 +121,8 @@ const Footer = () => (
               key={socialIcon.name}
               styleName="social-icon"
               href={socialIcon.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={socialIcon.icon} alt={`${socialIcon.name}-icon`} />
             </a>
