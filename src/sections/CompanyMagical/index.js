@@ -3,7 +3,7 @@ import Section from "root/components/Section";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
 import Background from "root/components/Background";
-import magicVideo from "root/assets/videos/Magic.mp4";
+import magicVideo from "root/assets/videos/section-company.mp4";
 import withQuery from "./withQuery";
 
 import "./index.css";
