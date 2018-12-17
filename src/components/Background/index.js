@@ -94,7 +94,7 @@ export default class Background extends Component {
           <div styleName={classnames} />
           {this.renderBackground()}
 
-          {children}
+          <div styleName="children">{children}</div>
         </div>
       </VisibilitySensor>
     );
