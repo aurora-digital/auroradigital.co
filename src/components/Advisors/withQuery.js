@@ -5,7 +5,7 @@ const query = graphql`
   query {
     francisco: file(relativePath: { eq: "images/francisco-baila.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     gabriel: file(relativePath: { eq: "images/gabriel-poca.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -21,7 +21,7 @@ const query = graphql`
 
     laura: file(relativePath: { eq: "images/laura-esteves.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -29,7 +29,7 @@ const query = graphql`
 
     roberto: file(relativePath: { eq: "images/roberto-machado.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

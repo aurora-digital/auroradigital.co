@@ -27,6 +27,7 @@ const Project = ({ image, projectName, projectUrl }) => (
       styleName="image"
       fluid={image}
       alt={`${projectName}-project`.toLowerCase()}
+      critical
     />
     <div styleName="project-link">
       <Typography variant="body" color="white" weight="bold">

@@ -5,7 +5,7 @@ const query = graphql`
   query {
     filipe: file(relativePath: { eq: "images/filipe.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
