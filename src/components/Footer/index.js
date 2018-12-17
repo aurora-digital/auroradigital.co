@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "gatsby-link";
 import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import Link from "root/components/Link";
 import Button from "root/components/Button";
 import Logo from "root/components/Logo";
 import facebook from "root/assets/images/facebook.svg";
@@ -41,7 +41,7 @@ const renderLink = link => {
 
   return (
     <div styleName="link">
-      <Link to={linkUrl}>
+      <Link to={linkUrl} underlineColor="dark-blue" hover>
         <Typography color="dark-blue">{capitalize(link)}</Typography>
       </Link>
     </div>
