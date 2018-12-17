@@ -59,10 +59,7 @@ export default class Background extends Component {
       return (
         <video
           style={{
-            background: `url(${
-              this.props.image.base64
-            }) no-repeat center center fixed`,
-            backgroundSize: "cover",
+            backgroundImage: `url(${this.props.image.base64})`,
           }}
           styleName="video"
           src={video}
