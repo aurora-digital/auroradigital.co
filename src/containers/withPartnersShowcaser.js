@@ -9,14 +9,9 @@ export default WrappedComponent => {
       data: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string.isRequired,
-          onClick: PropTypes.func,
-          selected: PropTypes.bool,
-          partner: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            position: PropTypes.string.isRequired,
-            image: PropTypes.shape({}).isRequired,
-            linkedin: PropTypes.string.isRequired,
-          }).isRequired,
+          position: PropTypes.string.isRequired,
+          image: PropTypes.shape({}).isRequired,
+          linkedin: PropTypes.string.isRequired,
         }).isRequired,
       ).isRequired,
     };
