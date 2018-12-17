@@ -9,12 +9,12 @@ import HomePageHero from "root/sections/HomeHero";
 import HomePagePartners from "root/sections/HomePartners";
 import HomeCostumers from "root/sections/HomeCostumers";
 import HomePageServices from "root/sections/HomeServices";
-import heroVideo from "root/assets/videos/Hero-vertical.mp4";
-import prideVideo from "root/assets/videos/pride.mp4";
+import heroVideo from "root/assets/videos/hero-home.mp4";
+import prideVideo from "root/assets/videos/section-home.mp4";
 
 export const query = graphql`
   query {
-    heroMolecules: file(relativePath: { eq: "images/hero-molecules.jpg" }) {
+    heroMolecules: file(relativePath: { eq: "images/hero-home.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid_withWebp
@@ -22,7 +22,7 @@ export const query = graphql`
       }
     }
 
-    pridePoster: file(relativePath: { eq: "images/pride-poster.jpg" }) {
+    pridePoster: file(relativePath: { eq: "images/section-home.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid

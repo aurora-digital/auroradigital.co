@@ -5,8 +5,8 @@ import BackgroundVideoText from "root/components/BackgroundVideoText";
 import BackgroundImageText from "root/components/BackgroundImageText";
 import ResponsiveRenderer from "root/components/ResponsiveRenderer";
 
-import video from "root/assets/videos/text-video.mp4";
-import textBackground from "root/assets/images/text-img.jpg";
+import video from "root/assets/videos/hero-services.mp4";
+import textBackground from "root/assets/images/hero-services.jpg";
 
 import "./index.css";
 
