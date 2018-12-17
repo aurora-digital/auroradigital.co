@@ -63,11 +63,6 @@ $menu-icon-size: 30px;
   top: -100px;
 }
 
-.links {
-  display: flex;
-  flex-direction: row;
-}
-
 .menu-toggle {
   position: relative;
 
@@ -95,6 +90,7 @@ $menu-icon-size: 30px;
 
 .navigation {
   display: flex;
+  align-items: flex-start;
 
   @include Breakpoint-tabletAndAbove {
     flex-direction: row;
@@ -103,6 +99,20 @@ $menu-icon-size: 30px;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
+  }
+
+  a:not(:last-child) {
+    cursor: pointer;
+
+    text-decoration: none;
+
+    @include Breakpoint-tabletAndAbove {
+      margin-right: $spacing-28;
+    }
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-28;
+    }
   }
 }
 
@@ -121,22 +131,6 @@ $menu-icon-size: 30px;
     border: 0;
 
     clip: rect(0 0 0 0);
-  }
-}
-
-.link:not(:last-child) {
-  display: block;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  @include Breakpoint-tabletAndAbove {
-    margin-right: $spacing-28;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-28;
   }
 }
 
