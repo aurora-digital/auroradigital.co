@@ -57,21 +57,37 @@ export default class Background extends Component {
 
     if (video && width > breakpointMobile) {
       return (
-        <video
-          style={{
-            backgroundImage: `url(${this.props.image.base64})`,
-          }}
-          styleName="video"
-          src={video}
-          poster={this.props.image.src}
-          muted
-          playsInline
-          preload="auto"
-          loop
-          autoPlay={autoPlay}
-          type="video/mp4"
-          ref={this.handleRef("video")}
-        />
+        <>
+          <video
+            style={{
+              display: "none",
+            }}
+            src={video}
+            poster={this.props.image.src}
+            muted
+            playsInline
+            preload="auto"
+            loop
+            autoPlay={autoPlay}
+            type="video/mp4"
+            ref={this.handleRef("video")}
+          />
+          <video
+            style={{
+              backgroundImage: `url(${this.props.image.base64})`,
+            }}
+            styleName="video"
+            src={video}
+            poster={this.props.image.src}
+            muted
+            playsInline
+            preload="auto"
+            loop
+            autoPlay={autoPlay}
+            type="video/mp4"
+            ref={this.handleRef("video")}
+          />
+        </>
       );
     }
 
