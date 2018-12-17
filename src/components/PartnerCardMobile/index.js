@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Img from "gatsby-image";
 
 import "./index.css";
 
 const PartnerCardMobile = ({ name, onClick, partner }) => (
   <button styleName="root" onClick={onClick} name={name}>
     <div styleName="content">
-      <img alt="partner" styleName="image" src={partner.image} />
+      <Img fluid={partner.image} alt="partner" styleName="image" />
     </div>
   </button>
 );
@@ -15,7 +16,7 @@ PartnerCardMobile.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   partner: PropTypes.shape({
-    image: PropTypes.string.isRequired,
+    image: PropTypes.shape({}).isRequired,
   }).isRequired,
 };
 

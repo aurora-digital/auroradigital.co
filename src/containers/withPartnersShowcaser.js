@@ -1,21 +1,44 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import PartnerCard from "../components/PartnerCard";
 import PartnerCardMobile from "../components/PartnerCardMobile";
 
-export default showcasePartnersData => WrappedComponent => {
+export default WrappedComponent => {
   class withPartnersShowcaser extends Component {
-    state = {
-      currentIndex: 0,
-      selectedPartner: showcasePartnersData[0],
+    static propTypes = {
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          onClick: PropTypes.func,
+          selected: PropTypes.bool,
+          partner: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            position: PropTypes.string.isRequired,
+            image: PropTypes.shape({}).isRequired,
+            linkedin: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      ).isRequired,
     };
 
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        currentIndex: 0,
+        selectedPartner: props.data[0],
+      };
+    }
+
     componentDidMount() {
+      const { data } = this.props;
+
       this.interval = setInterval(() => {
         const newCurrentIndex =
-          this.state.currentIndex === showcasePartnersData.length - 1
+          this.state.currentIndex === data.length - 1
             ? 0
             : this.state.currentIndex + 1;
-        const newSelectedPartner = showcasePartnersData[newCurrentIndex];
+        const newSelectedPartner = data[newCurrentIndex];
 
         this.setState({
           currentIndex: newCurrentIndex,
@@ -37,11 +60,12 @@ export default showcasePartnersData => WrappedComponent => {
     handleSelect = event => {
       this.clearComponentInterval();
 
+      const { data } = this.props;
       const partnerName = event.currentTarget.name;
 
       if (!partnerName) return;
 
-      const selectedPartner = showcasePartnersData.find(
+      const selectedPartner = data.find(
         partner => partner.name === partnerName,
       );
 
@@ -49,7 +73,7 @@ export default showcasePartnersData => WrappedComponent => {
     };
 
     renderPartners = () =>
-      showcasePartnersData.map(partner => (
+      this.props.data.map(partner => (
         <PartnerCard
           key={partner.name}
           name={partner.name}
@@ -60,7 +84,8 @@ export default showcasePartnersData => WrappedComponent => {
       ));
 
     renderMobileUnselectedPartners = () => {
-      const unselectedPartners = showcasePartnersData.filter(
+      const { data } = this.props;
+      const unselectedPartners = data.filter(
         partner => partner.name !== this.state.selectedPartner.name,
       );
 
