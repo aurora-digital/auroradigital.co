@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Link from "gatsby-link";
 import Modal from "react-modal";
 import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Button from "root/components/Button";
 import Typography from "root/components/Typography";
 import Logo from "root/components/Logo";
+import Link from "root/components/Link";
+import Contact from "root/components/Contact";
 
 import "./index.css";
 
@@ -15,7 +16,7 @@ Modal.setAppElement(`#___gatsby`);
 
 const COLOR_THEME_PRIMARY = {
   color: "dark-blue",
-  underlineColor: "white",
+  underlineColor: "light-blue",
   logoColor: "light-blue",
 };
 
@@ -95,17 +96,19 @@ export default class Navbar extends Component {
   renderPageLink = pageName => {
     const { currentPage } = this.props;
     const { color, underlineColor } = this.colors;
-    const { menuOpen } = this.state;
     const url = pageName === "home" ? `/` : `/${pageName}`;
 
     return (
-      <Link to={url} styleName="link">
+      <Link
+        to={url}
+        underlineColor={underlineColor}
+        isActive={currentPage === pageName}
+        hover
+      >
         <Typography
           variant="body"
           color={color}
           weight={currentPage === pageName ? "bold" : "regular"}
-          underline={currentPage === pageName && !menuOpen}
-          underlineColor={underlineColor}
         >
           {capitalize(pageName)}
         </Typography>
@@ -156,9 +159,11 @@ export default class Navbar extends Component {
           {this.renderPageLink("company")}
 
           <div styleName="contact-us">
-            <Button>
-              <Typography weight="bold">Contact us</Typography>
-            </Button>
+            <Contact>
+              <Button>
+                <Typography weight="bold">Contact us</Typography>
+              </Button>
+            </Contact>
           </div>
         </nav>
       </header>

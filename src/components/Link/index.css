@@ -1,0 +1,52 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  display: inline-block;
+}
+
+.hover {
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: white;
+
+    transform: scaleX(0);
+    transform-origin: center left;
+
+    transition: transform 0.3s ease-out;
+  }
+
+  &.is-active,
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.underline-white {
+  &::after {
+    background-color: white;
+  }
+}
+
+.underline-light-blue {
+  &::after {
+    background-color: $light-blue;
+  }
+}
+
+.underline-dark-blue {
+  &::after {
+    background-color: $dark-blue;
+  }
+}

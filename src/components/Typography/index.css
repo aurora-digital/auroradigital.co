@@ -71,11 +71,3 @@
 .lavender {
   color: $lavender;
 }
-
-.underline-white {
-  border-bottom: 2px solid white;
-}
-
-.underline-light-blue {
-  border-bottom: 2px solid $light-blue;
-}
