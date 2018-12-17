@@ -5,8 +5,8 @@ import BackgroundImageText from "root/components/BackgroundImageText";
 import Typography from "root/components/Typography";
 import ResponsiveRenderer from "root/components/ResponsiveRenderer";
 
-import video from "root/assets/videos/text-video.mp4";
-import textBackground from "root/assets/images/text-img.jpg";
+import video from "root/assets/videos/hero-company.mp4";
+import textBackground from "root/assets/images/hero-company.jpg";
 
 const column = 114;
 const gutter = 28;
