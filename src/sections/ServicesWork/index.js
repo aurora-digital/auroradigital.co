@@ -26,7 +26,7 @@ const developmentServices = [
 const renderServices = services => (
   <div styleName="services">
     {services.map(specificService => (
-      <div styleName="specific-service">
+      <div key={specificService} styleName="specific-service">
         <div styleName="asterisk">
           <Typography variant="h3" color="white">
             *
