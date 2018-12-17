@@ -5,7 +5,7 @@ const query = graphql`
   query {
     filipe: file(relativePath: { eq: "images/filipe.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     francisco: file(relativePath: { eq: "images/francisco.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -21,7 +21,7 @@ const query = graphql`
 
     ines: file(relativePath: { eq: "images/ines.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -29,7 +29,7 @@ const query = graphql`
 
     joao: file(relativePath: { eq: "images/joao.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -37,7 +37,7 @@ const query = graphql`
 
     tania: file(relativePath: { eq: "images/tania.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 500, maxHeight: 500) {
+        fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

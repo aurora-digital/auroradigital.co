@@ -5,7 +5,7 @@ const query = graphql`
   query {
     oncostats: file(relativePath: { eq: "images/oncostats.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
