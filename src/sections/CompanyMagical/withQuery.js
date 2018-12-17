@@ -5,7 +5,7 @@ const query = graphql`
   query {
     magicalPower: file(relativePath: { eq: "images/magicalPower.jpg" }) {
       image: childImageSharp {
-        fluid(maxHeight: 4000) {
+        fluid(maxWidth: 1400, maxHeight: 400) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
