@@ -3,16 +3,11 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import classNames from "classnames/bind";
 import VisibilitySensor from "react-visibility-sensor";
-import withWindowDimensions from "root/containers/withWindowDimensions";
 
 import "./index.css";
 
-const breakpointMobile = 768;
-
-@withWindowDimensions
 export default class Background extends Component {
   static propTypes = {
-    width: PropTypes.number,
     image: PropTypes.shape({
       base64: PropTypes.string.isRequired,
       src: PropTypes.string.isRequired,
@@ -27,8 +22,7 @@ export default class Background extends Component {
   };
 
   static defaultProps = {
-    width: null,
-    blendMode: "difference",
+    blendMode: "normal",
     color: "light-blue",
     maxWidth: false,
     video: "",
@@ -53,19 +47,12 @@ export default class Background extends Component {
   };
 
   renderBackground = () => {
-    const { video, image, autoPlay, width } = this.props;
+    const { video, image, autoPlay } = this.props;
 
-    if (video && width > breakpointMobile) {
+    if (video) {
       return (
         <>
-          <video
-            styleName="visually-hidden"
-            src={video}
-            poster={this.props.image.src}
-            muted
-            loop
-            type="video/mp4"
-          />
+          <Img styleName="image hidden" fluid={image} critical />
           <video
             style={{
               backgroundImage: `url(${this.props.image.base64})`,

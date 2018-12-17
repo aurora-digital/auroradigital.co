@@ -6,14 +6,6 @@
   overflow: hidden;
 }
 
-.visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
 .max-width {
   max-width: $ten-columns;
   margin: 0 auto;
@@ -42,6 +34,12 @@
   opacity: 0.9;
 }
 
+.image.hidden {
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
 .video {
   position: absolute;
   top: 0;
@@ -59,6 +57,10 @@
   background-size: cover;
   opacity: 0.9;
   object-fit: cover;
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
 }
 
 .rect {
