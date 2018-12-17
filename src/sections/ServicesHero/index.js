@@ -66,7 +66,7 @@ export default class ServicesHero extends Component {
         poster={textBackground}
         video={video}
         height="470px"
-        width={fiveColumns}
+        width={`${fiveColumns}px`}
       />
       {this.renderCopy()}
     </Section>
