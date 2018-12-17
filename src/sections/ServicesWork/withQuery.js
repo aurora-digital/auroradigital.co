@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    heroMolecules: file(relativePath: { eq: "images/hero-molecules.jpg" }) {
+    heroMolecules: file(relativePath: { eq: "images/section-services.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid_withWebp
