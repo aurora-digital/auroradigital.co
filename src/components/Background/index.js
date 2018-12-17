@@ -59,18 +59,12 @@ export default class Background extends Component {
       return (
         <>
           <video
-            style={{
-              display: "none",
-            }}
+            styleName="visually-hidden"
             src={video}
             poster={this.props.image.src}
             muted
-            playsInline
-            preload="auto"
             loop
-            autoPlay={autoPlay}
             type="video/mp4"
-            ref={this.handleRef("video")}
           />
           <video
             style={{
