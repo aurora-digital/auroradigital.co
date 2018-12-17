@@ -18,7 +18,7 @@ export const query = graphql`
     heroMolecules: file(relativePath: { eq: "images/hero-molecules.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
