@@ -18,7 +18,7 @@
 
   overflow: hidden;
 
-  transition: filter 0.2s linear;
+  transition: filter 0.2s ease-out;
 }
 
 .rect {
@@ -33,6 +33,8 @@
   background-color: $lavender;
   opacity: 0.84;
 
+  transition: opacity 0.2s ease-out;
+
   @supports not (mix-blend-mode: difference) {
     display: none;
   }
@@ -44,12 +46,14 @@
   @media (hover: hover) {
     .image {
       filter: grayscale(0%);
+
+      transition: filter 0.3s ease-in;
     }
 
     .rect {
       opacity: 0;
 
-      transition: opacity 0.2s linear;
+      transition: opacity 0.3s ease-in;
     }
   }
 }
