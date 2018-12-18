@@ -4,9 +4,9 @@ import posed, { PoseGroup } from "react-pose";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import SelectedPartnerMobile from "root/components/SelectedPartnerMobile";
+import withPartnersShowcaser from "root/containers/withPartnersShowcaser";
 import quotes from "root/assets/images/quotes.svg";
-import withPartnersShowcaser from "../../containers/withPartnersShowcaser";
-import partnersData from "./partnersData";
+import withQuery from "./withQuery";
 
 import "./index.css";
 
@@ -16,7 +16,8 @@ const fadeAnimation = {
 };
 const FadeDiv = posed.div(fadeAnimation);
 
-@withPartnersShowcaser(partnersData)
+@withQuery
+@withPartnersShowcaser
 export default class HomePagePartners extends Component {
   static propTypes = {
     renderPartners: PropTypes.func.isRequired,

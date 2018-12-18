@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames/bind";
+import Img from "gatsby-image";
 import Typography from "../Typography";
 import linkedin from "../../assets/images/linkedin.svg";
 
@@ -14,7 +15,7 @@ const PartnerCard = ({ name, onClick, selected, partner }) => {
   return (
     <button styleName={rootStyles} onClick={onClick} name={name}>
       <div styleName="content">
-        <img alt="partner" styleName="image" src={partner.image} />
+        <Img fluid={partner.image} alt="partner" styleName="image" />
         <Typography weight="bold" color="dark-blue">
           {partner.fullName}
         </Typography>
@@ -39,7 +40,7 @@ PartnerCard.propTypes = {
   partner: PropTypes.shape({
     name: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.shape({}).isRequired,
     linkedin: PropTypes.string.isRequired,
   }).isRequired,
 };
