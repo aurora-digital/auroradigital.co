@@ -40,7 +40,7 @@ export default class ServicesHero extends Component {
         labels={["A dynamic team to design", "and develop your product"]}
         poster={textBackground}
         video={video}
-        height="195px"
+        height="240px"
         width={`${eightColumns}px`}
       />
       {this.renderCopy()}
@@ -65,8 +65,8 @@ export default class ServicesHero extends Component {
         labels={["A dynamic", "team to design", "and develop", "your product"]}
         poster={textBackground}
         video={video}
-        height="430px"
-        width={fiveColumns}
+        height="470px"
+        width={`${fiveColumns}px`}
       />
       {this.renderCopy()}
     </Section>

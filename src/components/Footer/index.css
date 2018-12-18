@@ -169,6 +169,11 @@ $social-icon-size-mobile: $spacing-16;
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-16;
   }
+
+  p {
+    font-size: $font-size-body-mobile;
+    line-height: $line-height-body-mobile;
+  }
 }
 
 .social-icons {

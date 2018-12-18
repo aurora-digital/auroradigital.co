@@ -1,14 +1,15 @@
 import React from "react";
-import Link from "gatsby-link";
 import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import Link from "root/components/Link";
 import Button from "root/components/Button";
 import Logo from "root/components/Logo";
 import facebook from "root/assets/images/facebook.svg";
 import linkedIn from "root/assets/images/linkedin.svg";
 import twitter from "root/assets/images/twitter.svg";
 import instagram from "root/assets/images/instagram.svg";
+import Contact from "root/components/Contact";
 
 import "./index.css";
 
@@ -40,7 +41,7 @@ const renderLink = link => {
 
   return (
     <div styleName="link">
-      <Link to={linkUrl}>
+      <Link to={linkUrl} underlineColor="dark-blue" hover>
         <Typography color="dark-blue">{capitalize(link)}</Typography>
       </Link>
     </div>
@@ -56,9 +57,11 @@ const Footer = () => (
             Let’s work together
           </Typography>
           <div styleName="lets-work-button">
-            <Button>
-              <Typography weight="bold">Tell us everything</Typography>
-            </Button>
+            <Contact>
+              <Button>
+                <Typography weight="bold">Tell us everything</Typography>
+              </Button>
+            </Contact>
           </div>
         </div>
 
@@ -71,7 +74,9 @@ const Footer = () => (
 
           <div styleName="links-group">
             {renderLink("blog")}
-            {renderLink("contact")}
+            <Contact>
+              <Typography color="dark-blue">{capitalize("contact")}</Typography>
+            </Contact>
           </div>
         </div>
       </div>
@@ -116,6 +121,8 @@ const Footer = () => (
               key={socialIcon.name}
               styleName="social-icon"
               href={socialIcon.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={socialIcon.icon} alt={`${socialIcon.name}-icon`} />
             </a>

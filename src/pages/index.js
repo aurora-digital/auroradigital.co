@@ -11,7 +11,6 @@ import HomePride from "root/sections/HomePride";
 import HomePageServices from "root/sections/HomeServices";
 import heroVideo from "root/assets/videos/Hero-vertical.mp4";
 import prideVideo from "root/assets/videos/pride.mp4";
-import poster from "root/assets/images/hero-molecules.jpg";
 
 export const query = graphql`
   query {
@@ -19,6 +18,14 @@ export const query = graphql`
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    pridePoster: file(relativePath: { eq: "images/pride-poster.jpg" }) {
+      image: childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -43,7 +50,6 @@ export default class IndexPage extends Component {
       <Layout>
         <Background
           video={heroVideo}
-          poster={poster}
           image={data.heroMolecules.image.fluid}
           key="hero"
           name="hero"
@@ -55,8 +61,7 @@ export default class IndexPage extends Component {
         <HomePageServices />
         <Background
           video={prideVideo}
-          poster={poster}
-          image={data.heroMolecules.image.fluid}
+          image={data.pridePoster.image.fluid}
           maxWidth
           key="pride"
           name="pride"
