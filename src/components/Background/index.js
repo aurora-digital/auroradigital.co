@@ -22,7 +22,7 @@ export default class Background extends Component {
   };
 
   static defaultProps = {
-    blendMode: "normal",
+    blendMode: "difference",
     color: "light-blue",
     maxWidth: false,
     video: "",
