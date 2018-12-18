@@ -48,13 +48,13 @@
   }
 }
 
-.costumer-needs .left {
+.pride .left {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
   }
 }
 
-.costumer-needs .right {
+.pride .right {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
 
