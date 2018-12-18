@@ -43,7 +43,7 @@ const HomeHero = ({ data }) => (
         </div>
       </div>
 
-      <div styleName="costumer-needs">
+      <div styleName="pride">
         <div styleName="left">
           <Typography
             variant="h2"
@@ -51,16 +51,15 @@ const HomeHero = ({ data }) => (
             weight="bold"
             fontFamily="meta-serif"
           >
-            Focus on our customers and their user needs
+            Pride in creating the best possible experiences
           </Typography>
         </div>
 
         <div styleName="right">
           <Typography variant="body" color="white">
-            Healthcare solutions are quite sensitive and need to be built with
-            100% focus on the user’s needs, safety and privacy. We work
-            alongside our customers, from research to user-testing, to build
-            excellent software.
+            Our work speaks for itself. We take pride in working with healthcare
+            experts to create the best possible experience for all kinds of
+            users. From medical doctors to the elderly.
           </Typography>
         </div>
       </div>

@@ -7,7 +7,7 @@ import Background from "root/components/Background";
 import Layout from "root/components/Layout";
 import HomePageHero from "root/sections/HomeHero";
 import HomePagePartners from "root/sections/HomePartners";
-import HomePride from "root/sections/HomePride";
+import HomeCostumers from "root/sections/HomeCostumers";
 import HomePageServices from "root/sections/HomeServices";
 import heroVideo from "root/assets/videos/Hero-vertical.mp4";
 import prideVideo from "root/assets/videos/pride.mp4";
@@ -68,7 +68,7 @@ export default class IndexPage extends Component {
           color="lavender"
           blendMode="normal"
         >
-          <HomePride />
+          <HomeCostumers />
         </Background>
         <HomePagePartners />
         <Footer />
