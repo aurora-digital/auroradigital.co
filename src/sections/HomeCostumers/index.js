@@ -4,21 +4,21 @@ import Typography from "root/components/Typography";
 
 import "./index.css";
 
-const HomePride = () => (
+const HomeCostumers = () => (
   <Section separator>
     <div styleName="left">
       <Typography variant="h2" fontFamily="meta-serif">
-        Pride in creating the best possible experiences
+        Focus on our customers and their user needs
       </Typography>
     </div>
     <div styleName="right">
       <Typography>
-        Our work speaks for itself. We take pride in working with healthcare
-        experts to create the best possible experience for all kinds of users.
-        From medical doctors to the elderly.
+        Healthcare solutions are quite sensitive and need to be built with 100%
+        focus on the user’s needs, safety and privacy. We work alongside our
+        customers, from research to user-testing, to build excellent software.
       </Typography>
     </div>
   </Section>
 );
 
-export default HomePride;
+export default HomeCostumers;
