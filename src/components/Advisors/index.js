@@ -10,25 +10,21 @@ const Advisors = ({ data }) => (
     <TeamElement
       key="francisco"
       name="Francisco Baila"
-      position="Designer @ Subvisual"
       image={data.francisco.image.fluid}
     />
     <TeamElement
       key="gabriel"
       name="Gabriel Poça"
-      position="Developer @ Subvisual"
       image={data.gabriel.image.fluid}
     />
     <TeamElement
       key="laura"
       name="Laura Esteves"
-      position="COO @ Subvisual"
       image={data.laura.image.fluid}
     />
     <TeamElement
       key="roberto"
       name="Roberto Machado"
-      position="CEO @ Subvisual"
       image={data.roberto.image.fluid}
     />
   </div>

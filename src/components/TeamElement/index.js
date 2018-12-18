@@ -21,16 +21,22 @@ const TeamElement = ({ name, position, image }) => (
         {name}
       </Typography>
     </div>
-    <div styleName="position">
-      <Typography color="dark-blue">{position}</Typography>
-    </div>
+    {position && (
+      <div styleName="position">
+        <Typography color="dark-blue">{position}</Typography>
+      </div>
+    )}
   </button>
 );
 
 TeamElement.propTypes = {
   name: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
+  position: PropTypes.string,
   image: PropTypes.shape({}).isRequired,
+};
+
+TeamElement.defaultProps = {
+  position: null,
 };
 
 export default TeamElement;
