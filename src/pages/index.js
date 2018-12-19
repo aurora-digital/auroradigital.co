@@ -11,6 +11,8 @@ import HomePageServices from "root/sections/HomeServices";
 import heroVideo from "root/assets/videos/hero-home.mp4";
 import costumersVideo from "root/assets/videos/section-home.mp4";
 
+import "./index.css";
+
 export const query = graphql`
   query {
     heroMolecules: file(relativePath: { eq: "images/hero-home.jpg" }) {
@@ -21,7 +23,7 @@ export const query = graphql`
       }
     }
 
-    costumersPoster: file(relativePath: { eq: "images/costumers-poster.jpg" }) {
+    costumersPoster: file(relativePath: { eq: "images/section-home.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
