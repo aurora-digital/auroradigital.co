@@ -35,6 +35,7 @@ module.exports = {
         root: path.join(__dirname, "src"),
       },
     },
+    "gatsby-plugin-polyfill-io",
     "gatsby-plugin-sitemap",
   ],
 };

@@ -5627,6 +5627,13 @@ gatsby-plugin-page-creator@^2.0.4:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
+gatsby-plugin-polyfill-io@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-polyfill-io/-/gatsby-plugin-polyfill-io-1.0.5.tgz#8cab3ee8668845c8785e8d759bbe23ba1582145b"
+  integrity sha512-xkjde+FkWfWpYj7cisGXePVXt1Gb84LgWlaT5OuSFs6wcnebhAAr8GNJctIzJFmlKOTdbTYQnwYuDl3i/w7nyw==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-postcss@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.0.1.tgz#598d5096cd2e2bc5a94aa0434ea4c8f771f4d1fc"

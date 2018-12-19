@@ -45,7 +45,6 @@ class Layout extends Component {
       <div>
         <Helmet>
           <title>{siteTitle}</title>
-          <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
           <meta name="description" content={siteDescription} />
           <meta name="keywords" content={siteKeywords} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
