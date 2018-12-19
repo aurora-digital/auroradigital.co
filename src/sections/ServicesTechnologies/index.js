@@ -3,10 +3,8 @@ import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 
 import webpack from "root/assets/images/webpack.svg";
-import postgres from "root/assets/images/postgres.svg";
 import rails from "root/assets/images/rails.svg";
 import react from "root/assets/images/react.svg";
-import postcss from "root/assets/images/postcss.svg";
 import docker from "root/assets/images/docker.svg";
 
 import "./index.css";
@@ -29,12 +27,10 @@ const ServicesTechnologies = () => (
     </div>
 
     <div styleName="technology-container">
-      {renderTechnology(webpack, "Webpack")}
-      {renderTechnology(postgres, "Postgresql")}
+      {renderTechnology(docker, "Docker")}
       {renderTechnology(rails, "Rails")}
       {renderTechnology(react, "React")}
-      {renderTechnology(postcss, "PostCSS")}
-      {renderTechnology(docker, "Docker")}
+      {renderTechnology(webpack, "Webpack")}
     </div>
   </Section>
 );
