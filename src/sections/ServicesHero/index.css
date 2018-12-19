@@ -1,37 +1,17 @@
 @import "../../styles/all.css";
 
-.title {
-  max-width: $eight-columns;
-
-  @include Breakpoint-tabletOnly {
-    width: $six-columns;
-  }
+.root {
+  margin: $spacing-28 $spacing-28 0 $spacing-28;
 
   @include Breakpoint-mobileOnly {
-    margin-right: auto;
+    margin: $spacing-12 calc($spacing-28 / 2) 0 calc($spacing-28 / 2);
   }
 }
 
-.left {
-  @include Breakpoint-tabletAndAbove {
-    max-width: $four-columns;
-    margin-top: $spacing-168;
-  }
+.image {
+  max-height: 452px;
 
   @include Breakpoint-mobileOnly {
-    margin-top: calc($spacing-168 / 2);
-  }
-}
-
-.right {
-  @include Breakpoint-tabletAndAbove {
-    max-width: $four-columns;
-
-    margin-top: $spacing-56;
-    margin-left: auto;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
+    max-height: $spacing-112;
   }
 }
