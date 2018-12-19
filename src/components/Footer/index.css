@@ -189,24 +189,24 @@ $social-icon-size-mobile: $spacing-16;
   }
 }
 
-.social-icon {
-  img {
-    width: $social-icon-size;
-    height: $social-icon-size;
-  }
+.social-icon:not(:last-child) {
+  margin-right: $spacing-28;
+}
 
-  cursor: pointer;
+.svg {
+  width: $social-icon-size;
+  height: $social-icon-size;
 
   @include Breakpoint-mobileOnly {
     align-self: center;
 
-    img {
-      width: $social-icon-size-mobile;
-      height: $social-icon-size-mobile;
-    }
+    width: $social-icon-size-mobile;
+    height: $social-icon-size-mobile;
   }
 }
 
-.social-icon:not(:last-child) {
-  margin-right: $spacing-28;
+.svg:hover {
+  path {
+    fill: $light-blue;
+  }
 }
