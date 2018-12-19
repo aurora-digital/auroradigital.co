@@ -6,11 +6,12 @@ import Footer from "root/components/Footer";
 import Background from "root/components/Background";
 import Layout from "root/components/Layout";
 import HomePageHero from "root/sections/HomeHero";
-import HomePagePartners from "root/sections/HomePartners";
 import HomeCostumers from "root/sections/HomeCostumers";
 import HomePageServices from "root/sections/HomeServices";
 import heroVideo from "root/assets/videos/hero-home.mp4";
-import prideVideo from "root/assets/videos/section-home.mp4";
+import costumersVideo from "root/assets/videos/section-home.mp4";
+
+import "./index.css";
 
 export const query = graphql`
   query {
@@ -22,7 +23,7 @@ export const query = graphql`
       }
     }
 
-    pridePoster: file(relativePath: { eq: "images/section-home.jpg" }) {
+    costumersPoster: file(relativePath: { eq: "images/section-home.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
@@ -59,18 +60,19 @@ export default class IndexPage extends Component {
           <HomePageHero />
         </Background>
         <HomePageServices />
-        <Background
-          video={prideVideo}
-          image={data.pridePoster.image.fluid}
-          maxWidth
-          key="pride"
-          name="pride"
-          color="lavender"
-          blendMode="normal"
-        >
-          <HomeCostumers />
-        </Background>
-        <HomePagePartners />
+        <div styleName="costumers">
+          <Background
+            video={costumersVideo}
+            image={data.costumersPoster.image.fluid}
+            maxWidth
+            key="costumers"
+            name="costumers"
+            color="lavender"
+            blendMode="normal"
+          >
+            <HomeCostumers />
+          </Background>
+        </div>
         <Footer />
       </Layout>
     );
