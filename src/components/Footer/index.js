@@ -5,36 +5,10 @@ import Typography from "root/components/Typography";
 import Link from "root/components/Link";
 import Button from "root/components/Button";
 import Logo from "root/components/Logo";
-import facebook from "root/assets/images/facebook.svg";
-import linkedIn from "root/assets/images/linkedin.svg";
-import twitter from "root/assets/images/twitter.svg";
-import instagram from "root/assets/images/instagram.svg";
 import Contact from "root/components/Contact";
+import socialLinks from "./socialLinks";
 
 import "./index.css";
-
-const socialLinks = [
-  {
-    name: "facebook",
-    icon: facebook,
-    url: "https://www.facebook.com/svhealthsoftware",
-  },
-  {
-    name: "linkedIn",
-    icon: linkedIn,
-    url: "https://www.linkedin.com/company/svhealth",
-  },
-  {
-    name: "twitter",
-    icon: twitter,
-    url: "https://twitter.com/sv_health",
-  },
-  {
-    name: "instagram",
-    icon: instagram,
-    url: "https://www.instagram.com/sv_health/",
-  },
-];
 
 const renderLink = link => {
   const linkUrl = link === "home" ? "/" : `/${link}`;
@@ -123,7 +97,7 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={socialIcon.icon} alt={`${socialIcon.name}-icon`} />
+              {socialIcon.icon}
             </a>
           ))}
         </div>
