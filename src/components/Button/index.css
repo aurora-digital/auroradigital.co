@@ -20,6 +20,7 @@ $box-shadow: calc($spacing-16/2);
 .primary {
   .content {
     background-color: $light-blue;
+    border: 2px solid $light-blue;
     box-shadow: 8px 8px 28px color(black alpha(8%));
 
     color: white;
@@ -44,5 +45,15 @@ $box-shadow: calc($spacing-16/2);
 .medium {
   .content {
     padding: $spacing-16 calc($spacing-16 * 2);
+  }
+}
+
+.root:hover {
+  .content {
+    background-color: white;
+    border: 2px solid $light-blue;
+  }
+  * {
+    color: $light-blue;
   }
 }
