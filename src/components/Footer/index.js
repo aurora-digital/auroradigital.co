@@ -73,7 +73,6 @@ const Footer = () => (
           </div>
 
           <div styleName="links-group">
-            {renderLink("blog")}
             <Contact>
               <Typography color="dark-blue">{capitalize("contact")}</Typography>
             </Contact>
