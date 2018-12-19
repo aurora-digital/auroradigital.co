@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Section from "root/components/Section";
 import Background from "root/components/Background";
 import Typography from "root/components/Typography";
-import servicesVideo from "root/assets/videos/Services-vertical.mp4";
+import servicesVideo from "root/assets/videos/section-services.mp4";
 
 import withQuery from "./withQuery";
 
