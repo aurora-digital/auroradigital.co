@@ -33,7 +33,7 @@
   width: 200%;
   height: 200%;
 
-  @supports not (object-fit: cover) {
+  @supports (object-fit: cover) {
     top: 0;
     right: 0;
     bottom: 0;
