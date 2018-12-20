@@ -45,11 +45,11 @@ export default class Navbar extends Component {
     const { menuOpen } = this.state;
 
     if (menuOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "visible";
+    else document.body.style = null;
   }
 
   componentWillUnmount() {
-    document.body.style.overflow = "visible";
+    document.body.style = null;
 
     window.removeEventListener("scroll", this.handleScroll);
   }

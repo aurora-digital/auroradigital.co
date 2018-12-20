@@ -3,6 +3,8 @@ import { graphql, StaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
+import "./index.css";
+
 export default props => (
   <StaticQuery
     query={graphql`

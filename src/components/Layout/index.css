@@ -1,0 +1,10 @@
+@import "../../styles/all.css";
+
+:global {
+  html,
+  body {
+    @include Breakpoint-tabletAndAbove {
+      overflow-x: hidden;
+    }
+  }
+}
