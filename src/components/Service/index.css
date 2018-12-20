@@ -1,11 +1,15 @@
 @import "../../styles/all.css";
 
-$image-height: calc($spacing-168 / 2);
 $astherisk-desktop: $spacing-12;
 $astherisk-mobile: calc($spacing-16 / 2);
+$shape-size: 220px;
+$shape-size-mobile: 110px;
 
 .services {
+  position: relative;
+
   display: flex;
+
   flex-direction: row;
 
   @include Breakpoint-mobileOnly {
@@ -21,52 +25,117 @@ $astherisk-mobile: calc($spacing-16 / 2);
   }
 }
 
-.service-type {
-  position: relative;
+.link {
+  position: absolute;
+  top: 0;
+  left: $shape-size;
 
-  display: flex;
-  flex-direction: column;
-  margin-top: calc($image-height - $astherisk-desktop);
+  display: none;
 
-  margin-right: calc($line-height-h3 / 2 + $gutter);
+  .button {
+    margin-top: $spacing-112;
 
-  @include Breakpoint-mobileOnly {
-    margin-top: calc($image-height - $astherisk-mobile);
-    margin-right: calc($line-height-h3-mobile / 2 + $gutter / 2);
+    cursor: pointer;
+
+    text-decoration: none;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: 0;
+      margin-left: auto;
+    }
   }
 }
 
-.asterisk {
-  width: $astherisk-desktop;
+.service-description {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  canvas {
+    width: $shape-size;
+    height: $shape-size;
+
+    @include Breakpoint-mobileOnly {
+      width: $shape-size-mobile;
+      height: $shape-size-mobile;
+    }
+  }
+}
+
+.description {
+  position: relative;
+
+  margin-left: calc($shape-size * 0.5);
 
   @include Breakpoint-mobileOnly {
-    width: $astherisk-mobile;
+    margin-left: calc($shape-size-mobile * 0.5);
   }
 }
 
 .type {
   position: absolute;
-  top: calc($astherisk-desktop + $spacing-28);
-  left: calc($line-height-h3 / 2);
+  top: 0;
+  left: 0;
 
-  transform: rotate(90deg) translateY(-25%);
+  transform: rotate(90deg) translateY(0);
   transform-origin: top left;
 
   @include Breakpoint-mobileOnly {
-    top: calc($astherisk-mobile + $spacing-16);
-    left: calc($line-height-h3-mobile / 2);
+    left: $spacing-16;
   }
 }
 
-.service-description {
-  display: flex;
-  flex-direction: column;
+.description-services {
+  margin-left: $spacing-28;
 }
 
-.description {
-  margin-top: $spacing-28;
+.svg {
+  display: none;
+
+  path {
+    fill: $light-blue;
+  }
+}
+
+.shape-container {
+  opacity: 1;
+
+  transition: opacity 0.2s ease-out;
+}
+
+.image {
+  position: absolute;
+  top: calc($shape-size * 0.27);
+  left: calc($shape-size * 0.3);
+
+  width: calc($shape-size * 0.4);
+  height: calc($shape-size * 0.4);
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-16;
+    top: calc($shape-size-mobile * 0.27);
+    left: calc($shape-size-mobile * 0.3);
+
+    width: calc($shape-size-mobile * 0.4);
+    height: calc($shape-size-mobile * 0.4);
+  }
+}
+
+.services:hover,
+.services:focus,
+.services:active {
+  @include Breakpoint-tabletAndAbove {
+    .link {
+      display: inline-block;
+
+      white-space: nowrap;
+    }
+
+    .shape-container {
+      opacity: 0.5;
+
+      transition: opacity 0.3s ease-in;
+    }
   }
 }

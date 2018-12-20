@@ -44,6 +44,7 @@
     "gatsby-plugin-sitemap": "^2.0.1",
     "gatsby-source-filesystem": "^2.0.5",
     "gatsby-transformer-sharp": "^2.1.1",
+    "jelly.js": "^0.0.8",
     "lodash": "^4.17.11",
     "postcss-color-function": "^4.0.1",
     "postcss-import": "^11.1.0",
