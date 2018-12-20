@@ -15,6 +15,7 @@ const CompanyMagical = ({ data }) => (
     image={data.magicalPower.image.fluid}
     maxWidth
     video={magicVideo}
+    alt="background-company"
     key="magical"
     name="magical"
   >
