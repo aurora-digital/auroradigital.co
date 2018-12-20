@@ -15,6 +15,7 @@ import docker from "root/assets/images/docker.svg";
 import withQuery from "./withQuery";
 
 import "./index.css";
+import ListItem from "../../components/ListItem";
 
 const renderTechnology = (icon, name) => (
   <div styleName="technology">
@@ -57,18 +58,10 @@ const ServicesWork = ({ data }) => (
             </Typography>
           </div>
           <div styleName="copy">
-            <Typography color="dark-blue" variant="body">
-              Hosting Solutions
-            </Typography>
-            <Typography color="dark-blue" variant="body">
-              Software Development
-            </Typography>
-            <Typography color="dark-blue" variant="body">
-              Technology Implementation
-            </Typography>
-            <Typography color="dark-blue" variant="body">
-              System Integration
-            </Typography>
+            <ListItem color="dark-blue">Hosting Solutions</ListItem>
+            <ListItem color="dark-blue">Software Development</ListItem>
+            <ListItem color="dark-blue">Technology Implementation</ListItem>
+            <ListItem color="dark-blue">System Integration</ListItem>
           </div>
         </div>
       </div>
