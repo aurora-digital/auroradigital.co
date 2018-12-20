@@ -12,7 +12,7 @@ export default class Contact extends Component {
     const { children } = this.props;
 
     return (
-      <a styleName="root" href="mailto:contact@sv-health.io">
+      <a styleName="root" href="mailto:contact@svhealth.io">
         {children}
       </a>
     );
