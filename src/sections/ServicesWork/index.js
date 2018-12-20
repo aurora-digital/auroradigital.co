@@ -1,98 +1,82 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Section from "root/components/Section";
-import Background from "root/components/Background";
 import Typography from "root/components/Typography";
-import servicesVideo from "root/assets/videos/section-services.mp4";
+import ListItem from "root/components/ListItem";
+
+import webpack from "root/assets/images/webpack.svg";
+import rails from "root/assets/images/rails.svg";
+import react from "root/assets/images/react.svg";
+import docker from "root/assets/images/docker.svg";
 
 import withQuery from "./withQuery";
 
 import "./index.css";
 
-const designServices = [
-  "Research & Strategy",
-  "Brand Identity",
-  "Product Design",
-  "User Testing",
-];
+const renderTechnology = (icon, name) => (
+  <div styleName="technology">
+    <div styleName="icon">
+      <img src={icon} alt={name} />
+    </div>
+    <Typography color="dark-blue">{name}</Typography>
+  </div>
+);
 
-const developmentServices = [
-  "Hosting Solutions",
-  "Software Development",
-  "Technology Implementation",
-  "System Integration",
-];
+const ServicesWork = () => (
+  <Section>
+    <div styleName="root">
+      <div styleName="work-and-focus">
+        <div styleName="work">
+          <div styleName="title">
+            <Typography
+              color="dark-blue"
+              weight="bold"
+              variant="h2"
+              fontFamily="meta-serif"
+            >
+              Our work goes far behind what you actually see
+            </Typography>
+          </div>
+          <div styleName="copy">
+            <Typography color="dark-blue" variant="body">
+              We specialize in web based products. From blazing fast websites to
+              carefully crafted mobile-first webapps, our main goal is to use
+              the power of the fantastic web technologies out there to give you
+              the best work possible.
+            </Typography>
+          </div>
+        </div>
 
-const renderServices = services => (
-  <div styleName="services">
-    {services.map(specificService => (
-      <div key={specificService} styleName="specific-service">
-        <div styleName="asterisk">
-          <Typography variant="h3" color="white">
-            *
+        <div styleName="focus">
+          <div styleName="title">
+            <Typography color="dark-blue" weight="bold" variant="body">
+              Our focus
+            </Typography>
+          </div>
+          <div styleName="copy">
+            <ListItem color="dark-blue">Hosting Solutions</ListItem>
+            <ListItem color="dark-blue">Software Development</ListItem>
+            <ListItem color="dark-blue">Technology Implementation</ListItem>
+            <ListItem color="dark-blue">System Integration</ListItem>
+          </div>
+        </div>
+      </div>
+
+      <div styleName="technologies">
+        <div styleName="title">
+          <Typography color="dark-blue" variant="h2">
+            Our technologies of choice
           </Typography>
         </div>
-        <Typography variant="h3" color="white" key={specificService}>
-          {specificService}
-        </Typography>
+        <div styleName="copy">
+          {renderTechnology(docker, "Docker")}
+          {renderTechnology(rails, "Rails")}
+          {renderTechnology(react, "React")}
+          {renderTechnology(webpack, "Webpack")}
+        </div>
       </div>
-    ))}
-  </div>
-);
-
-const renderDesign = () => (
-  <div>
-    <div styleName="left">
-      <Typography weight="bold" variant="h2" fontFamily="meta-serif">
-        Design matters because people matter
-      </Typography>
     </div>
-    <div styleName="right">
-      <Typography variant="body">
-        It’s not only about pretty pixels. Quality and attention to detail is
-        imperative and we test and validate all of our products with real users
-        to ensure that. We always strive to deliver the best solutions for our
-        partners and users
-      </Typography>
-      {renderServices(designServices)}
-    </div>
-  </div>
-);
-
-const renderWork = () => (
-  <div styleName="work">
-    <div styleName="left">
-      <Typography weight="bold" variant="h2" fontFamily="meta-serif">
-        Our work goes far behind what you actually see
-      </Typography>
-    </div>
-    <div styleName="right">
-      <Typography variant="body">
-        We specialize in web based products. From blazing fast websites to
-        carefully crafted mobile-first webapps, our main goal is to use the
-        power of the fantastic web technologies out there to give you the best
-        work possible.
-      </Typography>
-      {renderServices(developmentServices)}
-    </div>
-  </div>
-);
-
-const ServicesWork = ({ data }) => (
-  <Background
-    color="lavender"
-    blendMode="normal"
-    image={data.heroMolecules.image.fluid}
-    maxWidth
-    video={servicesVideo}
-    key="services"
-    name="services"
-  >
-    <Section>
-      {renderDesign()}
-      {renderWork()}
-    </Section>
-  </Background>
+  </Section>
 );
 
 ServicesWork.propTypes = {
