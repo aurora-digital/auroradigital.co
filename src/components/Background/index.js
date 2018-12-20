@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
-import classNames from "classnames/bind";
+import classNames from "classnames";
 import VisibilitySensor from "react-visibility-sensor";
 
 import "./index.css";
@@ -14,7 +14,7 @@ export default class Background extends Component {
     }).isRequired,
     alt: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-    blendMode: PropTypes.oneOf(["normal", "difference"]),
+    blendMode: PropTypes.oneOf(["normal", "difference", "lighten"]),
     color: PropTypes.oneOf(["light-blue", "lavender", "magenta"]),
     maxWidth: PropTypes.bool,
     video: PropTypes.string,
