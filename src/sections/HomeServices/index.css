@@ -21,16 +21,3 @@
     flex-direction: column;
   }
 }
-
-.button {
-  margin-top: $spacing-112;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: 0;
-    margin-left: auto;
-  }
-}
