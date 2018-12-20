@@ -85,6 +85,7 @@ const ServicesWork = ({ data }) => (
     image={data.heroMolecules.image.fluid}
     maxWidth
     video={servicesVideo}
+    alt="background-services"
     key="services"
     name="services"
   >

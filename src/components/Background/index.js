@@ -12,6 +12,7 @@ export default class Background extends Component {
       base64: PropTypes.string.isRequired,
       src: PropTypes.string.isRequired,
     }).isRequired,
+    alt: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     blendMode: PropTypes.oneOf(["normal", "difference"]),
     color: PropTypes.oneOf(["light-blue", "lavender", "magenta"]),
@@ -47,17 +48,23 @@ export default class Background extends Component {
   };
 
   renderBackground = () => {
-    const { video, image, autoPlay } = this.props;
+    const { alt, video, image, autoPlay } = this.props;
 
     if (video) {
       return (
         <>
-          <Img styleName="image hidden" fluid={image} critical />
+          <Img
+            styleName="image hidden"
+            alt={`image-${alt}`}
+            fluid={image}
+            critical
+          />
           <video
             style={{
               backgroundImage: `url(${this.props.image.base64})`,
             }}
             styleName="video"
+            alt={`video-${alt}`}
             src={video}
             poster={this.props.image.src}
             muted
@@ -72,7 +79,9 @@ export default class Background extends Component {
       );
     }
 
-    return <Img styleName="image" fluid={image} critical />;
+    return (
+      <Img styleName="image" alt={`image-${alt}`} fluid={image} critical />
+    );
   };
 
   render() {

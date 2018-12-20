@@ -10,6 +10,7 @@ import "./index.css";
 
 const TechRevolutionSection = ({ data }) => (
   <Background
+    alt="background-tech-revolution"
     color="lavender"
     blendMode="normal"
     image={data.svhealthteam.image.fluid}
