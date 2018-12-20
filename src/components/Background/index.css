@@ -104,6 +104,14 @@
   }
 }
 
+.blend-lighten {
+  mix-blend-mode: lighten;
+
+  @supports not (mix-blend-mode: lighten) {
+    background-color: color($fallback-overlay alpha(40%));
+  }
+}
+
 .color-lavender {
   background-color: color($lavender alpha(84%));
 }
