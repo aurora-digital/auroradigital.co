@@ -1,21 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Section from "root/components/Section";
-import Background from "root/components/Background";
 import Typography from "root/components/Typography";
-import servicesVideo from "root/assets/videos/section-services.mp4";
+import ListItem from "root/components/ListItem";
 
 import webpack from "root/assets/images/webpack.svg";
-import postgres from "root/assets/images/postgres.svg";
 import rails from "root/assets/images/rails.svg";
 import react from "root/assets/images/react.svg";
-import postcss from "root/assets/images/postcss.svg";
 import docker from "root/assets/images/docker.svg";
 
 import withQuery from "./withQuery";
 
 import "./index.css";
-import ListItem from "../../components/ListItem";
 
 const renderTechnology = (icon, name) => (
   <div styleName="technology">
@@ -26,7 +22,7 @@ const renderTechnology = (icon, name) => (
   </div>
 );
 
-const ServicesWork = ({ data }) => (
+const ServicesWork = () => (
   <Section>
     <div styleName="root">
       <div styleName="work-and-focus">
