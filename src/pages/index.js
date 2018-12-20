@@ -52,6 +52,7 @@ export default class IndexPage extends Component {
         <Background
           video={heroVideo}
           image={data.heroMolecules.image.fluid}
+          alt="background-hero"
           key="hero"
           name="hero"
           autoPlay
@@ -65,6 +66,7 @@ export default class IndexPage extends Component {
             video={costumersVideo}
             image={data.costumersPoster.image.fluid}
             maxWidth
+            alt="background-costumers"
             key="costumers"
             name="costumers"
             color="lavender"
