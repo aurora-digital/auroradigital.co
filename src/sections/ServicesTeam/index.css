@@ -1,5 +1,8 @@
 @import "../../styles/all.css";
 
+$image-desktop-height: calc($spacing-168 * 2);
+$image-mobile-height: calc($spacing-168 / 2);
+
 .title {
   max-width: $eight-columns;
 
@@ -12,7 +15,12 @@
   }
 }
 
-.left {
+.work {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy-title {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
     margin-top: $spacing-168;
@@ -23,15 +31,89 @@
   }
 }
 
-.right {
+.work-alongside {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  margin-top: $spacing-56;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    margin-top: $spacing-28;
+  }
+}
+
+.alongside {
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
+    margin-right: $spacing-28;
+  }
+}
 
-    margin-top: $spacing-56;
-    margin-left: auto;
+.root-image {
+  @include Breakpoint-tabletAndAbove {
+    width: 100%;
+    max-width: $four-columns;
   }
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
+    margin-top: $spacing-56;
+    margin-left: $spacing-56;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.image {
+  filter: grayscale(100%);
+
+  overflow: hidden;
+
+  transition: filter 0.2s ease-out;
+
+  @include Breakpoint-mobileOnly {
+  }
+}
+
+.rect {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  mix-blend-mode: overlay;
+
+  background-color: $lavender;
+  opacity: 0.84;
+
+  transition: opacity 0.2s ease-out;
+
+  @supports not (mix-blend-mode: difference) {
+    display: none;
+  }
+}
+
+.root-image:hover,
+.root-image:focus,
+.root-image:active {
+  @media (hover: hover) {
+    .image {
+      filter: grayscale(0%);
+
+      transition: filter 0.3s ease-in;
+    }
+
+    .rect {
+      opacity: 0;
+
+      transition: opacity 0.3s ease-in;
+    }
   }
 }

@@ -1,17 +1,16 @@
 @import "../../styles/all.css";
 
 .root {
-  margin: $spacing-28 $spacing-28 0 $spacing-28;
-
-  @include Breakpoint-mobileOnly {
-    margin: $spacing-12 calc($spacing-28 / 2) 0 calc($spacing-28 / 2);
-  }
+  max-width: $ten-columns;
+  margin: $spacing-28 auto 0 auto;
 }
 
 .image {
-  max-height: 452px;
+  @media screen and (width < $separator-max-width) {
+    margin: $spacing-28 $gutter;
+  }
 
   @include Breakpoint-mobileOnly {
-    max-height: $spacing-112;
+    margin: 0 calc($gutter / 2);
   }
 }
