@@ -1,8 +1,9 @@
 @import "../../styles/all.css";
 
 $image-desktop-height: 308px;
-$image-tablet-height: 224px;
-$image-mobile-height: calc($spacing-168 / 2);
+$image-tablet-height: calc($spacing-112 * 2);
+$image-mobile-height: $spacing-112;
+$image-mobile-width: 236px;
 
 .title {
   max-width: $eight-columns;
@@ -54,13 +55,12 @@ $image-mobile-height: calc($spacing-168 / 2);
 
 .root-image {
   @include Breakpoint-tabletAndAbove {
-    width: 100%;
-    max-width: $four-columns;
+    width: $four-columns;
   }
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-56;
-    margin-left: $spacing-56;
+    width: $image-mobile-width;
+    margin: $spacing-56 $spacing-16 0 auto;
   }
 }
 
