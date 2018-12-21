@@ -54,7 +54,7 @@
   }
 
   @include Breakpoint-tabletAndBelow {
-    @media (hover: hover) {
+    @media (pointer: fine) {
       display: none;
     }
   }

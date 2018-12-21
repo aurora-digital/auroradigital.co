@@ -130,10 +130,10 @@ $shape-size-mobile: 110px;
   }
 }
 
-.services:hover,
 .services:focus,
-.services:active {
-  @include Breakpoint-tabletAndAbove {
+.services:active,
+.services:hover {
+  @media (hover: hover) {
     .link {
       display: inline-block;
     }
