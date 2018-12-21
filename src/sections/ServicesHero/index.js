@@ -47,17 +47,6 @@ export default class ServicesHero extends Component {
     </Section>
   );
 
-  renderMobile = () => (
-    <Section>
-      <BackgroundImageText image={textBackground}>
-        <Typography weight="bold" variant="h1" fontFamily="meta-serif">
-          &#8203;A dynamic team to design and develop your product
-        </Typography>
-      </BackgroundImageText>
-      {this.renderCopy()}
-    </Section>
-  );
-
   renderTablet = () => (
     <Section>
       <BackgroundVideoText
@@ -72,20 +61,24 @@ export default class ServicesHero extends Component {
     </Section>
   );
 
-  renderDefault = () => (
-    <>
-      <noscript>{this.renderMobile()}</noscript>
-      {this.renderMobile()}
-    </>
+  renderMobile = () => (
+    <Section>
+      <BackgroundImageText image={textBackground}>
+        <Typography weight="bold" variant="h1" fontFamily="meta-serif">
+          &#8203;A dynamic team to design and develop your product
+        </Typography>
+      </BackgroundImageText>
+      {this.renderCopy()}
+    </Section>
   );
 
   render() {
     return (
       <ResponsiveRenderer
-        renderDefault={this.renderDefault}
         renderDesktop={this.renderDesktop}
         renderTablet={this.renderTablet}
         renderMobile={this.renderMobile}
+        renderDefault={this.renderMobile}
       />
     );
   }
