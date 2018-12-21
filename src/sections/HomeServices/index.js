@@ -32,13 +32,13 @@ const HomeServices = () => (
     </div>
     <div services>
       <div styleName="link">
-        <Button type="secondary">
-          <Link to="/services" styleName="button">
+        <Link to="/services" styleName="button">
+          <Button type="secondary">
             <Typography color="light-blue" fontFamily="meta" weight="bold">
               View services
             </Typography>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
       <div styleName="services-container">
         <Service
