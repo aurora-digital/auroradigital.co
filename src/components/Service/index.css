@@ -52,16 +52,6 @@ $shape-size-mobile: 110px;
   display: flex;
 
   flex-direction: column;
-
-  canvas {
-    width: $shape-size;
-    height: $shape-size;
-
-    @include Breakpoint-mobileOnly {
-      width: $shape-size-mobile;
-      height: $shape-size-mobile;
-    }
-  }
 }
 
 .description {
@@ -91,18 +81,34 @@ $shape-size-mobile: 110px;
   margin-left: $spacing-28;
 }
 
-.svg {
-  display: none;
-
-  path {
-    fill: $light-blue;
-  }
-}
-
 .shape-container {
   opacity: 1;
 
   transition: opacity 0.2s ease-out;
+}
+
+.svg {
+  path {
+    fill: $light-blue;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: $shape-size-mobile;
+    height: $shape-size-mobile;
+  }
+}
+
+.canvas {
+  width: $shape-size;
+  height: $shape-size;
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
 }
 
 .image {
