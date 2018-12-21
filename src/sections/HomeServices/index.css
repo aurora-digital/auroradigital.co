@@ -13,6 +13,11 @@
   }
 }
 
+.services {
+  display: flex;
+  flex-direction: column;
+}
+
 .services-container {
   display: flex;
   flex-direction: row;
@@ -38,7 +43,7 @@
     white-space: nowrap;
   }
 
-  @media (hover: hover) {
+  @include Breakpoint-desktopOnly {
     display: none;
   }
 }

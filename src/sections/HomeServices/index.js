@@ -30,8 +30,7 @@ const HomeServices = () => (
         What works best for your project
       </Typography>
     </div>
-
-    <div styleName="services-container">
+    <div services>
       <div styleName="link">
         <Button type="secondary">
           <Link to="/services" styleName="button">
@@ -41,19 +40,21 @@ const HomeServices = () => (
           </Link>
         </Button>
       </div>
-      <Service
-        key="design"
-        serviceName="design"
-        image={designImg}
-        specificServices={designServices}
-      />
+      <div styleName="services-container">
+        <Service
+          key="design"
+          serviceName="design"
+          image={designImg}
+          specificServices={designServices}
+        />
 
-      <Service
-        key="development"
-        serviceName="development"
-        image={developmentImg}
-        specificServices={developmentServices}
-      />
+        <Service
+          key="development"
+          serviceName="development"
+          image={developmentImg}
+          specificServices={developmentServices}
+        />
+      </div>
     </div>
   </Section>
 );
