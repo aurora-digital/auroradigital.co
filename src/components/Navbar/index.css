@@ -140,7 +140,14 @@ $menu-icon-size: 30px;
   }
 }
 
-.modal {
+.modal-fixed {
+  display: block;
+
+
+  background-color: $navbar-background;
+}
+
+.modal-menu {
   display: block;
 
   width: 100vw;

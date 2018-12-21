@@ -38,7 +38,10 @@ export default class Navbar extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll, { passive: true });
+    window.addEventListener("scroll", this.handleScroll, {
+      capture: true,
+      passive: true,
+    });
   }
 
   componentDidUpdate() {
@@ -71,10 +74,8 @@ export default class Navbar extends Component {
     if (newScroll < 200) {
       this.setState({ showFixedNavbar: false });
     } else {
-      this.setState({ showFixedNavbar: newScroll < this.oldScroll });
+      this.setState({ showFixedNavbar: true });
     }
-
-    this.oldScroll = window.pageYOffset || document.documentElement.scrollTop;
   };
 
   handleMenuToggle = () => {
@@ -189,16 +190,17 @@ export default class Navbar extends Component {
 
     return (
       <>
-        {menuOpen ? <div style={{ height: "44px" }} /> : null}
-        <Modal styleName="modal" isOpen={menuOpen}>
+        <Modal styleName="modal-fixed" isOpen={!menuOpen}>
+          {this.renderFixedNavbar()}
+        </Modal>
+        <Modal styleName="modal-menu" isOpen={menuOpen}>
           {this.renderInner()}
         </Modal>
-        {!menuOpen ? (
-          <>
-            {this.renderFixedNavbar()}
-            <Section verticalSpacing={false}>{this.renderInner()}</Section>
-          </>
-        ) : null}
+        {menuOpen ? (
+          <div style={{ height: "44px" }} />
+        ) : (
+          <Section verticalSpacing={false}>{this.renderInner()}</Section>
+        )}
       </>
     );
   }
