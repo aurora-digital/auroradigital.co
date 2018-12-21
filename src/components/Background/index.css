@@ -25,7 +25,35 @@
   }
 }
 
-.stretch-to-fit {
+.image {
+  position: absolute !important;
+  top: -50%;
+  left: -50%;
+
+  width: 200%;
+  height: 200%;
+
+  @supports (object-fit: cover) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  opacity: 0.9;
+}
+
+.image.hidden {
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.video {
   position: absolute !important;
   top: -50%;
   left: -50%;
@@ -44,22 +72,6 @@
     height: 100%;
     object-fit: cover;
   }
-}
-
-.image {
-  @extend .stretch-to-fit;
-
-  opacity: 0.9;
-}
-
-.image.hidden {
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
-}
-
-.video {
-  @extend .stretch-to-fit;
 
   background-attachment: fixed;
   background-position: center;
