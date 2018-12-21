@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
+import Background from "root/components/Background";
 
 import withQuery from "./withQuery";
 
@@ -8,7 +8,9 @@ import "./index.css";
 
 const ServicesHero = ({ image }) => (
   <div styleName="root">
-    <Img styleName="image" fluid={image} critical />
+    <Background image={image} maxWidth color="none" key="hero" name="hero">
+      <div styleName="image" />
+    </Background>
   </div>
 );
 

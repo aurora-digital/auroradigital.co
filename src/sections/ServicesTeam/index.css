@@ -1,6 +1,7 @@
 @import "../../styles/all.css";
 
-$image-desktop-height: calc($spacing-168 * 2);
+$image-desktop-height: 308px;
+$image-tablet-height: 224px;
 $image-mobile-height: calc($spacing-168 / 2);
 
 .title {
@@ -71,13 +72,19 @@ $image-mobile-height: calc($spacing-168 / 2);
 }
 
 .image {
+  height: $image-desktop-height;
   filter: grayscale(100%);
 
   overflow: hidden;
 
   transition: filter 0.2s ease-out;
 
+  @include Breakpoint-tabletOnly {
+    height: $image-tablet-height;
+  }
+
   @include Breakpoint-mobileOnly {
+    height: $image-mobile-height;
   }
 }
 
