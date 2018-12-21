@@ -27,6 +27,19 @@ export default class CompanyHero extends Component {
     </Section>
   );
 
+  renderTablet = () => (
+    <Section>
+      <BackgroundVideoText
+        key="mobile"
+        labels={["Thriving for", "better", "healthcare", "solutions"]}
+        poster={textBackground}
+        video={video}
+        height="450px"
+        width={`${fourColumns}px`}
+      />
+    </Section>
+  );
+
   renderMobile = () => (
     <Section>
       <BackgroundImageText image={textBackground}>
@@ -42,33 +55,13 @@ export default class CompanyHero extends Component {
     </Section>
   );
 
-  renderTablet = () => (
-    <Section>
-      <BackgroundVideoText
-        key="mobile"
-        labels={["Thriving for", "better", "healthcare", "solutions"]}
-        poster={textBackground}
-        video={video}
-        height="450px"
-        width={`${fourColumns}px`}
-      />
-    </Section>
-  );
-
-  renderDefault = () => (
-    <>
-      <noscript>{this.renderMobile()}</noscript>
-      {this.renderMobile()}
-    </>
-  );
-
   render() {
     return (
       <ResponsiveRenderer
-        renderDefault={this.renderDefault}
         renderDesktop={this.renderDesktop}
         renderTablet={this.renderTablet}
         renderMobile={this.renderMobile}
+        renderDefault={this.renderMobile}
       />
     );
   }
