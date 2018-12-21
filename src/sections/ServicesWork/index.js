@@ -34,7 +34,7 @@ const ServicesWork = () => (
               variant="h2"
               fontFamily="meta-serif"
             >
-              Our work goes far behind what you actually see
+              Our work goes far beyond what you actually see
             </Typography>
           </div>
           <div styleName="copy">
