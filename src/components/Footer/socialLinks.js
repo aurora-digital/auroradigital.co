@@ -37,7 +37,7 @@ const facebookIcon = (
   </svg>
 );
 
-const twitterIcon = (
+/* const twitterIcon = (
   <svg
     width="28"
     height="28"
@@ -54,7 +54,7 @@ const twitterIcon = (
       fill="#ABB1FB"
     />
   </svg>
-);
+); */
 
 const instagramIcon = (
   <svg
