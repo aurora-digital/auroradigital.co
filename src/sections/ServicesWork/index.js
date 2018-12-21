@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ListItem from "root/components/ListItem";
@@ -8,8 +7,6 @@ import webpack from "root/assets/images/webpack.svg";
 import rails from "root/assets/images/rails.svg";
 import react from "root/assets/images/react.svg";
 import docker from "root/assets/images/docker.svg";
-
-import withQuery from "./withQuery";
 
 import "./index.css";
 
@@ -79,14 +76,4 @@ const ServicesWork = () => (
   </Section>
 );
 
-ServicesWork.propTypes = {
-  data: PropTypes.shape({
-    heroMolecules: PropTypes.shape({
-      image: PropTypes.shape({
-        fluid: PropTypes.shape({}).isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-
-export default withQuery(ServicesWork);
+export default ServicesWork;
