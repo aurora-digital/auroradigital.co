@@ -190,7 +190,7 @@ export default class Navbar extends Component {
 
     return (
       <>
-        <Modal styleName="modal-fixed" isOpen={!menuOpen}>
+        <Modal styleName="modal-fixed" overlayClassName="FixedNavbarModal__Overlay" isOpen={!menuOpen}>
           {this.renderFixedNavbar()}
         </Modal>
         <Modal styleName="modal-menu" isOpen={menuOpen}>
