@@ -7,6 +7,7 @@ $image-height-mobile: calc($image-height / 2);
   position: relative;
 
   display: flex;
+  flex-direction: column;
 
   width: 100%;
   height: $image-height;
@@ -46,17 +47,33 @@ $image-height-mobile: calc($image-height / 2);
   }
 }
 
-.project-link {
+.project-content {
   position: absolute;
+  top: 0;
+  left: 0;
 
-  top: 50%;
-  left: 50%;
+  display: flex;
 
-  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+}
+
+.content {
+  text-align: center;
+}
+
+.project-link {
+  margin-top: $spacing-28;
+
+  border-bottom: 2px solid white;
 
   cursor: pointer;
-
-  transform: translate(-50%, -50%);
 
   a {
     text-decoration: none;
@@ -76,19 +93,35 @@ $image-height-mobile: calc($image-height / 2);
   background-color: color($lavender alpha(84%));
 
   mix-blend-mode: overlay;
+
+  transition: background-color 0.2s ease-out;
+
+  @supports not (mix-blend-mode: overlay) {
+    background-color: color($fallback-overlay alpha(40%));
+  }
 }
 
 .root:hover,
 .root:focus {
   @media (hover: hover) {
-    .project-link {
-      display: block;
+    .project-content {
+      opacity: 1;
+
+      transition: opacity 0.3s ease-in;
     }
 
     .image::after {
       background-color: color($light-blue alpha(84%));
 
       mix-blend-mode: normal;
+
+      transition: background-color 0.3s ease-in;
     }
   }
+}
+
+.description {
+  max-width: 220px;
+
+  text-align: center;
 }

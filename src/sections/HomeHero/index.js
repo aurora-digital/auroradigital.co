@@ -34,11 +34,13 @@ const HomeHero = ({ data }) => (
             image={data.oncostats.image.fluid}
             projectName="Oncostats"
             projectUrl="https://oncostats.io"
+            description="Unlocking the access to real-world data"
           />
           <Project
             image={data.sioslife.image.fluid}
             projectName="siosLIFE"
             projectUrl="http://sioslife.com/"
+            description="For younger spirits"
           />
         </div>
       </div>
