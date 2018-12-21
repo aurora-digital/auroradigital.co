@@ -77,7 +77,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.9;
+  opacity: 1;
 
   @include Breakpoint-mobileOnly {
     display: none;

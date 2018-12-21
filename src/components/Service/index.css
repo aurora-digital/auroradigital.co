@@ -29,6 +29,7 @@ $shape-size-mobile: 110px;
   position: absolute;
   top: 0;
   left: $shape-size;
+  z-index: 1;
 
   display: none;
 
@@ -38,6 +39,7 @@ $shape-size-mobile: 110px;
     cursor: pointer;
 
     text-decoration: none;
+    white-space: nowrap;
 
     @include Breakpoint-mobileOnly {
       margin-top: 0;
@@ -134,8 +136,6 @@ $shape-size-mobile: 110px;
   @include Breakpoint-tabletAndAbove {
     .link {
       display: inline-block;
-
-      white-space: nowrap;
     }
 
     .shape-container {
