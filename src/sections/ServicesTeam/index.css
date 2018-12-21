@@ -1,0 +1,126 @@
+@import "../../styles/all.css";
+
+$image-desktop-height: 308px;
+$image-tablet-height: calc($spacing-112 * 2);
+$image-mobile-height: $spacing-112;
+$image-mobile-width: 236px;
+
+.title {
+  max-width: $eight-columns;
+
+  @include Breakpoint-tabletOnly {
+    width: $six-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy-title {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+    margin-top: $spacing-168;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-168 / 2);
+  }
+}
+
+.work-alongside {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  margin-top: $spacing-56;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    margin-top: $spacing-28;
+  }
+}
+
+.alongside {
+  @include Breakpoint-tabletAndAbove {
+    max-width: $four-columns;
+    margin-right: $spacing-28;
+  }
+}
+
+.root-image {
+  @include Breakpoint-tabletAndAbove {
+    width: $four-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: $image-mobile-width;
+    margin: $spacing-56 $spacing-16 0 auto;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.image {
+  height: $image-desktop-height;
+  filter: grayscale(100%);
+
+  overflow: hidden;
+
+  transition: filter 0.2s ease-out;
+
+  @include Breakpoint-tabletOnly {
+    height: $image-tablet-height;
+  }
+
+  @include Breakpoint-mobileOnly {
+    height: $image-mobile-height;
+  }
+}
+
+.rect {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  mix-blend-mode: overlay;
+
+  background-color: $lavender;
+  opacity: 0.84;
+
+  transition: opacity 0.2s ease-out;
+
+  @supports not (mix-blend-mode: difference) {
+    display: none;
+  }
+}
+
+.root-image:hover,
+.root-image:focus,
+.root-image:active {
+  @media (hover: hover) {
+    .image {
+      filter: grayscale(0%);
+
+      transition: filter 0.3s ease-in;
+    }
+
+    .rect {
+      opacity: 0;
+
+      transition: opacity 0.3s ease-in;
+    }
+  }
+}

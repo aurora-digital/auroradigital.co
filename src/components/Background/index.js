@@ -15,7 +15,7 @@ export default class Background extends Component {
     alt: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     blendMode: PropTypes.oneOf(["normal", "difference", "lighten"]),
-    color: PropTypes.oneOf(["light-blue", "lavender", "magenta"]),
+    color: PropTypes.oneOf(["light-blue", "lavender", "magenta", "none"]),
     maxWidth: PropTypes.bool,
     video: PropTypes.string,
     name: PropTypes.string,

@@ -5,6 +5,7 @@ import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
 import Footer from "root/components/Footer";
 import ServicesHero from "root/sections/ServicesHero";
+import ServicesTeam from "root/sections/ServicesTeam";
 import ServicesWork from "root/sections/ServicesWork";
 import ServicesDesign from "root/sections/ServicesDesign";
 import Background from "root/components/Background";
@@ -28,6 +29,7 @@ const ServicesPage = ({ data }) => (
   >
     <Navbar currentPage="services" theme="primary" />
     <ServicesHero />
+    <ServicesTeam />
     <Background
       image={data.designServices.image.fluid}
       maxWidth
