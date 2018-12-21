@@ -123,3 +123,7 @@
 .color-magenta {
   background-color: color($magenta alpha(84%));
 }
+
+.color-none {
+  background: none;
+}

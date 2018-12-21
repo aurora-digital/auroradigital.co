@@ -5,7 +5,7 @@ import Typography from "root/components/Typography";
 import "./index.css";
 
 const HomeCostumers = () => (
-  <Section separator>
+  <Section separator verticalSpacing={false}>
     <div styleName="left">
       <Typography variant="h2" fontFamily="meta-serif">
         Focus on our customers and their user needs
