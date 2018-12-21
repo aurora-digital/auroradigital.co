@@ -22,7 +22,10 @@ export const query = graphql`
 `;
 
 const ServicesPage = ({ data }) => (
-  <Layout>
+  <Layout
+    title="A dynamic team to design and develop your product | SVHealth"
+    description="We’ll work alongside you from the early stages of product research and design to development and deployment."
+  >
     <Navbar currentPage="services" theme="primary" />
     <ServicesHero />
     <Background

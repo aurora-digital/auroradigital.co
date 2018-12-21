@@ -48,7 +48,10 @@ export default class IndexPage extends Component {
     const { data } = this.props;
 
     return (
-      <Layout>
+      <Layout
+        title="Building health tech solutions | SV Health"
+        description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
+      >
         <Background
           video={heroVideo}
           image={data.heroMolecules.image.fluid}
