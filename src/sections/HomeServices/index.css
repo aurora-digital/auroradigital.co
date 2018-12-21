@@ -21,3 +21,27 @@
     flex-direction: column;
   }
 }
+
+.link {
+  margin-bottom: $spacing-56;
+
+  * {
+    text-decoration: none;
+  }
+  .button {
+    margin-top: $spacing-112;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}

@@ -39,8 +39,8 @@ const ServicesWork = () => (
           </div>
           <div styleName="copy">
             <Typography color="dark-blue" variant="body">
-              We specialize in web based products. From blazing fast websites to
-              carefully crafted mobile-first webapps, our main goal is to use
+              We specialize in web-based products. From blazing fast websites to
+              carefully crafted mobile-first web apps, our main goal is to use
               the power of the fantastic web technologies out there to give you
               the best work possible.
             </Typography>

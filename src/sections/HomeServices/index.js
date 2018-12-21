@@ -4,6 +4,8 @@ import Typography from "root/components/Typography";
 import designImg from "root/assets/images/design.svg";
 import developmentImg from "root/assets/images/development.svg";
 import Service from "root/components/Service";
+import Button from "root/components/Button";
+import Link from "root/components/Link";
 
 import "./index.css";
 
@@ -30,6 +32,15 @@ const HomeServices = () => (
     </div>
 
     <div styleName="services-container">
+      <div styleName="link">
+        <Button type="secondary">
+          <Link to="/services" styleName="button">
+            <Typography color="light-blue" fontFamily="meta" weight="bold">
+              View services
+            </Typography>
+          </Link>
+        </Button>
+      </div>
       <Service
         key="design"
         serviceName="design"

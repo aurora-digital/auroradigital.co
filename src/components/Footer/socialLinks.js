@@ -85,11 +85,11 @@ export default [
     icon: facebookIcon,
     url: "https://www.facebook.com/svhealthsoftware",
   },
-  {
+  /* {
     name: "twitter",
     icon: twitterIcon,
     url: "https://twitter.com/sv_health",
-  },
+  }, */
   {
     name: "instagram",
     icon: instagramIcon,
