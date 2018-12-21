@@ -41,12 +41,14 @@ const HomeServices = () => (
         </Link>
       </div>
       <div styleName="services-container">
-        <Service
-          key="design"
-          serviceName="design"
-          image={designImg}
-          specificServices={designServices}
-        />
+        <div styleName="service">
+          <Service
+            key="design"
+            serviceName="design"
+            image={designImg}
+            specificServices={designServices}
+          />
+        </div>
 
         <Service
           key="development"

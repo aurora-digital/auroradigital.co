@@ -21,10 +21,16 @@
 .services-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
+  }
+}
+
+.service {
+  @include Breakpoint-tabletAndAbove {
+    margin-right: $spacing-168;
   }
 }
 
@@ -45,5 +51,11 @@
 
   @include Breakpoint-desktopOnly {
     display: none;
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    @media (hover: hover) {
+      display: none;
+    }
   }
 }

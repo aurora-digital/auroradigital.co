@@ -61,7 +61,7 @@ const ServicesWork = () => (
 
       <div styleName="technologies">
         <div styleName="title">
-          <Typography color="dark-blue" variant="h2">
+          <Typography color="dark-blue" variant="h3">
             Our technologies of choice
           </Typography>
         </div>
