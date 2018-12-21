@@ -1,15 +1,21 @@
 @import "../../styles/all.css";
 
 .title {
+  margin-bottom: $spacing-56;
+
   @include Breakpoint-tabletAndAbove {
     max-width: $four-columns;
   }
 
   @include Breakpoint-mobileOnly {
     margin-right: auto;
+    margin-bottom: $spacing-28;
   }
+}
 
-  margin-bottom: $spacing-56;
+.services {
+  display: flex;
+  flex-direction: column;
 }
 
 .services-container {
@@ -19,5 +25,25 @@
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
+  }
+}
+
+.link {
+  display: block;
+
+  margin-bottom: $spacing-56;
+
+  * {
+    text-decoration: none;
+  }
+
+  .button {
+    cursor: pointer;
+
+    white-space: nowrap;
+  }
+
+  @include Breakpoint-desktopOnly {
+    display: none;
   }
 }

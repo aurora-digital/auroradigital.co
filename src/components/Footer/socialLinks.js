@@ -37,7 +37,7 @@ const facebookIcon = (
   </svg>
 );
 
-const twitterIcon = (
+/* const twitterIcon = (
   <svg
     width="28"
     height="28"
@@ -54,7 +54,7 @@ const twitterIcon = (
       fill="#ABB1FB"
     />
   </svg>
-);
+); */
 
 const instagramIcon = (
   <svg
@@ -85,11 +85,11 @@ export default [
     icon: facebookIcon,
     url: "https://www.facebook.com/svhealthsoftware",
   },
-  {
+  /* {
     name: "twitter",
     icon: twitterIcon,
     url: "https://twitter.com/sv_health",
-  },
+  }, */
   {
     name: "instagram",
     icon: instagramIcon,

@@ -32,7 +32,7 @@ const ServicesDesign = () => (
             </Typography>
           </div>
           <div styleName="copy">
-            <ListItem>Research & Stategy</ListItem>
+            <ListItem>Research & Strategy</ListItem>
             <ListItem>Brand Identity</ListItem>
             <ListItem>Product Design</ListItem>
             <ListItem>User Testing</ListItem>

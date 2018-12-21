@@ -4,6 +4,8 @@ import Typography from "root/components/Typography";
 import designImg from "root/assets/images/design.svg";
 import developmentImg from "root/assets/images/development.svg";
 import Service from "root/components/Service";
+import Button from "root/components/Button";
+import Link from "root/components/Link";
 
 import "./index.css";
 
@@ -28,21 +30,31 @@ const HomeServices = () => (
         What works best for your project
       </Typography>
     </div>
+    <div services>
+      <div styleName="link">
+        <Link to="/services" styleName="button">
+          <Button type="secondary">
+            <Typography color="light-blue" fontFamily="meta" weight="bold">
+              View services
+            </Typography>
+          </Button>
+        </Link>
+      </div>
+      <div styleName="services-container">
+        <Service
+          key="design"
+          serviceName="design"
+          image={designImg}
+          specificServices={designServices}
+        />
 
-    <div styleName="services-container">
-      <Service
-        key="design"
-        serviceName="design"
-        image={designImg}
-        specificServices={designServices}
-      />
-
-      <Service
-        key="development"
-        serviceName="development"
-        image={developmentImg}
-        specificServices={developmentServices}
-      />
+        <Service
+          key="development"
+          serviceName="development"
+          image={developmentImg}
+          specificServices={developmentServices}
+        />
+      </div>
     </div>
   </Section>
 );

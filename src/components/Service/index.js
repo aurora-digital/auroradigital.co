@@ -41,11 +41,7 @@ export default class Service extends React.Component {
       <div styleName="services">
         <div styleName="link">
           <Link to="/services" styleName="button">
-            <Typography
-              color="light-blue"
-              fontFamily="meta-serif"
-              weight="bold"
-            >
+            <Typography color="light-blue" fontFamily="meta" weight="bold">
               View services
             </Typography>
           </Link>
