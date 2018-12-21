@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import GatsbyLink from "gatsby-link";
+import { Link as GatsbyLink } from "gatsby";
 import classNames from "classnames/dedupe";
 
 import "./index.css";
