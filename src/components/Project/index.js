@@ -5,7 +5,7 @@ import Typography from "root/components/Typography";
 
 import "./index.css";
 
-const Project = ({ image, projectName, projectUrl }) => (
+const Project = ({ image, projectName, projectUrl, description }) => (
   <a
     styleName="root"
     tabIndex="0"
@@ -29,18 +29,30 @@ const Project = ({ image, projectName, projectUrl }) => (
       alt={`${projectName}-project`.toLowerCase()}
       critical
     />
-    <div styleName="project-link">
-      <Typography variant="body" color="white" weight="bold">
-        View Project
-      </Typography>
+    <div styleName="project-content">
+      <div styleName="description">
+        <Typography variant="body" color="white">
+          {description}
+        </Typography>
+      </div>
+      <div styleName="project-link">
+        <Typography variant="body" color="white" weight="bold">
+          View project
+        </Typography>
+      </div>
     </div>
   </a>
 );
+
+Project.defaultProps = {
+  description: "",
+};
 
 Project.propTypes = {
   image: PropTypes.shape({}).isRequired,
   projectName: PropTypes.string.isRequired,
   projectUrl: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default Project;
