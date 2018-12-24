@@ -1,0 +1,12 @@
+@import "../styles/all.css";
+
+.design {
+  position: relative;
+
+  top: calc(-1 * ($spacing-168 + $spacing-56));
+  z-index: -1;
+
+  @include Breakpoint-mobileOnly {
+    top: calc(-1 * ($spacing-112 + $spacing-28));
+  }
+}
