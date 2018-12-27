@@ -35,7 +35,7 @@ const ServicesPage = ({ data }) => (
       maxWidth
       key="design"
       name="design"
-      color="lavender"
+      color="magenta"
       blendMode="lighten"
     >
       <ServicesDesign />

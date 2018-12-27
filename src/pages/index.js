@@ -58,6 +58,8 @@ export default class IndexPage extends Component {
           alt="background-hero"
           key="hero"
           name="hero"
+          blendMode="difference"
+          color="light-blue"
           autoPlay
         >
           <Navbar currentPage="home" theme="secondary" />
@@ -73,7 +75,6 @@ export default class IndexPage extends Component {
             key="costumers"
             name="costumers"
             color="lavender"
-            blendMode="normal"
           >
             <HomeCostumers />
           </Background>
