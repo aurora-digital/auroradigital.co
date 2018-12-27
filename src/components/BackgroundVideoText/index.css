@@ -3,45 +3,37 @@
 .root {
   position: relative;
 
-  width: $seven-columns;
-
-  margin-top: -112px;
-
   overflow: hidden;
-
-  transform: translate3d(0, 0, 0);
-  transform-style: preserve-3d;
-
-  svg {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-  }
-
-  svg mask rect {
-    fill: white;
-  }
-
-  svg mask text {
-    fill: $dark-blue;
-    text-anchor: start;
-
-    alignment-baseline: baseline;
-    dominant-baseline: baseline;
-  }
-
-  svg > rect {
-    fill: white;
-    mask: url(#mask);
-  }
 
   video {
     width: auto;
-    height: 100%;
+    height: auto;
 
     background-color: $dark-blue;
 
-    backface-visibility: hidden;
+    @supports not (mix-blend-mode: screen) {
+      display: none;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+  }
+
+  h1 {
+    mix-blend-mode: screen;
+
+    background: white;
+    color: black;
+
+    @supports not (mix-blend-mode: screen) {
+      color: $lavender;
+    }
   }
 }
