@@ -55,11 +55,14 @@
 
 .video {
   position: absolute !important;
-  top: -50%;
-  left: -50%;
+  top: 0px;
+  top: 0px;
 
-  width: 200%;
-  height: 200%;
+  width: auto;
+  height: auto;
+
+  min-width: 100%;
+  min-height: 100%;
 
   /* Selects all browsers except IE and Internet Explorer */
   @supports (object-fit: cover) and (not (-ms-ime-align: auto)) {
