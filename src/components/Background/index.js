@@ -14,7 +14,7 @@ export default class Background extends Component {
     }).isRequired,
     alt: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-    blendMode: PropTypes.oneOf(["normal", "difference", "lighten"]),
+    blendMode: PropTypes.oneOf(["difference", "lighten"]),
     color: PropTypes.oneOf(["light-blue", "lavender", "magenta", "none"]),
     maxWidth: PropTypes.bool,
     video: PropTypes.string,
@@ -23,7 +23,7 @@ export default class Background extends Component {
   };
 
   static defaultProps = {
-    blendMode: "difference",
+    blendMode: null,
     color: "light-blue",
     maxWidth: false,
     video: "",
@@ -90,7 +90,7 @@ export default class Background extends Component {
     const rootClassnames = classNames("root", { "max-width": maxWidth });
     const classnames = classNames("rect", {
       [`color-${color}`]: true,
-      [`blend-${blendMode}`]: true,
+      [`blend-${blendMode}`]: !!blendMode,
     });
 
     return (

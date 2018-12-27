@@ -103,30 +103,6 @@
   background-color: $lavender;
 }
 
-.blend-normal {
-  mix-blend-mode: normal;
-
-  @supports not (mix-blend-mode: normal) {
-    background-color: color($fallback-overlay alpha(40%));
-  }
-}
-
-.blend-difference {
-  mix-blend-mode: difference;
-
-  @supports not (mix-blend-mode: difference) {
-    background-color: color($fallback-overlay alpha(40%));
-  }
-}
-
-.blend-lighten {
-  mix-blend-mode: lighten;
-
-  @supports not (mix-blend-mode: lighten) {
-    background-color: color($fallback-overlay alpha(40%));
-  }
-}
-
 .color-lavender {
   background-color: color($lavender alpha(84%));
 }
@@ -141,4 +117,20 @@
 
 .color-none {
   background: none;
+}
+
+.blend-difference {
+  mix-blend-mode: difference;
+
+  @supports not (mix-blend-mode: difference) {
+    background-color: color($fallback-overlay alpha(40%));
+  }
+}
+
+.blend-lighten {
+  mix-blend-mode: lighten;
+
+  @supports not (mix-blend-mode: lighten) {
+    background-color: color($lavender alpha(60%));
+  }
 }
