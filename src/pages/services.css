@@ -1,12 +1,17 @@
 @import "../styles/all.css";
 
+$tabletAndAbove-vertical-position: calc(-1 * ($spacing-168 + $spacing-56));
+$mobile-vertical-position: calc(-1 * ($spacing-112 + $spacing-28));
+
 .design {
   position: relative;
 
-  top: calc(-1 * ($spacing-168 + $spacing-56));
+  top: $tabletAndAbove-vertical-position;
+  margin-bottom: $tabletAndAbove-vertical-position;
   z-index: -1;
 
   @include Breakpoint-mobileOnly {
-    top: calc(-1 * ($spacing-112 + $spacing-28));
+    top: $mobile-vertical-position;
+    margin-bottom: $mobile-vertical-position;
   }
 }
