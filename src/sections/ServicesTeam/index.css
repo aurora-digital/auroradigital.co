@@ -4,6 +4,7 @@ $image-desktop-height: 308px;
 $image-tablet-height: calc($spacing-112 * 2);
 $image-mobile-height: $spacing-112;
 $image-mobile-width: 236px;
+$content-width-desktop: 1108px;
 
 .title {
   max-width: $eight-columns;
@@ -54,6 +55,10 @@ $image-mobile-width: 236px;
 }
 
 .root-image {
+  @media screen and (width < $content-width-desktop) {
+    margin-right: $spacing-56;
+  }
+
   @include Breakpoint-tabletAndAbove {
     width: $four-columns;
   }
