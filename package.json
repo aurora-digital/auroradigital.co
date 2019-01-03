@@ -30,6 +30,7 @@
     "@babel/plugin-proposal-decorators": "^7.2.0",
     "autoprefixer": "^9.4.2",
     "babel-plugin-react-css-modules": "^3.4.2",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "classnames": "^2.2.6",
     "eslint-plugin-prettier": "^2.6.0",
     "gatsby": "^2.0.1",
