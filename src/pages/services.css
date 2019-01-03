@@ -7,11 +7,13 @@ $mobile-vertical-position: calc(-1 * ($spacing-112 + $spacing-28));
   position: relative;
 
   top: $tabletAndAbove-vertical-position;
-  margin-bottom: $tabletAndAbove-vertical-position;
   z-index: -1;
+
+  margin-bottom: $tabletAndAbove-vertical-position;
 
   @include Breakpoint-mobileOnly {
     top: $mobile-vertical-position;
+
     margin-bottom: $mobile-vertical-position;
   }
 }

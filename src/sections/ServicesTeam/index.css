@@ -4,7 +4,7 @@ $image-desktop-height: 308px;
 $image-tablet-height: calc($spacing-112 * 2);
 $image-mobile-height: $spacing-112;
 $image-mobile-width: 236px;
-$content-width-desktop: 1108px;
+$nine-columns: 1250px;
 
 .title {
   max-width: $eight-columns;
@@ -55,7 +55,7 @@ $content-width-desktop: 1108px;
 }
 
 .root-image {
-  @media screen and (width < $content-width-desktop) {
+  @media screen and (width <= $nine-columns) {
     margin-right: $spacing-56;
   }
 
