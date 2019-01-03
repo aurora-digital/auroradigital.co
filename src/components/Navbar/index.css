@@ -154,6 +154,8 @@ $menu-icon-size: 30px;
   height: $modal-height;
 
   background-color: $navbar-background;
+
+  outline: none;
 }
 
 :global {
