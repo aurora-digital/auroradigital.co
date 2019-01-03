@@ -61,12 +61,12 @@ export default class Background extends Component {
           />
           <video
             style={{
-              backgroundImage: `url(${this.props.image.base64})`,
+              backgroundImage: `url(${image.base64})`,
             }}
             styleName="video"
             alt={`video-${alt}`}
             src={video}
-            poster={this.props.image.src}
+            poster={image.src}
             muted
             playsInline
             preload="auto"

@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import "./index.css";
 
 const PartnerCardMobile = ({ name, onClick, partner }) => (
-  <button styleName="root" onClick={onClick} name={name}>
+  <button styleName="root" onClick={onClick} name={name} type="button">
     <div styleName="content">
       <Img fluid={partner.image} alt="partner" styleName="image" />
     </div>

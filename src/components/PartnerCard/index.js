@@ -13,7 +13,7 @@ const PartnerCard = ({ name, onClick, selected, partner }) => {
   });
 
   return (
-    <button styleName={rootStyles} onClick={onClick} name={name}>
+    <button styleName={rootStyles} onClick={onClick} name={name} type="button">
       <div styleName="content">
         <Img fluid={partner.image} alt="partner" styleName="image" />
         <Typography weight="bold" color="dark-blue">
