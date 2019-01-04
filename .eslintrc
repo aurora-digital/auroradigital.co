@@ -2,6 +2,11 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
   "globals": {
     "__DEVELOPMENT__": true,
     "__PRODUCTION__": true,
@@ -61,6 +66,7 @@
     ],
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
+    "react/jsx-one-expression-per-line": "off",
     "import/no-unresolved": [
       2,
       {

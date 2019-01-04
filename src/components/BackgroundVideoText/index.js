@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import withWindowDimensions from "root/containers/withWindowDimensions";
 
-import Typography from "../../components/Typography";
+import Typography from "../Typography";
 
 import "./index.css";
 
@@ -35,8 +35,11 @@ export default class BackgroundVideoText extends Component {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.width !== this.props.width || nextState !== this.state) {
-      if (nextProps.width !== this.props.width) {
+    const { width: oldWidth } = this.props;
+    const { width: newWidth } = nextProps;
+
+    if (newWidth !== oldWidth || nextState !== this.state) {
+      if (newWidth !== oldWidth) {
         this.setState({
           videoHeight: `${this.title.clientHeight}px`,
           videoWidth: `${this.title.clientWidth}px`,
@@ -55,14 +58,15 @@ export default class BackgroundVideoText extends Component {
 
   render() {
     const { width, label, poster, video } = this.props;
+    const { videoWidth, videoHeight } = this.state;
 
     if (width >= breakpointMobile) {
       return (
         <div
           styleName="root"
           style={{
-            width: this.state.videoWidth,
-            height: this.state.videoHeight,
+            width: videoWidth,
+            height: videoHeight,
           }}
         >
           <div styleName="title" ref={this.handleRef}>

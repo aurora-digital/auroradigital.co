@@ -27,12 +27,11 @@ export default WrappedComponent => {
 
     componentDidMount() {
       const { data } = this.props;
+      const { currentIndex } = this.state;
 
       this.interval = setInterval(() => {
         const newCurrentIndex =
-          this.state.currentIndex === data.length - 1
-            ? 0
-            : this.state.currentIndex + 1;
+          currentIndex === data.length - 1 ? 0 : currentIndex + 1;
         const newSelectedPartner = data[newCurrentIndex];
 
         this.setState({
@@ -67,21 +66,26 @@ export default WrappedComponent => {
       this.setState({ selectedPartner });
     };
 
-    renderPartners = () =>
-      this.props.data.map(partner => (
+    renderPartners = () => {
+      const { data } = this.props;
+      const { selectedPartner } = this.state;
+
+      return data.map(partner => (
         <PartnerCard
           key={partner.name}
           name={partner.name}
           partner={partner}
-          selected={this.state.selectedPartner.name === partner.name}
+          selected={selectedPartner.name === partner.name}
           onClick={this.handleSelect}
         />
       ));
+    };
 
     renderMobileUnselectedPartners = () => {
       const { data } = this.props;
+      const { selectedPartner } = this.state;
       const unselectedPartners = data.filter(
-        partner => partner.name !== this.state.selectedPartner.name,
+        partner => partner.name !== selectedPartner.name,
       );
 
       return unselectedPartners.map(partner => (
@@ -95,12 +99,14 @@ export default WrappedComponent => {
     };
 
     render() {
+      const { selectedPartner } = this.state;
+
       return (
         <WrappedComponent
           {...this.props}
           renderPartners={this.renderPartners}
           renderMobileUnselectedPartners={this.renderMobileUnselectedPartners}
-          selectedPartner={this.state.selectedPartner}
+          selectedPartner={selectedPartner}
         />
       );
     }

@@ -11,7 +11,7 @@ const Button = ({ handleClick, children, type, size }) => {
   });
 
   return (
-    <button styleName={rootStyles} onClick={handleClick}>
+    <button styleName={rootStyles} onClick={handleClick} type="button">
       <div styleName="content">{children}</div>
     </button>
   );
