@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 import "./index.css";
 
 const TeamElement = ({ name, position, image }) => (
-  <button styleName="root">
+  <button styleName="root" type="button">
     <div styleName="image-wrapper">
       <div styleName="rect" />
       <Img
