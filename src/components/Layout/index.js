@@ -17,7 +17,7 @@ export default class Layout extends Component {
   };
 
   render() {
-    const { title, description, keywords } = this.props;
+    const { title, description, keywords, children } = this.props;
 
     return (
       <div>
@@ -27,7 +27,7 @@ export default class Layout extends Component {
           <meta name="keywords" content={keywords} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
-        <div>{this.props.children}</div>
+        <div>{children}</div>
       </div>
     );
   }

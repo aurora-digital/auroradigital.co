@@ -137,8 +137,9 @@ export default class Navbar extends Component {
           aria-controls="main-menu"
           aria-label="Toggle navbar"
           onClick={this.handleMenuToggle}
+          type="button"
         >
-          {this.state.menuOpen ? (
+          {menuOpen ? (
             <div styleName="close-icon" />
           ) : (
             <Typography weight="bold" color={color}>
@@ -190,7 +191,11 @@ export default class Navbar extends Component {
 
     return (
       <>
-        <Modal styleName="modal-fixed" overlayClassName="FixedNavbarModal__Overlay" isOpen={!menuOpen}>
+        <Modal
+          styleName="modal-fixed"
+          overlayClassName="FixedNavbarModal__Overlay"
+          isOpen={!menuOpen}
+        >
           {this.renderFixedNavbar()}
         </Modal>
         <Modal styleName="modal-menu" isOpen={menuOpen}>

@@ -10,6 +10,8 @@ import ServicesWork from "root/sections/ServicesWork";
 import ServicesDesign from "root/sections/ServicesDesign";
 import Background from "root/components/Background";
 
+import "./services.css";
+
 export const query = graphql`
   query {
     designServices: file(relativePath: { eq: "images/design-services.jpg" }) {
@@ -30,16 +32,18 @@ const ServicesPage = ({ data }) => (
     <Navbar currentPage="services" theme="primary" />
     <ServicesHero />
     <ServicesTeam />
-    <Background
-      image={data.designServices.image.fluid}
-      maxWidth
-      key="design"
-      name="design"
-      color="lavender"
-      blendMode="lighten"
-    >
-      <ServicesDesign />
-    </Background>
+    <div styleName="design">
+      <Background
+        image={data.designServices.image.fluid}
+        maxWidth
+        key="design"
+        name="design"
+        color="magenta"
+        blendMode="lighten"
+      >
+        <ServicesDesign />
+      </Background>
+    </div>
 
     <ServicesWork />
     <Footer />

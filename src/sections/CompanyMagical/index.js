@@ -11,7 +11,6 @@ import "./index.css";
 const CompanyMagical = ({ data }) => (
   <Background
     color="magenta"
-    blendMode="normal"
     image={data.magicalPower.image.fluid}
     maxWidth
     video={magicVideo}
