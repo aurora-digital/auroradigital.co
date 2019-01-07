@@ -48,7 +48,7 @@ class ServicesTeam extends Component {
     return (
       <Section>
         <BackgroundVideoText
-          label="Thriving for better healthcare solutions"
+          label="A dynamic team to design and develop your product"
           poster={textBackground}
           video={video}
           alt="services team"
