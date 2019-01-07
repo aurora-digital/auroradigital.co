@@ -143,7 +143,6 @@ $menu-icon-size: 30px;
 .modal-fixed {
   display: block;
 
-
   background-color: $navbar-background;
 }
 
@@ -177,6 +176,12 @@ $menu-icon-size: 30px;
   }
 
   .FixedNavbarModal__Overlay {
+    z-index: 3;
+  }
+
+  .ReactModalPortal {
+    position: fixed;
+
     z-index: 3;
   }
 }
