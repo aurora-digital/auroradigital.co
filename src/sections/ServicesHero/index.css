@@ -5,7 +5,7 @@ $image-tablet-height: 340px;
 $image-mobile-height: $spacing-112;
 
 .root {
-  margin-top: $spacing-28;
+
 }
 
 .image {
