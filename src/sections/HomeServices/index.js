@@ -30,7 +30,7 @@ const HomeServices = () => (
         What works best for your project
       </Typography>
     </div>
-    <div services>
+    <div>
       <div styleName="link">
         <Link to="/services" styleName="button">
           <Button type="secondary">
