@@ -17,6 +17,11 @@ $menu-icon-size: 30px;
   }
 
   @include Breakpoint-mobileOnly {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: $line-height-body;
     padding-top: $spacing-16;
   }
 }

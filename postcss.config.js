@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     "postcss-import": {},
     precss: {},
-    autoprefixer: { grid: true },
+    autoprefixer: {},
     "postcss-color-function": {},
     "postcss-modules": {
       getJSON: () => {},
