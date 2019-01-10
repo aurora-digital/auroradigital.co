@@ -47,9 +47,13 @@ const Footer = () => (
           </div>
 
           <div styleName="links-group">
-            <Contact>
-              <Typography color="dark-blue">{capitalize("contact")}</Typography>
-            </Contact>
+            <div styleName="link">
+              <Contact underlineColor="dark-blue" hover>
+                <Typography color="dark-blue">
+                  {capitalize("contact")}
+                </Typography>
+              </Contact>
+            </div>
           </div>
         </div>
       </div>
