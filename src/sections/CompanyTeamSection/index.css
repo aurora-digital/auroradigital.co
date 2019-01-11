@@ -78,8 +78,7 @@
     padding: $spacing-28;
 
     margin-bottom: calc(
-      $spacing-28 + $spacing-12 + $line-height-h3-mobile +
-        $line-height-body-mobile
+      $spacing-28 + $spacing-12 + $line-height-h3-mobile + $line-height-body-mobile
     );
   }
 
