@@ -68,6 +68,10 @@ $menu-icon-size: 30px;
   top: -100px;
 }
 
+.placeholder {
+  height: $navbar-height-mobile;
+}
+
 .menu-toggle {
   position: relative;
 
