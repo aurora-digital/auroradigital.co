@@ -38,17 +38,19 @@ const ServicesPage = ({ data }) => (
       <ServicesHero />
       <ServicesTeam />
     </div>
-    <Background
-      image={data.designServices.image.fluid}
-      maxWidth
-      key="design"
-      name="design"
-      color="lavender"
-      blendMode="lighten"
-      alt="background-design"
-    >
-      <ServicesDesign />
-    </Background>
+    <div styleName="design">
+      <Background
+        image={data.designServices.image.fluid}
+        maxWidth
+        key="design"
+        name="design"
+        color="lavender"
+        blendMode="lighten"
+        alt="background-design"
+      >
+        <ServicesDesign />
+      </Background>
+    </div>
     <ServicesWork />
     <Footer />
   </Layout>
