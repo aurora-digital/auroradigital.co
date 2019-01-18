@@ -197,6 +197,10 @@ $social-icon-size-mobile: $spacing-16;
   width: $social-icon-size;
   height: $social-icon-size;
 
+  path {
+    transition: fill 0.2s ease-out;
+  }
+
   @include Breakpoint-mobileOnly {
     align-self: center;
 
@@ -208,5 +212,7 @@ $social-icon-size-mobile: $spacing-16;
 .svg:hover {
   path {
     fill: $light-blue;
+
+    transition: fill 0.2s ease-in;
   }
 }
