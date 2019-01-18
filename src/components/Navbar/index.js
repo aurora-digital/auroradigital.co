@@ -202,7 +202,7 @@ export default class Navbar extends Component {
           {this.renderInner()}
         </Modal>
         {menuOpen ? (
-          <div style={{ height: "44px" }} />
+          <div styleName="placeholder" />
         ) : (
           <Section verticalSpacing={false}>{this.renderInner()}</Section>
         )}
