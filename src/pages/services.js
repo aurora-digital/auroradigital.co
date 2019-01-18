@@ -9,6 +9,7 @@ import ServicesTeam from "root/sections/ServicesTeam";
 import ServicesWork from "root/sections/ServicesWork";
 import ServicesDesign from "root/sections/ServicesDesign";
 import Background from "root/components/Background";
+import Particles from "root/components/Particles";
 
 import "./services.css";
 
@@ -30,21 +31,26 @@ const ServicesPage = ({ data }) => (
     description="We’ll work alongside you from the early stages of product research and design to development and deployment."
   >
     <Navbar currentPage="services" theme="primary" />
-    <ServicesHero />
-    <ServicesTeam />
+    <div styleName="particles-content">
+      <div styleName="particles">
+        <Particles height="1070px" />
+      </div>
+      <ServicesHero />
+      <ServicesTeam />
+    </div>
     <div styleName="design">
       <Background
         image={data.designServices.image.fluid}
         maxWidth
         key="design"
         name="design"
-        color="magenta"
+        color="lavender"
         blendMode="lighten"
+        alt="background-design"
       >
         <ServicesDesign />
       </Background>
     </div>
-
     <ServicesWork />
     <Footer />
   </Layout>

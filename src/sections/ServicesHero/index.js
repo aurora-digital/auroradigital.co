@@ -7,7 +7,14 @@ import withQuery from "./withQuery";
 import "./index.css";
 
 const ServicesHero = ({ image }) => (
-  <Background image={image} maxWidth color="none" key="hero" name="hero">
+  <Background
+    alt="background-services-hero"
+    image={image}
+    maxWidth
+    color="none"
+    key="hero"
+    name="hero"
+  >
     <div styleName="image" />
   </Background>
 );

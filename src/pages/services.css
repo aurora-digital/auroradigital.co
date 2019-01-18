@@ -17,3 +17,19 @@ $mobile-vertical-position: calc(-1 * ($spacing-112 + $spacing-28));
     margin-bottom: $mobile-vertical-position;
   }
 }
+.particles-content {
+  position: relative;
+
+  width: 100%;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 1070px;
+}
