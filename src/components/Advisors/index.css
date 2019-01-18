@@ -1,21 +1,34 @@
 @import "../../styles/all.css";
 
 .root {
-  display: grid;
-
-  grid-column-gap: $spacing-28;
-  grid-row-gap: $spacing-112;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-
+  display: flex;
   margin-top: $spacing-112;
 
-  @include Breakpoint-tabletAndBelow {
-    grid-template-columns: 1fr 1fr;
+  @supports (display: grid) {
+    @include Breakpoint-tabletAndBelow {
+      display: grid;
+      grid-column-gap: $spacing-28;
+      grid-row-gap: $spacing-112;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include Breakpoint-mobileOnly {
+      grid-row-gap: $spacing-28;
+      grid-template-columns: 1fr;
+      margin-top: $spacing-56;
+    }
+  }
+}
+
+@include Breakpoint-tabletAndAbove {
+  .team-element {
+    flex-grow: 0;
+    flex-basis: 25%;
+    width: 100%;
+    height: 100%;
   }
 
-  @include Breakpoint-mobileOnly {
-    grid-row-gap: $spacing-28;
-    grid-template-columns: 1fr;
-    margin-top: $spacing-56;
+  .team-element:not(:last-child) {
+    margin-right: $spacing-28;
   }
 }

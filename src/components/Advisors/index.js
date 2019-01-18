@@ -7,26 +7,34 @@ import "./index.css";
 
 const Advisors = ({ data }) => (
   <div styleName="root">
-    <TeamElement
-      key="francisco"
-      name="Francisco Baila"
-      image={data.francisco.image.fluid}
-    />
-    <TeamElement
-      key="gabriel"
-      name="Gabriel Poça"
-      image={data.gabriel.image.fluid}
-    />
-    <TeamElement
-      key="laura"
-      name="Laura Esteves"
-      image={data.laura.image.fluid}
-    />
-    <TeamElement
-      key="roberto"
-      name="Roberto Machado"
-      image={data.roberto.image.fluid}
-    />
+    <div styleName="team-element">
+      <TeamElement
+        key="francisco"
+        name="Francisco Baila"
+        image={data.francisco.image.fluid}
+      />
+    </div>
+    <div styleName="team-element">
+      <TeamElement
+        key="gabriel"
+        name="Gabriel Poça"
+        image={data.gabriel.image.fluid}
+      />
+    </div>
+    <div styleName="team-element">
+      <TeamElement
+        key="laura"
+        name="Laura Esteves"
+        image={data.laura.image.fluid}
+      />
+    </div>
+    <div styleName="team-element">
+      <TeamElement
+        key="roberto"
+        name="Roberto Machado"
+        image={data.roberto.image.fluid}
+      />
+    </div>
   </div>
 );
 

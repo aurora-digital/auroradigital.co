@@ -16,23 +16,47 @@
 }
 
 .team {
-  display: grid;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
-  grid-column-gap: $spacing-28;
-  grid-row-gap: $spacing-112;
-  grid-template-columns: 1fr 1fr 1fr;
-
+.team > * {
+  box-sizing: border-box;
   margin-top: $spacing-112;
 
-  @include Breakpoint-tabletAndBelow {
-    grid-template-columns: 1fr 1fr;
+  @include Breakpoint-desktopOnly {
+    width: 31.6%;
   }
 
-  @include Breakpoint-mobileOnly {
-    justify-content: center;
-    grid-auto-rows: 1fr;
-    grid-row-gap: $spacing-28;
-    grid-template-columns: 1fr;
+  @include Breakpoint-tabletOnly {
+    width: 48%;
+  }
+}
+
+@supports (display: grid) {
+  .team {
+    display: grid;
+    grid-column-gap: $spacing-28;
+    grid-row-gap: $spacing-112;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: $spacing-112;
+
+    @include Breakpoint-tabletOnly {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include Breakpoint-mobileOnly {
+      justify-content: center;
+      grid-auto-rows: 1fr;
+      grid-row-gap: $spacing-28;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team > * {
+    width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -41,7 +65,9 @@
   flex-direction: column;
   justify-content: space-between;
 
-  padding: $spacing-56;
+  max-width: 100%;
+
+  padding: $spacing-28;
 
   /* Total spacing of the team element description*/
   margin-bottom: calc(

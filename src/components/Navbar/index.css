@@ -8,21 +8,26 @@ $navbar-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
 $menu-icon-size: 30px;
 
 .root {
-  display: grid;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: $line-height-body;
-
-  padding-top: $spacing-28;
+  padding: $spacing-12 0;
 
   a {
     text-decoration: none;
   }
 
   @include Breakpoint-mobileOnly {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: $line-height-body;
     padding-top: $spacing-16;
   }
+}
+
+.root > * {
+  align-self: center;
 }
 
 .root.isOpen {
@@ -61,6 +66,10 @@ $menu-icon-size: 30px;
 
 .fixed.hidden {
   top: -100px;
+}
+
+.placeholder {
+  height: $navbar-height-mobile;
 }
 
 .menu-toggle {
