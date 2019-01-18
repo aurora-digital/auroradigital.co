@@ -7,11 +7,9 @@ import withQuery from "./withQuery";
 import "./index.css";
 
 const ServicesHero = ({ image }) => (
-  <div styleName="root">
-    <Background image={image} maxWidth color="none" key="hero" name="hero">
-      <div styleName="image" />
-    </Background>
-  </div>
+  <Background image={image} maxWidth color="none" key="hero" name="hero">
+    <div styleName="image" />
+  </Background>
 );
 
 ServicesHero.propTypes = {
