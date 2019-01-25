@@ -33,7 +33,7 @@ const ServicesPage = ({ data }) => (
     <Navbar currentPage="services" theme="primary" />
     <div styleName="particles-content">
       <div styleName="particles">
-        <Particles height="1070px" />
+        <Particles />
       </div>
       <ServicesHero />
       <ServicesTeam />
