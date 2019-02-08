@@ -54,7 +54,10 @@ export default class Navbar extends Component {
   componentWillUnmount() {
     document.body.style.overflow = null;
 
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll, {
+      capture: true,
+      passive: true,
+    });
   }
 
   get colors() {
