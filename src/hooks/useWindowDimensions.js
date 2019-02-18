@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export default function useWindowDimensions() {
+  if (typeof document === "undefined") return { width: null, height: null };
+
   const [dimensions, setDimensions] = useState({ width: null, height: null });
 
   function updateDimensions() {
@@ -10,11 +12,11 @@ export default function useWindowDimensions() {
     });
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     updateDimensions();
   }, []);
 
-  useEffect(
+  useLayoutEffect(
     () => {
       window.addEventListener("resize", updateDimensions);
 
