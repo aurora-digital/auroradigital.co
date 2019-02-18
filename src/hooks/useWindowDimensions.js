@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useWindowDimensions() {
-  const [dimensions, setDimensions] = useState({
-    width: document.documentElement.clientWidth,
-    height: document.documentElement.clientHeight,
-  });
+  const [dimensions, setDimensions] = useState({ width: null, height: null });
 
   function updateDimensions() {
     setDimensions({
@@ -14,12 +11,22 @@ export default function useWindowDimensions() {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
+    updateDimensions();
+  }, []);
 
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  });
+  useEffect(
+    () => {
+      window.addEventListener("resize", updateDimensions);
+
+      return () => {
+        window.removeEventListener("resize", updateDimensions);
+      };
+    },
+    [
+      document.documentElement.clientWidth,
+      document.documentElement.clientHeight,
+    ],
+  );
 
   return dimensions;
 }
