@@ -87,4 +87,8 @@
 
 .challenge-email {
   margin-top: $spacing-16;
+
+  a {
+    text-decoration: none;
+  }
 }
