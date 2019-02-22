@@ -5,7 +5,7 @@ const query = graphql`
   query {
     servicesWorking: file(relativePath: { eq: "images/services-working.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 1000, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
