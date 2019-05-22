@@ -9,7 +9,7 @@
     width: auto;
     height: auto;
 
-    background-color: $dark-blue;
+    background-color: $oxford-blue;
 
     @supports not (mix-blend-mode: screen) {
       display: none;
@@ -33,7 +33,7 @@
     color: black;
 
     @supports not (mix-blend-mode: screen) {
-      color: $lavender;
+      color: $baby-blue;
     }
   }
 }

@@ -1,2 +1,2 @@
 require("./src/styles/reset.css");
-require("./src/styles/typekit.css");
+require("./src/styles/default.css");

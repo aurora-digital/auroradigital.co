@@ -1,17 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import Navbar from "root/components/Navbar";
-import Footer from "root/components/Footer";
-import Background from "root/components/Background";
-import Layout from "root/components/Layout";
-import HomePageHero from "root/sections/HomeHero";
-import HomeCostumers from "root/sections/HomeCostumers";
-import HomePageServices from "root/sections/HomeServices";
-import heroVideo from "root/assets/videos/hero-home.mp4";
-import costumersVideo from "root/assets/videos/section-home.mp4";
 
-import "./index.css";
+import Layout from "root/components/Layout";
+import Footer from "root/components/Footer";
+import HomeHero from "../sections/HomeHero";
 
 export const query = graphql`
   query {
@@ -45,41 +38,13 @@ export default class IndexPage extends Component {
   };
 
   render() {
-    const { data } = this.props;
-
     return (
       <Layout
         title="Building health tech solutions | SV Health"
         description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
       >
-        <Background
-          video={heroVideo}
-          image={data.heroMolecules.image.fluid}
-          alt="background-hero"
-          key="hero"
-          name="hero"
-          blendMode="difference"
-          color="light-blue"
-          autoPlay
-        >
-          <Navbar currentPage="home" theme="secondary" />
-          <HomePageHero />
-        </Background>
-        <HomePageServices />
-        <div styleName="costumers">
-          <Background
-            video={costumersVideo}
-            image={data.costumersPoster.image.fluid}
-            maxWidth
-            alt="background-costumers"
-            key="costumers"
-            name="costumers"
-            color="lavender"
-          >
-            <HomeCostumers />
-          </Background>
-        </div>
-        <Footer />
+        <HomeHero />
+
       </Layout>
     );
   }

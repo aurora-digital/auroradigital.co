@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link as GatsbyLink } from "gatsby";
-import classNames from "classnames/dedupe";
+import classNames from "classnames";
 
 import "./index.css";
 
@@ -10,7 +10,7 @@ export default class Link extends React.Component {
     children: PropTypes.node.isRequired,
     internal: PropTypes.bool,
     to: PropTypes.string.isRequired,
-    underlineColor: PropTypes.oneOf(["light-blue", "dark-blue", "white"]),
+    underlineColor: PropTypes.oneOf(["klein-blue", "oxford-blue", "white"]),
     hover: PropTypes.bool,
     isActive: PropTypes.bool,
   };

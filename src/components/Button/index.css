@@ -19,8 +19,8 @@ $box-shadow: calc($spacing-16/2);
 
 .primary {
   .content {
-    background-color: $light-blue;
-    border: 2px solid $light-blue;
+    background-color: $baby-blue;
+    border: 2px solid $baby-blue;
     box-shadow: 8px 8px 28px color(black alpha(8%));
 
     color: white;
@@ -32,9 +32,9 @@ $box-shadow: calc($spacing-16/2);
 .secondary {
   .content {
     background-color: white;
-    border: 2px solid $light-blue;
+    border: 2px solid $baby-blue;
 
-    color: $light-blue;
+    color: $baby-blue;
   }
 }
 
@@ -53,12 +53,12 @@ $box-shadow: calc($spacing-16/2);
 .root:hover {
   .content {
     background-color: white;
-    border: 2px solid $light-blue;
+    border: 2px solid $baby-blue;
 
     transition: background-color 0.2s ease-in;
   }
   * {
-    color: $light-blue;
+    color: $baby-blue;
 
     transition: color 0.2s ease-in;
   }

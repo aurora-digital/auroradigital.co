@@ -1,28 +1,12 @@
 @import "../../styles/all.css";
 
-$modal-height: 402px;
-$navbar-background: color(white alpha(98%));
-$navbar-height: 84px;
-$navbar-height-mobile: 56px;
-$navbar-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
-$menu-icon-size: 30px;
-
 .root {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-12 0;
+  padding: $spacing-52 0;
 
   a {
     text-decoration: none;
-  }
-
-  @include Breakpoint-mobileOnly {
-    display: grid;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: $line-height-body;
-    padding-top: $spacing-16;
   }
 }
 
@@ -30,167 +14,26 @@ $menu-icon-size: 30px;
   align-self: center;
 }
 
-.root.isOpen {
-  grid-row-gap: $spacing-56;
-  grid-template-rows: $line-height-body auto;
-
-  @include Breakpoint-mobileOnly {
-    max-width: $content-width-mobile;
-
-    padding-right: calc($gutter / 2);
-    padding-left: calc($gutter / 2);
-    margin: 0 auto;
-  }
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
-  z-index: 3;
-
-  width: 100%;
-  height: 100%;
-  max-height: $navbar-height;
-
-  background-color: $navbar-background;
-  box-shadow: $navbar-shadow;
-
-  transition-duration: 0.4s;
-  transition-property: top;
-  transition-timing-function: ease-out;
-
-  @include Breakpoint-mobileOnly {
-    max-height: $navbar-height-mobile;
-  }
-}
-
-.fixed.hidden {
-  top: -100px;
-}
-
-.placeholder {
-  height: $navbar-height-mobile;
-}
-
-.menu-toggle {
-  position: relative;
-
-  height: $line-height-body-mobile;
-  min-width: $menu-icon-size;
-
-  background-color: transparent;
-
-  cursor: pointer;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-
-  user-select: none;
-
+.brand {
   @include Breakpoint-tabletAndAbove {
-    display: none;
+    position: absolute;
+    left: 50%;
+
+    transform: translate(-50%, -25%);
   }
-}
-
-.close-icon {
-  height: 100%;
-
-  background: url("../../assets/images/close.svg") center center no-repeat;
 }
 
 .navigation {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
 
-  @include Breakpoint-tabletAndAbove {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  @include Breakpoint-mobileOnly {
-    flex-direction: column;
-  }
+  margin-left: auto;
 
   a:not(:last-child) {
-    cursor: pointer;
-
-    text-decoration: none;
-
-    @include Breakpoint-tabletAndAbove {
-      margin-right: $spacing-28;
-    }
+    margin-right: $spacing-32;
 
     @include Breakpoint-mobileOnly {
-      margin-bottom: $spacing-28;
+      margin-right: $spacing-12;
     }
-  }
-}
-
-.navigation.isClosed {
-  @include Breakpoint-mobileOnly {
-    /* Visually hidden for accessbility */
-    position: absolute;
-
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-
-    overflow: hidden;
-
-    border: 0;
-
-    clip: rect(0 0 0 0);
-  }
-}
-
-.contact-us {
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-56;
-  }
-}
-
-.modal-fixed {
-  display: block;
-
-  background-color: $navbar-background;
-}
-
-.modal-menu {
-  display: block;
-
-  width: 100vw;
-  height: $modal-height;
-
-  background-color: $navbar-background;
-
-  outline: none;
-}
-
-:global {
-  .ReactModal__Overlay {
-    z-index: 3;
-
-    background-color: transparent !important;
-    opacity: 0;
-
-    transition: opacity 200ms ease-in;
-  }
-
-  .ReactModal__Overlay--after-open {
-    opacity: 1;
-  }
-
-  .ReactModal__Overlay--before-close {
-    opacity: 0;
-  }
-
-  .FixedNavbarModal__Overlay {
-    z-index: 3;
-  }
-
-  .ReactModalPortal {
-    position: fixed;
-
-    z-index: 3;
   }
 }

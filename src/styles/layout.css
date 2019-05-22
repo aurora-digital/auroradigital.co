@@ -1,12 +1,21 @@
+$spacing-8: 8px;
 $spacing-12: 12px;
 $spacing-16: 16px;
+$spacing-20: 20px;
 $spacing-28: 28px;
+$spacing-32: 32px;
+$spacing-52: 52px;
 $spacing-56: 56px;
+$spacing-84: 84px;
 $spacing-112: 112px;
+$spacing-136: 136px;
 $spacing-168: 168px;
+$spacing-224: 224px;
+$spacing-352: 352px;
+$spacing-584: 584px;
 
-$column: 114px;
-$gutter: 28px;
+$column: 85px;
+$gutter: 32px;
 $column-spacing: calc(2 * $gutter + $column);
 $two-columns: calc(2 * $column + $gutter);
 $three-columns: calc(3 * $column + 2 * $gutter);
@@ -17,7 +26,9 @@ $seven-columns: calc(7 * $column + 6 * $gutter);
 $eight-columns: calc(8 * $column + 7 * $gutter);
 $nine-columns: calc(9 * $column + 8 * $gutter);
 $ten-columns: calc(10 * $column + 9 * $gutter);
+$eleven-columns: calc(11 * $column + 10 * $gutter);
+$twelve-columns: calc(12 * $column + 11 * $gutter);
 
-$content-width-desktop: $eight-columns;
+$content-width-desktop: $ten-columns;
 $content-width-mobile: $four-columns;
 $separator-max-width: 1440px;

@@ -1,20 +1,13 @@
-$font-family-meta-pro: ff-meta-web-pro, sans-serif;
-$font-family-meta-serif-pro: ff-meta-serif-web-pro, serif;
+$font-family-visuelt: "Helvetica", sans-serif;
 
-$font-size-h1: 84px;
-$line-height-h1: 112px;
-$font-size-h2: 40px;
-$line-height-h2: 56px;
-$font-size-h3: 28px;
-$line-height-h3: 40px;
-$font-size-body: 20px;
-$line-height-body: 28px;
-
-$font-size-h1-mobile: 40px;
-$line-height-h1-mobile: 56px;
-$font-size-h2-mobile: 20px;
-$line-height-h2-mobile: 28px;
-$font-size-h3-mobile: 20px;
-$line-height-h3-mobile: 28px;
-$font-size-body-mobile: 16px;
-$line-height-body-mobile: 20px;
+$font-size-h1: calc(4em * 1.618);
+$line-height-h1: 1.5;
+$line-height-h1-px: calc(1.5 * $font-size-h1);
+$font-size-h2: calc(3em * 1.618);
+$line-height-h2: 1.5;
+$font-size-h3: calc(2em * 1.618);
+$line-height-h3: 1.5;
+$font-size-body: calc(1em * 1.618);
+$line-height-body: 1.618;
+$font-size-body-small: 1em;
+$line-height-body-small: 1.618;

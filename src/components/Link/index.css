@@ -4,6 +4,8 @@
   position: relative;
 
   display: inline-block;
+
+  cursor: pointer;
 }
 
 .hover {
@@ -35,18 +37,18 @@
 
 .underline-white {
   &::after {
-    background-color: white;
+    background-color: $white;
   }
 }
 
-.underline-light-blue {
+.underline-klein-blue {
   &::after {
-    background-color: $light-blue;
+    background-color: $klein-blue;
   }
 }
 
-.underline-dark-blue {
+.underline-oxford-blue {
   &::after {
-    background-color: $dark-blue;
+    background-color: $oxford-blue;
   }
 }

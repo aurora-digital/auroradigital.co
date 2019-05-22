@@ -1,9 +1,0 @@
-@import "../styles/all.css";
-
-.costumers {
-  margin-bottom: $spacing-168;
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-112;
-  }
-}

@@ -169,11 +169,6 @@ $social-icon-size-mobile: $spacing-16;
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-16;
   }
-
-  p {
-    font-size: $font-size-body-mobile;
-    line-height: $line-height-body-mobile;
-  }
 }
 
 .social-icons {
@@ -211,7 +206,7 @@ $social-icon-size-mobile: $spacing-16;
 
 .svg:hover {
   path {
-    fill: $light-blue;
+    fill: $baby-blue;
 
     transition: fill 0.2s ease-in;
   }

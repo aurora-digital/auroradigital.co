@@ -8,5 +8,6 @@ module.exports = {
       getJSON: () => {},
       generateScopedName: "[folder]__[local]__[hash]",
     },
+    "postcss-responsive-type": {},
   },
 };
