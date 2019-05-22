@@ -6,7 +6,7 @@ import "./index.css";
 
 export default class Contact extends Component {
   static propTypes = {
-    underlineColor: PropTypes.oneOf(["light-blue", "dark-blue", "white"]),
+    underlineColor: PropTypes.oneOf(["klein-blue", "oxford-blue", "white"]),
     hover: PropTypes.bool,
     children: PropTypes.node.isRequired,
   };

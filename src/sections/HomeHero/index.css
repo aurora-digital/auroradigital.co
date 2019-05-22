@@ -1,68 +1,88 @@
 @import "../../styles/all.css";
 
-.root > *:not(:last-child) {
-  padding-bottom: $spacing-168;
+$wave-height: 400px;
+$wave-offset: calc(($wave-height / -2) - 15px);
+
+.root {
+  padding-bottom: calc(($wave-height / 2) - 20px);
+
+  background-color: $klein-blue;
+}
+
+.background {
+  height: 100%;
+}
+
+.title-wrapper {
+  height: $line-height-h1-px;
+
+  margin: $spacing-224 0;
 
   @include Breakpoint-mobileOnly {
-    padding-bottom: $spacing-112;
+    margin: $spacing-84 0;
   }
 }
 
-.we-are {
+.title {
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  width: 100vw;
+  height: $wave-height;
+
+  overflow: hidden;
+
+  transform: translateY($wave-offset);
+}
+
+.wave {
+  position: absolute;
+
+  width: 6400px;
+  height: $wave-height;
+
+  background: url(../../assets/images/white-wave.svg) repeat-x;
+
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -2115px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translateY($wave-offset);
+  }
+  50% {
+    transform: translateY(calc($wave-offset + 50px));
+  }
+}
+
+.copy {
+  position: relative;
+
+  z-index: 2;
+
   max-width: $six-columns;
-
-  @include Breakpoint-tabletOnly {
-    width: $five-columns;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-right: auto;
-  }
-}
-
-.we-design-and-develop {
-  max-width: $three-columns;
-
-  margin-top: $spacing-56;
-}
-
-.images {
-  display: flex;
-  flex-direction: row;
-
-  margin-top: $spacing-56;
-
-  @include Breakpoint-mobileOnly {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.images > *:not(:last-child) {
-  @include Breakpoint-tabletAndAbove {
-    margin-right: $spacing-28;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-28;
-  }
-}
-
-.pride .left {
-  @include Breakpoint-tabletAndAbove {
-    max-width: $four-columns;
-  }
-}
-
-.pride .right {
-  @include Breakpoint-tabletAndAbove {
-    max-width: $four-columns;
-
-    margin-top: $spacing-56;
-    margin-left: auto;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
-  }
 }

@@ -3,91 +3,15 @@
 .root {
   position: relative;
 
+  height: 100%;
   overflow: hidden;
 }
 
 .children {
   position: relative;
-
-  z-index: 2;
 }
 
-.max-width {
-  max-width: $ten-columns;
-  margin: 0 auto;
-
-  @media screen and (width < $separator-max-width) {
-    margin: 0 $gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin: 0 calc($gutter / 2);
-  }
-}
-
-.image {
-  position: absolute !important;
-  top: -50%;
-  left: -50%;
-
-  width: 200%;
-  height: 200%;
-
-  @supports (object-fit: cover) {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  opacity: 0.9;
-}
-
-.image.hidden {
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
-}
-
-.video {
-  position: absolute !important;
-  top: 0px;
-  top: 0px;
-
-  width: auto;
-  height: auto;
-
-  min-width: 100%;
-  min-height: 100%;
-
-  /* Selects all browsers except IE and Internet Explorer */
-  @supports (object-fit: cover) and (not (-ms-ime-align: auto)) {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 1;
-
-  @include Breakpoint-mobileOnly {
-    display: none;
-  }
-}
-
-.rect {
+.background {
   position: absolute;
 
   top: 0;
@@ -95,42 +19,6 @@
   bottom: 0;
   left: 0;
 
-  z-index: 1;
-
   width: 100%;
   height: 100%;
-
-  background-color: $lavender;
-}
-
-.color-lavender {
-  background-color: color($lavender alpha(84%));
-}
-
-.color-light-blue {
-  background-color: color($light-blue alpha(28%));
-}
-
-.color-magenta {
-  background-color: color($magenta alpha(84%));
-}
-
-.color-none {
-  background: none;
-}
-
-.blend-difference {
-  mix-blend-mode: difference;
-
-  @supports not (mix-blend-mode: difference) {
-    background-color: color($fallback-overlay alpha(40%));
-  }
-}
-
-.blend-lighten {
-  mix-blend-mode: lighten;
-
-  @supports not (mix-blend-mode: lighten) {
-    background-color: color($lavender alpha(60%));
-  }
 }

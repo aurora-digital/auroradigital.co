@@ -1,51 +1,41 @@
 @import "../../styles/all.css";
 
+:global {
+  html {
+    font-size: 20px;
+    font-size: responsive 10px 20px;
+    lower-font-range: 320px;
+    upper-font-range: 1440px;
+  }
+}
+
 .h1 {
   font-size: $font-size-h1;
   line-height: $line-height-h1;
-
-  @include Breakpoint-mobileOnly {
-    font-size: $font-size-h1-mobile;
-    line-height: $line-height-h1-mobile;
-  }
 }
 
 .h2 {
   font-size: $font-size-h2;
   line-height: $line-height-h2;
-
-  @include Breakpoint-mobileOnly {
-    font-size: $font-size-h2-mobile;
-    line-height: $line-height-h2-mobile;
-  }
 }
 
 .h3 {
   font-size: $font-size-h3;
   line-height: $line-height-h3;
-
-  @include Breakpoint-mobileOnly {
-    font-size: $font-size-h3-mobile;
-    line-height: $line-height-h3-mobile;
-  }
 }
 
 .body {
   font-size: $font-size-body;
   line-height: $line-height-body;
-
-  @include Breakpoint-mobileOnly {
-    font-size: $font-size-body-mobile;
-    line-height: $line-height-body-mobile;
-  }
 }
 
-.meta {
-  font-family: $font-family-meta-pro;
+.small-body {
+  font-size: $font-size-body-small;
+  line-height: $line-height-body-small;
 }
 
-.meta-serif {
-  font-family: $font-family-meta-serif-pro;
+.visuelt {
+  font-family: $font-family-visuelt;
 }
 
 .regular {
@@ -60,14 +50,18 @@
   color: white;
 }
 
-.light-blue {
-  color: $light-blue;
+.oxford-blue {
+  color: $oxford-blue;
 }
 
-.dark-blue {
-  color: $dark-blue;
+.klein-blue {
+  color: $klein-blue;
 }
 
-.lavender {
-  color: $lavender;
+.baby-blue {
+  color: $baby-blue;
+}
+
+.alice-blue {
+  color: $alice-blue;
 }

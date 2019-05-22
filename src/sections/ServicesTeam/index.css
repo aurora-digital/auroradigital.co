@@ -102,7 +102,7 @@ $nine-columns: 1250px;
 
   mix-blend-mode: overlay;
 
-  background-color: $lavender;
+  background-color: $baby-blue;
   opacity: 0.84;
 
   transition: opacity 0.2s ease-out;

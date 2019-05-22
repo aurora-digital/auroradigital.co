@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames/bind";
+import classNames from "classnames";
 import Img from "gatsby-image";
 import Typography from "../Typography";
 import linkedin from "../../assets/images/linkedin.svg";

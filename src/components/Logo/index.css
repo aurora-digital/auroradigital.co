@@ -1,10 +1,11 @@
 @import "../../styles/all.css";
 
 .root {
-  height: 26px;
+  height: 36px;
 
   @include Breakpoint-mobileOnly {
-    height: 12px;
+    width: 100px;
+    height: 22px;
   }
 }
 
@@ -14,8 +15,8 @@
   }
 }
 
-.logo-svg-light-blue {
+.logo-svg-klein-blue {
   path {
-    fill: $light-blue;
+    fill: $klein-blue;
   }
 }

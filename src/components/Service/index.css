@@ -91,7 +91,7 @@ $shape-size-mobile: 110px;
 
 .svg {
   path {
-    fill: $light-blue;
+    fill: $baby-blue;
   }
 
   @include Breakpoint-tabletAndAbove {

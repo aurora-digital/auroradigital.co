@@ -90,7 +90,7 @@ $image-height-mobile: calc($image-height / 2);
   width: 100%;
   height: 100%;
 
-  background-color: color($lavender alpha(84%));
+  background-color: color($baby-blue alpha(84%));
 
   mix-blend-mode: overlay;
 
@@ -111,7 +111,7 @@ $image-height-mobile: calc($image-height / 2);
     }
 
     .image::after {
-      background-color: color($light-blue alpha(84%));
+      background-color: color($baby-blue alpha(84%));
 
       mix-blend-mode: normal;
 
