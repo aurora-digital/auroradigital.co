@@ -4,210 +4,91 @@ $social-icon-size: $spacing-28;
 $social-icon-size-mobile: $spacing-16;
 
 .root {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
   margin-bottom: $spacing-56;
 
   @include Breakpoint-mobileOnly {
+    flex-direction: column;
     margin-bottom: $spacing-28;
   }
 }
 
-.sitemap {
-  display: flex;
+.root > *:not(:last-child) {
+  margin-right: $gutter;
 
-  @include Breakpoint-tabletAndAbove {
-    flex-direction: row;
+  @include Breakpoint-tabletOnly {
+    margin-right: $spacing-52;
   }
 
   @include Breakpoint-mobileOnly {
-    flex-direction: column;
-  }
-}
-
-.lets-work {
-  @include Breakpoint-tabletAndAbove {
-    width: 100%;
-    max-width: $five-columns;
-
-    margin-right: $gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-56;
-  }
-}
-
-.lets-work-button {
-  margin-top: $spacing-56;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
-  }
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-
-  @include Breakpoint-tabletAndAbove {
-    justify-content: space-between;
-    width: 100%;
-    max-width: $three-columns;
-  }
-}
-
-.links-group {
-  display: flex;
-  flex-direction: column;
-
-  @include Breakpoint-tabletAndAbove {
-    width: 100%;
-    max-width: $column;
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: 50%;
-  }
-}
-
-.link {
-  a {
-    text-decoration: none;
-  }
-}
-
-.link:not(:last-child) {
-  margin-bottom: $spacing-16;
-}
-
-.separator-wrapper {
-  position: relative;
-
-  height: $spacing-112;
-
-  @include Breakpoint-mobileOnly {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: $spacing-56;
-  }
-}
-
-.separator {
-  width: $ten-columns;
-  height: 2px;
-
-  background-color: rgba(80, 56, 117, 0.12);
-
-  @include Breakpoint-tabletAndAbove {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translateX(-50%);
-  }
-
-  @media screen and (width < $separator-max-width) {
-    width: calc(100vw - 2 * $gutter);
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: 100%;
-  }
-}
-
-.contacts {
-  @include Breakpoint-tabletAndAbove {
-    display: flex;
-    flex-direction: row;
-  }
-
-  @include Breakpoint-mobileOnly {
-    display: grid;
-
-    grid-template-areas:
-      "logo social-icons"
-      "first-address first-address"
-      "second-address second-address";
+    margin-bottom: $spacing-52;
   }
 }
 
 .logo {
-  grid-area: logo;
+  @include Breakpoint-desktopOnly {
+    width: $three-columns;
+  }
 
-  @include Breakpoint-mobileOnly {
-    align-self: center;
+  @include Breakpoint-tabletOnly {
+    width: $two-columns;
   }
 }
 
-.contacts > *:not(:last-child) {
-  @include Breakpoint-tabletAndAbove {
-    width: 100%;
-    max-width: $two-columns;
-
-    margin-right: $gutter;
-  }
-}
-
-.address {
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
-  }
-}
-
-.address.first {
-  grid-area: first-address;
-}
-
-.address.second {
-  grid-area: second-address;
-}
-
-.address-copy {
-  margin-top: $spacing-28;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-16;
-  }
-}
-
-.social-icons {
-  grid-area: social-icons;
-
+.addresses {
   display: flex;
   flex-direction: row;
 
-  margin-left: auto;
-
-  @include Breakpoint-mobileOnly {
-    align-items: center;
+  @include Breakpoint-tabletOnly {
+    justify-content: space-between;
   }
 }
 
-.social-icon:not(:last-child) {
-  margin-right: $spacing-28;
-}
+.addresses > *:not(:last-child) {
+  margin-right: $gutter;
 
-.svg {
-  width: $social-icon-size;
-  height: $social-icon-size;
-
-  path {
-    transition: fill 0.2s ease-out;
-  }
-
-  @include Breakpoint-mobileOnly {
-    align-self: center;
-
-    width: $social-icon-size-mobile;
-    height: $social-icon-size-mobile;
+  @include Breakpoint-tabletOnly {
+    margin-right: $spacing-52;
   }
 }
 
-.svg:hover {
-  path {
-    fill: $baby-blue;
+.titled-links {
+  display: flex;
+  flex-direction: column;
 
-    transition: fill 0.2s ease-in;
+  a {
+    cursor: pointer;
+
+    text-decoration: none;
   }
+
+  @include Breakpoint-desktopOnly {
+    width: $two-columns;
+  }
+}
+
+.titled-links > *:last-child {
+  margin-top: $spacing-20;
+}
+
+.address-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    margin-left: $spacing-12;
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-links > *:not(:last-child) {
+  margin-right: $spacing-20;
 }

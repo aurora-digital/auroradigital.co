@@ -1,10 +1,10 @@
 @import "../../styles/all.css";
 
 $wave-height: 400px;
-$wave-offset: calc(($wave-height / -2) - 15px);
+$wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: calc(($wave-height / 2) - 20px);
+  padding-bottom: $wave-offset;
 
   background-color: $klein-blue;
 }
@@ -27,7 +27,7 @@ $wave-offset: calc(($wave-height / -2) - 15px);
   position: absolute;
   left: 0;
 
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 
   white-space: nowrap;
@@ -38,12 +38,12 @@ $wave-offset: calc(($wave-height / -2) - 15px);
   left: 0;
   z-index: 1;
 
-  width: 100vw;
+  width: 100%;
   height: $wave-height;
 
   overflow: hidden;
 
-  transform: translateY($wave-offset);
+  transform: translateY(calc($wave-offset * -1));
 }
 
 .wave {
@@ -62,10 +62,10 @@ $wave-offset: calc(($wave-height / -2) - 15px);
 
 @keyframes wave {
   0% {
-    margin-left: 0px;
+    transform: translateX(0px);
   }
   100% {
-    margin-left: -2115px;
+    transform: translateX(-2115px)
   }
 }
 
