@@ -1,103 +1,75 @@
 import React from "react";
-import capitalize from "lodash/capitalize";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
-import Link from "root/components/Link";
-import Button from "root/components/Button";
 import Logo from "root/components/Logo";
-import Contact from "root/components/Contact";
-import socialLinks from "./socialLinks";
 
 import "./index.css";
 
-const renderLink = link => {
-  const linkUrl = link === "home" ? "/" : `/${link}`;
+const Arrow = () => (
+  <svg
+    height="1em"
+    viewBox="0 0 15 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line
+      x1="8.74228e-08"
+      y1="7"
+      x2="12"
+      y2="7"
+      stroke="#002FA7"
+      strokeWidth="2"
+    />
+    <path d="M7 1L13 7L7 13" stroke="#002FA7" strokeWidth="2" />
+  </svg>
+);
 
-  return (
-    <div styleName="link">
-      <Link to={linkUrl} underlineColor="oxford-blue" hover>
-        <Typography color="oxford-blue">{capitalize(link)}</Typography>
-      </Link>
-    </div>
-  );
-};
+const renderAddress = (name, address) => (
+  <div styleName="titled-links">
+    <Typography variant="small-body" color="oxford-blue" weight="bold">
+      {name}
+    </Typography>
+    <a styleName="address-link" href={address}>
+      <Typography variant="small-body" color="klein-blue">
+        Directions
+      </Typography>
+      <Arrow />
+    </a>
+  </div>
+);
+
+const SOCIAL_LINKS = [
+  { name: "Md", ariaLabel: "Medium", link: "#" },
+  { name: "Git", ariaLabel: "Github", link: "#" },
+  { name: "In", ariaLabel: "LinkedIn", link: "#" },
+  { name: "Fb", ariaLabel: "Facebook", link: "#" },
+  { name: "Tw", ariaLabel: "Twitter", link: "#" },
+  { name: "Ins", ariaLabel: "Instagram", link: "#" },
+];
 
 const Footer = () => (
   <Section verticalSpacing={false}>
     <div styleName="root">
-      <div styleName="sitemap">
-        <div styleName="lets-work">
-          <Typography variant="h3" color="oxford-blue">
-            Let’s work together
-          </Typography>
-          <div styleName="lets-work-button">
-            <Contact>
-              <Button>
-                <Typography weight="bold">Tell us everything</Typography>
-              </Button>
-            </Contact>
-          </div>
-        </div>
-
-        <div styleName="links">
-          <div styleName="links-group">
-            {renderLink("home")}
-            {renderLink("services")}
-            {renderLink("company")}
-          </div>
-
-          <div styleName="links-group">
-            <div styleName="link">
-              <Contact underlineColor="oxford-blue" hover>
-                <Typography color="oxford-blue">
-                  {capitalize("contact")}
-                </Typography>
-              </Contact>
-            </div>
-          </div>
-        </div>
+      <div styleName="logo">
+        <Logo color="klein-blue" />
       </div>
 
-      <div styleName="contacts">
-        <div styleName="logo">
-          <Logo color="klein-blue" />
-        </div>
+      <div styleName="addresses">
+        {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
+        {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
+      </div>
 
-        <div styleName="address first ">
-          <Typography weight="bold" color="klein-blue">
-            Braga, Portugal
-          </Typography>
+      <div styleName="titled-links">
+        <Typography variant="small-body" color="oxford-blue" weight="bold">
+          Follow Us
+        </Typography>
 
-          <div styleName="address-copy">
-            <Typography color="klein-blue">
-              Polo de Negócios de Braga, Avenida D. João II 404, 4º andar, Sala
-              45 4715-275 Braga
-            </Typography>
-          </div>
-        </div>
-
-        <div styleName="address second">
-          <Typography weight="bold" color="klein-blue">
-            Boston, USA
-          </Typography>
-
-          <div styleName="address-copy">
-            <Typography color="klein-blue">
-              CIC Cambridge, 1 Broadway, Cambridge, MA 02142, USA
-            </Typography>
-          </div>
-        </div>
-
-        <div styleName="social-icons">
-          {socialLinks.map(socialIcon => (
-            <a
-              key={socialIcon.name}
-              styleName="social-icon"
-              href={socialIcon.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {socialIcon.icon}
+        <div styleName="social-links">
+          {SOCIAL_LINKS.map(({ name, ariaLabel, link }) => (
+            <a href={link} key={name} aria-label={ariaLabel}>
+              <Typography variant="small-body" color="klein-blue">
+                {name}
+              </Typography>
             </a>
           ))}
         </div>
