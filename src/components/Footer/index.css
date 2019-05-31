@@ -1,8 +1,5 @@
 @import "../../styles/all.css";
 
-$social-icon-size: $spacing-28;
-$social-icon-size-mobile: $spacing-16;
-
 .root {
   display: flex;
   flex-direction: row;
@@ -12,7 +9,7 @@ $social-icon-size-mobile: $spacing-16;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
-    margin-bottom: $spacing-28;
+    margin-bottom: $spacing-20;
   }
 }
 

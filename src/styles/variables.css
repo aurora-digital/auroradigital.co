@@ -2,11 +2,14 @@ $font-family-visuelt: "visuelt", "Helvetica", sans-serif;
 
 $font-size-h1: responsive 52px 224px;
 $line-height-h1: 1.5;
-$font-size-h2: calc(3em * 1.618);
+$font-size-h2: responsive 32px 136px;
 $line-height-h2: 1.5;
-$font-size-h3: calc(2em * 1.618);
+$font-size-h3: responsive 32px 84px;
 $line-height-h3: 1.5;
-$font-size-body: calc(1em * 1.618);
+$font-size-body: responsive 20px 52px;
 $line-height-body: 1.618;
-$font-size-body-small: 1em;
+$font-size-body-small: responsive 16px 32px;
 $line-height-body-small: 1.618;
+
+$min-responsive-font-screen: 320px;
+$max-responsive-font-screen: 2760px;

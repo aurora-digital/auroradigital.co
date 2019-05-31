@@ -4,8 +4,8 @@ import classNames from "classnames";
 
 import "./index.css";
 
-const Section = ({ children, verticalSpacing, separator }) => {
-  const styles = classNames("root", { verticalSpacing, separator });
+const Section = ({ children, verticalSpacing }) => {
+  const styles = classNames("root", { verticalSpacing });
 
   return <div styleName={styles}>{children}</div>;
 };
@@ -13,12 +13,10 @@ const Section = ({ children, verticalSpacing, separator }) => {
 Section.propTypes = {
   verticalSpacing: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  separator: PropTypes.bool,
 };
 
 Section.defaultProps = {
   verticalSpacing: true,
-  separator: false,
 };
 
 export default Section;
