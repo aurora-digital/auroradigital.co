@@ -9,7 +9,7 @@ const useScrollDirection = () => {
 
   const updateValues = ({ scroll }) => {
     if (scroll.changed) {
-      if (scroll.velocity.y === 0) setTimeout(() => setScroll(scroll), 250);
+      if (scroll.velocity.y === 0) setTimeout(() => setScroll(scroll), 500);
       else setScroll(scroll);
     }
   };

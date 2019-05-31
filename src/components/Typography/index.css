@@ -1,37 +1,47 @@
 @import "../../styles/all.css";
 
-:global {
-  html {
-    font-size: 20px;
-    font-size: responsive 10px 20px;
-    lower-font-range: 320px;
-    upper-font-range: 2560px;
-  }
+.root {
+  display: inline-block;
 }
 
 .h1 {
-  font-size: $font-size-h1;
+  font-size: responsive 52px 224px;
   line-height: $line-height-h1;
+
+  lower-font-range: 320px;
+  upper-font-range: 2760px;
 }
 
 .h2 {
-  font-size: $font-size-h2;
+  font-size: responsive 32px 136px;
   line-height: $line-height-h2;
+
+  lower-font-range: 320px;
+  upper-font-range: 2760px;
 }
 
 .h3 {
-  font-size: $font-size-h3;
+  font-size: responsive 32px 84px;
   line-height: $line-height-h3;
+
+  lower-font-range: 320px;
+  upper-font-range: 2760px;
 }
 
 .body {
-  font-size: $font-size-body;
+  font-size: responsive 20px 52px;
   line-height: $line-height-body;
+
+  lower-font-range: 320px;
+  upper-font-range: 2760px;
 }
 
 .small-body {
-  font-size: $font-size-body-small;
+  font-size: responsive 16px 32px;
   line-height: $line-height-body-small;
+
+  lower-font-range: 320px;
+  upper-font-range: 2760px;
 }
 
 .visuelt {

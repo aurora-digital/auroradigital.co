@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 import "./index.css";
 
@@ -27,7 +28,9 @@ export default class Layout extends Component {
           <meta name="keywords" content={keywords} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
-        <div>{children}</div>
+        <ParallaxProvider>
+          <div>{children}</div>
+        </ParallaxProvider>
       </div>
     );
   }

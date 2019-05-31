@@ -62,6 +62,7 @@
     "react-modal": "^3.8.1",
     "react-particles-js": "^2.4.2",
     "react-pose": "^4.0.7",
+    "react-scroll-parallax": "^2.1.2",
     "react-visibility-sensor": "^5.0.2",
     "tornis": "^0.1.3"
   },
