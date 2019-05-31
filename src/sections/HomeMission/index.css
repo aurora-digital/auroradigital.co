@@ -1,0 +1,43 @@
+@import "../../styles/all.css";
+
+$Breakpoint-parallax: 768px;
+
+.root {
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.parallax-container {
+  @media screen and (width <= $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
+  }
+
+  text-align: center;
+}
+
+.parallax:last-child {
+  align-self: flex-end;
+}
+
+.parallax {
+  white-space: nowrap;
+}
+
+.copy {
+  position: relative;
+
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+}

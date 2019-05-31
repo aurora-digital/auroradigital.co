@@ -6,6 +6,7 @@ import Layout from "root/components/Layout";
 import Footer from "root/components/Footer";
 import HomeHero from "../sections/HomeHero";
 import HomePortfolio from "../sections/HomePortfolio";
+import HomeMission from "../sections/HomeMission";
 
 export const query = graphql`
   query {
@@ -46,6 +47,7 @@ export default class IndexPage extends Component {
       >
         <HomeHero />
         <HomePortfolio />
+        <HomeMission />
         <Footer />
       </Layout>
     );
