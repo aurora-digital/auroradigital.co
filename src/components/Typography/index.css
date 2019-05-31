@@ -5,43 +5,43 @@
 }
 
 .h1 {
-  font-size: responsive 52px 224px;
+  font-size: $font-size-h1;
   line-height: $line-height-h1;
 
-  lower-font-range: 320px;
-  upper-font-range: 2760px;
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
 }
 
 .h2 {
-  font-size: responsive 32px 136px;
+  font-size: $font-size-h2;
   line-height: $line-height-h2;
 
-  lower-font-range: 320px;
-  upper-font-range: 2760px;
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
 }
 
 .h3 {
-  font-size: responsive 32px 84px;
+  font-size: $font-size-h3;
   line-height: $line-height-h3;
 
-  lower-font-range: 320px;
-  upper-font-range: 2760px;
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
 }
 
 .body {
-  font-size: responsive 20px 52px;
+  font-size: $font-size-body;
   line-height: $line-height-body;
 
-  lower-font-range: 320px;
-  upper-font-range: 2760px;
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
 }
 
 .small-body {
-  font-size: responsive 16px 32px;
+  font-size: $font-size-body-small;
   line-height: $line-height-body-small;
 
-  lower-font-range: 320px;
-  upper-font-range: 2760px;
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
 }
 
 .visuelt {
