@@ -72,6 +72,10 @@ $social-icon-size-mobile: $spacing-16;
 
 .titled-links > *:last-child {
   margin-top: $spacing-20;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-8;
+  }
 }
 
 .address-link {

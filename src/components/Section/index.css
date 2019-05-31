@@ -12,20 +12,20 @@
   }
 
   @include Breakpoint-mobileOnly {
-    max-width: $content-width-mobile;
-
-    padding: 0 calc($gutter / 2);
+    padding: 0 $mobile-padding;
     margin: 0 auto;
+
+    overflow-x: hidden;
   }
 }
 
 .verticalSpacing {
-  padding-top: $spacing-168;
-  padding-bottom: $spacing-168;
+  padding-top: $spacing-224;
+  padding-bottom: $spacing-224;
 
   @include Breakpoint-mobileOnly {
-    padding-top: $spacing-112;
-    padding-bottom: $spacing-112;
+    padding-top: $spacing-136;
+    padding-bottom: $spacing-136;
   }
 }
 

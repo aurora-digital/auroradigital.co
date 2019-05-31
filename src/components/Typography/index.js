@@ -16,7 +16,7 @@ export default class Typography extends React.Component {
       "baby-blue",
       "alice-blue",
     ]),
-    weight: PropTypes.oneOf(["regular", "bold"]),
+    weight: PropTypes.oneOf(["regular", "medium", "bold"]),
   };
 
   static defaultProps = {
