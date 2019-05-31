@@ -5,7 +5,7 @@
     font-size: 20px;
     font-size: responsive 10px 20px;
     lower-font-range: 320px;
-    upper-font-range: 1440px;
+    upper-font-range: 2560px;
   }
 }
 
@@ -40,6 +40,10 @@
 
 .regular {
   font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
 }
 
 .bold {

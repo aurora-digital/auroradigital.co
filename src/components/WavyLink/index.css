@@ -1,0 +1,87 @@
+@import "../../styles/all.css";
+
+.root {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.children:hover + .wave-wrapper > .wave.darker {
+  max-width: 578px;
+}
+
+.children {
+  display: inline;
+  height: 100%;
+
+  margin-right: $spacing-32;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.wave-wrapper {
+  position: relative;
+
+  width: 500px;
+  height: 140px;
+
+  pointer-events: none;
+
+  transform: translateY(-50%);
+
+  @include Breakpoint-mobileOnly {
+    transform: translateY(-50%) scaleY(0.6);
+  }
+}
+
+.wave {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.wave:after {
+  content: "";
+
+  position: absolute;
+
+  width: calc(578px * 2);
+  height: 140px;
+
+  background: url(../../assets/images/wave-long.svg) repeat-x;
+
+  animation: wave 2.5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation-play-state: paused;
+}
+
+.wave.darker:after {
+  background: url(../../assets/images/wave-long-klein.svg) repeat-x;
+}
+
+.wave.darker {
+  z-index: 1;
+
+  max-width: 0;
+
+  transition: max-width 2.5s ease-out;
+}
+
+.wave.darker.moving:after,
+.wave.moving:after {
+  animation-play-state: running;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

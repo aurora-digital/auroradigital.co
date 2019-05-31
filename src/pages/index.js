@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "root/components/Layout";
 import Footer from "root/components/Footer";
 import HomeHero from "../sections/HomeHero";
+import HomePortfolio from "../sections/HomePortfolio";
 
 export const query = graphql`
   query {
@@ -44,6 +45,7 @@ export default class IndexPage extends Component {
         description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
       >
         <HomeHero />
+        <HomePortfolio />
         <Footer />
       </Layout>
     );

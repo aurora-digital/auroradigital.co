@@ -4,7 +4,7 @@ $wave-height: 400px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: $wave-offset;
+  padding-bottom: 200px;
 
   background-color: $klein-blue;
 }
@@ -43,7 +43,7 @@ $wave-offset: calc(($wave-height / 2));
 
   overflow: hidden;
 
-  transform: translateY(calc($wave-offset * -1));
+  transform: translateY(-25%);
 }
 
 .wave {
@@ -58,6 +58,11 @@ $wave-offset: calc(($wave-height / 2));
   perspective: 1000;
 
   animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation-play-state: paused;
+}
+
+.wave.animate {
+  animation-play-state: running;
 }
 
 @keyframes wave {
@@ -65,7 +70,7 @@ $wave-offset: calc(($wave-height / 2));
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(-2115px)
+    transform: translateX(-2115px);
   }
 }
 

@@ -25,18 +25,6 @@
 
 @font-face {
   font-family: "visuelt";
-  src: url("/fonts/visuelt-regular-pro.eot");
-  src: url("/fonts/visuelt-regular-pro.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/visuelt-regular-pro.woff2") format("woff2"),
-    url("/fonts/visuelt-regular-pro.woff") format("woff"),
-    url("/fonts/visuelt-regular-pro.ttf") format("truetype");
-
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "visuelt";
   src: url("/fonts/visuelt-medium-pro.eot");
   src: url("/fonts/visuelt-medium-pro.eot?#iefix") format("embedded-opentype"),
     url("/fonts/visuelt-medium-pro.woff2") format("woff2"),
@@ -45,4 +33,16 @@
 
   font-style: normal;
   font-weight: 500;
+}
+
+@font-face {
+  font-family: "visuelt";
+  src: url("/fonts/visuelt-regular-pro.eot");
+  src: url("/fonts/visuelt-regular-pro.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/visuelt-regular-pro.woff2") format("woff2"),
+    url("/fonts/visuelt-regular-pro.woff") format("woff"),
+    url("/fonts/visuelt-regular-pro.ttf") format("truetype");
+
+  font-style: normal;
+  font-weight: normal;
 }
