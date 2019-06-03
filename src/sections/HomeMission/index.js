@@ -12,7 +12,7 @@ export default function HomeMission() {
       <div styleName="root">
         <div styleName="title">
           <div styleName="parallax-container">
-            <Parallax styleName="parallax" x={[-20, 20]} tagOuter="figure">
+            <Parallax styleName="parallax" x={[-50, 20]} tagOuter="figure">
               <Typography color="klein-blue" weight="bold" variant="h1">
                 Creating the best
               </Typography>
