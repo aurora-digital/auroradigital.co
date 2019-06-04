@@ -22,7 +22,7 @@ export default class Contact extends Component {
         internal={false}
         underlineColor={underlineColor}
         hover={hover}
-        to="mailto:contact@svhealth.io"
+        to="mailto:contact@auroradigital.co"
       >
         {children}
       </Link>

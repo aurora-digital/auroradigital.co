@@ -1,6 +1,28 @@
 @import "../../styles/all.css";
 
 .root {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include Breakpoint-desktopOnly {
+    width: $content-width-desktop;
+
+    margin: 0 auto;
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin: 0 $gutter;
+  }
+
+  @include Breakpoint-mobileOnly {
+    overflow: hidden;
+  }
+}
+
+.container {
   display: flex;
   flex-direction: row;
 
@@ -10,15 +32,28 @@
 }
 
 .challenge {
-  max-width: $five-columns;
+  margin-right: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-52;
+  }
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: $five-columns;
+  max-width: $four-columns;
+  margin-right: $spacing-32;
   margin-left: auto;
+
+  * {
+    text-decoration: none;
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    margin-left: 0;
+  }
 }
 
 .cv {
@@ -32,5 +67,25 @@
 
   *:first-child {
     margin-right: $spacing-8;
+  }
+}
+
+.wave {
+  width: $spacing-136;
+
+  @include Breakpoint-desktopOnly {
+    margin-right: calc($spacing-52 * -1);
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-left: calc($spacing-52 * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    position: absolute;
+    top: 55%;
+    right: calc($spacing-56 * -1);
+
+    width: $two-columns;
   }
 }
