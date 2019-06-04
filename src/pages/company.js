@@ -4,6 +4,7 @@ import Footer from "root/components/Footer";
 import CompanyHero from "../sections/CompanyHero";
 import CompanyMedtechRevolution from "../sections/CompanyMedtechRevolution";
 import CompanyTeam from "../sections/CompanyTeam";
+import CompanyValues from "../sections/CompanyValues";
 
 export default class CompanyPage extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class CompanyPage extends Component {
         <CompanyMedtechRevolution />
 
         <CompanyTeam />
+        <CompanyValues />
 
         <Footer />
       </Layout>

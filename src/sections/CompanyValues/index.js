@@ -21,7 +21,12 @@ const CompanyValues = () => (
     </div>
 
     <div styleName="wave-mobile">
-      <svg viewBox="0 0 320 781" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 320 781"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
         <path
           d="M99.1622 748C68.8813 730.858 33.5818 721.452 0 721.639L0 0.00221525C42.4602 -0.184936 86.6313 11.4912 124.918 33.1649C185.327 67.3625 260.726 67.9829 320.846 33.2684L347 747.886C270.811 791.879 175.717 791.337 99.1622 748Z"
           fill="#001F54"
