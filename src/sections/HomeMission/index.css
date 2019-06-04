@@ -2,9 +2,6 @@
 
 $Breakpoint-parallax: 1020px;
 
-.root {
-}
-
 .title {
   display: flex;
   flex-direction: column;
