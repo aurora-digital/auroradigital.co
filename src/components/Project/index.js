@@ -27,7 +27,6 @@ const Project = ({ image, projectName, projectUrl, description }) => (
       styleName="image"
       fluid={image}
       alt={`${projectName}-project`.toLowerCase()}
-      critical
     />
     <div styleName="project-content">
       <div styleName="description">

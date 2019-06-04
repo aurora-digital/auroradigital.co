@@ -1,0 +1,73 @@
+@import "../../styles/all.css";
+
+$desktopSpace: calc($ten-columns - $column - $column);
+$desktopColumns: calc($desktopSpace / 3);
+
+$tabletSpace: calc(100% - $gutter - $gutter);
+$tabletColumns: calc($tabletSpace / 3);
+
+.root {
+  display: flex;
+
+  width: 100%;
+
+  @include Breakpoint-mobileOnly {
+    display: block;
+  }
+}
+
+.container {
+  position: relative;
+
+  display: grid;
+
+  grid-column-gap: $column;
+  grid-row-gap: $spacing-84;
+
+  grid-template-columns: repeat(3, $desktopColumns);
+  padding-bottom: $spacing-224;
+
+  @include Breakpoint-desktopOnly {
+    margin: 0 auto;
+  }
+
+  @include Breakpoint-tabletOnly {
+    grid-column-gap: $gutter;
+    grid-row-gap: $spacing-84;
+
+    grid-template-columns: repeat(3, $tabletColumns);
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    grid-row-gap: $spacing-52;
+
+    grid-template-columns: 100%;
+  }
+}
+
+.element {
+  display: block;
+}
+
+.element:nth-child(2) {
+  @include Breakpoint-tabletAndAbove {
+    margin-top: $spacing-136;
+  }
+}
+
+.element:nth-child(4),
+.element:nth-child(6) {
+  @include Breakpoint-tabletAndAbove {
+    margin-top: calc($spacing-136 * -1);
+  }
+}
+
+.element:nth-child(5) {
+  @include Breakpoint-tabletAndAbove {
+    margin-top: 0;
+  }
+}
