@@ -103,11 +103,15 @@
 
   .left-column {
     position: absolute;
-    top: $spacing-352;
+    top: 34.5%;
     z-index: 1;
 
     display: flex;
     flex-direction: row;
+
+    @include Breakpoint-tabletOnly {
+      top: 26%;
+    }
 
     @include Breakpoint-mobileOnly {
       position: static;
@@ -121,7 +125,7 @@
 
   .right-column {
     position: absolute;
-    bottom: $spacing-136;
+    bottom: 24%;
     left: 50%;
     z-index: 1;
 
@@ -129,6 +133,7 @@
     flex-direction: row;
 
     @include Breakpoint-tabletOnly {
+      bottom: 26%;
       right: 0;
       left: auto;
     }

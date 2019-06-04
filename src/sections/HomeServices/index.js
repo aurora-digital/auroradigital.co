@@ -40,7 +40,9 @@ export default function HomeServices() {
 
           <div styleName="left-column">
             <div styleName="title">
-              <Typography color="baby-blue">Design</Typography>
+              <Typography weight="bold" color="baby-blue">
+                Design
+              </Typography>
             </div>
             <div styleName="list">
               <Typography>Research & Strategy</Typography>
@@ -52,7 +54,9 @@ export default function HomeServices() {
 
           <div styleName="right-column">
             <div styleName="title">
-              <Typography color="baby-blue">Devolpment</Typography>
+              <Typography weight="bold" color="baby-blue">
+                Devolpment
+              </Typography>
             </div>
             <div styleName="list">
               <Typography>Hosting Solution</Typography>

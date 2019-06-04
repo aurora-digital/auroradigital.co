@@ -1,6 +1,6 @@
 @import "../../styles/all.css";
 
-$Breakpoint-parallax: 768px;
+$Breakpoint-parallax: 1020px;
 
 .root {
 }
@@ -13,18 +13,20 @@ $Breakpoint-parallax: 768px;
 .parallax-container-wrapper {
   height: calc(2em * $line-height-h1);
 
+  overflow: hidden;
+
   @include h1-responsive-font;
 }
 
 .parallax-container {
-  @media screen and (width < $Breakpoint-parallax) {
-    display: none;
-  }
-
   position: absolute;
   left: 0;
 
   width: 100vw;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
 }
 
 .parallax-fallback {
