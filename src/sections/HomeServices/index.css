@@ -1,0 +1,261 @@
+@import "../../styles/all.css";
+
+.root {
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-tabletOnly {
+    padding-bottom: $spacing-136;
+  }
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+  }
+}
+
+.image {
+  position: relative;
+
+  height: $spacing-584;
+
+  div {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+
+    transition: filter 500ms;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: color($klein-blue alpha(52%));
+    mix-blend-mode: overlay;
+
+    opacity: 1;
+
+    transition: opacity 500ms;
+  }
+
+  @include Breakpoint-tabletOnly {
+    height: $spacing-584;
+  }
+
+  @include Breakpoint-mobileOnly {
+    height: $spacing-224;
+  }
+}
+
+.image:hover {
+  div {
+    filter: grayscale(0%);
+  }
+
+  &::after {
+    opacity: 0;
+  }
+}
+
+.first-image {
+  width: calc($four-columns + $gutter);
+
+  margin-left: calc(-1 * $column-spacing);
+
+  transform: translateY($spacing-224);
+
+  @include Breakpoint-tabletOnly {
+    width: 35vw;
+
+    margin-left: -$gutter;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: auto;
+
+    margin-right: -$mobile-padding;
+    margin-left: $spacing-84;
+
+    transform: none;
+  }
+}
+
+.second-image {
+  width: calc($seven-columns + $gutter);
+
+  margin-top: $spacing-84;
+  margin-right: calc(-1 * $column-spacing);
+  margin-left: auto;
+
+  @include Breakpoint-tabletOnly {
+    width: 53vw;
+
+    margin-right: -$gutter;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: auto;
+
+    margin-right: $spacing-84;
+    margin-left: -$mobile-padding;
+  }
+}
+
+.copy-working-together {
+  max-width: $six-columns;
+
+  margin-top: $spacing-84;
+  margin-left: auto;
+
+  @include Breakpoint-tabletOnly {
+    max-width: calc(53vw - $gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-52;
+  }
+}
+
+.copy-working-together > *:last-child {
+  margin-top: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-32;
+  }
+}
+
+.copy-services {
+  position: relative;
+
+  .left-column {
+    position: absolute;
+    top: 34.5%;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+
+    @include Breakpoint-tabletOnly {
+      top: 26%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      position: static;
+
+      flex-direction: column;
+
+      padding-top: $spacing-136;
+      margin-top: $spacing-84;
+    }
+  }
+
+  .right-column {
+    position: absolute;
+    bottom: 24%;
+    left: 50%;
+    z-index: 1;
+
+    display: inline-flex;
+    flex-direction: row;
+
+    @include Breakpoint-tabletOnly {
+      right: 0;
+      bottom: 26%;
+      left: auto;
+    }
+
+    @include Breakpoint-mobileOnly {
+      position: static;
+
+      flex-direction: column;
+
+      padding-bottom: $spacing-136;
+      margin-top: $spacing-52;
+    }
+  }
+
+  .title {
+    margin-right: $spacing-32;
+  }
+
+  .list {
+    display: inline-flex;
+    flex-direction: column;
+
+    white-space: nowrap;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-20;
+      margin-left: calc($gutter / 2);
+    }
+  }
+}
+
+.copy-services-background {
+  width: calc($twelve-columns + $column);
+  height: 100%;
+
+  margin-left: calc(-1 * $column-spacing);
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.copy-services-background-mobile {
+  position: absolute;
+
+  z-index: -1;
+
+  width: 100vw;
+  height: 100%;
+
+  margin-left: -$mobile-padding;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.copy-our-work {
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+
+  .title {
+    width: $seven-columns;
+
+    @include Breakpoint-tabletAndBelow {
+      width: 100%;
+    }
+  }
+
+  .copy {
+    margin-top: $spacing-52;
+    margin-left: $three-columns;
+
+    @include Breakpoint-tabletOnly {
+      margin-left: $two-columns;
+    }
+
+    @include Breakpoint-mobileOnly {
+      margin-left: 0;
+    }
+  }
+}
