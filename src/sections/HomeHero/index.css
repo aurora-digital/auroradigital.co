@@ -14,11 +14,11 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .title-wrapper {
-  height: calc(1em * 1.5);
+  height: calc(1em * $line-height-h1);
 
   margin: $spacing-224 0;
 
-  font-size: responsive 52px 224px; /* Copy pasted from Typography.css */
+  @include h1-responsive-font;
 
   @include Breakpoint-mobileOnly {
     margin: $spacing-84 0;

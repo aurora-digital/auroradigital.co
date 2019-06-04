@@ -1,15 +1,55 @@
 $font-family-visuelt: "visuelt", "Helvetica", sans-serif;
 
-$font-size-h1: responsive 52px 224px;
+$font-size-h1: responsive 52px 156px;
 $line-height-h1: 1.5;
-$font-size-h2: responsive 32px 136px;
+$font-size-h2: responsive 32px 112px;
 $line-height-h2: 1.5;
 $font-size-h3: responsive 32px 84px;
 $line-height-h3: 1.5;
-$font-size-body: responsive 20px 52px;
+$font-size-body: responsive 20px 40px;
 $line-height-body: 1.618;
 $font-size-body-small: responsive 16px 32px;
 $line-height-body-small: 1.618;
 
 $min-responsive-font-screen: 320px;
-$max-responsive-font-screen: 2760px;
+$max-responsive-font-screen: 2160px;
+
+@mixin font-min-max {
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
+}
+
+@mixin h1-responsive-font {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+
+  @include font-min-max;
+}
+
+@mixin h2-responsive-font {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+
+  @include font-min-max;
+}
+
+@mixin h3-responsive-font {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+
+  @include font-min-max;
+}
+
+@mixin body-responsive-font {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+
+  @include font-min-max;
+}
+
+@mixin body-small-responsive-font {
+  font-size: $font-size-body-small;
+  line-height: $line-height-body-small;
+
+  @include font-min-max;
+}

@@ -10,10 +10,21 @@ $Breakpoint-parallax: 768px;
   flex-direction: column;
 }
 
+.parallax-container-wrapper {
+  height: calc(2em * $line-height-h1);
+
+  @include h1-responsive-font;
+}
+
 .parallax-container {
-  @media screen and (width <= $Breakpoint-parallax) {
+  @media screen and (width < $Breakpoint-parallax) {
     display: none;
   }
+
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
 }
 
 .parallax-fallback {
@@ -30,6 +41,10 @@ $Breakpoint-parallax: 768px;
 
 .parallax {
   white-space: nowrap;
+}
+
+.parallax:last-child {
+  text-align: right;
 }
 
 .copy {

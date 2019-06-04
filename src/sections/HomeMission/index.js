@@ -11,18 +11,20 @@ export default function HomeMission() {
     <Section verticalSpacing={false}>
       <div styleName="root">
         <div styleName="title">
-          <div styleName="parallax-container">
-            <Parallax styleName="parallax" x={[-20, 20]} tagOuter="figure">
-              <Typography color="klein-blue" weight="bold" variant="h1">
-                Creating the best
-              </Typography>
-            </Parallax>
+          <div styleName="parallax-container-wrapper">
+            <div styleName="parallax-container">
+              <Parallax styleName="parallax" x={[-20, 20]} tagOuter="figure">
+                <Typography color="klein-blue" weight="bold" variant="h1">
+                  Creating the best
+                </Typography>
+              </Parallax>
 
-            <Parallax styleName="parallax" x={[20, -20]} tagOuter="figure">
-              <Typography color="klein-blue" weight="bold" variant="h1">
-                possible experience
-              </Typography>
-            </Parallax>
+              <Parallax styleName="parallax" x={[20, -35]} tagOuter="figure">
+                <Typography color="klein-blue" weight="bold" variant="h1">
+                  possible experience
+                </Typography>
+              </Parallax>
+            </div>
           </div>
         </div>
 
