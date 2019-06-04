@@ -1,0 +1,32 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+  }
+}
+
+.challenge {
+  max-width: $five-columns;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $five-columns;
+  margin-left: auto;
+}
+
+.cv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  *:first-child {
+    margin-right: $spacing-8;
+  }
+}
