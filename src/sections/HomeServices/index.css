@@ -16,11 +16,36 @@
   }
 }
 
-.first-image,
-.second-image {
+.image {
+  position: relative;
+
   height: $spacing-584;
 
-  background-color: grey;
+  div {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+
+    transition: filter 500ms;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: color($klein-blue alpha(52%));
+    mix-blend-mode: overlay;
+
+    opacity: 1;
+
+    transition: opacity 500ms;
+  }
 
   @include Breakpoint-tabletOnly {
     height: $spacing-584;
@@ -28,6 +53,16 @@
 
   @include Breakpoint-mobileOnly {
     height: $spacing-224;
+  }
+}
+
+.image:hover {
+  div {
+    filter: grayscale(0%);
+  }
+
+  &::after {
+    opacity: 0;
   }
 }
 
@@ -133,8 +168,8 @@
     flex-direction: row;
 
     @include Breakpoint-tabletOnly {
-      bottom: 26%;
       right: 0;
+      bottom: 26%;
       left: auto;
     }
 
@@ -166,7 +201,7 @@
 }
 
 .copy-services-background {
-  width: calc($twelve-columns + $column-spacing);
+  width: calc($twelve-columns + $column);
   height: 100%;
 
   margin-left: calc(-1 * $column-spacing);

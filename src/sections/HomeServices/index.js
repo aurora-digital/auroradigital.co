@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import Img from "gatsby-image/withIEPolyfill";
 
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
@@ -7,14 +9,19 @@ import BackgroundWave from "root/assets/images/home-services-wave.inline.svg";
 import BackgroundWaveMobile from "root/assets/images/home-services-wave-mobile.inline.svg";
 
 import "./index.css";
+import withQuery from "./withQuery";
 
-export default function HomeServices() {
+function HomeServices({ data }) {
   return (
     <Section>
       <div styleName="root">
         <div styleName="images">
-          <div styleName="first-image" />
-          <div styleName="second-image" />
+          <div styleName="image first-image">
+            <Img fluid={data.first.image.fluid} objectFit="cover" />
+          </div>
+          <div styleName="image second-image">
+            <Img fluid={data.second.image.fluid} objectFit="cover" />
+          </div>
         </div>
 
         <div styleName="copy-working-together">
@@ -87,3 +94,9 @@ export default function HomeServices() {
     </Section>
   );
 }
+
+HomeServices.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
+export default withQuery(HomeServices);
