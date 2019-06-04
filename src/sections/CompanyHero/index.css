@@ -30,19 +30,21 @@ $Breakpoint-parallax: 768px;
 }
 
 .parallax-container {
-  @media screen and (width <= $Breakpoint-parallax) {
-    display: none;
-  }
+  overflow: hidden;
 
   text-align: center;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
 }
 
 .parallax-fallback {
+  text-align: center;
+
   @media screen and (width > $Breakpoint-parallax) {
     display: none;
   }
-
-  text-align: center;
 }
 
 .parallax:last-child {
