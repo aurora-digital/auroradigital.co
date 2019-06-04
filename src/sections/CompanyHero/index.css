@@ -1,0 +1,64 @@
+@import "../../styles/all.css";
+
+$Breakpoint-parallax: 768px;
+
+.root {
+  padding-bottom: $spacing-224;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  margin: $spacing-136 0;
+
+  background-image: url("../../assets/images/wave-company-hero.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include Breakpoint-tabletOnly {
+    margin: $spacing-84 0;
+
+    background-size: $spacing-584 $spacing-224;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: $spacing-84 0;
+
+    background-size: $spacing-224 $spacing-84;
+  }
+}
+
+.parallax-container {
+  @media screen and (width <= $Breakpoint-parallax) {
+    display: none;
+  }
+
+  text-align: center;
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
+  }
+
+  text-align: center;
+}
+
+.parallax:last-child {
+  align-self: flex-end;
+}
+
+.parallax {
+  white-space: nowrap;
+}
+
+.copy {
+  position: relative;
+
+  margin: $spacing-224 auto 0 auto;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+}

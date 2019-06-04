@@ -13,13 +13,13 @@ export default function HomeMission() {
         <div styleName="title">
           <div styleName="parallax-container-wrapper">
             <div styleName="parallax-container">
-              <Parallax styleName="parallax" x={[-20, 20]} tagOuter="figure">
+              <Parallax styleName="parallax" x={[-20, 40]} tagOuter="figure">
                 <Typography color="klein-blue" weight="bold" variant="h1">
                   Creating the best
                 </Typography>
               </Parallax>
 
-              <Parallax styleName="parallax" x={[20, -35]} tagOuter="figure">
+              <Parallax styleName="parallax" x={[20, -65]} tagOuter="figure">
                 <Typography color="klein-blue" weight="bold" variant="h1">
                   possible experience
                 </Typography>
