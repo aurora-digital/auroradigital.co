@@ -1,30 +1,68 @@
 @import "../../styles/all.css";
 
 .root {
+  position: relative;
+
+  display: block;
+
   width: 100%;
-  height: 100%;
+
+  margin-top: 0;
 
   background-color: white;
   outline: none;
 }
 
-.image-wrapper {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.root.even {
+  @include Breakpoint-mobileOnly {
+    margin-right: auto;
+    margin-left: calc($gutter * -1);
+  }
+}
+
+.root.odd {
+  @include Breakpoint-mobileOnly {
+    margin-right: calc($gutter * -1);
+    margin-left: auto;
+  }
+}
+
+.root.margin {
+  @include Breakpoint-desktopOnly {
+    padding-top: $spacing-136;
+  }
 }
 
 .image {
-  filter: grayscale(100%);
+  position: relative;
 
-  overflow: hidden;
+  height: $spacing-352;
+  margin: 0;
 
-  transition: filter 0.2s ease-out;
+  img {
+    filter: grayscale(100%);
+
+    transition: filter 200ms ease-out;
+  }
+
+  @include Breakpoint-tabletOnly {
+    max-height: $spacing-352;
+    min-height: $spacing-224;
+  }
+
+  @include Breakpoint-mobileOnly {
+    height: 60vw;
+    max-height: $spacing-352;
+    min-height: $spacing-224;
+  }
 }
 
-.rect {
+.image div {
   position: absolute;
+
+  top: 0;
+  left: 0;
+
   z-index: 1;
 
   width: 100%;
@@ -32,10 +70,10 @@
 
   mix-blend-mode: overlay;
 
-  background-color: $baby-blue;
-  opacity: 0.84;
+  background-color: $klein-blue;
+  opacity: 0.52;
 
-  transition: opacity 0.2s ease-out;
+  transition: opacity 200ms ease-out;
 
   @supports not (mix-blend-mode: difference) {
     display: none;
@@ -47,35 +85,79 @@
 .root:active {
   @media (hover: hover) {
     .image {
-      filter: grayscale(0%);
+      img {
+        filter: grayscale(0%);
 
-      transition: filter 0.3s ease-in;
+        transition: filter 300ms ease-in;
+      }
+
+      div {
+        opacity: 0;
+
+        transition: opacity 300ms ease-in;
+      }
     }
+  }
+}
 
-    .rect {
-      opacity: 0;
+.description {
+  margin-top: $spacing-32;
 
-      transition: opacity 0.3s ease-in;
-    }
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+  }
+}
+
+.root.even .description {
+  @include Breakpoint-mobileOnly {
+    padding-left: $gutter;
   }
 }
 
 .name {
-  margin-top: $spacing-56;
-
   text-align: left;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-28;
+    margin-top: $spacing-20;
   }
 }
 
 .position {
-  margin-top: $spacing-16;
+  margin-top: $spacing-12;
 
   text-align: left;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-12;
+    margin-top: calc($spacing-8 * 0.5);
   }
+}
+
+.social {
+  display: flex;
+
+  margin-top: $spacing-32;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-32 * 0.5);
+  }
+}
+
+.link {
+  margin-left: $spacing-20;
+
+  opacity: 1;
+
+  text-decoration: none;
+
+  transition: opacity 70ms linear;
+}
+
+.link:first-child {
+  margin-left: 0;
+}
+
+.link:hover {
+  opacity: 0.7;
+
+  transition: opacity 70ms linear;
 }
