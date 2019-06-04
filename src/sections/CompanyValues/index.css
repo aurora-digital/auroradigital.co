@@ -5,6 +5,10 @@
 }
 
 .wave-tablet-above {
+  max-width: $twelve-columns;
+
+  margin: 0 auto;
+
   @include Breakpoint-mobileOnly {
     display: none;
   }
@@ -35,11 +39,11 @@
   width: 100%;
 
   @include Breakpoint-desktopOnly {
-    top: 4%;
+    top: 15%;
   }
 
   @include Breakpoint-tabletOnly {
-    top: 5%;
+    top: 10%;
   }
 
   @include Breakpoint-mobileOnly {
