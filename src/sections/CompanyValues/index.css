@@ -11,15 +11,15 @@
 }
 
 .wave-mobile {
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
-
   height: 780px;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
   }
 }
 
@@ -30,8 +30,12 @@
 
   display: flex;
 
+  flex-direction: column;
+
+  width: 100%;
+
   @include Breakpoint-desktopOnly {
-    top: 15%;
+    top: 4%;
   }
 
   @include Breakpoint-tabletOnly {
@@ -41,10 +45,6 @@
   @include Breakpoint-mobileOnly {
     top: 5%;
   }
-
-  flex-direction: column;
-
-  width: 100%;
 }
 
 .title {
