@@ -1,0 +1,65 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  width: 100%;
+}
+
+.wave-tablet-above {
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.wave-mobile {
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.values {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+
+  @include Breakpoint-desktopOnly {
+    top: 15%;
+  }
+
+  @include Breakpoint-tabletOnly {
+    top: 5%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    top: 5%;
+  }
+
+  flex-direction: column;
+
+  width: 100%;
+  height: max-content;
+}
+
+.title {
+  max-width: $three-columns;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-84;
+  }
+}
+
+.copy {
+  float: right;
+  max-width: $six-columns;
+
+  *:last-child {
+    margin-top: $spacing-20;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: $spacing-32 0;
+  }
+}
