@@ -4,6 +4,14 @@ $Breakpoint-parallax: 768px;
 
 .root {
   padding-bottom: $spacing-224;
+
+  @include Breakpoint-tabletOnly {
+    padding-bottom: $spacing-136;
+  }
+
+  @include Breakpoint-mobileOnly {
+    padding-bottom: $spacing-136;
+  }
 }
 
 .title {
