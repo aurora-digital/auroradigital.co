@@ -2,12 +2,35 @@
 
 .root {
   position: relative;
+
+  margin-bottom: $spacing-136;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-84;
+  }
 }
 
-.wave-tablet-above {
+.wave-desktop {
   max-width: $twelve-columns;
 
   margin: 0 auto;
+
+  @include Breakpoint-tabletAndBelow {
+    display: none;
+  }
+}
+
+.wave-tablet {
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include Breakpoint-desktopOnly {
+    display: none;
+  }
 
   @include Breakpoint-mobileOnly {
     display: none;
@@ -39,11 +62,11 @@
   width: 100%;
 
   @include Breakpoint-desktopOnly {
-    top: 15%;
+    top: 20%;
   }
 
   @include Breakpoint-tabletOnly {
-    top: 10%;
+    top: 22%;
   }
 
   @include Breakpoint-mobileOnly {
@@ -56,6 +79,10 @@
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-bottom: $spacing-52;
   }
 }
 

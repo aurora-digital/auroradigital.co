@@ -15,9 +15,8 @@ export default class CompanyPage extends Component {
       >
         <CompanyHero />
         <CompanyMedtechRevolution />
-
-        <CompanyTeam />
         <CompanyValues />
+        <CompanyTeam />
 
         <Footer />
       </Layout>
