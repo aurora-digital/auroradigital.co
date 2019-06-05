@@ -22,7 +22,7 @@
 
 .root.odd {
   @include Breakpoint-mobileOnly {
-    margin-right: 0;
+    margin-right: calc($gutter * -1);
     margin-left: auto;
   }
 }
@@ -36,7 +36,8 @@
 .image {
   position: relative;
 
-  height: $spacing-352;
+  height: $spacing-224;
+
   margin: 0;
 
   img {
@@ -46,14 +47,15 @@
   }
 
   @include Breakpoint-tabletOnly {
-    max-height: $spacing-352;
-    min-height: $spacing-224;
+    max-height: 400px;
+    min-height: 300px;
   }
 
   @include Breakpoint-mobileOnly {
-    height: 60vw;
-    max-height: $spacing-352;
-    min-height: $spacing-224;
+    width: auto;
+    height: 70vw;
+
+    max-width: 80vw;
   }
 }
 
@@ -130,34 +132,4 @@
   @include Breakpoint-mobileOnly {
     margin-top: calc($spacing-8 * 0.5);
   }
-}
-
-.social {
-  display: flex;
-
-  margin-top: $spacing-32;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: calc($spacing-32 * 0.5);
-  }
-}
-
-.link {
-  margin-left: $spacing-20;
-
-  opacity: 1;
-
-  text-decoration: none;
-
-  transition: opacity 70ms linear;
-}
-
-.link:first-child {
-  margin-left: 0;
-}
-
-.link:hover {
-  opacity: 0.7;
-
-  transition: opacity 70ms linear;
 }

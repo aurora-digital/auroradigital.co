@@ -1,16 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, Children } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
 import Img from "gatsby-image";
 import classNames from "classnames";
 import Social from "root/components/Social";
+import { findDOMNode } from "react-dom";
 
 import "./index.css";
 
-export default class TeamElement extends Component {
+const gutter = 32;
+const mobileBreakpoint = 800;
+
+export default class AdvisorElement extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    position: PropTypes.string,
     image: PropTypes.shape({}).isRequired,
     github: PropTypes.string,
     linkedin: PropTypes.string,
@@ -21,13 +24,26 @@ export default class TeamElement extends Component {
   };
 
   static defaultProps = {
-    position: null,
     linkedin: null,
     github: null,
     twitter: null,
     instagram: null,
     behance: null,
   };
+
+  state = {
+    width: null,
+  };
+
+  componentDidMount() {
+    const { name } = this.props;
+
+    if (this[name]) {
+      const node = findDOMNode(this[name]);
+
+      this.setState({ width: node.clientWidth });
+    }
+  }
 
   handleRef = element => {
     const { name } = this.props;
@@ -39,7 +55,6 @@ export default class TeamElement extends Component {
     const {
       image,
       name,
-      position,
       id,
       github,
       linkedin,
@@ -47,11 +62,23 @@ export default class TeamElement extends Component {
       instagram,
       behance,
     } = this.props;
+    const { width } = this.state;
+
+    const even = id % 2 === 0;
+    const odd = id % 2 !== 0;
 
     const rootStyles = classNames("root", {
-      even: id % 2 === 0,
-      odd: id % 2 !== 0,
+      even,
+      odd,
     });
+
+    const windowWidth = document.documentElement.clientWidth - 2 * gutter;
+
+    let marginLeft = null;
+
+    if (width && document.documentElement.clientWidth <= mobileBreakpoint) {
+      marginLeft = odd ? windowWidth - width + gutter : 0;
+    }
 
     return (
       <button styleName={rootStyles} type="button">
@@ -60,20 +87,15 @@ export default class TeamElement extends Component {
           alt={`${name.toLowerCase()} photo`}
           fluid={image}
           objectFit="cover"
+          ref={this.handleRef}
+          style={{ marginLeft: `${marginLeft}px` }}
         />
-        <div styleName="description">
+        <div styleName="description" style={{ marginLeft: `${marginLeft}px` }}>
           <div styleName="name">
             <Typography weight="bold" variant="small-body" color="oxford-blue">
               {name}
             </Typography>
           </div>
-          {position && (
-            <div styleName="position">
-              <Typography variant="small-body" color="oxford-blue">
-                {position}
-              </Typography>
-            </div>
-          )}
           <Social
             github={github}
             linkedin={linkedin}
