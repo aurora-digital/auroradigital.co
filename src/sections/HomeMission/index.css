@@ -13,6 +13,10 @@ $Breakpoint-parallax: 1020px;
   overflow: hidden;
 
   @include h1-responsive-font;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
 }
 
 .parallax-container {
@@ -20,10 +24,6 @@ $Breakpoint-parallax: 1020px;
   left: 0;
 
   width: 100vw;
-
-  @media screen and (width < $Breakpoint-parallax) {
-    display: none;
-  }
 }
 
 .parallax-fallback {
