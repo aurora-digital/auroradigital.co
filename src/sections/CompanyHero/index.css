@@ -38,8 +38,6 @@ $Breakpoint-parallax: 768px;
 }
 
 .parallax-container {
-  overflow: hidden;
-
   text-align: center;
 
   @media screen and (width < $Breakpoint-parallax) {

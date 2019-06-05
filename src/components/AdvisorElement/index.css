@@ -1,0 +1,113 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  display: block;
+
+  margin-top: 0;
+
+  background-color: white;
+  outline: none;
+
+  @include Breakpoint-tabletAndAbove {
+    width: 100%;
+  }
+}
+
+.image {
+  position: relative;
+
+  height: $spacing-224;
+
+  margin: 0;
+
+  img {
+    filter: grayscale(100%);
+
+    transition: filter 500ms;
+  }
+
+  @include Breakpoint-tabletOnly {
+    max-height: 400px;
+    min-height: 300px;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: 70vw;
+    height: 70vw;
+
+    max-width: 80vw;
+  }
+}
+
+.image div {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  mix-blend-mode: overlay;
+
+  background-color: color($klein-blue alpha(52%));
+  opacity: 0.52;
+
+  transition: opacity 500ms;
+
+  @supports not (mix-blend-mode: difference) {
+    display: none;
+  }
+}
+
+.root:hover,
+.root:focus,
+.root:active {
+  @media (hover: hover) {
+    .image {
+      img {
+        filter: grayscale(0%);
+      }
+
+      div {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.description {
+  margin-top: $spacing-32;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+  }
+}
+
+.description.margin {
+  @include Breakpoint-mobileOnly {
+    padding-left: $gutter;
+  }
+}
+
+.name {
+  text-align: left;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+  }
+}
+
+.position {
+  margin-top: $spacing-12;
+
+  text-align: left;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-8 * 0.5);
+  }
+}
