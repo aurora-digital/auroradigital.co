@@ -25,12 +25,12 @@ export default function HomeMission() {
             </Parallax>
           </div>
         </div>
-      </div>
 
-      <div styleName="parallax-fallback">
-        <Typography color="klein-blue" weight="bold" variant="h1">
-          Creating the best possible experience
-        </Typography>
+        <div styleName="parallax-fallback">
+          <Typography color="klein-blue" weight="bold" variant="h1">
+            Creating the best possible experience
+          </Typography>
+        </div>
       </div>
 
       <div styleName="copy">
