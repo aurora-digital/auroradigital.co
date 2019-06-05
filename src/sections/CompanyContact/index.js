@@ -8,7 +8,7 @@ import "./index.css";
 
 export default function CompanyContact() {
   return (
-    <Section>
+    <Section verticalSpacing={false}>
       <div styleName="root">
         <div styleName="challenge">
           <Typography color="klein-blue" variant="h3">

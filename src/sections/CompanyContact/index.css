@@ -47,7 +47,7 @@
   align-items: center;
 
   * {
-    font-size: responsive 20px 52px; /* Copy pasted from Typography.css */
+    @include body-responsive-font;
   }
 
   *:first-child {
