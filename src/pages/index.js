@@ -11,7 +11,7 @@ export default class IndexPage extends Component {
   render() {
     return (
       <Layout
-        title="Building health tech solutions | SV Health"
+        title="Building health tech solutions | Aurora"
         description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
       >
         <HomeHero />
