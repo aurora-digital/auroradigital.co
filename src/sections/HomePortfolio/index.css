@@ -144,13 +144,13 @@
   mix-blend-mode: overlay;
 
   opacity: 1;
+
+  transition: opacity 500ms;
 }
 
 .right-image:hover::after,
 .left-image:hover::after {
   opacity: 0;
-
-  transition: opacity 500ms;
 }
 
 .project.sioslife {

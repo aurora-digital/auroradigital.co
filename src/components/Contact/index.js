@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "root/components/Link";
 
-import "./index.css";
-
 export default class Contact extends Component {
   static propTypes = {
     underlineColor: PropTypes.oneOf(["klein-blue", "oxford-blue", "white"]),

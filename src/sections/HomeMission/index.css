@@ -1,17 +1,27 @@
 @import "../../styles/all.css";
 
-$Breakpoint-parallax: 768px;
-
-.root {
-}
+$Breakpoint-parallax: 1020px;
 
 .title {
   display: flex;
   flex-direction: column;
 }
 
+.parallax-container-wrapper {
+  height: calc(2em * $line-height-h1);
+
+  overflow: hidden;
+
+  @include h1-responsive-font;
+}
+
 .parallax-container {
-  @media screen and (width <= $Breakpoint-parallax) {
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
+
+  @media screen and (width < $Breakpoint-parallax) {
     display: none;
   }
 }
@@ -30,6 +40,10 @@ $Breakpoint-parallax: 768px;
 
 .parallax {
   white-space: nowrap;
+}
+
+.parallax:last-child {
+  text-align: right;
 }
 
 .copy {
