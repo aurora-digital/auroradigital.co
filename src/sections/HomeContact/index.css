@@ -7,7 +7,7 @@
 
   width: 100%;
 
-  margin-bottom: $spacing-224;
+  margin-bottom: calc($spacing-224 + (0.7 * 140px));
 
   @include Breakpoint-mobileOnly {
     display: grid;
@@ -49,6 +49,10 @@
   flex-grow: 1;
 
   margin-right: calc($column-spacing * -1);
+
+  * > *:last-child {
+    transform: translateY(-30%);
+  }
 
   @include Breakpoint-mobileOnly {
     order: 2;
