@@ -17,7 +17,7 @@ export default class TeamElement extends Component {
     twitter: PropTypes.string,
     instagram: PropTypes.string,
     behance: PropTypes.string,
-    id: PropTypes.number.isRequired,
+    nameMargin: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -27,6 +27,7 @@ export default class TeamElement extends Component {
     twitter: null,
     instagram: null,
     behance: null,
+    nameMargin: false,
   };
 
   handleRef = element => {
@@ -40,28 +41,27 @@ export default class TeamElement extends Component {
       image,
       name,
       position,
-      id,
       github,
       linkedin,
       twitter,
       instagram,
       behance,
+      nameMargin,
     } = this.props;
 
-    const rootStyles = classNames("root", {
-      even: id % 2 === 0,
-      odd: id % 2 !== 0,
+    const descStyles = classNames("description", {
+      margin: !!nameMargin,
     });
 
     return (
-      <button styleName={rootStyles} type="button">
+      <button styleName="root" type="button">
         <Img
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
           fluid={image}
           objectFit="cover"
         />
-        <div styleName="description">
+        <div styleName={descStyles}>
           <div styleName="name">
             <Typography weight="bold" variant="small-body" color="oxford-blue">
               {name}
@@ -75,7 +75,6 @@ export default class TeamElement extends Component {
             </div>
           )}
           <Social
-            name={name}
             github={github}
             linkedin={linkedin}
             twitter={twitter}

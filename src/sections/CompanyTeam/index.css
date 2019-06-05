@@ -14,60 +14,53 @@ $tabletColumns: calc($tabletSpace / 3);
   @include Breakpoint-mobileOnly {
     display: block;
   }
-}
 
-.container {
-  position: relative;
+  padding-bottom: $spacing-136;
 
-  display: grid;
+  @supports (display: grid) {
+    @include Breakpoint-desktopOnly {
+      display: grid;
+      grid-column-gap: $column;
+      grid-template-columns: repeat(3, $desktopColumns);
+    }
+    @include Breakpoint-tabletOnly {
+      display: grid;
+      grid-column-gap: $gutter;
+      grid-row-gap: 0;
+      grid-template-columns: repeat(3, $tabletColumns);
+    }
 
-  grid-column-gap: $column;
-  grid-row-gap: $spacing-84;
+    @include Breakpoint-mobileOnly {
+      display: grid;
+      grid-row-gap: 0;
 
-  grid-template-columns: repeat(3, $desktopColumns);
-  padding-bottom: $spacing-224;
-
-  @include Breakpoint-desktopOnly {
-    margin: 0 auto;
-  }
-
-  @include Breakpoint-tabletOnly {
-    grid-column-gap: $gutter;
-    grid-row-gap: $spacing-84;
-
-    grid-template-columns: repeat(3, $tabletColumns);
-
-    width: 100%;
-
-    margin: 0 auto;
-  }
-
-  @include Breakpoint-mobileOnly {
-    grid-row-gap: $spacing-52;
-
-    grid-template-columns: 100%;
+      grid-template-columns: 100%;
+    }
   }
 }
 
 .element {
-  display: block;
-}
+  display: flex;
 
-.element:nth-child(2) {
   @include Breakpoint-tabletAndAbove {
-    margin-top: $spacing-136;
+    margin-top: calc($spacing-84 * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-52;
+    margin-left: calc(-1 * $gutter);
   }
 }
 
-.element:nth-child(4),
-.element:nth-child(6) {
-  @include Breakpoint-tabletAndAbove {
-    margin-top: calc($spacing-136 * -1);
-  }
-}
-
+.element:nth-child(2),
 .element:nth-child(5) {
   @include Breakpoint-tabletAndAbove {
-    margin-top: 0;
+    margin-top: $spacing-84;
+  }
+}
+.element:nth-child(2),
+.element:nth-child(4) {
+  @include Breakpoint-mobileOnly {
+    margin: $spacing-52 calc(-1 * $gutter) 0 auto;
   }
 }
