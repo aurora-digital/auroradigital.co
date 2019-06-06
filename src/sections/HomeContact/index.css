@@ -1,0 +1,78 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  width: 100%;
+
+  margin-bottom: calc($spacing-224 + (0.7 * 140px));
+
+  @include Breakpoint-mobileOnly {
+    display: grid;
+    grid-row-gap: $spacing-20;
+    grid-template-columns: 55% 1fr;
+
+    margin-bottom: $spacing-136;
+  }
+}
+
+.lets-talk {
+  min-width: $four-columns;
+
+  margin-right: $column-spacing;
+
+  @include Breakpoint-tabletOnly {
+    min-width: auto;
+
+    margin-right: $column;
+  }
+
+  @include Breakpoint-mobileOnly {
+    order: 1;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-mobileOnly {
+    order: 3;
+  }
+}
+
+.wave {
+  position: relative;
+
+  flex-grow: 1;
+
+  height: 100%;
+
+  margin-right: calc($column-spacing * -1);
+
+  * > *:last-child {
+    transform: translateY(-30%);
+  }
+
+  @include Breakpoint-mobileOnly {
+    order: 2;
+
+    margin-right: 0;
+
+    * {
+      z-index: -1;
+    }
+
+    * > *:last-child {
+      transform: translate(-20%, -20%) scale(0.6);
+    }
+  }
+}
+
+.wave > *:last-child {
+  @include Breakpoint-tabletAndAbove {
+    width: 100%;
+  }
+}
