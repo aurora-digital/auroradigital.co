@@ -13,7 +13,7 @@ import withQuery from "./withQuery";
 
 function HomeServices({ data }) {
   return (
-    <Section animate>
+    <Section>
       <div styleName="root">
         <div styleName="images">
           <div styleName="image left-image">

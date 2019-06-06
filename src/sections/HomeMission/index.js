@@ -8,7 +8,7 @@ import "./index.css";
 
 export default function HomeMission() {
   return (
-    <Section verticalSpacing={false} animate>
+    <Section verticalSpacing={false}>
       <div styleName="title">
         <div styleName="parallax-container-wrapper">
           <div styleName="parallax-container">
