@@ -48,6 +48,8 @@
 
   flex-grow: 1;
 
+  height: 100%;
+
   margin-right: calc($column-spacing * -1);
 
   * > *:last-child {
@@ -64,7 +66,7 @@
     }
 
     * > *:last-child {
-      transform: translate(-20%, -40%) scale(0.6);
+      transform: translate(-20%, -20%) scale(0.6);
     }
   }
 }
