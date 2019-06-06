@@ -10,14 +10,19 @@ export default class Link extends React.Component {
     children: PropTypes.node.isRequired,
     internal: PropTypes.bool,
     to: PropTypes.string.isRequired,
-    underlineColor: PropTypes.oneOf(["klein-blue", "oxford-blue", "white"]),
+    underlineColor: PropTypes.oneOf([
+      "klein-blue",
+      "oxford-blue",
+      "white",
+      "transparent",
+    ]),
     hover: PropTypes.bool,
     isActive: PropTypes.bool,
   };
 
   static defaultProps = {
     internal: true,
-    underlineColor: "white",
+    underlineColor: "transparent",
     hover: false,
     isActive: false,
   };
