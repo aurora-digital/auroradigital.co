@@ -1,0 +1,100 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  margin-bottom: $spacing-136;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-84;
+  }
+}
+
+.wave-desktop {
+  max-width: $twelve-columns;
+
+  margin: 0 auto;
+
+  @include Breakpoint-tabletAndBelow {
+    display: none;
+  }
+}
+
+.wave-tablet {
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include Breakpoint-desktopOnly {
+    display: none;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.wave-mobile {
+  height: 780px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.values {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  @include Breakpoint-desktopOnly {
+    top: 20%;
+  }
+
+  @include Breakpoint-tabletOnly {
+    top: 22%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    top: 5%;
+  }
+}
+
+.title {
+  max-width: $three-columns;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-84;
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-bottom: $spacing-52;
+  }
+}
+
+.copy {
+  float: right;
+  max-width: $six-columns;
+
+  *:last-child {
+    margin-top: $spacing-12;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: $spacing-32 0;
+  }
+}
