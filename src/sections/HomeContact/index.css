@@ -59,7 +59,13 @@
 
     margin-right: 0;
 
-    transform: translateY(50%);
+    * {
+      z-index: -1;
+    }
+
+    * > *:last-child {
+      transform: translate(-20%, -40%) scale(0.6);
+    }
   }
 }
 
