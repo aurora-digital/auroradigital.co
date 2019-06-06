@@ -54,3 +54,7 @@
     background-color: $oxford-blue;
   }
 }
+
+.underline-transparent {
+  text-decoration: none;
+}

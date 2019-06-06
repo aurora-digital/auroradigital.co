@@ -5,6 +5,7 @@ import CompanyHero from "../sections/CompanyHero";
 import CompanyMedtechRevolution from "../sections/CompanyMedtechRevolution";
 import CompanyTeam from "../sections/CompanyTeam";
 import CompanyValues from "../sections/CompanyValues";
+import CompanyContact from "../sections/CompanyContact";
 
 export default class CompanyPage extends Component {
   render() {
@@ -17,7 +18,7 @@ export default class CompanyPage extends Component {
         <CompanyMedtechRevolution />
         <CompanyValues />
         <CompanyTeam />
-
+        <CompanyContact />
         <Footer />
       </Layout>
     );

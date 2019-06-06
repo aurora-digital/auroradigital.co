@@ -11,7 +11,7 @@
 }
 
 .wave-desktop {
-  max-width: $twelve-columns;
+  max-width: calc($twelve-columns + $column);
 
   margin: 0 auto;
 
