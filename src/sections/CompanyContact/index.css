@@ -62,12 +62,20 @@
 
   margin-right: calc($column-spacing * -1);
 
+  * > *:last-child {
+    transform: translateY(0%);
+  }
+
   @include Breakpoint-mobileOnly {
     position: absolute;
-    top: 65%;
+
     right: $spacing-84;
 
-    width: $two-columns;
+    width: $three-columns;
+
+    * > *:last-child {
+      transform: translateY(50%) scale(0.6);
+    }
   }
 }
 
