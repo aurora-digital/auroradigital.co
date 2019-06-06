@@ -11,10 +11,10 @@ export default function CompanyContact() {
     <Section verticalSpacing={false}>
       <div styleName="root">
         <div styleName="challenge">
-          <Typography color="klein-blue" variant="h3">
+          <Typography color="klein-blue" variant="h3" weight="medium">
             Looking for
           </Typography>
-          <Typography color="klein-blue" variant="h3">
+          <Typography color="klein-blue" variant="h3" weight="medium">
             a new challenge?
           </Typography>
         </div>

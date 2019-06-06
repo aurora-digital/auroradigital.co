@@ -1,0 +1,25 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  max-width: $seven-columns;
+
+  margin-bottom: $spacing-136;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-84;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: calc($spacing-84 - $spacing-8);
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-32;
+  }
+}
