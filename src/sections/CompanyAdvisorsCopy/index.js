@@ -9,10 +9,10 @@ export default function CompanyAdvisorsCopy() {
     <Section verticalSpacing={false}>
       <div styleName="root">
         <div styleName="title">
-          <Typography variant="h3" color="oxford-blue">
+          <Typography variant="h3" color="oxford-blue" weight="medium">
             We are backed
           </Typography>
-          <Typography variant="h3" color="oxford-blue">
+          <Typography variant="h3" color="oxford-blue" weight="medium">
             by an excellent advisory board
           </Typography>
         </div>

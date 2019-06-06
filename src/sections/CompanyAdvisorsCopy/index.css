@@ -5,6 +5,12 @@
   flex-direction: column;
 
   max-width: $seven-columns;
+
+  margin-bottom: $spacing-136;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-84;
+  }
 }
 
 .title {

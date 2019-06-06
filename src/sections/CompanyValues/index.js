@@ -23,7 +23,9 @@ const CompanyValues = () => (
     <div styleName="values">
       <Section verticalSpacing={false}>
         <div styleName="title">
-          <Typography variant="h3">Honesty Transparency Commitment</Typography>
+          <Typography variant="h3" weight="medium">
+            Honesty Transparency Commitment
+          </Typography>
         </div>
         <div styleName="copy">
           <div>
