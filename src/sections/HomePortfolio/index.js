@@ -39,7 +39,7 @@ function HomePortfolio({ data }) {
   );
 
   return (
-    <Section>
+    <Section animate>
       <div styleName="root">
         <Typography weight="medium" variant="h3" color="oxford-blue">
           Portfolio

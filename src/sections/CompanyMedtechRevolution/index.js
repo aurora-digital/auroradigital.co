@@ -8,7 +8,7 @@ import withQuery from "./withQuery";
 import "./index.css";
 
 const CompanyMedtechRevolution = ({ data }) => (
-  <Section verticalSpacing={false}>
+  <Section verticalSpacing={false} animate>
     <div styleName="root">
       <div styleName="container-top">
         <div styleName="text">

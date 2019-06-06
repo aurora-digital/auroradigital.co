@@ -8,7 +8,7 @@ import "./index.css";
 
 function CompanyTeam({ data }) {
   return (
-    <Section verticalSpacing={false}>
+    <Section verticalSpacing={false} animate>
       <div styleName="root">
         <div styleName="element">
           <TeamElement

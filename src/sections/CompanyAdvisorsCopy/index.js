@@ -6,7 +6,7 @@ import "./index.css";
 
 export default function CompanyAdvisorsCopy() {
   return (
-    <Section verticalSpacing={false}>
+    <Section verticalSpacing={false} animate>
       <div styleName="root">
         <div styleName="title">
           <Typography variant="h3" color="oxford-blue" weight="medium">
