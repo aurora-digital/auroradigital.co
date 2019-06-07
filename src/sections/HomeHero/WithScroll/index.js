@@ -1,43 +1,21 @@
-import React, { useState, useLayoutEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { withController } from "react-scroll-parallax";
 import { Controller, Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
-import skrolltop from "skrolltop";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
-import easing from "./easing";
-
 import "./index.css";
 
 function HomeHeroWithScroll({ parallaxController }) {
-  const [scrolled, setScrolled] = useState(false);
   const [ref, inView] = useInView();
   const waveStyles = classNames("wave", { animate: inView });
 
   if (parallaxController && !inView) parallaxController.update();
-
-  useLayoutEffect(
-    () => {
-      const height = document.body.offsetHeight;
-
-      if (!scrolled) return;
-
-      skrolltop.scrollTo({
-        element: window,
-        to: height * 0.08,
-        duration: 2000,
-        easing,
-      });
-
-      setScrolled(true);
-    },
-    [inView],
-  );
 
   return (
     <div ref={ref}>

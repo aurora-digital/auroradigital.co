@@ -11900,11 +11900,6 @@ sitemap@^1.12.0:
     underscore "^1.7.0"
     url-join "^1.1.0"
 
-skrolltop@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/skrolltop/-/skrolltop-1.0.1.tgz#af29a33f8b19f84846bc5b9e65d15799009bf2f3"
-  integrity sha512-J98nrbnPbKqLgkq9y6NG68FY2zTLhpHNYy7AeyfXWPfw8nnTUOze6rDIg6o6ax9HPP0+M0D4yS9bYprVFlkL1Q==
-
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"

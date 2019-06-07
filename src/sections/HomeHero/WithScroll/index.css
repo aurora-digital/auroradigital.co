@@ -19,7 +19,6 @@ $wave-offset: calc(($wave-height / 2));
   height: calc(1em * $line-height-h1);
 
   margin: $spacing-224 0;
-  margin-left: calc(1 * $column + $gutter);
 
   @include h1-responsive-font;
 
@@ -38,7 +37,7 @@ $wave-offset: calc(($wave-height / 2));
 
   white-space: nowrap;
 
-  animation: enter 2s cubic-bezier(0.68, -0.75, 0.265, 3);
+  animation: enter 2s ease-in-out;
   animation-fill-mode: forwards;
 
   @include Breakpoint-tabletAndBelow {
@@ -50,11 +49,19 @@ $wave-offset: calc(($wave-height / 2));
 
 @keyframes enter {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0vw);
+  }
+
+  15% {
+    transform: translateX(2.5vw);
+  }
+
+  75% {
+    transform: translateX(-20vw);
   }
 
   100% {
-    transform: translateX(-20vw);
+    transform: translate(-16.5vw);
   }
 }
 
