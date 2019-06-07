@@ -8,8 +8,8 @@ import "./index.css";
 export default function CompanyAdvisorsCopy() {
   return (
     <Section verticalSpacing={false}>
-      <FadeUpOnScroll>
-        <div styleName="root">
+      <div styleName="root">
+        <FadeUpOnScroll>
           <div styleName="title">
             <Typography variant="h3" color="oxford-blue" weight="medium">
               We are backed
@@ -18,15 +18,16 @@ export default function CompanyAdvisorsCopy() {
               by an excellent advisory board
             </Typography>
           </div>
-
+        </FadeUpOnScroll>
+        <FadeUpOnScroll>
           <Typography color="oxford-blue">
             Our advisors have a vast experience in launching multiple
             large-scale technological products in both the Medtech and Fintech
             areas - their direct insight will empower us to deliver you an even
             better experience.
           </Typography>
-        </div>
-      </FadeUpOnScroll>
+        </FadeUpOnScroll>
+      </div>
     </Section>
   );
 }

@@ -5,6 +5,7 @@ import MobileWave from "root/assets/images/company-values-mobile-wave.inline.svg
 
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 
 import "./index.css";
 
@@ -23,23 +24,29 @@ const CompanyValues = () => (
     <div styleName="values">
       <Section verticalSpacing={false}>
         <div styleName="title">
-          <Typography variant="h3" weight="medium">
-            Honesty Transparency Commitment
-          </Typography>
+          <FadeUpOnScroll>
+            <Typography variant="h3" weight="medium">
+              Honesty Transparency Commitment
+            </Typography>
+          </FadeUpOnScroll>
         </div>
         <div styleName="copy">
           <div>
-            <Typography>
-              Our team comes from vastly different backgrounds that work
-              together to create amazing technology.
-            </Typography>
+            <FadeUpOnScroll>
+              <Typography>
+                Our team comes from vastly different backgrounds that work
+                together to create amazing technology.
+              </Typography>
+            </FadeUpOnScroll>
           </div>
           <div>
-            <Typography>
-              From market research and web design to bioinformatics and IoT, we
-              are ready to help you and your company create fantastic digital
-              experiences.
-            </Typography>
+            <FadeUpOnScroll>
+              <Typography>
+                From market research and web design to bioinformatics and IoT,
+                we are ready to help you and your company create fantastic
+                digital experiences.
+              </Typography>
+            </FadeUpOnScroll>
           </div>
         </div>
       </Section>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
@@ -7,19 +7,33 @@ import "./index.css";
 
 const FadeUpOnScroll = ({ children }) => {
   const [ref, inView] = useInView();
-  const [load, setLoad] = useState(false);
+  const [animationHasFinished, setFinished] = useState(false);
+  const [animationStart, setStart] = useState(false);
 
-  const handleAnimation = () => {
-    setLoad(true);
-  };
+  const handleAnimationEnd = () => (animationStart ? setFinished(true) : null);
+
+  const handleAnimationStart = () =>
+    !animationHasFinished ? setStart(true) : null;
+
+  useEffect(
+    () => {
+      if (!inView && animationStart && !animationHasFinished) setFinished(true);
+    },
+    [inView],
+  );
 
   const styles = classNames("root", {
-    "animate-start": inView && !load,
-    "animate-end": inView && load,
+    "animate-start": inView && !animationHasFinished,
+    "animate-end": inView && animationHasFinished,
   });
 
   return (
-    <div ref={ref} styleName={styles} onAnimationEnd={handleAnimation}>
+    <div
+      ref={ref}
+      styleName={styles}
+      onAnimationStart={handleAnimationStart}
+      onAnimationEnd={handleAnimationEnd}
+    >
       {children}
     </div>
   );

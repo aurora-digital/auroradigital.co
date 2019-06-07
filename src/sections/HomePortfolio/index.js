@@ -4,6 +4,7 @@ import Img from "gatsby-image/withIEPolyfill";
 
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 
 import withQuery from "./withQuery";
 
@@ -41,79 +42,106 @@ function HomePortfolio({ data }) {
   return (
     <Section>
       <div styleName="root">
-        <Typography weight="medium" variant="h3" color="oxford-blue">
-          Portfolio
-        </Typography>
+        <FadeUpOnScroll>
+          <Typography weight="medium" variant="h3" color="oxford-blue">
+            Portfolio
+          </Typography>
+        </FadeUpOnScroll>
 
         <div styleName="project sioslife">
           <div styleName="title-image">
             <div styleName="title">
-              <Typography color="oxford-blue" weight="medium">
-                siosLIFE
-              </Typography>
-              <Typography color="oxford-blue">For younger spirits</Typography>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue" weight="medium">
+                  siosLIFE
+                </Typography>
+              </FadeUpOnScroll>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue">For younger spirits</Typography>
+              </FadeUpOnScroll>
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink("siosLife")}
+              <FadeUpOnScroll>
+                {renderLink("siosLife")}
 
-              <div styleName="right-image">
-                <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
-              </div>
+                <div styleName="right-image">
+                  <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
+                </div>
+              </FadeUpOnScroll>
             </div>
           </div>
 
-          <div styleName="left-image">
-            <Img fluid={data.sioslife1.image.fluid} objectFit="cover" />
-          </div>
+          <FadeUpOnScroll>
+            <div styleName="left-image">
+              <Img fluid={data.sioslife1.image.fluid} objectFit="cover" />
+            </div>
+          </FadeUpOnScroll>
         </div>
 
         <div styleName="project oncostats">
           <div styleName="title-image">
             <div styleName="title">
-              <Typography color="oxford-blue" weight="medium">
-                Oncostats
-              </Typography>
-              <Typography color="oxford-blue">
-                Defeating a common enemy, cancer
-              </Typography>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue" weight="medium">
+                  Oncostats
+                </Typography>
+              </FadeUpOnScroll>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue">
+                  Defeating a common enemy, cancer
+                </Typography>
+              </FadeUpOnScroll>
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink("oncostats")}
+              <FadeUpOnScroll>
+                {renderLink("oncostats")}
 
-              <div styleName="right-image">
-                <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
-              </div>
+                <div styleName="right-image">
+                  <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
+                </div>
+              </FadeUpOnScroll>
             </div>
           </div>
 
-          <div styleName="left-image">
-            <Img fluid={data.oncostats1.image.fluid} objectFit="cover" />
-          </div>
+          <FadeUpOnScroll>
+            <div styleName="left-image">
+              <Img fluid={data.oncostats1.image.fluid} objectFit="cover" />
+            </div>
+          </FadeUpOnScroll>
         </div>
 
         <div styleName="project lyftonomie">
           <div styleName="title-image">
             <div styleName="title">
-              <Typography color="oxford-blue" weight="medium">
-                Lyftonomie
-              </Typography>
-              <Typography color="oxford-blue">Vitamins. Done right</Typography>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue" weight="medium">
+                  Lyftonomie
+                </Typography>
+              </FadeUpOnScroll>
+              <FadeUpOnScroll>
+                <Typography color="oxford-blue">
+                  Vitamins. Done right
+                </Typography>
+              </FadeUpOnScroll>
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink("lyftonomie")}
+              <FadeUpOnScroll>
+                {renderLink("lyftonomie")}
 
-              <div styleName="right-image">
-                <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
-              </div>
+                <div styleName="right-image">
+                  <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
+                </div>
+              </FadeUpOnScroll>
             </div>
           </div>
-
-          <div styleName="left-image">
-            <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
-          </div>
+          <FadeUpOnScroll>
+            <div styleName="left-image">
+              <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
+            </div>
+          </FadeUpOnScroll>
         </div>
       </div>
     </Section>
