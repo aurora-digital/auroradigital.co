@@ -46,14 +46,8 @@ $Breakpoint-parallax: 768px;
 }
 
 .parallax-fallback {
-  text-align: center;
-
   @media screen and (width > $Breakpoint-parallax) {
     display: none;
-  }
-
-  @include Breakpoint-mobileOnly {
-    text-align: left;
   }
 }
 
