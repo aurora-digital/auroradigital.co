@@ -10,15 +10,14 @@
 }
 
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-
-    transform: matrix(1, 0, 0, 1, 0, 70);
+  from {
+    transform: translate3d(0, 40px, 0);
   }
-  100% {
+
+  to {
     opacity: 1;
 
-    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
