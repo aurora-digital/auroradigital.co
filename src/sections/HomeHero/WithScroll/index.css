@@ -4,7 +4,7 @@ $wave-height: 400px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: 200px;
+  padding-bottom: calc($wave-height / 2);
 
   background-color: $klein-blue;
 }
@@ -38,6 +38,9 @@ $wave-offset: calc(($wave-height / 2));
 
   white-space: nowrap;
 
+  animation: enter 2s cubic-bezier(0.68, -0.75, 0.265, 3);
+  animation-fill-mode: forwards;
+
   @include Breakpoint-tabletAndBelow {
     position: static;
 
@@ -51,7 +54,7 @@ $wave-offset: calc(($wave-height / 2));
   }
 
   100% {
-    transform: translateX(-75%);
+    transform: translateX(-20vw);
   }
 }
 
@@ -112,6 +115,4 @@ $wave-offset: calc(($wave-height / 2));
   z-index: 2;
 
   max-width: $six-columns;
-
-  mix-blend-mode: exclusion;
 }

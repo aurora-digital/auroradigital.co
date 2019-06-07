@@ -4,7 +4,7 @@ $wave-height: 400px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: 200px;
+  padding-bottom: calc($wave-height / 2);
 
   background-color: $klein-blue;
 }

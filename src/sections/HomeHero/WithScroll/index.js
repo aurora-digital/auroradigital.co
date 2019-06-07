@@ -25,12 +25,12 @@ function HomeHeroWithScroll({ parallaxController }) {
     () => {
       const height = document.body.offsetHeight;
 
-      if (!inView || scrolled) return;
+      if (!scrolled) return;
 
       skrolltop.scrollTo({
         element: window,
         to: height * 0.08,
-        duration: 1000,
+        duration: 2000,
         easing,
       });
 
@@ -49,15 +49,16 @@ function HomeHeroWithScroll({ parallaxController }) {
                 <Navbar theme="secondary" />
                 <Section verticalSpacing={false}>
                   <div styleName="title-wrapper">
-                    <div
-                      styleName="title"
-                      style={{
-                        transform: `translateX(${progress * -100}%)`,
-                      }}
-                    >
-                      <Typography weight="bold" variant="h1">
-                        Nurturing digital healthcare
-                      </Typography>
+                    <div styleName="title">
+                      <div
+                        style={{
+                          transform: `translateX(${progress * -100}%)`,
+                        }}
+                      >
+                        <Typography weight="bold" variant="h1">
+                          Nurturing digital healthcare
+                        </Typography>
+                      </div>
                     </div>
                   </div>
 
