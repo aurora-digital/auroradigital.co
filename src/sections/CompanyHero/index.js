@@ -15,24 +15,31 @@ const CompanyHero = () => (
           styleName="parallax-container"
           aria-label="Striving for better healthcare"
         >
-          <div aria-hidden="true">
-            <Parallax styleName="parallax" x={[-78, 20]} tagOuter="figure">
-              <Typography color="oxford-blue" weight="bold" variant="h1">
-                Striving for
-              </Typography>
-            </Parallax>
+          <Parallax styleName="parallax" x={[-78, 20]} tagOuter="figure">
+            <Typography color="oxford-blue" weight="bold" variant="h1">
+              Striving for
+            </Typography>
+          </Parallax>
 
-            <Parallax styleName="parallax" x={[30, -30]} tagOuter="figure">
-              <Typography color="oxford-blue" weight="bold" variant="h1">
-                better healthcare
-              </Typography>
-            </Parallax>
-          </div>
+          <Parallax styleName="parallax" x={[30, -30]} tagOuter="figure">
+            <Typography color="oxford-blue" weight="bold" variant="h1">
+              better healthcare
+            </Typography>
+          </Parallax>
         </div>
 
-        <div styleName="parallax-fallback">
+        <div
+          styleName="parallax-fallback"
+          aria-label="Striving for better healthcare"
+        >
           <Typography color="oxford-blue" weight="bold" variant="h1">
             Striving for better healthcare
+          </Typography>
+          <Typography color="oxford-blue" weight="bold" variant="h1">
+            better
+          </Typography>
+          <Typography color="oxford-blue" weight="bold" variant="h1">
+            healthcare
           </Typography>
         </div>
       </div>
