@@ -74,4 +74,6 @@ $wave-offset: calc(($wave-height / 2));
   z-index: 2;
 
   max-width: $six-columns;
+
+  mix-blend-mode: exclusion;
 }

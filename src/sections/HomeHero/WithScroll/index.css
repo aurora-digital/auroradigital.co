@@ -45,6 +45,16 @@ $wave-offset: calc(($wave-height / 2));
   }
 }
 
+@keyframes enter {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-75%);
+  }
+}
+
 .overlay {
   position: absolute;
   left: 0;
@@ -102,4 +112,6 @@ $wave-offset: calc(($wave-height / 2));
   z-index: 2;
 
   max-width: $six-columns;
+
+  mix-blend-mode: exclusion;
 }
