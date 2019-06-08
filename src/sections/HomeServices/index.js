@@ -47,7 +47,7 @@ function HomeServices({ data }) {
 
           <div styleName="left-column">
             <div styleName="title">
-              <Typography weight="bold" color="baby-blue">
+              <Typography weight="medium" color="baby-blue">
                 Design
               </Typography>
             </div>
@@ -61,8 +61,8 @@ function HomeServices({ data }) {
 
           <div styleName="right-column">
             <div styleName="title">
-              <Typography weight="bold" color="baby-blue">
-                Devolpment
+              <Typography weight="medium" color="baby-blue">
+                Development
               </Typography>
             </div>
             <div styleName="list">
