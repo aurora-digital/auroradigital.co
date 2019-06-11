@@ -92,7 +92,6 @@
 .second-image {
   width: calc($seven-columns + $gutter);
 
-  margin-top: $spacing-84;
   margin-right: calc(-1 * $column-spacing);
   margin-left: auto;
 
