@@ -62,11 +62,7 @@ export default class Navbar extends Component {
         isActive={currentPage === pageName}
         hover
       >
-        <Typography
-          variant="small-body"
-          color={color}
-          weight={currentPage === pageName ? "bold" : "regular"}
-        >
+        <Typography variant="small-body" color={color}>
           {capitalize(pageName)}
         </Typography>
       </Link>
