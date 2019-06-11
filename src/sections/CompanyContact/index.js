@@ -23,7 +23,7 @@ export default function CompanyContact() {
           <div styleName="cv">
             <Typography color="oxford-blue">Send us a CV</Typography>
             <span role="img" aria-label="finger-pointing-down">
-              👇🏻
+              👇
             </span>
           </div>
 
