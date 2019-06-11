@@ -55,8 +55,8 @@ export default class TeamElement extends Component {
     });
 
     return (
-      <FadeUpOnScroll>
-        <button styleName="root" type="button">
+      <button styleName="root" type="button">
+        <FadeUpOnScroll>
           <Img
             styleName="image"
             alt={`${name.toLowerCase()} photo`}
@@ -89,8 +89,8 @@ export default class TeamElement extends Component {
               behance={behance}
             />
           </div>
-        </button>
-      </FadeUpOnScroll>
+        </FadeUpOnScroll>
+      </button>
     );
   }
 }
