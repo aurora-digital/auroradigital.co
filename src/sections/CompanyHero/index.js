@@ -8,7 +8,7 @@ import "./index.css";
 
 const CompanyHero = () => (
   <div styleName="root">
-    <Navbar theme="primary" />
+    <Navbar currentPage="company" theme="primary" />
     <Section verticalSpacing={false}>
       <div styleName="title">
         <div styleName="parallax-container">
