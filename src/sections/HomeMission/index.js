@@ -20,7 +20,7 @@ export default function HomeMission() {
 
             <Parallax styleName="parallax" x={[20, -65]} tagOuter="figure">
               <Typography color="klein-blue" weight="bold" variant="h1">
-                possible experience
+                possible experiences
               </Typography>
             </Parallax>
           </div>
@@ -28,7 +28,7 @@ export default function HomeMission() {
 
         <div styleName="parallax-fallback">
           <Typography color="klein-blue" weight="bold" variant="h1">
-            Creating the best possible experience
+            Creating the best possible experiences
           </Typography>
         </div>
       </div>
