@@ -17,6 +17,10 @@ $tabletColumns: calc($tabletSpace / 2);
     display: block;
   }
 
+  @include Breakpoint-tabletAndAbove {
+    display: flex;
+  }
+
   @supports (display: grid) {
     @include Breakpoint-desktopOnly {
       display: grid;

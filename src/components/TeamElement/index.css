@@ -11,25 +11,9 @@
 
   background-color: white;
   outline: none;
-}
 
-.root.even {
-  @include Breakpoint-mobileOnly {
-    margin-right: auto;
-    margin-left: calc($gutter * -1);
-  }
-}
-
-.root.odd {
-  @include Breakpoint-mobileOnly {
-    margin-right: calc($gutter * -1);
-    margin-left: auto;
-  }
-}
-
-.root.margin {
-  @include Breakpoint-desktopOnly {
-    padding-top: $spacing-136;
+  @include Breakpoint-tabletAndAbove {
+    width: 100%;
   }
 }
 
@@ -42,7 +26,7 @@
   img {
     filter: grayscale(100%);
 
-    transition: filter 200ms ease-out;
+    transition: filter 500ms ease-out;
   }
 
   @include Breakpoint-tabletOnly {
@@ -51,9 +35,10 @@
   }
 
   @include Breakpoint-mobileOnly {
-    height: 60vw;
-    max-height: $spacing-352;
-    min-height: $spacing-224;
+    width: 75vw;
+    height: 75vw;
+
+    max-width: 80vw;
   }
 }
 
@@ -70,10 +55,10 @@
 
   mix-blend-mode: overlay;
 
-  background-color: $klein-blue;
+  background-color: color($klein-blue alpha(52%));
   opacity: 0.52;
 
-  transition: opacity 200ms ease-out;
+  transition: opacity 500ms ease-out;
 
   @supports not (mix-blend-mode: difference) {
     display: none;
@@ -87,14 +72,10 @@
     .image {
       img {
         filter: grayscale(0%);
-
-        transition: filter 300ms ease-in;
       }
 
       div {
         opacity: 0;
-
-        transition: opacity 300ms ease-in;
       }
     }
   }
@@ -108,7 +89,7 @@
   }
 }
 
-.root.even .description {
+.description.margin {
   @include Breakpoint-mobileOnly {
     padding-left: $gutter;
   }
@@ -130,34 +111,4 @@
   @include Breakpoint-mobileOnly {
     margin-top: calc($spacing-8 * 0.5);
   }
-}
-
-.social {
-  display: flex;
-
-  margin-top: $spacing-32;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: calc($spacing-32 * 0.5);
-  }
-}
-
-.link {
-  margin-left: $spacing-20;
-
-  opacity: 1;
-
-  text-decoration: none;
-
-  transition: opacity 70ms linear;
-}
-
-.link:first-child {
-  margin-left: 0;
-}
-
-.link:hover {
-  opacity: 0.7;
-
-  transition: opacity 70ms linear;
 }
