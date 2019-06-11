@@ -5,7 +5,7 @@ const query = graphql`
   query {
     first: file(relativePath: { eq: "images/home-services-first-image.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 700, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -15,7 +15,7 @@ const query = graphql`
       relativePath: { eq: "images/home-services-second-image.jpg" }
     ) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 700, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

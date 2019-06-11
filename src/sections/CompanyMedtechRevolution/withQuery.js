@@ -5,7 +5,7 @@ const query = graphql`
   query {
     teamwork: file(relativePath: { eq: "images/team-work.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 700, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     teamtalk: file(relativePath: { eq: "images/team-talk.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 700, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
