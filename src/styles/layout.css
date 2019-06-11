@@ -25,6 +25,6 @@ $ten-columns: calc(10 * $column + 9 * $gutter);
 $eleven-columns: calc(11 * $column + 10 * $gutter);
 $twelve-columns: calc(12 * $column + 11 * $gutter);
 
-$content-width-desktop: $ten-columns;
+$content-width-desktop: calc($ten-columns + 4px);
 $mobile-padding: 4vw;
 $separator-max-width: 1440px;
