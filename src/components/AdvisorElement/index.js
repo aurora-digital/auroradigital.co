@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
 import Img from "gatsby-image";
-import classNames from "classnames";
 import Social from "root/components/Social";
+import classNames from "classnames";
 
 import "./index.css";
 
-export default class TeamElement extends Component {
+export default class AdvisorElement extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    position: PropTypes.string,
     image: PropTypes.shape({}).isRequired,
     github: PropTypes.string,
     linkedin: PropTypes.string,
@@ -21,7 +20,6 @@ export default class TeamElement extends Component {
   };
 
   static defaultProps = {
-    position: null,
     linkedin: null,
     github: null,
     twitter: null,
@@ -30,17 +28,10 @@ export default class TeamElement extends Component {
     nameMargin: false,
   };
 
-  handleRef = element => {
-    const { name } = this.props;
-
-    this[name] = element;
-  };
-
   render() {
     const {
       image,
       name,
-      position,
       github,
       linkedin,
       twitter,
@@ -54,7 +45,7 @@ export default class TeamElement extends Component {
     });
 
     return (
-      <button styleName="root" type="button">
+      <button type="button" styleName="root">
         <Img
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
@@ -67,13 +58,6 @@ export default class TeamElement extends Component {
               {name}
             </Typography>
           </div>
-          {position && (
-            <div styleName="position">
-              <Typography variant="small-body" color="oxford-blue">
-                {position}
-              </Typography>
-            </div>
-          )}
           <Social
             github={github}
             linkedin={linkedin}

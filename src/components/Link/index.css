@@ -6,6 +6,8 @@
   display: inline-block;
 
   cursor: pointer;
+
+  text-decoration: none;
 }
 
 .hover {
@@ -51,4 +53,8 @@
   &::after {
     background-color: $oxford-blue;
   }
+}
+
+.underline-transparent {
+  text-decoration: none;
 }

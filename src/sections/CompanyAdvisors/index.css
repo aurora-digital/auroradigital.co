@@ -1,0 +1,68 @@
+@import "../../styles/all.css";
+
+$desktopSpace: calc($ten-columns - $column - $column - $column);
+$desktopColumns: calc($desktopSpace / 4);
+
+$tabletSpace: calc(100% - $gutter - $gutter - $gutter);
+$tabletColumns: calc($tabletSpace / 2);
+
+.root {
+  display: flex;
+
+  width: 100%;
+
+  padding-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    display: block;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: flex;
+  }
+
+  @supports (display: grid) {
+    @include Breakpoint-desktopOnly {
+      display: grid;
+      grid-column-gap: $column;
+      grid-template-columns: repeat(4, $desktopColumns);
+    }
+    @include Breakpoint-tabletOnly {
+      display: grid;
+      grid-column-gap: $column;
+      grid-row-gap: 0;
+      grid-template-columns: repeat(2, $tabletColumns);
+    }
+
+    @include Breakpoint-mobileOnly {
+      display: grid;
+      grid-row-gap: 0;
+
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+.advisor-element {
+  display: flex;
+
+  @include Breakpoint-tabletAndAbove {
+    margin-top: calc($spacing-84 * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-52;
+    margin-left: calc(-1 * $gutter);
+  }
+}
+
+.advisor-element:nth-child(2),
+.advisor-element:nth-child(4) {
+  @include Breakpoint-tabletAndAbove {
+    margin-top: $spacing-84;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin: $spacing-52 calc(-1 * $gutter) 0 auto;
+  }
+}

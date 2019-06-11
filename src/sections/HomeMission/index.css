@@ -14,7 +14,7 @@ $Breakpoint-parallax: 1020px;
 
 
 
-  @include h1-responsive-font;
+  @include h2-responsive-font;
 
   @media screen and (width < $Breakpoint-parallax) {
     display: none;
@@ -55,9 +55,11 @@ $Breakpoint-parallax: 1020px;
 .copy {
   position: relative;
 
-  margin-top: $spacing-224;
+  max-width: $eight-columns;
+  margin: 0 auto;
+  margin-top: $spacing-136;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
+    margin-top: $spacing-84;
   }
 }

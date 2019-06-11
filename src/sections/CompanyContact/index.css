@@ -1,0 +1,86 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  width: 100%;
+
+  margin-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: $spacing-136;
+  }
+}
+
+.challenge {
+  min-width: $four-columns;
+
+  margin-right: $column;
+
+  @include Breakpoint-tabletOnly {
+    min-width: auto;
+  }
+
+  @include Breakpoint-mobileOnly {
+    min-width: auto;
+    margin-right: 0;
+    margin-bottom: $spacing-52;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  * {
+    @include body-responsive-font;
+  }
+
+  *:first-child {
+    margin-right: $spacing-8;
+  }
+}
+
+.wave {
+  position: relative;
+
+  flex-grow: 1;
+
+  margin-right: calc($column-spacing * -1);
+
+  * > *:last-child {
+    transform: translateY(0%);
+  }
+
+  @include Breakpoint-mobileOnly {
+    position: absolute;
+
+    right: $spacing-84;
+
+    width: $three-columns;
+
+    * > *:last-child {
+      transform: translateY(50%) scale(0.6);
+    }
+  }
+}
+
+.wave > *:last-child {
+  @include Breakpoint-tabletAndAbove {
+    width: 100%;
+  }
+}

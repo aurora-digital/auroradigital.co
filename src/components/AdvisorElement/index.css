@@ -5,8 +5,6 @@
 
   display: block;
 
-  width: 100%;
-
   margin-top: 0;
 
   background-color: white;
@@ -20,18 +18,19 @@
 .image {
   position: relative;
 
-  height: $spacing-352;
+  height: $spacing-224;
+
   margin: 0;
 
   img {
     filter: grayscale(100%);
 
-    transition: filter 500ms ease-out;
+    transition: filter 500ms;
   }
 
   @include Breakpoint-tabletOnly {
-    max-height: $spacing-352;
-    min-height: $spacing-224;
+    max-height: 400px;
+    min-height: 300px;
   }
 
   @include Breakpoint-mobileOnly {
@@ -58,7 +57,7 @@
   background-color: color($klein-blue alpha(52%));
   opacity: 0.52;
 
-  transition: opacity 500ms ease-out;
+  transition: opacity 500ms;
 
   @supports not (mix-blend-mode: difference) {
     display: none;

@@ -16,11 +16,11 @@ function HomeServices({ data }) {
     <Section>
       <div styleName="root">
         <div styleName="images">
-          <div styleName="image first-image">
-            <Img fluid={data.first.image.fluid} objectFit="cover" />
+          <div styleName="image left-image">
+            <Img fluid={data.left.image.fluid} objectFit="cover" />
           </div>
-          <div styleName="image second-image">
-            <Img fluid={data.second.image.fluid} objectFit="cover" />
+          <div styleName="image right-image">
+            <Img fluid={data.right.image.fluid} objectFit="cover" />
           </div>
         </div>
 
@@ -47,7 +47,7 @@ function HomeServices({ data }) {
 
           <div styleName="left-column">
             <div styleName="title">
-              <Typography weight="bold" color="baby-blue">
+              <Typography weight="medium" color="baby-blue">
                 Design
               </Typography>
             </div>
@@ -61,8 +61,8 @@ function HomeServices({ data }) {
 
           <div styleName="right-column">
             <div styleName="title">
-              <Typography weight="bold" color="baby-blue">
-                Devolpment
+              <Typography weight="medium" color="baby-blue">
+                Development
               </Typography>
             </div>
             <div styleName="list">

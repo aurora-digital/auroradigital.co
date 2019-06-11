@@ -6,6 +6,7 @@ import HomeHero from "root/sections/HomeHero";
 import HomePortfolio from "root/sections/HomePortfolio";
 import HomeMission from "root/sections/HomeMission";
 import HomeServices from "root/sections/HomeServices";
+import HomeContact from "root/sections/HomeContact";
 
 export default class IndexPage extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class IndexPage extends Component {
         <HomePortfolio />
         <HomeMission />
         <HomeServices />
+        <HomeContact />
         <Footer />
       </Layout>
     );
