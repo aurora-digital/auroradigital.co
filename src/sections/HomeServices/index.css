@@ -12,7 +12,7 @@
   }
 
   @include Breakpoint-mobileOnly {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
@@ -66,7 +66,7 @@
   }
 }
 
-.first-image {
+.left-image {
   width: calc($four-columns + $gutter);
 
   margin-left: calc(-1 * $column-spacing);
@@ -82,14 +82,15 @@
   @include Breakpoint-mobileOnly {
     width: auto;
 
-    margin-right: -$mobile-padding;
-    margin-left: $spacing-84;
+    margin-top: $spacing-84;
+    margin-right: $spacing-84;
+    margin-left: -$mobile-padding;
 
     transform: none;
   }
 }
 
-.second-image {
+.right-image {
   width: calc($seven-columns + $gutter);
 
   margin-right: calc(-1 * $column-spacing);
@@ -104,8 +105,8 @@
   @include Breakpoint-mobileOnly {
     width: auto;
 
-    margin-right: $spacing-84;
-    margin-left: -$mobile-padding;
+    margin-right: -$mobile-padding;
+    margin-left: $spacing-84;
   }
 }
 
