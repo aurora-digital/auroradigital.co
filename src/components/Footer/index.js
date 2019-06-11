@@ -56,7 +56,7 @@ const Footer = () => (
 
       <div styleName="addresses">
         {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
-        {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
+        {renderAddress("Boston, USA", "https://goo.gl/maps/iapQCSPFSrZaJ5qn9")}
       </div>
 
       <div styleName="titled-links">
