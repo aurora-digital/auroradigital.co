@@ -51,6 +51,10 @@ $Breakpoint-parallax: 768px;
   @media screen and (width > $Breakpoint-parallax) {
     display: none;
   }
+
+  @include Breakpoint-mobileOnly {
+    text-align: left;
+  }
 }
 
 .parallax:last-child {
