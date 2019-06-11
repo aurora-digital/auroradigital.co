@@ -24,7 +24,7 @@ const FadeUpOnScroll = ({ children }) => {
 
   const styles = classNames("root", {
     "animate-start": inView && !animationHasFinished,
-    "animate-end": inView && animationHasFinished,
+    "animate-end": animationHasFinished,
   });
 
   return (

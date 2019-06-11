@@ -16,14 +16,16 @@ function HomeServices({ data }) {
   return (
     <Section>
       <div styleName="root">
-        <div styleName="images">
-          <div styleName="image left-image">
-            <Img fluid={data.left.image.fluid} objectFit="cover" />
+        <FadeUpOnScroll>
+          <div styleName="images">
+            <div styleName="image left-image">
+              <Img fluid={data.left.image.fluid} objectFit="cover" />
+            </div>
+            <div styleName="image right-image">
+              <Img fluid={data.right.image.fluid} objectFit="cover" />
+            </div>
           </div>
-          <div styleName="image right-image">
-            <Img fluid={data.right.image.fluid} objectFit="cover" />
-          </div>
-        </div>
+        </FadeUpOnScroll>
 
         <FadeUpOnScroll>
           <div styleName="copy-working-together">
