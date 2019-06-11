@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    first: file(relativePath: { eq: "images/home-services-first-image.jpg" }) {
+    left: file(relativePath: { eq: "images/home-services-left-image.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 700, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
@@ -11,9 +11,7 @@ const query = graphql`
       }
     }
 
-    second: file(
-      relativePath: { eq: "images/home-services-second-image.jpg" }
-    ) {
+    right: file(relativePath: { eq: "images/home-services-right-image.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 700, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp

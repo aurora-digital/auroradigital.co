@@ -16,11 +16,11 @@ function HomeServices({ data }) {
     <Section>
       <div styleName="root">
         <div styleName="images">
-          <div styleName="image first-image">
-            <Img fluid={data.first.image.fluid} objectFit="cover" />
+          <div styleName="image left-image">
+            <Img fluid={data.left.image.fluid} objectFit="cover" />
           </div>
-          <div styleName="image second-image">
-            <Img fluid={data.second.image.fluid} objectFit="cover" />
+          <div styleName="image right-image">
+            <Img fluid={data.right.image.fluid} objectFit="cover" />
           </div>
         </div>
 
