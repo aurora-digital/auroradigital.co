@@ -5,7 +5,7 @@ const query = graphql`
   query {
     sioslife1: file(relativePath: { eq: "images/sioslife1.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -13,7 +13,7 @@ const query = graphql`
 
     sioslife2: file(relativePath: { eq: "images/sioslife2.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -21,7 +21,7 @@ const query = graphql`
 
     oncostats1: file(relativePath: { eq: "images/oncostats1.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -29,7 +29,7 @@ const query = graphql`
 
     oncostats2: file(relativePath: { eq: "images/oncostats2.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -37,7 +37,7 @@ const query = graphql`
 
     lyftonomie1: file(relativePath: { eq: "images/lyftonomie1.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -45,7 +45,7 @@ const query = graphql`
 
     lyftonomie2: file(relativePath: { eq: "images/lyftonomie2.jpg" }) {
       image: childImageSharp {
-        fluid(maxWidth: 700, quality: 85) {
+        fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
