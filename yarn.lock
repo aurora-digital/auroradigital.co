@@ -10979,6 +10979,11 @@ react-scroll-parallax@^2.1.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-scrollmagic@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.1.0.tgz#1bd602a3c9f85627c46c62a8dbec1d7f6fb7ea49"
+  integrity sha512-ZTYtk2jj6vGIH9vphqwivhaSrAgoGO8LsMV2uqrjqyKkPS5evRTXmaj6wQ5Vl+jG16e33AzTTK+49knqLA2e2w==
+
 react-side-effect@^1.1.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.5.tgz#f26059e50ed9c626d91d661b9f3c8bb38cd0ff2d"

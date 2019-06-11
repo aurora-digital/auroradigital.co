@@ -1,44 +1,22 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
-import classNames from "classnames";
 
-import Section from "root/components/Section";
-import Navbar from "root/components/Navbar";
-import Typography from "root/components/Typography";
+import HomeHeroNoScroll from "./NoScroll";
+import HomeHeroWithScroll from "./WithScroll";
 
 import "./index.css";
 
-const HomeHero = () => {
-  const [ref, inView] = useInView();
-  const waveStyles = classNames("wave", { animate: inView });
-
+function HomeHero() {
   return (
-    <div ref={ref}>
-      <div styleName="root">
-        <Navbar theme="secondary" />
-        <Section verticalSpacing={false}>
-          <div styleName="title-wrapper">
-            <div styleName="title">
-              <Typography weight="bold" variant="h1">
-                Nurturing digital healthcare
-              </Typography>
-            </div>
-          </div>
-
-          <div styleName="copy">
-            <Typography color="baby-blue">
-              We design and develop thoughtful web and mobile healthcare
-              solutions, accessible to anyone, anywhere, at anytime.
-            </Typography>
-          </div>
-
-          <div styleName="overlay">
-            <div styleName={waveStyles} />
-          </div>
-        </Section>
+    <>
+      <div styleName="no-scroll">
+        <HomeHeroNoScroll />
       </div>
-    </div>
+
+      <div styleName="with-scroll">
+        <HomeHeroWithScroll />
+      </div>
+    </>
   );
-};
+}
 
 export default HomeHero;

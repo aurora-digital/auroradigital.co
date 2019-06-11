@@ -1,95 +1,19 @@
 @import "../../styles/all.css";
 
-$wave-height: 400px;
-$wave-offset: calc(($wave-height / 2));
+$Breakpoint-scroll: 2160px;
 
-.root {
-  padding-bottom: 200px;
-
-  background-color: $klein-blue;
-}
-
-.background {
-  height: 100%;
-}
-
-.title-wrapper {
-  height: calc(1em * $line-height-h1);
-
-  margin: $spacing-224 0;
-
-  @include h1-responsive-font;
-
-  @include Breakpoint-mobileOnly {
-    margin: $spacing-84 0;
+.no-scroll {
+  @media screen and (width >= $Breakpoint-desktop) and (width <= $Breakpoint-scroll) {
+    display: none;
   }
 }
 
-.title {
-  position: absolute;
-  left: 0;
-
-  width: 100%;
-  overflow: hidden;
-
-  white-space: nowrap;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  z-index: 1;
-
-  width: 100%;
-  height: $wave-height;
-
-  overflow: hidden;
-
-  transform: translateY(-25%);
-}
-
-.wave {
-  position: absolute;
-
-  width: 6400px;
-  height: $wave-height;
-
-  background: url(../../assets/images/white-wave.svg) repeat-x;
-
-  backface-visibility: hidden;
-  perspective: 1000;
-
-  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-  animation-play-state: paused;
-}
-
-.wave.animate {
-  animation-play-state: running;
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(0px);
+.with-scroll {
+  @include Breakpoint-tabletAndBelow {
+    display: none;
   }
-  100% {
-    transform: translateX(-2115px);
+
+  @media screen and (width > $Breakpoint-scroll) {
+    display: none;
   }
-}
-
-@keyframes swell {
-  0%,
-  100% {
-    transform: translateY($wave-offset);
-  }
-  50% {
-    transform: translateY(calc($wave-offset + 50px));
-  }
-}
-
-.copy {
-  position: relative;
-
-  z-index: 2;
-
-  max-width: $six-columns;
 }
