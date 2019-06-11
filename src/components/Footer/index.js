@@ -25,7 +25,7 @@ const Arrow = () => (
 );
 
 const renderAddress = (name, address) => (
-  <div styleName="titled-links">
+  <address styleName="titled-links">
     <Typography variant="small-body" color="oxford-blue" weight="bold">
       {name}
     </Typography>
@@ -35,7 +35,7 @@ const renderAddress = (name, address) => (
       </Typography>
       <Arrow />
     </a>
-  </div>
+  </address>
 );
 
 const SOCIAL_LINKS = [
