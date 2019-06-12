@@ -1,0 +1,26 @@
+@import "../../styles/all.css";
+
+.root {
+  opacity: 0;
+}
+
+.animate-start {
+  animation: fadeUp 1.5s;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-end {
+  opacity: 1;
+}

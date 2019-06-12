@@ -3,6 +3,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import Typography from "root/components/Typography";
 import Section from "root/components/Section";
+import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 
 import "./index.css";
 
@@ -33,14 +34,16 @@ export default function HomeMission() {
         </div>
       </div>
 
-      <div styleName="copy">
-        <Typography color="oxford-blue">
-          Healthcare solutions are quite sensitive and need to be built with
-          100% focus on the user’s needs, safety and privacy. We work alongside
-          our customers, from research to user-testing, to build excellent
-          software.
-        </Typography>
-      </div>
+      <FadeUpOnScroll>
+        <div styleName="copy">
+          <Typography color="oxford-blue">
+            Healthcare solutions are quite sensitive and need to be built with
+            100% focus on the user’s needs, safety and privacy. We work
+            alongside our customers, from research to user-testing, to build
+            excellent software.
+          </Typography>
+        </div>
+      </FadeUpOnScroll>
     </Section>
   );
 }
