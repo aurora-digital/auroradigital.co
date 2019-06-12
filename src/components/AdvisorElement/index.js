@@ -45,7 +45,7 @@ export default class AdvisorElement extends Component {
     });
 
     return (
-      <button type="button" styleName="root">
+      <div styleName="root">
         <Img
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
@@ -66,7 +66,7 @@ export default class AdvisorElement extends Component {
             behance={behance}
           />
         </div>
-      </button>
+      </div>
     );
   }
 }

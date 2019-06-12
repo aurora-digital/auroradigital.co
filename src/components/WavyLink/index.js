@@ -21,7 +21,12 @@ function WavyLink({ url, children }) {
 
   return (
     <div styleName="root" ref={ref}>
-      <a styleName="children" href={url}>
+      <a
+        styleName="children"
+        rel="noopener noreferrer"
+        target="_blank"
+        href={url}
+      >
         {children}
       </a>
 

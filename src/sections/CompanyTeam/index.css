@@ -17,6 +17,7 @@ $tabletColumns: calc($tabletSpace / 3);
 
   @include Breakpoint-tabletAndAbove {
     display: flex;
+    padding-top: $spacing-84;
   }
 
   padding-bottom: $spacing-136;

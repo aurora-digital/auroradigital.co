@@ -54,7 +54,7 @@ export default class TeamElement extends Component {
     });
 
     return (
-      <button styleName="root" type="button">
+      <div styleName="root">
         <Img
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
@@ -82,7 +82,7 @@ export default class TeamElement extends Component {
             behance={behance}
           />
         </div>
-      </button>
+      </div>
     );
   }
 }
