@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import "./index.css";
 
-const FadeUpOnScroll = ({ children }) => {
+const FadeUpOnScroll = ({ children, className }) => {
   const [ref, inView] = useInView();
   const [animationHasFinished, setFinished] = useState(false);
   const [animationStart, setStart] = useState(false);
@@ -29,6 +29,7 @@ const FadeUpOnScroll = ({ children }) => {
 
   return (
     <div
+      className={className}
       ref={ref}
       styleName={styles}
       onAnimationStart={handleAnimationStart}
@@ -41,6 +42,7 @@ const FadeUpOnScroll = ({ children }) => {
 
 FadeUpOnScroll.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default FadeUpOnScroll;
