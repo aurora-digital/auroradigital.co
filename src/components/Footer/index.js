@@ -30,7 +30,12 @@ const renderAddress = (name, address) => (
     <Typography variant="small-body" color="oxford-blue" weight="bold">
       {name}
     </Typography>
-    <a styleName="address-link" href={address}>
+    <a
+      styleName="address-link"
+      rel="noopener noreferrer"
+      target="_blank"
+      href={address}
+    >
       <Typography variant="small-body" color="klein-blue">
         Directions
       </Typography>
