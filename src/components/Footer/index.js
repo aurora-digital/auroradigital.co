@@ -46,12 +46,20 @@ const renderAddress = (name, address) => (
 );
 
 const SOCIAL_LINKS = [
+  /*
   { name: "Md", ariaLabel: "Medium", link: "#" },
   { name: "Git", ariaLabel: "Github", link: "#" },
-  { name: "In", ariaLabel: "LinkedIn", link: "#" },
+  */
+  {
+    name: "In",
+    ariaLabel: "LinkedIn",
+    link: "https://linkedin.com/company/auroradigitalhealth",
+  },
+  /*
   { name: "Fb", ariaLabel: "Facebook", link: "#" },
   { name: "Tw", ariaLabel: "Twitter", link: "#" },
   { name: "Ins", ariaLabel: "Instagram", link: "#" },
+  */
 ];
 
 const Footer = () => (
@@ -73,7 +81,13 @@ const Footer = () => (
 
         <div styleName="social-links">
           {SOCIAL_LINKS.map(({ name, ariaLabel, link }) => (
-            <a href={link} key={name} aria-label={ariaLabel}>
+            <a
+              href={link}
+              rel="noopener noreferrer"
+              target="_blank"
+              key={name}
+              aria-label={`Aurora's, ${ariaLabel}`}
+            >
               <Typography variant="small-body" color="klein-blue">
                 {name}
               </Typography>
