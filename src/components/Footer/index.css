@@ -1,6 +1,8 @@
 @import "../../styles/all.css";
 
 .root {
+  position: relative;
+
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -92,4 +94,14 @@
 
 .social-links > *:not(:last-child) {
   margin-right: $spacing-20;
+}
+
+.wave {
+  position: absolute;
+  top: 50%;
+  left: -15%;
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
 }

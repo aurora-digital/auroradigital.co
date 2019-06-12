@@ -2,6 +2,7 @@ import React from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import Logo from "root/components/Logo";
+import Wave from "root/assets/images/footer-wave.inline.svg";
 
 import "./index.css";
 
@@ -73,6 +74,9 @@ const Footer = () => (
             </a>
           ))}
         </div>
+      </div>
+      <div styleName="wave">
+        <Wave />
       </div>
     </div>
   </Section>
