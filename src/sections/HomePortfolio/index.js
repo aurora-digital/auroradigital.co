@@ -11,17 +11,28 @@ import "./index.css";
 import WavyLink from "../../components/WavyLink";
 
 function HomePortfolio({ data }) {
-  const renderLink = url => (
+  const projectUrls = {
+    siosLife: "https://sioslife.com/",
+    oncostats: "https://oncostats.io/",
+    lyftonomie: "https://lyftonomie.fr/",
+  };
+
+  const renderLink = project => (
     <>
       <div styleName="link">
-        <WavyLink url={url}>
-          <Typography variant="small-body" weight="bold" color="klein-blue">
+        <WavyLink url={projectUrls[project]}>
+          <Typography
+            aria-label={`View Project ${project}`}
+            variant="small-body"
+            weight="bold"
+            color="klein-blue"
+          >
             View Project
           </Typography>
         </WavyLink>
       </div>
 
-      <a styleName="link-mobile" href={url}>
+      <a styleName="link-mobile" href={projectUrls[project]}>
         <Typography variant="small-body" weight="bold" color="klein-blue">
           View Project
         </Typography>
@@ -46,7 +57,7 @@ function HomePortfolio({ data }) {
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink()}
+              {renderLink("siosLife")}
 
               <div styleName="right-image">
                 <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
@@ -71,7 +82,7 @@ function HomePortfolio({ data }) {
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink()}
+              {renderLink("oncostats")}
 
               <div styleName="right-image">
                 <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
@@ -94,7 +105,7 @@ function HomePortfolio({ data }) {
             </div>
 
             <div styleName="right-image-wrapper">
-              {renderLink()}
+              {renderLink("lyftonomie")}
 
               <div styleName="right-image">
                 <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
