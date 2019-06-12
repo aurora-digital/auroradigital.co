@@ -59,6 +59,7 @@ export default class AdvisorElement extends Component {
             </Typography>
           </div>
           <Social
+            name={name}
             github={github}
             linkedin={linkedin}
             twitter={twitter}

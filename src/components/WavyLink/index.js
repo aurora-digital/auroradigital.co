@@ -8,7 +8,7 @@ import useScrollDirection from "root/hooks/useScrollDirection";
 
 import "./index.css";
 
-function WavyLink({ url, children }) {
+function WavyLink({ url, children, label }) {
   const [ref, inView] = useInView();
   const scrollDirection = useScrollDirection();
 
@@ -26,6 +26,7 @@ function WavyLink({ url, children }) {
         rel="noopener noreferrer"
         target="_blank"
         href={url}
+        aria-label={label}
       >
         {children}
       </a>
@@ -42,6 +43,11 @@ function WavyLink({ url, children }) {
 WavyLink.propTypes = {
   url: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  label: PropTypes.string,
+};
+
+WavyLink.defaultProps = {
+  label: "",
 };
 
 export default WavyLink;

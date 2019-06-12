@@ -18,6 +18,7 @@ export default class Link extends React.Component {
     ]),
     hover: PropTypes.bool,
     isActive: PropTypes.bool,
+    label: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,6 +26,7 @@ export default class Link extends React.Component {
     underlineColor: "transparent",
     hover: false,
     isActive: false,
+    label: "",
   };
 
   render() {
@@ -35,6 +37,7 @@ export default class Link extends React.Component {
       hover,
       isActive,
       underlineColor,
+      label,
     } = this.props;
     const styles = classNames("root", {
       hover,
@@ -44,14 +47,14 @@ export default class Link extends React.Component {
 
     if (internal) {
       return (
-        <GatsbyLink to={to} styleName={styles}>
+        <GatsbyLink aria-label={label} to={to} styleName={styles}>
           {children}
         </GatsbyLink>
       );
     }
 
     return (
-      <a styleName={styles} href={to}>
+      <a styleName={styles} aria-label={label} href={to}>
         {children}
       </a>
     );

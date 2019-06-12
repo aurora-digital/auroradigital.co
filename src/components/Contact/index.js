@@ -28,6 +28,7 @@ export default class Contact extends Component {
         underlineColor={underlineColor}
         hover={hover}
         to="mailto:contact@auroradigital.co"
+        label="Email, contact@auroradigital.co"
       >
         {children}
       </Link>

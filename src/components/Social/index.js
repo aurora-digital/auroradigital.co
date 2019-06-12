@@ -37,7 +37,7 @@ export default class Social extends Component {
             target="_blank"
             styleName="link"
             href={linkedin}
-            aria-label={`${name}' Linkedin`}
+            aria-label={`${name}', Linkedin`}
           >
             <Typography variant="small-body" color="klein-blue">
               In
@@ -50,7 +50,7 @@ export default class Social extends Component {
             target="_blank"
             styleName="link"
             href={twitter}
-            aria-label={`${name}' Twitter`}
+            aria-label={`${name}', Twitter`}
           >
             <Typography variant="small-body" color="klein-blue">
               Tw
@@ -63,7 +63,7 @@ export default class Social extends Component {
             target="_blank"
             styleName="link"
             href={github}
-            aria-label={`${name}' Github`}
+            aria-label={`${name}', Github`}
           >
             <Typography variant="small-body" color="klein-blue">
               Git
@@ -77,7 +77,7 @@ export default class Social extends Component {
             target="_blank"
             styleName="link"
             href={instagram}
-            aria-label={`${name}' Instagram`}
+            aria-label={`${name}', Instagram`}
           >
             <Typography variant="small-body" color="klein-blue">
               Ins
@@ -91,7 +91,7 @@ export default class Social extends Component {
             target="_blank"
             styleName="link"
             href={behance}
-            aria-label={`${name}' Behance`}
+            aria-label={`${name}', Behance`}
           >
             <Typography variant="small-body" color="klein-blue">
               Be
