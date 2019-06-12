@@ -9,13 +9,13 @@ $wave-offset: calc(($wave-height / 2));
   background-color: $klein-blue;
 
   * {
-    animation-play-state: paused;
+    animation-play-state: paused !important;
   }
 }
 
 .root.animate {
   * {
-    animation-play-state: running;
+    animation-play-state: running !important;
   }
 }
 

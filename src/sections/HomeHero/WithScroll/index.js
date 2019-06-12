@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useState, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import { withController } from "react-scroll-parallax";
 import { Controller, Scene } from "react-scrollmagic";
-import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
+import useDetectJavascript from "root/hooks/useDetectJavascript";
+
 import "./index.css";
 
 function HomeHeroWithScroll({ parallaxController }) {
-  const [ref, inView] = useInView();
-  const waveStyles = classNames("root", { animate: inView });
+  const hasJavascript = useDetectJavascript();
+  const [animate, setAnimate] = useState(false);
+  const waveStyles = classNames("root", { animate });
 
-  if (parallaxController && !inView) parallaxController.update();
+  useLayoutEffect(() => {
+    if (parallaxController && hasJavascript) parallaxController.update();
+
+    if (!animate) setAnimate(true);
+  });
 
   return (
-    <div ref={ref}>
+    <div>
       <Controller>
-        <Scene triggerHook="0" duration={2000} pin enabled={inView}>
+        <Scene triggerHook="0" duration={2000} pin>
           {progress => (
             <div>
               <div styleName={waveStyles}>
