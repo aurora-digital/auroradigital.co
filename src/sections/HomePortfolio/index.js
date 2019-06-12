@@ -61,15 +61,13 @@ function HomePortfolio({ data }) {
               </FadeUpOnScroll>
             </div>
 
-            <div styleName="right-image-wrapper">
-              <FadeUpOnScroll>
-                {renderLink("siosLife")}
+            <FadeUpOnScroll styleName="right-image-wrapper">
+              {renderLink("siosLife")}
 
-                <div styleName="right-image">
-                  <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
-                </div>
-              </FadeUpOnScroll>
-            </div>
+              <div styleName="right-image">
+                <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
+              </div>
+            </FadeUpOnScroll>
           </div>
 
           <FadeUpOnScroll>
@@ -94,15 +92,13 @@ function HomePortfolio({ data }) {
               </FadeUpOnScroll>
             </div>
 
-            <div styleName="right-image-wrapper">
-              <FadeUpOnScroll>
-                {renderLink("oncostats")}
+            <FadeUpOnScroll styleName="right-image-wrapper">
+              {renderLink("oncostats")}
 
-                <div styleName="right-image">
-                  <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
-                </div>
-              </FadeUpOnScroll>
-            </div>
+              <div styleName="right-image">
+                <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
+              </div>
+            </FadeUpOnScroll>
           </div>
 
           <FadeUpOnScroll>
@@ -127,15 +123,12 @@ function HomePortfolio({ data }) {
               </FadeUpOnScroll>
             </div>
 
-            <div styleName="right-image-wrapper">
-              <FadeUpOnScroll>
-                {renderLink("lyftonomie")}
-
-                <div styleName="right-image">
-                  <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
-                </div>
-              </FadeUpOnScroll>
-            </div>
+            <FadeUpOnScroll styleName="right-image-wrapper">
+              {renderLink("lyftonomie")}
+              <div styleName="right-image">
+                <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
+              </div>
+            </FadeUpOnScroll>
           </div>
           <FadeUpOnScroll>
             <div styleName="left-image">
