@@ -23,7 +23,7 @@ const COLOR_THEME_SECONDARY = {
 
 export default class Navbar extends Component {
   static propTypes = {
-    currentPage: PropTypes.oneOf(["home", "services", "company"]),
+    currentPage: PropTypes.oneOf(["home", "company", "blop"]),
     theme: PropTypes.oneOf(["primary", "secondary"]),
   };
 
@@ -43,7 +43,7 @@ export default class Navbar extends Component {
 
     return (
       <div styleName="brand">
-        <Link to="/">
+        <Link to="/" label="Aurora's homepage">
           <Logo color={logoColor} />
         </Link>
       </div>
@@ -61,6 +61,7 @@ export default class Navbar extends Component {
         underlineColor={underlineColor}
         isActive={currentPage === pageName}
         hover
+        label={`Aurora's ${pageName}`}
       >
         <Typography variant="small-body" color={color}>
           {capitalize(pageName)}

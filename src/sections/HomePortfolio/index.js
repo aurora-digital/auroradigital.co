@@ -20,13 +20,11 @@ function HomePortfolio({ data }) {
   const renderLink = project => (
     <>
       <div styleName="link">
-        <WavyLink url={projectUrls[project]}>
-          <Typography
-            aria-label={`View Project ${project}`}
-            variant="small-body"
-            weight="bold"
-            color="klein-blue"
-          >
+        <WavyLink
+          url={projectUrls[project]}
+          label={`View Project, ${project} `}
+        >
+          <Typography variant="small-body" weight="bold" color="klein-blue">
             View Project
           </Typography>
         </WavyLink>
