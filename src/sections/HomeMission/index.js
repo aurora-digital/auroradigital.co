@@ -11,22 +11,27 @@ export default function HomeMission() {
     <Section verticalSpacing={false}>
       <div styleName="title">
         <div styleName="parallax-container-wrapper">
-          <div styleName="parallax-container">
-            <Parallax styleName="parallax" x={[-20, 40]} tagOuter="figure">
-              <Typography color="klein-blue" weight="bold" variant="h2">
-                Creating the best
-              </Typography>
-            </Parallax>
+          <div
+            styleName="parallax-container"
+            aria-label="Creating the best possible experiencies"
+          >
+            <div aria-hidden="true">
+              <Parallax styleName="parallax" x={[-20, 60]} tagOuter="figure">
+                <Typography color="klein-blue" weight="bold" variant="h2">
+                  Creating the best
+                </Typography>
+              </Parallax>
 
-            <Parallax styleName="parallax" x={[20, -65]} tagOuter="figure">
-              <Typography color="klein-blue" weight="bold" variant="h2">
-                possible experiences
-              </Typography>
-            </Parallax>
+              <Parallax styleName="parallax" x={[55, -20]} tagOuter="figure">
+                <Typography color="klein-blue" weight="bold" variant="h2">
+                  possible experiences
+                </Typography>
+              </Parallax>
+            </div>
           </div>
         </div>
 
-        <div styleName="parallax-fallback">
+        <div styleName="parallax-fallback" aria-hidden="true">
           <Typography color="klein-blue" weight="bold" variant="h2">
             Creating the best possible experiences
           </Typography>

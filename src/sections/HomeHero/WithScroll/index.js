@@ -13,7 +13,6 @@ import "./index.css";
 
 function HomeHeroWithScroll({ parallaxController }) {
   const [ref, inView] = useInView();
-  const waveStyles = classNames("wave", { animate: inView });
 
   if (parallaxController && !inView) parallaxController.update();
 
@@ -41,7 +40,7 @@ function HomeHeroWithScroll({ parallaxController }) {
                   </div>
 
                   <div styleName="overlay">
-                    <div styleName={waveStyles} />
+                    <div styleName="wave" />
 
                     <Section verticalSpacing={false}>
                       <div styleName="copy">

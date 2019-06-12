@@ -90,11 +90,6 @@ $wave-offset: calc(($wave-height / 2));
   perspective: 1000;
 
   animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-  animation-play-state: paused;
-}
-
-.wave.animate {
-  animation-play-state: running;
 }
 
 @keyframes wave {
