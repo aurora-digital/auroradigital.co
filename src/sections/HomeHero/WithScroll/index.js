@@ -18,7 +18,7 @@ function HomeHeroWithScroll({ parallaxController }) {
   return (
     <div ref={ref}>
       <Controller>
-        <Scene triggerHook="0" duration={2000} pin enabled={inView}>
+        <Scene triggerHook="0" duration={2000} pin>
           {progress => (
             <div>
               <div styleName="root">
