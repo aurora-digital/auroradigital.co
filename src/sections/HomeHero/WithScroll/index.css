@@ -7,6 +7,16 @@ $wave-offset: calc(($wave-height / 2));
   padding-bottom: calc($wave-height / 2);
 
   background-color: $klein-blue;
+
+  * {
+    animation-play-state: paused;
+  }
+}
+
+.root.animate {
+  * {
+    animation-play-state: running;
+  }
 }
 
 .background {

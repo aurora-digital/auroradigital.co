@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withController } from "react-scroll-parallax";
 import { Controller, Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
+import classNames from "classnames";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
@@ -12,16 +13,17 @@ import "./index.css";
 
 function HomeHeroWithScroll({ parallaxController }) {
   const [ref, inView] = useInView();
+  const waveStyles = classNames("root", { animate: inView });
 
   if (parallaxController && !inView) parallaxController.update();
 
   return (
     <div ref={ref}>
       <Controller>
-        <Scene triggerHook="0" duration={2000} pin>
+        <Scene triggerHook="0" duration={2000} pin enabled={inView}>
           {progress => (
             <div>
-              <div styleName="root">
+              <div styleName={waveStyles}>
                 <Navbar theme="secondary" />
                 <Section verticalSpacing={false}>
                   <div styleName="title-wrapper">
