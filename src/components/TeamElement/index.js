@@ -75,6 +75,7 @@ export default class TeamElement extends Component {
             </div>
           )}
           <Social
+            name={name}
             github={github}
             linkedin={linkedin}
             twitter={twitter}

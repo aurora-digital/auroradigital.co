@@ -35,6 +35,7 @@ const renderAddress = (name, address) => (
       rel="noopener noreferrer"
       target="_blank"
       href={address}
+      aria-label={`Directions for ${name}, office`}
     >
       <Typography variant="small-body" color="klein-blue">
         Directions
