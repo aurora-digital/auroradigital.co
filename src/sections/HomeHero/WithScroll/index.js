@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withController } from "react-scroll-parallax";
 import { Controller, Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
-import classNames from "classnames";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
