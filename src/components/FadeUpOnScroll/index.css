@@ -6,7 +6,7 @@
 
 .animate-start {
   animation: fadeUp 1.5s;
-  animation-delay: 0.3s;
+  animation-delay: 0.1s;
 }
 
 @keyframes fadeUp {
