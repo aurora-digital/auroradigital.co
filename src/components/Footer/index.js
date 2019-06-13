@@ -55,9 +55,18 @@ const SOCIAL_LINKS = [
     ariaLabel: "LinkedIn",
     link: "https://linkedin.com/company/auroradigitalhealth",
   },
+
+  {
+    name: "Fb",
+    ariaLabel: "Facebook",
+    link: "https://www.facebook.com/Aurora-Digital-Health-481479605955769/",
+  },
+  {
+    name: "Tw",
+    ariaLabel: "Twitter",
+    link: "https://twitter.com/AuroraDigitalH1",
+  },
   /*
-  { name: "Fb", ariaLabel: "Facebook", link: "#" },
-  { name: "Tw", ariaLabel: "Twitter", link: "#" },
   { name: "Ins", ariaLabel: "Instagram", link: "#" },
   */
 ];
