@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: baseline;
 
-  margin-bottom: $spacing-56;
+  margin-bottom: $spacing-52;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;

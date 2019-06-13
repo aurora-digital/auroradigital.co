@@ -1,4 +1,5 @@
 $font-family-visuelt: "visuelt", "Helvetica", sans-serif;
+$font-family-fira-mono: "Fira Mono", monospace;
 
 $font-size-h1: responsive 52px 136px;
 $line-height-h1: 1.5;

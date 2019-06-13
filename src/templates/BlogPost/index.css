@@ -1,0 +1,92 @@
+@import "../../styles/all.css";
+
+.root {
+  max-width: $six-columns;
+  margin: $spacing-224 auto;
+
+  @include Breakpoint-mobileOnly {
+    padding: 0 calc($gutter / 2);
+    margin-top: $spacing-52;
+    margin-bottom: $spacing-136;
+  }
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: $spacing-32;
+  margin-bottom: $spacing-84;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+    margin-bottom: $spacing-52;
+  }
+}
+
+.content {
+  margin-top: $spacing-52;
+  margin-bottom: $spacing-136;
+
+  color: $oxford-blue;
+
+  font-family: $font-family-visuelt;
+
+  p {
+    @include body-small-responsive-font;
+
+    margin-bottom: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-20;
+    }
+  }
+
+  h2 {
+    @include body-responsive-font;
+
+    margin-top: $spacing-84;
+    margin-bottom: $spacing-32;
+
+    font-weight: 500;
+  }
+
+  code {
+    background-color: $code-grey;
+
+    font-family: $font-family-fira-mono;
+  }
+
+  pre {
+    padding: $spacing-20;
+
+    background-color: $code-grey;
+
+    font-family: $font-family-fira-mono;
+
+    code {
+      line-height: 150%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      padding: $spacing-12;
+    }
+  }
+}
+
+:global {
+  .Blog-banner {
+    span {
+      @include Breakpoint-desktopOnly {
+        position: absolute;
+        left: 50%;
+
+        width: $eight-columns;
+        max-width: $eight-columns !important;
+        margin-bottom: $spacing-136;
+
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

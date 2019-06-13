@@ -3,7 +3,7 @@
 .root {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-52 0;
+  padding-top: $spacing-52;
 
   a {
     text-decoration: none;
