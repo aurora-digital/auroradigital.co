@@ -23,7 +23,7 @@ const COLOR_THEME_SECONDARY = {
 
 export default class Navbar extends Component {
   static propTypes = {
-    currentPage: PropTypes.oneOf(["home", "company", "blop"]),
+    currentPage: PropTypes.oneOf(["home", "company", "blog"]),
     theme: PropTypes.oneOf(["primary", "secondary"]),
   };
 
