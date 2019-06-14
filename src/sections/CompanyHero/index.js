@@ -13,12 +13,12 @@ const CompanyHero = () => (
       <div styleName="title">
         <div
           styleName="parallax-container"
-          aria-label="Thriving for better healthcare"
+          aria-label="Striving for better healthcare"
         >
           <div aria-hidden="true">
             <Parallax styleName="parallax" x={[-78, 20]} tagOuter="figure">
               <Typography color="oxford-blue" weight="bold" variant="h1">
-                Thriving for
+                Striving for
               </Typography>
             </Parallax>
 
@@ -32,7 +32,7 @@ const CompanyHero = () => (
 
         <div styleName="parallax-fallback">
           <Typography color="oxford-blue" weight="bold" variant="h1">
-            Thriving for better healthcare
+            Striving for better healthcare
           </Typography>
         </div>
       </div>
