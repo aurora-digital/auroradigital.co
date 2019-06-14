@@ -85,7 +85,7 @@
   }
 
   a {
-    border-bottom: 2px solid $klein-blue;
+    border-bottom: 1px solid $klein-blue;
 
     color: $klein-blue;
   }
