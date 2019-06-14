@@ -72,6 +72,23 @@
       padding: $spacing-12;
     }
   }
+
+  blockquote {
+    max-width: $four-columns;
+    margin: $spacing-84 auto;
+
+    color: $klein-blue;
+
+    @include Breakpoint-mobileOnly {
+      margin: $spacing-52 auto;
+    }
+  }
+
+  a {
+    border-bottom: 2px solid $klein-blue;
+
+    color: $klein-blue;
+  }
 }
 
 :global {
