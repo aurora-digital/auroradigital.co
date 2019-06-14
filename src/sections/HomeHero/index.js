@@ -1,7 +1,6 @@
 import React from "react";
 
 import HomeHeroNoScroll from "./NoScroll";
-import HomeHeroWithScroll from "./WithScroll";
 
 import "./index.css";
 
