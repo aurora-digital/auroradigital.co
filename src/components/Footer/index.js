@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
+import Link from "root/components/Link";
 import Logo from "root/components/Logo";
 import Wave from "root/assets/images/footer-wave.inline.svg";
 
@@ -75,7 +76,9 @@ const Footer = () => (
   <Section verticalSpacing={false}>
     <div styleName="root">
       <div styleName="logo">
-        <Logo color="klein-blue" />
+        <Link to="/" label="Aurora's homepage">
+          <Logo color="klein-blue" />
+        </Link>
       </div>
 
       <div styleName="addresses">

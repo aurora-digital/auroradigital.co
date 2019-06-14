@@ -14,7 +14,12 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .title {
-  margin: $spacing-224 0;
+  margin-top: $spacing-136;
+  margin-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-84;
+  }
 }
 
 .overlay {
