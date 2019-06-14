@@ -8,13 +8,7 @@ import "./index.css";
 function HomeHero() {
   return (
     <>
-      <div styleName="no-scroll">
-        <HomeHeroNoScroll />
-      </div>
-
-      <div styleName="with-scroll">
-        <HomeHeroWithScroll />
-      </div>
+      <HomeHeroNoScroll />
     </>
   );
 }
