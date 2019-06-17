@@ -84,7 +84,7 @@ export default class Navbar extends Component {
           >
             {this.renderPageLink("company")}
 
-            {this.renderPageLink("blog")}
+            {/* his.renderPageLink("blog") */}
           </nav>
         </header>
       </Section>
