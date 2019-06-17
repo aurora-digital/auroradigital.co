@@ -51,39 +51,55 @@ function HomeServices({ data }) {
           </div>
 
           <div styleName="left-column">
-            <div styleName="title">
+            <div styleName="title" aria-hidden="true">
               <FadeUpOnScroll>
                 <Typography weight="medium" color="baby-blue">
                   Design
                 </Typography>
               </FadeUpOnScroll>
             </div>
-            <div styleName="list">
+            <ul styleName="list" aria-label="Design Services">
               <FadeUpOnScroll>
-                <Typography>Research & Strategy</Typography>
-                <Typography>Brand Identity</Typography>
-                <Typography>Product Design</Typography>
-                <Typography>User Testing</Typography>
+                <li>
+                  <Typography>Research & Strategy</Typography>
+                </li>
+                <li>
+                  <Typography>Brand Identity</Typography>
+                </li>
+                <li>
+                  <Typography>Product Design</Typography>
+                </li>
+                <li>
+                  <Typography>User Testing</Typography>
+                </li>
               </FadeUpOnScroll>
-            </div>
+            </ul>
           </div>
 
           <div styleName="right-column">
-            <div styleName="title">
+            <div styleName="title" aria-hidden="true">
               <FadeUpOnScroll>
                 <Typography weight="medium" color="baby-blue">
                   Development
                 </Typography>
               </FadeUpOnScroll>
             </div>
-            <div styleName="list">
+            <ul styleName="list" aria-label="Development Services">
               <FadeUpOnScroll>
-                <Typography>Hosting Solution</Typography>
-                <Typography>Software Development</Typography>
-                <Typography>Technology Implementation</Typography>
-                <Typography>System Integration</Typography>
+                <li>
+                  <Typography>Hosting Solution</Typography>
+                </li>
+                <li>
+                  <Typography>Software Development</Typography>
+                </li>
+                <li>
+                  <Typography>Technology Implementation</Typography>
+                </li>
+                <li>
+                  <Typography>System Integration</Typography>
+                </li>
               </FadeUpOnScroll>
-            </div>
+            </ul>
           </div>
         </div>
 
