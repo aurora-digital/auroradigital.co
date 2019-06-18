@@ -47,10 +47,16 @@ const renderAddress = (name, address) => (
 );
 
 const SOCIAL_LINKS = [
-  /*
-  { name: "Md", ariaLabel: "Medium", link: "#" },
-  { name: "Git", ariaLabel: "Github", link: "#" },
-  */
+  {
+    name: "Md",
+    ariaLabel: "Medium",
+    link: "https://medium.com/@auroradigitalhealth",
+  },
+  {
+    name: "Git",
+    ariaLabel: "Github",
+    link: "https://github.com/aurora-digital",
+  },
   {
     name: "In",
     ariaLabel: "LinkedIn",
@@ -67,9 +73,11 @@ const SOCIAL_LINKS = [
     ariaLabel: "Twitter",
     link: "https://twitter.com/AuroraDigitalH1",
   },
-  /*
-  { name: "Ins", ariaLabel: "Instagram", link: "#" },
-  */
+  {
+    name: "Ins",
+    ariaLabel: "Instagram",
+    link: "https://www.instagram.com/aurora_digital_health/",
+  },
 ];
 
 const Footer = () => (
