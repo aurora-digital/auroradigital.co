@@ -239,22 +239,24 @@
   }
 
   .title {
-    width: $seven-columns;
+    width: $six-columns;
 
-    @include Breakpoint-tabletAndBelow {
+    @include Breakpoint-mobileOnly {
       width: 100%;
     }
   }
 
   .copy {
+    width: $seven-columns;
     margin-top: $spacing-52;
-    margin-left: $three-columns;
+    margin-left: auto;
 
     @include Breakpoint-tabletOnly {
-      margin-left: $two-columns;
+      width: $six-columns;
     }
 
     @include Breakpoint-mobileOnly {
+      width: 100%;
       margin-left: 0;
     }
   }
