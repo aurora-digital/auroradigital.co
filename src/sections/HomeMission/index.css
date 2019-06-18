@@ -12,8 +12,6 @@ $Breakpoint-parallax: 1020px;
 
   height: calc(2em * $line-height-h1);
 
-
-
   @include h2-responsive-font;
 
   @media screen and (width < $Breakpoint-parallax) {
@@ -32,8 +30,6 @@ $Breakpoint-parallax: 1020px;
   @media screen and (width > $Breakpoint-parallax) {
     display: none;
   }
-
-  text-align: center;
 }
 
 .parallax:last-child {
