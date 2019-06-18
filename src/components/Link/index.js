@@ -15,6 +15,7 @@ export default class Link extends React.Component {
       "oxford-blue",
       "white",
       "transparent",
+      "baby-blue",
     ]),
     hover: PropTypes.bool,
     isActive: PropTypes.bool,

@@ -38,7 +38,11 @@
 .contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: baseline;
+
+  * {
+    @include body-responsive-font;
+  }
 }
 
 .cv {
@@ -46,8 +50,14 @@
   flex-direction: row;
   align-items: center;
 
-  * {
-    @include body-responsive-font;
+  margin-bottom: calc($spacing-20 + $spacing-8);
+
+  @include Breakpoint-tabletOnly {
+    margin-bottom: 24px;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-12;
   }
 
   *:first-child {
