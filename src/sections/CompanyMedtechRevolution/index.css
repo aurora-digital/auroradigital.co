@@ -14,7 +14,7 @@
 }
 
 .container-top {
-  grid-template-columns: calc($five-columns + $gutter) 1fr;
+  grid-template-columns: $five-columns 1fr;
 
   .text {
     order: 1;
@@ -45,7 +45,7 @@
 }
 
 .container-bottom {
-  grid-template-columns: 1fr calc($five-columns + $gutter);
+  grid-template-columns: 1fr $five-columns;
 
   .text {
     order: 1;
@@ -109,7 +109,7 @@
 
 .left-image {
   height: $spacing-352;
-  margin-top: calc($spacing-84 * -1);
+  margin-top: calc($spacing-84 * -2);
   margin-left: calc($column-spacing * -1);
 
   @include Breakpoint-tabletOnly {
