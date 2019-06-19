@@ -50,11 +50,7 @@
   flex-direction: row;
   align-items: center;
 
-  margin-bottom: calc($spacing-20 + $spacing-8);
-
-  @include Breakpoint-tabletOnly {
-    margin-bottom: 24px;
-  }
+  margin-bottom: $spacing-20;
 
   @include Breakpoint-mobileOnly {
     margin-bottom: $spacing-12;
