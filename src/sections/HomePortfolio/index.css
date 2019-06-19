@@ -117,7 +117,6 @@
 }
 
 .left-image {
-  margin-top: -$spacing-136;
   margin-left: calc($column-spacing * -1);
 
   @include Breakpoint-tabletAndBelow {
@@ -189,6 +188,10 @@
     width: calc($six-columns + $gutter);
     height: 352px;
 
+    @include Breakpoint-desktopOnly {
+      margin-top: calc(($spacing-352) * -1 + $spacing-32);
+    }
+
     @include Breakpoint-tabletOnly {
       width: calc(28vw + $gutter);
       height: $spacing-352;
@@ -246,6 +249,10 @@
     width: calc($five-columns + $gutter);
     height: $spacing-352;
 
+    @include Breakpoint-desktopOnly {
+      margin-top: calc(($spacing-352) * -1 + $spacing-32);
+    }
+
     @include Breakpoint-tabletOnly {
       width: calc(48vw + $gutter);
       height: auto;
@@ -290,6 +297,10 @@
 
   .left-image {
     width: $three-columns;
+
+    @include Breakpoint-desktopOnly {
+      margin-top: calc(($spacing-352) * -1 + $spacing-20 + 4px);
+    }
 
     @include Breakpoint-tabletOnly {
       width: calc(20vw + $spacing-136);
