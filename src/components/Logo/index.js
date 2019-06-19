@@ -6,9 +6,9 @@ import "./index.css";
 
 const Logo = ({ color }) => (
   <svg
-    width="166"
+    width="100"
     height="38"
-    viewBox="0 0 166 38"
+    viewBox="35 0 100 38"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     styleName={classNames("root", { [`logo-svg-${color}`]: true })}
