@@ -1,6 +1,6 @@
 @import "../../../styles/all.css";
 
-$wave-height: 400px;
+$wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
@@ -15,7 +15,7 @@ $wave-offset: calc(($wave-height / 2));
 
 .title {
   margin-top: $spacing-136;
-  margin-bottom: $spacing-224;
+  margin-bottom: 205px;
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
@@ -25,12 +25,12 @@ $wave-offset: calc(($wave-height / 2));
 .overlay {
   position: absolute;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 
   width: 100%;
   height: $wave-height;
 
-  overflow: hidden;
+  overflow: visible;
 
   transform: translateY(-25%);
 }
@@ -51,7 +51,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .wave.animate {
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 
 @keyframes wave {
@@ -79,4 +79,6 @@ $wave-offset: calc(($wave-height / 2));
   z-index: 2;
 
   max-width: $six-columns;
+
+  margin-top: calc(24px * -1);
 }
