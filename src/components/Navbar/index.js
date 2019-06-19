@@ -16,8 +16,8 @@ const COLOR_THEME_PRIMARY = {
 };
 
 const COLOR_THEME_SECONDARY = {
-  color: "white",
-  underlineColor: "white",
+  color: "baby-blue",
+  underlineColor: "baby-blue",
   logoColor: "white",
 };
 
