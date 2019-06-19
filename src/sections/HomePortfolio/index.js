@@ -25,6 +25,9 @@ function HomePortfolio({ data }) {
           url={projectUrls[project]}
           label={`View Project, ${project} `}
         >
+          <span role="img" aria-label="finger-pointing-right">
+            👉
+          </span>
           <Typography variant="small-body" weight="bold" color="klein-blue">
             View Project
           </Typography>
@@ -32,6 +35,9 @@ function HomePortfolio({ data }) {
       </div>
 
       <a styleName="link-mobile" href={projectUrls[project]}>
+        <span role="img" aria-label="finger-pointing-right">
+          👉
+        </span>
         <Typography variant="small-body" weight="bold" color="klein-blue">
           View Project
         </Typography>

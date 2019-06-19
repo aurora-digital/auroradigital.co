@@ -18,6 +18,9 @@ export default function HomeContact() {
         </div>
 
         <div styleName="link">
+          <span role="img" aria-label="finger-pointing-right">
+            👉
+          </span>
           <Contact>
             <Typography color="klein-blue">contact@auroradigital.co</Typography>
           </Contact>

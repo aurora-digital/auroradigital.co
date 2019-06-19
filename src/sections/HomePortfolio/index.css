@@ -69,6 +69,12 @@
 
   transform: translate(-100%, calc(-100% + $spacing-224));
 
+  span {
+    margin-right: $spacing-12;
+
+    font-size: $font-size-body-small;
+  }
+
   @include Breakpoint-mobileOnly {
     transform: translate(-100%, calc(-100% + $spacing-84));
 
@@ -86,6 +92,10 @@
   cursor: pointer;
 
   text-decoration: none;
+
+  span {
+    margin-right: $spacing-12;
+  }
 
   @include Breakpoint-tabletAndAbove {
     display: none;
@@ -170,7 +180,7 @@
   }
 
   .link {
-    left: calc(($three-columns * -1) - $gutter);
+    left: calc(($three-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($two-columns * -1) - $gutter);
@@ -210,7 +220,7 @@
 
 .project.oncostats {
   .link {
-    left: calc(($four-columns * -1) - $gutter);
+    left: calc(($four-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($three-columns * -1) - $gutter);
@@ -229,6 +239,7 @@
       margin-left: -$mobile-padding;
 
       .link-mobile {
+        margin-right: $spacing-20;
         margin-left: auto;
       }
     }
@@ -270,7 +281,7 @@
 
 .project.lyftonomie {
   .link {
-    left: calc(($three-columns * -1) - $gutter);
+    left: calc(($three-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($two-columns * -1) - $gutter);
