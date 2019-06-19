@@ -83,36 +83,41 @@ const SOCIAL_LINKS = [
 const Footer = () => (
   <Section verticalSpacing={false}>
     <div styleName="root">
-      <div styleName="logo">
-        <Link to="/" label="Aurora's homepage">
-          <Logo color="klein-blue" />
-        </Link>
-      </div>
+      <div styleName="container">
+        <div styleName="logo">
+          <Link to="/" label="Aurora's homepage">
+            <Logo color="klein-blue" />
+          </Link>
+        </div>
 
-      <div styleName="addresses">
-        {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
-        {renderAddress("Boston, USA", "https://goo.gl/maps/iapQCSPFSrZaJ5qn9")}
-      </div>
+        <div styleName="addresses">
+          {renderAddress("Braga, Portugal", "https://goo.gl/maps/ddvtn1Ez8N72")}
+          {renderAddress(
+            "Boston, USA",
+            "https://goo.gl/maps/iapQCSPFSrZaJ5qn9",
+          )}
+        </div>
 
-      <div styleName="titled-links">
-        <Typography variant="small-body" color="oxford-blue" weight="bold">
-          Follow Us
-        </Typography>
+        <div styleName="titled-links">
+          <Typography variant="small-body" color="oxford-blue" weight="bold">
+            Follow Us
+          </Typography>
 
-        <div styleName="social-links">
-          {SOCIAL_LINKS.map(({ name, ariaLabel, link }) => (
-            <a
-              href={link}
-              rel="noopener noreferrer"
-              target="_blank"
-              key={name}
-              aria-label={`Aurora's, ${ariaLabel}`}
-            >
-              <Typography variant="small-body" color="klein-blue">
-                {name}
-              </Typography>
-            </a>
-          ))}
+          <div styleName="social-links">
+            {SOCIAL_LINKS.map(({ name, ariaLabel, link }) => (
+              <a
+                href={link}
+                rel="noopener noreferrer"
+                target="_blank"
+                key={name}
+                aria-label={`Aurora's, ${ariaLabel}`}
+              >
+                <Typography variant="small-body" color="klein-blue">
+                  {name}
+                </Typography>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       <div styleName="wave">
