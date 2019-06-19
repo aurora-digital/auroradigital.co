@@ -1,6 +1,9 @@
 @import "../../styles/all.css";
 
 .root {
+  @include Breakpoint-desktopOnly {
+    margin-top: calc(calc($spacing-224 - $spacing-84) * -1);
+  }
 }
 
 .project {
@@ -13,6 +16,10 @@
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-136;
   }
+}
+
+.project:first-child {
+  margin-top: $spacing-136;
 }
 
 .title-image {
