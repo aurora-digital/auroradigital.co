@@ -58,3 +58,9 @@
 .underline-transparent {
   text-decoration: none;
 }
+
+.underline-baby-blue {
+  &::after {
+    background-color: $baby-blue;
+  }
+}
