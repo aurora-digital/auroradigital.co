@@ -3,27 +3,25 @@
 .root {
   position: relative;
 
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-
-  margin-bottom: $spacing-56;
+  margin-bottom: $spacing-136;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
-    margin-bottom: $spacing-20;
+    margin-bottom: $spacing-84;
   }
 }
 
-.root > *:not(:last-child) {
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.container > *:not(:last-child) {
   margin-right: $gutter;
 
   @include Breakpoint-tabletOnly {
     margin-right: $spacing-52;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-52;
   }
 }
 
@@ -97,9 +95,8 @@
 }
 
 .wave {
-  position: absolute;
-  top: 50%;
-  left: -15%;
+  margin-top: calc($spacing-32 * -1);
+  margin-left: calc($column-spacing * -1);
 
   @include Breakpoint-mobileOnly {
     display: none;
