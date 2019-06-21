@@ -136,6 +136,8 @@
 .copy-services {
   position: relative;
 
+  padding-top: $spacing-84;
+
   .left-column {
     position: absolute;
     top: 34.5%;
