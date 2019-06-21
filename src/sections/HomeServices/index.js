@@ -87,7 +87,7 @@ function HomeServices({ data }) {
             <ul styleName="list" aria-label="Development Services">
               <FadeUpOnScroll>
                 <li>
-                  <Typography>Hosting Solution</Typography>
+                  <Typography>Hosting Solutions</Typography>
                 </li>
                 <li>
                   <Typography>Software Development</Typography>
