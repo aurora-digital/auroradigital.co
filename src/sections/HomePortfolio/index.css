@@ -131,7 +131,7 @@
   margin-left: calc($column-spacing * -1);
 
   @include Breakpoint-desktopOnly {
-    margin-top: calc($spacing-224 * -1 - $spacing-32);
+    margin-top: calc($spacing-224 * -1 - $spacing-20);
   }
 
   @include Breakpoint-tabletAndBelow {
