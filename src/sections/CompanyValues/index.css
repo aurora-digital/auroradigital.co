@@ -90,11 +90,15 @@
   float: right;
   max-width: $six-columns;
 
-  *:last-child {
-    margin-top: $spacing-12;
-  }
-
   @include Breakpoint-mobileOnly {
     margin: $spacing-32 0;
+  }
+}
+
+.copy-top {
+  margin-bottom: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-32;
   }
 }
