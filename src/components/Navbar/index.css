@@ -1,8 +1,13 @@
 @import "../../styles/all.css";
 
 .root {
+  height: $navbar-height;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
+
   padding: $spacing-52 0;
 
   a {
@@ -10,7 +15,7 @@
   }
 }
 
-.root > * {
+.container > * {
   align-self: center;
 }
 
