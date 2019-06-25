@@ -18,7 +18,7 @@ $wave-offset: calc(($wave-height / 2));
 
   background-color: $klein-blue;
 
-  animation: slide 2s linear;
+  animation: slide 1750ms ease-in;
 }
 
 @keyframes slide {
