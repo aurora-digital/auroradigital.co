@@ -4,7 +4,7 @@ $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: calc($wave-height / 2);
+  padding-bottom: calc($wave-height - 0.2 * $wave-height);
 
   background-color: $klein-blue;
 }
@@ -15,24 +15,22 @@ $wave-offset: calc(($wave-height / 2));
 
 .title {
   margin-top: $spacing-136;
-  margin-bottom: 205px;
+  margin-bottom: $spacing-84;
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
+    margin-bottom: $spacing-52;
   }
 }
 
 .overlay {
   position: absolute;
   left: 0;
-  z-index: 2;
 
   width: 100%;
   height: $wave-height;
 
   overflow: hidden;
-
-  transform: translateY(-25%);
 }
 
 .wave {
