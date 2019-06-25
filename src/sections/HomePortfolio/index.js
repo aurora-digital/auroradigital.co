@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
-
+import { ParallaxBanner } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import FadeUpOnScroll from "root/components/FadeUpOnScroll";
-
+import LoadPlaceholder from "root/components/LoadPlaceholder";
 import withQuery from "./withQuery";
 
 import "./index.css";
@@ -19,7 +19,7 @@ function HomePortfolio({ data }) {
   };
 
   const renderLink = project => (
-    <>
+    <div>
       <div styleName="link">
         <WavyLink
           url={projectUrls[project]}
@@ -42,8 +42,32 @@ function HomePortfolio({ data }) {
           View Project
         </Typography>
       </a>
-    </>
+    </div>
   );
+
+  const renderParallaxImage = ({ baseDelay, image, parallaxAmount }) => (
+    <ParallaxBanner
+      layers={[
+        {
+          children: (
+            <LoadPlaceholder delay={baseDelay}>
+              {onLoad => (
+                <Img
+                  fadeIn={false}
+                  onLoad={onLoad}
+                  fluid={image}
+                  objectFit="cover"
+                />
+              )}
+            </LoadPlaceholder>
+          ),
+          amount: parallaxAmount,
+        },
+      ]}
+    />
+  );
+
+  const baseDelay = 0.3;
 
   return (
     <Section>
@@ -67,13 +91,19 @@ function HomePortfolio({ data }) {
               </FadeUpOnScroll>
             </div>
 
-            <FadeUpOnScroll styleName="right-image-wrapper">
+            <div styleName="right-image-wrapper">
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
+                <div styleName="parallax">
+                  {renderParallaxImage({
+                    baseDelay,
+                    image: data.sioslife2.image.fluid,
+                    parallaxAmount: 0.1,
+                  })}
+                </div>
               </div>
-            </FadeUpOnScroll>
+            </div>
           </div>
 
           <FadeUpOnScroll>

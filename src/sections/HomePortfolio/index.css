@@ -116,17 +116,17 @@
 
   div {
     height: 100%;
-    filter: grayscale(100%);
-
-    transition: filter 500ms;
   }
+
+  overflow-y: hidden;
 }
 
-.left-image:hover,
-.right-image:hover {
-  div {
-    filter: grayscale(0%);
-  }
+.parallax {
+  position: absolute;
+  top: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
 }
 
 .right-image {
@@ -159,30 +159,6 @@
     margin-top: 0;
     margin-left: -$mobile-padding;
   }
-}
-
-.right-image::after,
-.left-image::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: color($klein-blue alpha(52%));
-  mix-blend-mode: overlay;
-
-  opacity: 1;
-
-  transition: opacity 500ms;
-}
-
-.right-image:hover::after,
-.left-image:hover::after {
-  opacity: 0;
 }
 
 .project.sioslife {

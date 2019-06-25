@@ -1,0 +1,24 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $klein-blue;
+
+  transition: transform 0.5s cubic-bezier(0.7, 0.05, 0, 1);
+
+  z-index: 1;
+}
+
+.placeholder.loaded {
+  transform: translateX(-100%);
+}
