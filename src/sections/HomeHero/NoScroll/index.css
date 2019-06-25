@@ -14,7 +14,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .title {
-  margin-top: $spacing-136;
+  margin-top: calc($spacing-224 - $navbar-height);
   margin-bottom: $spacing-84;
 
   @include Breakpoint-mobileOnly {
