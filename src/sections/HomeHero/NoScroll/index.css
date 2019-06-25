@@ -14,7 +14,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .title {
-  margin-top: $spacing-136;
+  margin-top: calc($spacing-224 - $navbar-height);
   margin-bottom: 205px;
 
   @include Breakpoint-mobileOnly {
@@ -29,8 +29,6 @@ $wave-offset: calc(($wave-height / 2));
 
   width: 100%;
   height: $wave-height;
-
-  overflow: visible;
 
   transform: translateY(-25%);
 }
@@ -51,7 +49,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .wave.animate {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 @keyframes wave {
