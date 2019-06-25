@@ -4,13 +4,50 @@ $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: calc($wave-height / 2);
+  position: relative;
 
-  background-color: $klein-blue;
+  padding-bottom: calc($wave-height / 2);
 }
 
 .background {
+  position: absolute;
+  z-index: -1;
+
+  width: 100%;
   height: 100%;
+
+  background-color: $klein-blue;
+
+  animation: slide 750ms ease-in;
+}
+
+@keyframes slide {
+  from {
+    max-width: 0%;
+  }
+
+  to {
+    max-width: 100%;
+  }
+}
+
+.fadein,
+.navbar nav > a {
+  opacity: 0;
+
+  animation: fadein 500ms;
+  animation-delay: 750ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .title {
@@ -51,7 +88,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .wave.animate {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 @keyframes wave {
@@ -74,7 +111,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .copy {
-  position: relative;
+  position: absolute;
 
   z-index: 2;
 
