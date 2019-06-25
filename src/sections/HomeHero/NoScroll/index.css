@@ -30,7 +30,7 @@ $wave-offset: calc(($wave-height / 2));
   width: 100%;
   height: $wave-height;
 
-  overflow: visible;
+  overflow: hidden;
 
   transform: translateY(-25%);
 }
@@ -51,7 +51,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .wave.animate {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 @keyframes wave {
@@ -79,6 +79,4 @@ $wave-offset: calc(($wave-height / 2));
   z-index: 2;
 
   max-width: $six-columns;
-
-  margin-top: calc(24px * -1);
 }
