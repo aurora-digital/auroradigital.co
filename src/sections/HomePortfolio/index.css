@@ -60,7 +60,16 @@
 
   align-self: center;
 
-  transform: translate(-100%, calc(-100% + $spacing-224));
+  @include Breakpoint-desktopOnly {
+    transform: translate(
+      0,
+      calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
+    );
+  }
+
+  @include Breakpoint-tabletOnly {
+    transform: translate(0, calc(-100% + $spacing-224));
+  }
 
   @include Breakpoint-mobileOnly {
     transform: translate(-100%, calc(-100% + $spacing-84));
@@ -105,6 +114,8 @@
 }
 
 .right-image {
+  max-height: 584px;
+
   margin-right: calc($column-spacing * -1);
 
   @include Breakpoint-tabletAndBelow {
@@ -118,6 +129,10 @@
 
 .left-image {
   margin-left: calc($column-spacing * -1);
+
+  @include Breakpoint-desktopOnly {
+    margin-top: calc($spacing-224 * -1 - $spacing-32);
+  }
 
   @include Breakpoint-tabletAndBelow {
     margin-top: -$spacing-84;
@@ -188,10 +203,6 @@
     width: calc($six-columns + $gutter);
     height: 352px;
 
-    @include Breakpoint-desktopOnly {
-      margin-top: calc(($spacing-352) * -1 + $spacing-32);
-    }
-
     @include Breakpoint-tabletOnly {
       width: calc(28vw + $gutter);
       height: $spacing-352;
@@ -249,10 +260,6 @@
     width: calc($five-columns + $gutter);
     height: $spacing-352;
 
-    @include Breakpoint-desktopOnly {
-      margin-top: calc(($spacing-352) * -1 + $spacing-32);
-    }
-
     @include Breakpoint-tabletOnly {
       width: calc(48vw + $gutter);
       height: auto;
@@ -297,10 +304,6 @@
 
   .left-image {
     width: $three-columns;
-
-    @include Breakpoint-desktopOnly {
-      margin-top: calc(($spacing-352) * -1 + $spacing-20 + 4px);
-    }
 
     @include Breakpoint-tabletOnly {
       width: calc(20vw + $spacing-136);
