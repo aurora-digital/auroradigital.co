@@ -15,12 +15,7 @@ $tabletColumns: calc($tabletSpace / 3);
     display: block;
   }
 
-  @include Breakpoint-tabletAndAbove {
-    display: flex;
-    padding-top: $spacing-84;
-  }
-
-  padding-bottom: $spacing-136;
+  padding-bottom: $spacing-224;
 
   @supports (display: grid) {
     @include Breakpoint-desktopOnly {
