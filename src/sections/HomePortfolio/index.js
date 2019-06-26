@@ -148,7 +148,7 @@ function HomePortfolio({ data }) {
           </div>
           <FadeUpOnScroll>
             <div styleName="left-image">
-              {renderParallaxEffect(data.lyftonomie1.image.fluid)}
+              <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
             </div>
           </FadeUpOnScroll>
         </div>
