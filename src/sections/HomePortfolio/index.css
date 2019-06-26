@@ -158,7 +158,7 @@
 }
 
 .right-image {
-  max-height: 584px;
+  max-height: $spacing-584;
 
   margin-right: calc($column-spacing * -1);
 
@@ -206,7 +206,7 @@
 
   .right-image {
     width: calc($four-columns + $gutter);
-    height: 584px;
+    height: $spacing-584;
 
     @include Breakpoint-tabletOnly {
       width: calc(50vw + $gutter);

@@ -82,7 +82,7 @@
 .right-image {
   order: 2;
 
-  height: 584px;
+  height: $spacing-584;
 
   margin-right: calc($column-spacing * -1);
 

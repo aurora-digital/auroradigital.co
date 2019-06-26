@@ -20,6 +20,10 @@
   position: relative;
 
   height: $spacing-584;
+
+  @include Breakpoint-mobileOnly {
+    height: $spacing-224;
+  }
 }
 
 .parallax {
