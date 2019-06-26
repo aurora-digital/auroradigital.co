@@ -27,7 +27,7 @@
 
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-52;
+  margin-bottom: $spacing-84;
 
   @include Breakpoint-tabletAndBelow {
     flex-direction: column;
@@ -67,7 +67,15 @@
 
   align-self: center;
 
-  transform: translate(-100%, calc(-100% + $spacing-224));
+  @include Breakpoint-desktopOnly {
+    transform: translateY(
+      calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
+    );
+  }
+
+  @include Breakpoint-tabletOnly {
+    transform: translateY(calc(-100% + $spacing-224));
+  }
 
   span {
     margin-right: $spacing-12;
@@ -122,6 +130,8 @@
 }
 
 .right-image {
+  max-height: 584px;
+
   margin-right: calc($column-spacing * -1);
 
   @include Breakpoint-tabletAndBelow {
@@ -134,8 +144,11 @@
 }
 
 .left-image {
-  margin-top: -$spacing-136;
   margin-left: calc($column-spacing * -1);
+
+  @include Breakpoint-desktopOnly {
+    margin-top: calc($spacing-224 * -1 - $spacing-20);
+  }
 
   @include Breakpoint-tabletAndBelow {
     margin-top: -$spacing-84;
