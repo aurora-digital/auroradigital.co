@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
-import { ParallaxBanner } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import FadeUpOnScroll from "root/components/FadeUpOnScroll";
-import LoadPlaceholder from "root/components/LoadPlaceholder";
+import ParallaxImage from "root/components/ParallaxImage";
 import withQuery from "./withQuery";
 
 import "./index.css";
@@ -18,8 +17,19 @@ function HomePortfolio({ data }) {
     lyftonomie: "https://lyftonomie.fr/",
   };
 
+  const renderParallaxImage = image => (
+    <ParallaxImage parallaxAmount={0.1}>
+      <Img
+        fadeIn={false}
+        styleName="parallax"
+        style={{ height: "100%" }}
+        fluid={image}
+      />
+    </ParallaxImage>
+  );
+
   const renderLink = project => (
-    <div>
+    <>
       <div styleName="link">
         <WavyLink
           url={projectUrls[project]}
@@ -42,24 +52,7 @@ function HomePortfolio({ data }) {
           View Project
         </Typography>
       </a>
-    </div>
-  );
-
-  const renderParallaxImage = ({ image, parallaxAmount }) => (
-    <ParallaxBanner
-      styleName="parallax"
-      layers={[
-        {
-          children: (
-            <Img fadeIn={false} fluid={image} style={{ height: "100%" }} />
-          ),
-          amount: parallaxAmount,
-        },
-      ]}
-      style={{
-        height: "100%",
-      }}
-    />
+    </>
   );
 
   return (
@@ -84,16 +77,13 @@ function HomePortfolio({ data }) {
               </FadeUpOnScroll>
             </div>
 
-            <div styleName="right-image-wrapper">
+            <FadeUpOnScroll styleName="right-image-wrapper">
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                {renderParallaxImage({
-                  image: data.sioslife2.image.fluid,
-                  parallaxAmount: 0.2,
-                })}
+                {renderParallaxImage(data.sioslife2.image.fluid)}
               </div>
-            </div>
+            </FadeUpOnScroll>
           </div>
 
           <FadeUpOnScroll>

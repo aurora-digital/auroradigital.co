@@ -118,7 +118,7 @@
 .parallax {
   position: relative;
 
-  div {
+  img {
     height: 100%;
     filter: grayscale(100%);
 
@@ -128,7 +128,7 @@
 
 .parallax:hover,
 .parallax:hover {
-  div {
+  img {
     filter: grayscale(0%);
   }
 }
