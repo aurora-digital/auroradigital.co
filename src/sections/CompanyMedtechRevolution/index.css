@@ -77,19 +77,12 @@
 .right-image,
 .left-image {
   position: relative;
-
-  div {
-    height: 100%;
-    filter: grayscale(100%);
-
-    transition: filter 500ms;
-  }
 }
 
 .right-image {
   order: 2;
 
-  height: 584px;
+  height: $spacing-584;
 
   margin-right: calc($column-spacing * -1);
 
@@ -127,17 +120,26 @@
   }
 }
 
-.left-image:hover,
-.right-image:hover {
-  div {
-    filter: grayscale(0%);
+.parallax {
+  position: relative;
+
+  img {
+    height: 100%;
+    filter: grayscale(100%);
 
     transition: filter 500ms;
   }
 }
 
-.right-image::after,
-.left-image::after {
+.parallax:hover,
+.parallax:hover {
+  img {
+    filter: grayscale(0%);
+  }
+}
+
+.parallax::after,
+.parallax::after {
   content: "";
 
   position: absolute;
@@ -151,11 +153,11 @@
   mix-blend-mode: overlay;
 
   opacity: 1;
-}
-
-.right-image:hover::after,
-.left-image:hover::after {
-  opacity: 0;
 
   transition: opacity 500ms;
+}
+
+.parallax:hover::after,
+.parallax:hover::after {
+  opacity: 0;
 }
