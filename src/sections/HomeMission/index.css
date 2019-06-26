@@ -52,8 +52,11 @@ $Breakpoint-parallax: 1020px;
   position: relative;
 
   max-width: $eight-columns;
-  margin: 0 auto;
-  margin-top: $spacing-136;
+  margin: $spacing-136 auto 0 auto;
+
+  @include Breakpoint-tabletOnly {
+    max-width: $seven-columns;
+  }
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;

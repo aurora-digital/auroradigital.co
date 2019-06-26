@@ -14,31 +14,29 @@ function HomeHeroNoScroll() {
   const waveStyles = classNames("wave", { animate: inView });
 
   return (
-    <div styleName="root" ref={ref}>
-      <div styleName="background" />
+    <div ref={ref}>
+      <div styleName="root">
+        <div styleName="background" />
+        <Navbar theme="secondary" />
+        <Section verticalSpacing={false}>
+          <div styleName="title">
+            <Typography weight="bold" variant="h1">
+              Nurturing digital healthcare
+            </Typography>
+          </div>
 
-      <Navbar theme="secondary" />
+          <div styleName="copy">
+            <Typography color="baby-blue">
+              We design and develop thoughtful web and mobile healthcare
+              solutions, accessible to anyone, anywhere, at anytime.
+            </Typography>
+          </div>
 
-      <Section verticalSpacing={false}>
-        <div styleName="title">
-          <Typography weight="bold" variant="h1">
-            Nurturing digital healthcare
-          </Typography>
-        </div>
-
-        <div styleName="overlay">
-          <div styleName={waveStyles} />
-
-          <Section verticalSpacing={false}>
-            <div styleName="copy">
-              <Typography color="baby-blue">
-                We design and develop thoughtful web and mobile healthcare
-                solutions, accessible to anyone, anywhere, at anytime.
-              </Typography>
-            </div>
-          </Section>
-        </div>
-      </Section>
+          <div styleName="overlay">
+            <div styleName={waveStyles} />
+          </div>
+        </Section>
+      </div>
     </div>
   );
 }
