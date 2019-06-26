@@ -20,7 +20,7 @@
 
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-52;
+  margin-bottom: $spacing-84;
 
   @include Breakpoint-tabletAndBelow {
     flex-direction: column;
@@ -61,14 +61,13 @@
   align-self: center;
 
   @include Breakpoint-desktopOnly {
-    transform: translate(
-      0,
+    transform: translateY(
       calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
     );
   }
 
   @include Breakpoint-tabletOnly {
-    transform: translate(0, calc(-100% + $spacing-224));
+    transform: translateY(calc(-100% + $spacing-224));
   }
 
   @include Breakpoint-mobileOnly {
