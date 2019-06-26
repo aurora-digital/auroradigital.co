@@ -45,29 +45,22 @@ function HomePortfolio({ data }) {
     </div>
   );
 
-  const renderParallaxImage = ({ baseDelay, image, parallaxAmount }) => (
+  const renderParallaxImage = ({ image, parallaxAmount }) => (
     <ParallaxBanner
+      styleName="parallax"
       layers={[
         {
           children: (
-            <LoadPlaceholder delay={baseDelay}>
-              {onLoad => (
-                <Img
-                  fadeIn={false}
-                  onLoad={onLoad}
-                  fluid={image}
-                  objectFit="cover"
-                />
-              )}
-            </LoadPlaceholder>
+            <Img fadeIn={false} fluid={image} style={{ height: "100%" }} />
           ),
           amount: parallaxAmount,
         },
       ]}
+      style={{
+        height: "100%",
+      }}
     />
   );
-
-  const baseDelay = 0.3;
 
   return (
     <Section>
@@ -95,13 +88,10 @@ function HomePortfolio({ data }) {
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                <div styleName="parallax">
-                  {renderParallaxImage({
-                    baseDelay,
-                    image: data.sioslife2.image.fluid,
-                    parallaxAmount: 0.1,
-                  })}
-                </div>
+                {renderParallaxImage({
+                  image: data.sioslife2.image.fluid,
+                  parallaxAmount: 0.2,
+                })}
               </div>
             </div>
           </div>

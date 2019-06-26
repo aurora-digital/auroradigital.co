@@ -113,20 +113,48 @@
 .right-image,
 .left-image {
   position: relative;
-
-  div {
-    height: 100%;
-  }
-
-  overflow-y: hidden;
 }
 
 .parallax {
+  position: relative;
+
+  div {
+    height: 100%;
+    filter: grayscale(100%);
+
+    transition: filter 500ms;
+  }
+}
+
+.parallax:hover,
+.parallax:hover {
+  div {
+    filter: grayscale(0%);
+  }
+}
+
+.parallax::after,
+.parallax::after {
+  content: "";
+
   position: absolute;
   top: 0;
-  top: 50%;
+  left: 0;
+
   width: 100%;
-  transform: translateY(-50%);
+  height: 100%;
+
+  background-color: color($klein-blue alpha(52%));
+  mix-blend-mode: overlay;
+
+  opacity: 1;
+
+  transition: opacity 500ms;
+}
+
+.parallax:hover::after,
+.parallax:hover::after {
+  opacity: 0;
 }
 
 .right-image {
