@@ -35,12 +35,6 @@ const CompanyHero = () => (
           <Typography color="oxford-blue" weight="bold" variant="h1">
             Striving for better healthcare
           </Typography>
-          <Typography color="oxford-blue" weight="bold" variant="h1">
-            better
-          </Typography>
-          <Typography color="oxford-blue" weight="bold" variant="h1">
-            healthcare
-          </Typography>
         </div>
       </div>
       <div styleName="copy">
