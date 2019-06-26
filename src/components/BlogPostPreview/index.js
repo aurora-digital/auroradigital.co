@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 
+import ParallaxEffect from "root/components/ParallaxEffect";
 import Typography from "root/components/Typography";
 
 import "./index.css";
@@ -17,7 +18,9 @@ function BlogPostPreview({
 }) {
   return (
     <Link styleName="root" to={`/blog/articles/${path}`}>
-      <Img sizes={featuredImage.childImageSharp.sizes} />
+      <ParallaxEffect parallaxAmount={0.1}>
+        <Img fluid={featuredImage.image.fluid} />
+      </ParallaxEffect>
 
       <div styleName="author">
         <Typography variant="small-body" color="oxford-blue">

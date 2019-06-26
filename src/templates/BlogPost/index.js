@@ -27,7 +27,6 @@ export const pageQuery = graphql`
           image: childImageSharp {
             fluid(maxWidth: 1024, quality: 95) {
               ...GatsbyImageSharpFluid_withWebp
-              presentationHeight
             }
           }
         }
@@ -36,7 +35,7 @@ export const pageQuery = graphql`
   }
 `;
 
-function Template({ data, pageContext }) {
+function BlogPost({ data, pageContext }) {
   const {
     mdx: { code, frontmatter },
   } = data;
@@ -76,13 +75,13 @@ function Template({ data, pageContext }) {
   );
 }
 
-Template.propTypes = {
+BlogPost.propTypes = {
   data: PropTypes.shape({
     mdx: PropTypes.shape(),
   }).isRequired,
   pageContext: PropTypes.shape({
-    author: PropTypes.string.isRequired,
+    author: PropTypes.shape({}).isRequired,
   }).isRequired,
 };
 
-export default Template;
+export default BlogPost;

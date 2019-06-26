@@ -24,9 +24,9 @@ export const query = graphql`
             title
             description
             featuredImage {
-              childImageSharp {
-                sizes(maxWidth: 630) {
-                  ...GatsbyImageSharpSizes
+              image: childImageSharp {
+                fluid(maxWidth: 1080, quality: 95) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

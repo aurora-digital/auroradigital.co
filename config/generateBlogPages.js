@@ -26,8 +26,6 @@ module.exports = async (graphql, actions) => {
   }
 
   result.data.allMdx.edges.forEach(({ node }) => {
-    console.log(node.frontmatter.path);
-
     createPage({
       path: `/blog/articles/${node.frontmatter.path}`,
       component: path.resolve(`./src/templates/BlogPost/index.js`),

@@ -4,9 +4,10 @@ import Img from "gatsby-image";
 import { Link } from "gatsby";
 
 import Typography from "root/components/Typography";
+import ParallaxEffect from "root/components/ParallaxEffect";
+import WavyLink from "root/components/WavyLink";
 
 import "./index.css";
-import WavyLink from "../WavyLink";
 
 function FeaturedBlogPostPreview({
   title,
@@ -47,7 +48,9 @@ function FeaturedBlogPostPreview({
       </div>
 
       <div styleName="image">
-        <Img sizes={featuredImage.childImageSharp.sizes} objectFit="cover" />
+        <ParallaxEffect parallaxAmount={0.1}>
+          <Img fluid={featuredImage.image.fluid} style={{ height: "100%" }} />
+        </ParallaxEffect>
       </div>
     </div>
   );

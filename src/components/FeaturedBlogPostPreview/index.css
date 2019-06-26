@@ -28,11 +28,6 @@
   margin-right: calc(-1 * $column-spacing);
   margin-left: $column-spacing;
 
-  div {
-    width: 100%;
-    height: calc(100% - $spacing-20);
-  }
-
   @include Breakpoint-mobileOnly {
     max-width: 100%;
     margin: 0;
