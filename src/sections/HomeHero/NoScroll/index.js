@@ -32,7 +32,7 @@ function HomeHeroNoScroll() {
           <div styleName={waveStyles} />
 
           <Section verticalSpacing={false}>
-            <div styleName="copy fadein">
+            <div styleName="copy">
               <Typography color="baby-blue">
                 We design and develop thoughtful web and mobile healthcare
                 solutions, accessible to anyone, anywhere, at anytime.

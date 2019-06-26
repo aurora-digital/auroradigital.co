@@ -35,11 +35,6 @@ $wave-offset: calc(($wave-height / 2));
   }
 }
 
-.fadein,
-.navbar nav > a {
-
-}
-
 .title {
   margin-top: $spacing-136;
   margin-bottom: 205px;
