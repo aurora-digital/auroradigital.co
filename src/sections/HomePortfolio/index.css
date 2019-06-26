@@ -221,7 +221,7 @@
 
   .left-image {
     width: calc($six-columns + $gutter);
-    height: 352px;
+    height: $spacing-352;
 
     @include Breakpoint-tabletOnly {
       width: calc(28vw + $gutter);
@@ -283,13 +283,11 @@
 
     @include Breakpoint-tabletOnly {
       width: calc(48vw + $gutter);
-      height: auto;
     }
 
     @include Breakpoint-mobileOnly {
       width: calc(70vw + $mobile-padding);
-      height: auto;
-
+      height: $spacing-224;
       margin-right: -$mobile-padding;
       margin-left: auto;
     }
@@ -315,6 +313,7 @@
 
     @include Breakpoint-tabletOnly {
       width: calc(58vw + $gutter);
+      height: $spacing-352;
     }
 
     @include Breakpoint-mobileOnly {
@@ -325,6 +324,10 @@
 
   .left-image {
     width: $three-columns;
+
+    div {
+      filter: grayscale(100%);
+    }
 
     @include Breakpoint-tabletOnly {
       width: calc(20vw + $spacing-136);
@@ -341,6 +344,17 @@
   }
 
   .left-image::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    mix-blend-mode: overlay;
+
     background-color: transparent;
     background-image: url("../../assets/images/mask-layer.png");
     background-position: right;
@@ -350,6 +364,11 @@
     opacity: 1;
 
     transition: opacity 500ms;
+  }
+  .left-image:hover {
+    div {
+      filter: grayscale(0%);
+    }
   }
 
   .left-image:hover::after {
