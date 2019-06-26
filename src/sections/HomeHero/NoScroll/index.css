@@ -1,10 +1,10 @@
 @import "../../../styles/all.css";
 
-$wave-height: 400px;
+$wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
-  padding-bottom: calc($wave-height / 2);
+  padding-bottom: calc($wave-height - 0.2 * $wave-height);
 
   background-color: $klein-blue;
 }
@@ -14,25 +14,23 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .title {
-  margin-top: $spacing-136;
-  margin-bottom: $spacing-224;
+  margin-top: calc($spacing-224 - $navbar-height);
+  margin-bottom: $spacing-84;
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
+    margin-bottom: $spacing-52;
   }
 }
 
 .overlay {
   position: absolute;
   left: 0;
-  z-index: 1;
 
   width: 100%;
   height: $wave-height;
 
   overflow: hidden;
-
-  transform: translateY(-25%);
 }
 
 .wave {
@@ -74,7 +72,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .copy {
-  position: relative;
+  position: absolute;
 
   z-index: 2;
 

@@ -49,15 +49,13 @@ function HomeHeroWithScroll({ parallaxController }) {
                   <div styleName="overlay">
                     <div styleName="wave" />
 
-                    <Section verticalSpacing={false}>
-                      <div styleName="copy">
-                        <Typography color="baby-blue">
-                          We design and develop thoughtful web and mobile
-                          healthcare solutions, accessible to anyone, anywhere,
-                          at anytime.
-                        </Typography>
-                      </div>
-                    </Section>
+                    <div styleName="copy">
+                      <Typography color="baby-blue">
+                        We design and develop thoughtful web and mobile
+                        healthcare solutions, accessible to anyone, anywhere, at
+                        anytime.
+                      </Typography>
+                    </div>
                   </div>
                 </Section>
               </div>

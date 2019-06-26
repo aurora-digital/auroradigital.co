@@ -31,7 +31,7 @@ const CompanyValues = () => (
           </FadeUpOnScroll>
         </div>
         <div styleName="copy">
-          <div>
+          <div styleName="copy-top">
             <FadeUpOnScroll>
               <Typography>
                 Our team comes from vastly different backgrounds that work

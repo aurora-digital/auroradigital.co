@@ -17,8 +17,7 @@ $tabletColumns: calc($tabletSpace / 2);
     display: block;
   }
 
-  @include Breakpoint-tabletAndAbove {
-    display: flex;
+  @include Breakpoint-tabletOnly {
     padding-top: $spacing-84;
   }
 
@@ -47,7 +46,7 @@ $tabletColumns: calc($tabletSpace / 2);
 .advisor-element {
   display: flex;
 
-  @include Breakpoint-tabletAndAbove {
+  @include Breakpoint-tabletOnly {
     margin-top: calc($spacing-84 * -1);
   }
 

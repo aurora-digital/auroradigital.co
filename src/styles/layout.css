@@ -27,3 +27,4 @@ $twelve-columns: calc(12 * $column + 11 * $gutter);
 $content-width-desktop: calc($ten-columns + 4px);
 $mobile-padding: 4vw;
 $separator-max-width: 1440px;
+$navbar-height: 133px;

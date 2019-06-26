@@ -1,12 +1,7 @@
 @import "../../styles/all.css";
 
 .root {
-  height: 36px;
-
-  @include Breakpoint-mobileOnly {
-    width: 100px;
-    height: 22px;
-  }
+  height: 22px;
 }
 
 .logo-svg-white {

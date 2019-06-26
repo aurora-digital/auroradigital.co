@@ -41,12 +41,20 @@ export default function HomeMission() {
 
       <FadeUpOnScroll>
         <div styleName="copy">
-          <Typography color="oxford-blue">
+          <div styleName="above-text">
             Healthcare solutions are quite sensitive and need to be built with
             100% focus on the user’s needs, safety and privacy. We work
             alongside our customers, from research to user-testing, to build
             excellent software.
-          </Typography>
+          </div>
+          <div styleName="under-text">
+            <Typography color="oxford-blue">
+              Healthcare solutions are quite sensitive and need to be built with
+              100% focus on the user’s needs, safety and privacy. We work
+              alongside our customers, from research to user-testing, to build
+              excellent software.
+            </Typography>
+          </div>
         </div>
       </FadeUpOnScroll>
     </Section>

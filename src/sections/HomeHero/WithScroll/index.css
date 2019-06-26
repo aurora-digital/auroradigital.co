@@ -1,6 +1,6 @@
 @import "../../../styles/all.css";
 
-$wave-height: 400px;
+$wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {

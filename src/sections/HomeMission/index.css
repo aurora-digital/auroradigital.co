@@ -12,8 +12,6 @@ $Breakpoint-parallax: 1020px;
 
   height: calc(2em * $line-height-h1);
 
-
-
   @include h2-responsive-font;
 
   @media screen and (width < $Breakpoint-parallax) {
@@ -32,8 +30,6 @@ $Breakpoint-parallax: 1020px;
   @media screen and (width > $Breakpoint-parallax) {
     display: none;
   }
-
-  text-align: center;
 }
 
 .parallax:last-child {
@@ -56,10 +52,45 @@ $Breakpoint-parallax: 1020px;
   position: relative;
 
   max-width: $eight-columns;
-  margin: 0 auto;
-  margin-top: $spacing-136;
+  margin: $spacing-136 auto 0 auto;
+
+  @include Breakpoint-tabletOnly {
+    max-width: $seven-columns;
+  }
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
+  }
+
+  .above-text {
+    z-index: 0;
+
+    background-image: url(../../assets/images/wave-animation-mobile.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-size: 50% 100%;
+
+    background-clip: text;
+    color: transparent;
+
+    font-family: $font-family-visuelt;
+
+    font-weight: 400;
+
+    @include body-responsive-font;
+
+    @include Breakpoint-tabletAndAbove {
+      background-image: url(../../assets/images/wave-animation-low.gif);
+    }
+  }
+
+  .under-text {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: -1;
   }
 }

@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
-
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import FadeUpOnScroll from "root/components/FadeUpOnScroll";
-
+import ParallaxEffect from "root/components/ParallaxEffect";
 import withQuery from "./withQuery";
 
 import "./index.css";
@@ -18,6 +17,17 @@ function HomePortfolio({ data }) {
     lyftonomie: "https://lyftonomie.fr/",
   };
 
+  const renderParallaxEffect = image => (
+    <ParallaxEffect parallaxAmount={0.1}>
+      <Img
+        fadeIn={false}
+        styleName="parallax"
+        style={{ height: "100%" }}
+        fluid={image}
+      />
+    </ParallaxEffect>
+  );
+
   const renderLink = project => (
     <>
       <div styleName="link">
@@ -25,6 +35,9 @@ function HomePortfolio({ data }) {
           url={projectUrls[project]}
           label={`View Project, ${project} `}
         >
+          <span role="img" aria-label="finger-pointing-right">
+            👉
+          </span>
           <Typography variant="small-body" weight="bold" color="klein-blue">
             View Project
           </Typography>
@@ -32,6 +45,9 @@ function HomePortfolio({ data }) {
       </div>
 
       <a styleName="link-mobile" href={projectUrls[project]}>
+        <span role="img" aria-label="finger-pointing-right">
+          👉
+        </span>
         <Typography variant="small-body" weight="bold" color="klein-blue">
           View Project
         </Typography>
@@ -65,14 +81,14 @@ function HomePortfolio({ data }) {
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                <Img fluid={data.sioslife2.image.fluid} objectFit="cover" />
+                {renderParallaxEffect(data.sioslife2.image.fluid)}
               </div>
             </FadeUpOnScroll>
           </div>
 
           <FadeUpOnScroll>
             <div styleName="left-image">
-              <Img fluid={data.sioslife1.image.fluid} objectFit="cover" />
+              {renderParallaxEffect(data.sioslife1.image.fluid)}
             </div>
           </FadeUpOnScroll>
         </div>
@@ -96,14 +112,14 @@ function HomePortfolio({ data }) {
               {renderLink("oncostats")}
 
               <div styleName="right-image">
-                <Img fluid={data.oncostats2.image.fluid} objectFit="cover" />
+                {renderParallaxEffect(data.oncostats2.image.fluid)}
               </div>
             </FadeUpOnScroll>
           </div>
 
           <FadeUpOnScroll>
             <div styleName="left-image">
-              <Img fluid={data.oncostats1.image.fluid} objectFit="cover" />
+              {renderParallaxEffect(data.oncostats1.image.fluid)}
             </div>
           </FadeUpOnScroll>
         </div>
@@ -126,13 +142,13 @@ function HomePortfolio({ data }) {
             <FadeUpOnScroll styleName="right-image-wrapper">
               {renderLink("lyftonomie")}
               <div styleName="right-image">
-                <Img fluid={data.lyftonomie2.image.fluid} objectFit="cover" />
+                {renderParallaxEffect(data.lyftonomie2.image.fluid)}
               </div>
             </FadeUpOnScroll>
           </div>
           <FadeUpOnScroll>
             <div styleName="left-image">
-              <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
+              {renderParallaxEffect(data.lyftonomie1.image.fluid)}
             </div>
           </FadeUpOnScroll>
         </div>

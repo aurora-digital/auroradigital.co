@@ -1,16 +1,21 @@
 @import "../../styles/all.css";
 
 .root {
+  height: $navbar-height;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
-  padding-top: $spacing-52;
+
+  padding: $spacing-52 0;
 
   a {
     text-decoration: none;
   }
 }
 
-.root > * {
+.container > * {
   align-self: center;
 }
 

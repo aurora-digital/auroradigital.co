@@ -1,6 +1,9 @@
 @import "../../styles/all.css";
 
 .root {
+  @include Breakpoint-desktopOnly {
+    margin-top: calc(calc($spacing-224 - $spacing-84) * -1);
+  }
 }
 
 .project {
@@ -15,12 +18,16 @@
   }
 }
 
+.project:first-child {
+  margin-top: $spacing-136;
+}
+
 .title-image {
   position: relative;
 
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-52;
+  margin-bottom: $spacing-84;
 
   @include Breakpoint-tabletAndBelow {
     flex-direction: column;
@@ -60,7 +67,21 @@
 
   align-self: center;
 
-  transform: translate(-100%, calc(-100% + $spacing-224));
+  @include Breakpoint-desktopOnly {
+    transform: translateY(
+      calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
+    );
+  }
+
+  @include Breakpoint-tabletOnly {
+    transform: translateY(calc(-100% + $spacing-224));
+  }
+
+  span {
+    margin-right: $spacing-12;
+
+    font-size: $font-size-body-small;
+  }
 
   @include Breakpoint-mobileOnly {
     transform: translate(-100%, calc(-100% + $spacing-84));
@@ -80,6 +101,10 @@
 
   text-decoration: none;
 
+  span {
+    margin-right: $spacing-12;
+  }
+
   @include Breakpoint-tabletAndAbove {
     display: none;
   }
@@ -88,8 +113,12 @@
 .right-image,
 .left-image {
   position: relative;
+}
 
-  div {
+.parallax {
+  position: relative;
+
+  img {
     height: 100%;
     filter: grayscale(100%);
 
@@ -97,42 +126,15 @@
   }
 }
 
-.left-image:hover,
-.right-image:hover {
-  div {
+.parallax:hover,
+.parallax:hover {
+  img {
     filter: grayscale(0%);
   }
 }
 
-.right-image {
-  margin-right: calc($column-spacing * -1);
-
-  @include Breakpoint-tabletAndBelow {
-    margin-right: calc($gutter * -1);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-right: -$mobile-padding;
-  }
-}
-
-.left-image {
-  margin-top: -$spacing-136;
-  margin-left: calc($column-spacing * -1);
-
-  @include Breakpoint-tabletAndBelow {
-    margin-top: -$spacing-84;
-    margin-left: calc($gutter * -1);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: 0;
-    margin-left: -$mobile-padding;
-  }
-}
-
-.right-image::after,
-.left-image::after {
+.parallax::after,
+.parallax::after {
   content: "";
 
   position: absolute;
@@ -150,9 +152,41 @@
   transition: opacity 500ms;
 }
 
-.right-image:hover::after,
-.left-image:hover::after {
+.parallax:hover::after,
+.parallax:hover::after {
   opacity: 0;
+}
+
+.right-image {
+  max-height: $spacing-584;
+
+  margin-right: calc($column-spacing * -1);
+
+  @include Breakpoint-tabletAndBelow {
+    margin-right: calc($gutter * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-right: -$mobile-padding;
+  }
+}
+
+.left-image {
+  margin-left: calc($column-spacing * -1);
+
+  @include Breakpoint-desktopOnly {
+    margin-top: calc($spacing-224 * -1 - $spacing-20);
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    margin-top: -$spacing-84;
+    margin-left: calc($gutter * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: 0;
+    margin-left: -$mobile-padding;
+  }
 }
 
 .project.sioslife {
@@ -163,7 +197,7 @@
   }
 
   .link {
-    left: calc(($three-columns * -1) - $gutter);
+    left: calc(($three-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($two-columns * -1) - $gutter);
@@ -172,7 +206,7 @@
 
   .right-image {
     width: calc($four-columns + $gutter);
-    height: 584px;
+    height: $spacing-584;
 
     @include Breakpoint-tabletOnly {
       width: calc(50vw + $gutter);
@@ -203,7 +237,7 @@
 
 .project.oncostats {
   .link {
-    left: calc(($four-columns * -1) - $gutter);
+    left: calc(($four-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($three-columns * -1) - $gutter);
@@ -222,6 +256,7 @@
       margin-left: -$mobile-padding;
 
       .link-mobile {
+        margin-right: $spacing-20;
         margin-left: auto;
       }
     }
@@ -263,7 +298,7 @@
 
 .project.lyftonomie {
   .link {
-    left: calc(($three-columns * -1) - $gutter);
+    left: calc(($three-columns * -1) - $gutter - $gutter);
 
     @include Breakpoint-tabletOnly {
       left: calc(($two-columns * -1) - $gutter);

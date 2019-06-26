@@ -16,8 +16,8 @@ const COLOR_THEME_PRIMARY = {
 };
 
 const COLOR_THEME_SECONDARY = {
-  color: "white",
-  underlineColor: "white",
+  color: "baby-blue",
+  underlineColor: "baby-blue",
   logoColor: "white",
 };
 
@@ -72,22 +72,24 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <Section verticalSpacing={false}>
-        <header styleName="root">
-          {this.renderBrand()}
+      <div styleName="root">
+        <Section verticalSpacing={false}>
+          <header styleName="container">
+            {this.renderBrand()}
 
-          <nav
-            styleName="navigation"
-            role="navigation"
-            aria-expanded="false"
-            aria-label="Navigation Menu"
-          >
-            {this.renderPageLink("company")}
+            <nav
+              styleName="navigation"
+              role="navigation"
+              aria-expanded="false"
+              aria-label="Navigation Menu"
+            >
+              {this.renderPageLink("company")}
 
-            {this.renderPageLink("blog")}
-          </nav>
-        </header>
-      </Section>
+              {/* his.renderPageLink("blog") */}
+            </nav>
+          </header>
+        </Section>
+      </div>
     );
   }
 }

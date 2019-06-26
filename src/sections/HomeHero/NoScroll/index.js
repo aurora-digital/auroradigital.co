@@ -25,17 +25,15 @@ function HomeHeroNoScroll() {
             </Typography>
           </div>
 
+          <div styleName="copy">
+            <Typography color="baby-blue">
+              We design and develop thoughtful web and mobile healthcare
+              solutions, accessible to anyone, anywhere, at anytime.
+            </Typography>
+          </div>
+
           <div styleName="overlay">
             <div styleName={waveStyles} />
-
-            <Section verticalSpacing={false}>
-              <div styleName="copy">
-                <Typography color="baby-blue">
-                  We design and develop thoughtful web and mobile healthcare
-                  solutions, accessible to anyone, anywhere, at anytime.
-                </Typography>
-              </div>
-            </Section>
           </div>
         </Section>
       </div>
