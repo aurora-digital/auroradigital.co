@@ -2,11 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import Img from "gatsby-image/withIEPolyfill";
 
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 import Footer from "root/components/Footer";
+import ParallaxEffect from "root/components/ParallaxEffect";
 
 import "./index.css";
 
@@ -21,6 +23,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        featuredImage {
+          image: childImageSharp {
+            fluid(maxWidth: 1024, quality: 95) {
+              ...GatsbyImageSharpFluid_withWebp
+              presentationHeight
+            }
+          }
+        }
       }
     }
   }
@@ -35,6 +45,17 @@ function Template({ data, pageContext }) {
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
       <Navbar theme="primary" />
+
+      <div styleName="banner">
+        <ParallaxEffect parallaxAmount={0.1}>
+          <Img
+            fadeIn={false}
+            style={{ height: "100%" }}
+            fluid={frontmatter.featuredImage.image.fluid}
+          />
+        </ParallaxEffect>
+      </div>
+
       <article styleName="root">
         <Typography weight="medium" color="oxford-blue">
           {frontmatter.title}

@@ -2,12 +2,27 @@
 
 .root {
   max-width: $six-columns;
-  margin: $spacing-224 auto;
+  margin: 0 auto;
+  margin-bottom: $spacing-224;
 
   @include Breakpoint-mobileOnly {
     padding: 0 calc($gutter / 2);
-    margin-top: $spacing-52;
     margin-bottom: $spacing-136;
+  }
+}
+
+.banner {
+  height: 352px;
+  max-width: $ten-columns;
+  margin: 0 auto;
+  margin-bottom: $spacing-84;
+
+  @include Breakpoint-mobileOnly {
+    height: 136px;
+    max-width: 100%;
+
+    padding: 0 calc($gutter / 2);
+    margin-bottom: $spacing-52;
   }
 }
 
@@ -88,22 +103,5 @@
     border-bottom: 1px solid $klein-blue;
 
     color: $klein-blue;
-  }
-}
-
-:global {
-  .Blog-banner {
-    span {
-      @include Breakpoint-desktopOnly {
-        position: absolute;
-        left: 50%;
-
-        width: $eight-columns;
-        max-width: $eight-columns !important;
-        margin-bottom: $spacing-136;
-
-        transform: translateX(-50%);
-      }
-    }
   }
 }
