@@ -42,7 +42,11 @@ const FadeUpOnScroll = ({ children, className }) => {
 
 FadeUpOnScroll.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+FadeUpOnScroll.defaultProps = {
+  className: "",
 };
 
 export default FadeUpOnScroll;

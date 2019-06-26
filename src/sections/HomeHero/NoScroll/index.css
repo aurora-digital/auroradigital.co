@@ -4,13 +4,35 @@ $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
 
 .root {
+  position: relative;
+
   padding-bottom: calc($wave-height - 0.2 * $wave-height);
+  overflow: hidden;
 
   background-color: $klein-blue;
 }
 
 .background {
-  height: 100%;
+  position: absolute;
+  z-index: 3;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: white;
+
+  animation: slide 1750ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .title {
