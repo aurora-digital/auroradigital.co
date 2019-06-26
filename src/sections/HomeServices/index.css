@@ -20,50 +20,48 @@
   position: relative;
 
   height: $spacing-584;
+}
 
-  div {
-    width: 100%;
+.parallax {
+  position: relative;
+
+  img {
     height: 100%;
     filter: grayscale(100%);
 
     transition: filter 500ms;
   }
+}
 
-  &::after {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: color($klein-blue alpha(52%));
-    mix-blend-mode: overlay;
-
-    opacity: 1;
-
-    transition: opacity 500ms;
-  }
-
-  @include Breakpoint-tabletOnly {
-    height: $spacing-584;
-  }
-
-  @include Breakpoint-mobileOnly {
-    height: $spacing-224;
+.parallax:hover,
+.parallax:hover {
+  img {
+    filter: grayscale(0%);
   }
 }
 
-.image:hover {
-  div {
-    filter: grayscale(0%);
-  }
+.parallax::after,
+.parallax::after {
+  content: "";
 
-  &::after {
-    opacity: 0;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: color($klein-blue alpha(52%));
+  mix-blend-mode: overlay;
+
+  opacity: 1;
+
+  transition: opacity 500ms;
+}
+
+.parallax:hover::after,
+.parallax:hover::after {
+  opacity: 0;
 }
 
 .left-image {
