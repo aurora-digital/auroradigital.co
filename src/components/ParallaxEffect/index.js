@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 
 import PropTypes from "prop-types";
 
-export default function ParallaxImage({ children, parallaxAmount }) {
+export default function ParallaxEffect({ children, parallaxAmount }) {
   return (
     <ParallaxBanner
       layers={[
@@ -19,11 +19,11 @@ export default function ParallaxImage({ children, parallaxAmount }) {
   );
 }
 
-ParallaxImage.propTypes = {
+ParallaxEffect.propTypes = {
   children: PropTypes.node.isRequired,
   parallaxAmount: PropTypes.number,
 };
 
-ParallaxImage.defaultProps = {
+ParallaxEffect.defaultProps = {
   parallaxAmount: 0.2,
 };
