@@ -1,6 +1,5 @@
 import React from "react";
 import { withController } from "react-scroll-parallax";
-
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
@@ -17,6 +16,7 @@ function HomeHeroNoScroll() {
   return (
     <div ref={ref}>
       <div styleName="root">
+        <div styleName="background" />
         <Navbar theme="secondary" />
         <Section verticalSpacing={false}>
           <div styleName="title">
