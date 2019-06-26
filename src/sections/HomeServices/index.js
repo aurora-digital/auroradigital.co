@@ -5,6 +5,7 @@ import Img from "gatsby-image/withIEPolyfill";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import FadeUpOnScroll from "root/components/FadeUpOnScroll";
+import ParallaxEffect from "root/components/ParallaxEffect";
 
 import BackgroundWave from "root/assets/images/home-services-wave.inline.svg";
 import BackgroundWaveMobile from "root/assets/images/home-services-wave-mobile.inline.svg";
@@ -13,16 +14,27 @@ import "./index.css";
 import withQuery from "./withQuery";
 
 function HomeServices({ data }) {
+  const renderParallaxEffect = image => (
+    <ParallaxEffect parallaxAmount={0.1}>
+      <Img
+        fadeIn={false}
+        styleName="parallax"
+        style={{ height: "100%" }}
+        fluid={image}
+      />
+    </ParallaxEffect>
+  );
+
   return (
     <Section>
       <div styleName="root">
         <FadeUpOnScroll>
           <div styleName="images">
             <div styleName="image left-image">
-              <Img fluid={data.left.image.fluid} objectFit="cover" />
+              {renderParallaxEffect(data.left.image.fluid)}
             </div>
             <div styleName="image right-image">
-              <Img fluid={data.right.image.fluid} objectFit="cover" />
+              {renderParallaxEffect(data.right.image.fluid)}
             </div>
           </div>
         </FadeUpOnScroll>

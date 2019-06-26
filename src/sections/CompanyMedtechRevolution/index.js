@@ -4,9 +4,21 @@ import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 import Typography from "root/components/Typography";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
+import ParallaxEffect from "root/components/ParallaxEffect";
 import withQuery from "./withQuery";
 
 import "./index.css";
+
+const renderParallaxEffect = image => (
+  <ParallaxEffect parallaxAmount={0.1}>
+    <Img
+      fadeIn={false}
+      styleName="parallax"
+      style={{ height: "100%" }}
+      fluid={image}
+    />
+  </ParallaxEffect>
+);
 
 const CompanyMedtechRevolution = ({ data }) => (
   <Section verticalSpacing={false}>
@@ -21,7 +33,7 @@ const CompanyMedtechRevolution = ({ data }) => (
             </Typography>
           </div>
           <div styleName="right-image">
-            <Img fluid={data.teamtalk.image.fluid} objectFit="cover" />
+            {renderParallaxEffect(data.teamtalk.image.fluid)}
           </div>
         </div>
       </FadeUpOnScroll>
@@ -29,7 +41,7 @@ const CompanyMedtechRevolution = ({ data }) => (
       <FadeUpOnScroll>
         <div styleName="container-bottom">
           <div styleName="left-image">
-            <Img fluid={data.teamwork.image.fluid} objectFit="cover" />
+            {renderParallaxEffect(data.teamwork.image.fluid)}
           </div>
           <div styleName="text">
             <Typography variant="body" color="oxford-blue">
