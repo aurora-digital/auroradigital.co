@@ -8,7 +8,7 @@ import "./index.css";
 const FadeUpOnScroll = ({ children, className }) => {
   const [animated, setAnimated] = useState(false);
   const [ref, inView] = useInView();
-
+  const handleAnimationEnd = () => setAnimated(true);
   const styles = classNames("root", {
     animate: inView && !animated,
   });
@@ -18,7 +18,7 @@ const FadeUpOnScroll = ({ children, className }) => {
       className={className}
       ref={ref}
       styleName={styles}
-      onAnimationEnd={() => setAnimated(true)}
+      onAnimationEnd={handleAnimationEnd}
     >
       {children}
     </div>
