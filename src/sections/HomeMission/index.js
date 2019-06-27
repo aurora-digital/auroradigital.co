@@ -43,14 +43,14 @@ export default function HomeMission() {
         <div styleName="copy">
           <div styleName="above-text">
             Healthcare solutions are quite sensitive and need to be built with
-            100% focus on the user’s needs, safety and privacy. We work
+            100% focus on the user’s needs, safety and privacy. We&nbsp;work
             alongside our customers, from research to user-testing, to build
             excellent software.
           </div>
           <div styleName="under-text">
             <Typography color="oxford-blue">
               Healthcare solutions are quite sensitive and need to be built with
-              100% focus on the user’s needs, safety and privacy. We work
+              100% focus on the user’s needs, safety and privacy. We&nbsp;work
               alongside our customers, from research to user-testing, to build
               excellent software.
             </Typography>
