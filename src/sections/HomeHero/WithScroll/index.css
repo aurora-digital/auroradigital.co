@@ -111,16 +111,6 @@ $wave-offset: calc(($wave-height / 2));
   }
 }
 
-@keyframes swell {
-  0%,
-  100% {
-    transform: translateY($wave-offset);
-  }
-  50% {
-    transform: translateY(calc($wave-offset + 50px));
-  }
-}
-
 .copy {
   position: relative;
 

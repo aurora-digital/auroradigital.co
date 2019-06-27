@@ -2,15 +2,21 @@
 
 .root {
   opacity: 0;
-}
 
-.animate-start {
   animation: fadeUp 2s;
   animation-delay: 0.3s;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.animate {
+  animation-play-state: running;
 }
 
 @keyframes fadeUp {
   from {
+    opacity: 0;
+
     transform: translate3d(0, 40px, 0);
   }
 
@@ -19,8 +25,4 @@
 
     transform: translate3d(0, 0, 0);
   }
-}
-
-.animate-end {
-  opacity: 1;
 }
