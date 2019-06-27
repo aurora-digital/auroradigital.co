@@ -58,6 +58,9 @@
 
   background: url(../../assets/images/wave-long.svg) repeat-x;
 
+  backface-visibility: hidden;
+	perspective: 1000;
+
   animation: wave 2.5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   animation-play-state: paused;
 }

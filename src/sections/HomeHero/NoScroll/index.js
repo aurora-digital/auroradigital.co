@@ -11,7 +11,7 @@ import "./index.css";
 
 function HomeHeroNoScroll() {
   const [ref, inView] = useInView();
-  const waveStyles = classNames("wave", { animate: inView });
+  const waveStyles = classNames("wave", { animate: false });
 
   return (
     <div ref={ref}>
