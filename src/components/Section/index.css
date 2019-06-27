@@ -28,29 +28,3 @@
     padding-bottom: $spacing-136;
   }
 }
-
-.animate {
-  opacity: 0;
-}
-
-.animate-start {
-  animation: show 1.5s;
-  animation-delay: 0.3s;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-
-    transform: matrix(1, 0, 0, 1, 0, 70);
-  }
-  100% {
-    opacity: 1;
-
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-}
-
-.animate-end {
-  opacity: 1;
-}
