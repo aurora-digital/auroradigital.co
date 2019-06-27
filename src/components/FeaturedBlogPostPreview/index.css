@@ -1,0 +1,80 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+
+  text-decoration: none;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column-reverse;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+
+  max-width: $five-columns;
+}
+
+.image {
+  width: 100%;
+
+  max-width: $five-columns;
+
+  margin-right: calc(-1 * $column-spacing);
+  margin-left: $column-spacing;
+
+  @include Breakpoint-mobileOnly {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.author {
+  margin-top: $spacing-20;
+}
+
+.title {
+  margin-top: $spacing-20;
+}
+
+.description {
+  margin-top: $spacing-20;
+
+  opacity: 0.75;
+}
+
+.link {
+  width: $four-columns;
+  height: calc(140px + 70px);
+
+  margin-left: calc(-2 * $column-spacing);
+
+  transform: translateY(50%);
+
+  @include Breakpoint-mobileOnly {
+    margin-left: 0;
+  }
+
+  div {
+    flex-direction: row-reverse;
+
+    @include Breakpoint-mobileOnly {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    margin-right: 0;
+    margin-left: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-right: $spacing-32;
+      margin-left: 0;
+    }
+  }
+}

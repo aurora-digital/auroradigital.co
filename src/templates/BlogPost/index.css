@@ -1,0 +1,104 @@
+@import "../../styles/all.css";
+
+.root {
+  max-width: $six-columns;
+  margin: 0 auto;
+  margin-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    padding: 0 calc($gutter / 2);
+    margin-bottom: $spacing-136;
+  }
+}
+
+.banner {
+  height: 352px;
+  max-width: $ten-columns;
+  margin: 0 auto;
+  margin-bottom: $spacing-84;
+
+  @include Breakpoint-mobileOnly {
+    height: 136px;
+    max-width: 100%;
+
+    padding: 0 calc($gutter / 2);
+    margin-bottom: $spacing-52;
+  }
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $spacing-32;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-20;
+  }
+}
+
+.content {
+  margin-top: $spacing-52;
+  margin-bottom: $spacing-136;
+
+  color: $oxford-blue;
+
+  font-family: $font-family-visuelt;
+
+  p {
+    @include body-small-responsive-font;
+
+    margin-bottom: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-20;
+    }
+  }
+
+  h2 {
+    @include body-responsive-font;
+
+    margin-top: $spacing-84;
+    margin-bottom: $spacing-32;
+
+    font-weight: 500;
+  }
+
+  code {
+    background-color: $code-grey;
+
+    font-family: $font-family-fira-mono;
+  }
+
+  pre {
+    padding: $spacing-20;
+
+    background-color: $code-grey;
+
+    font-family: $font-family-fira-mono;
+
+    code {
+      line-height: 150%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      padding: $spacing-12;
+    }
+  }
+
+  blockquote {
+    max-width: $four-columns;
+    margin: $spacing-84 auto;
+
+    color: $klein-blue;
+
+    @include Breakpoint-mobileOnly {
+      margin: $spacing-52 auto;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid $klein-blue;
+
+    color: $klein-blue;
+  }
+}

@@ -16,8 +16,33 @@ module.exports = {
         path: `${__dirname}/src/assets/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/blog`,
+        name: "blog-posts",
+      },
+    },
+
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 824,
+              linkImagesToOriginal: false,
+              wrapperStyle: "margin: 56px 0;",
+              withWebp: true,
+              quality: 100,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
