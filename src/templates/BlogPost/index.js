@@ -56,15 +56,15 @@ function BlogPost({ data, pageContext }) {
       </div>
 
       <article styleName="root">
-        <Typography weight="medium" color="oxford-blue">
-          {frontmatter.title}
-        </Typography>
-
         <div styleName="author">
           <Typography variant="small-body" color="oxford-blue">
             {author.name} | {frontmatter.date}
           </Typography>
         </div>
+
+        <Typography weight="medium" color="oxford-blue">
+          {frontmatter.title}
+        </Typography>
 
         <div styleName="content">
           <MDXRenderer>{code.body}</MDXRenderer>

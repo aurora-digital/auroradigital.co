@@ -29,13 +29,10 @@
 .author {
   display: flex;
   flex-direction: row;
-
-  margin-top: $spacing-32;
-  margin-bottom: $spacing-84;
+  margin-bottom: $spacing-32;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-20;
-    margin-bottom: $spacing-52;
+    margin-bottom: $spacing-20;
   }
 }
 
