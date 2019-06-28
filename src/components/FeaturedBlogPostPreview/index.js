@@ -40,7 +40,7 @@ function FeaturedBlogPostPreview({
 
         <div styleName="link">
           <WavyLink>
-            <Typography variant="small-body" weight="bold" color="oxford-blue">
+            <Typography variant="small-body" weight="bold" color="klein-blue">
               <Link to={`/blog/articles/${path}`}>Read More</Link>
             </Typography>
           </WavyLink>

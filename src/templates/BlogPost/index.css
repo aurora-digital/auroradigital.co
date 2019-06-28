@@ -37,12 +37,16 @@
 }
 
 .content {
-  margin-top: $spacing-52;
+  margin-top: $spacing-84;
   margin-bottom: $spacing-136;
 
   color: $oxford-blue;
 
   font-family: $font-family-visuelt;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-52;
+  }
 
   p {
     @include body-small-responsive-font;
@@ -59,8 +63,6 @@
 
     margin-top: $spacing-84;
     margin-bottom: $spacing-32;
-
-    font-weight: 500;
   }
 
   code {
@@ -98,7 +100,5 @@
 
   a {
     border-bottom: 1px solid $klein-blue;
-
-    color: $klein-blue;
   }
 }

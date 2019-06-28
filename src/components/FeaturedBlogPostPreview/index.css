@@ -18,12 +18,17 @@
   flex-direction: column;
 
   max-width: $five-columns;
+
+  @include Breakpoint-mobileOnly {
+    max-width: 100%;
+  }
 }
 
 .image {
   width: 100%;
+  height: 584px;
 
-  max-width: $five-columns;
+  max-width: calc($five-columns + $gutter);
 
   margin-right: calc(-1 * $column-spacing);
   margin-left: $column-spacing;
@@ -34,30 +39,48 @@
   }
 }
 
-.author {
-  margin-top: $spacing-20;
-}
-
 .title {
-  margin-top: $spacing-20;
+  margin-top: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-32;
+  }
 }
 
 .description {
-  margin-top: $spacing-20;
+  margin-top: $spacing-32;
 
-  opacity: 0.75;
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+  }
 }
 
 .link {
-  width: $four-columns;
+  position: relative;
+
   height: calc(140px + 70px);
 
-  margin-left: calc(-2 * $column-spacing);
+  margin-top: $spacing-52;
+  margin-left: calc(-1 * $column-spacing);
 
-  transform: translateY(50%);
+  overflow: hidden;
 
   @include Breakpoint-mobileOnly {
-    margin-left: 0;
+    width: $three-columns;
+    margin-top: $spacing-32;
+    margin-left: auto;
+
+    * > *:last-child {
+      transform: translate(-20%, -20%) scale(0.6);
+    }
+  }
+
+  * {
+    transform: translateY(0);
+  }
+
+  * > *:last-child {
+    width: $three-columns;
   }
 
   div {
@@ -71,6 +94,8 @@
   a {
     margin-right: 0;
     margin-left: $spacing-32;
+
+    transform: translateY(70%);
 
     @include Breakpoint-mobileOnly {
       margin-right: $spacing-32;
