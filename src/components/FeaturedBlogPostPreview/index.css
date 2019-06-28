@@ -34,8 +34,10 @@
   margin-left: $column-spacing;
 
   @include Breakpoint-mobileOnly {
+    height: 224px;
     max-width: 100%;
     margin: 0;
+    margin-bottom: $spacing-20;
   }
 }
 

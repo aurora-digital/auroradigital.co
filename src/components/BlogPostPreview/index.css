@@ -23,8 +23,6 @@
 .description {
   margin-top: $spacing-20;
 
-  opacity: 0.75;
-
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-12;
   }

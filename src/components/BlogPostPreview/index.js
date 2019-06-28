@@ -22,9 +22,11 @@ function BlogPostPreview({
         <Img fluid={featuredImage.image.fluid} />
       </ParallaxEffect>
 
-      <Typography variant="small-body" color="oxford-blue">
-        {author.name} | {date}
-      </Typography>
+      <div styleName="author">
+        <Typography variant="small-body" color="oxford-blue">
+          {author.name} | {date}
+        </Typography>
+      </div>
 
       <div styleName="title">
         <Typography weight="medium" color="oxford-blue">
