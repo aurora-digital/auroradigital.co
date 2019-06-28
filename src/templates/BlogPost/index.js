@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import Img from "gatsby-image/withIEPolyfill";
+import Helmet from "react-helmet";
 
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
@@ -43,6 +44,15 @@ function BlogPost({ data, pageContext }) {
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
+      <Helmet>
+        <meta
+          property="og:image"
+          content={`https://auroradigital.co${
+            frontmatter.featuredImage.image.fluid.src
+          }`}
+        />
+      </Helmet>
+
       <Navbar theme="primary" />
 
       <div styleName="banner">
