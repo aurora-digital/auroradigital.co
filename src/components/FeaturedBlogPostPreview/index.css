@@ -67,6 +67,10 @@
 
   overflow: hidden;
 
+  * > *:last-child {
+    width: $three-columns;
+  }
+
   & > * > *:last-child {
     transform: translateX(0%);
   }
@@ -79,7 +83,7 @@
     margin-left: auto;
 
     & > * > *:last-child {
-      transform: translateY(-25%) translateX(-25%) scale(0.6);
+      transform: translateY(-25%) translateX(-30%) scale(0.6);
     }
   }
 
@@ -93,9 +97,9 @@
 
   a {
     margin-right: 0;
-    margin-left: $spacing-32;
+    margin-left: $spacing-20;
 
-    transform: translateY(70%);
+    transform: translateY(125%);
 
     @include Breakpoint-mobileOnly {
       margin-right: $spacing-32;
