@@ -48,7 +48,7 @@ function Blog({
   ;
 
   return (
-    <Layout title="Blog | SVHealth" description="SVHealth's Blog">
+    <Layout title="Blog | Aurora" description="Aurora's Blog">
       <Navbar currentPage="blog" theme="primary" />
       <Section verticalSpacing={false}>
         <div styleName="root">
