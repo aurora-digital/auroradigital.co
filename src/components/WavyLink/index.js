@@ -8,15 +8,15 @@ import useScrollDirection from "root/hooks/useScrollDirection";
 
 import "./index.css";
 
-function WavyLink({ url, children, label }) {
+function WavyLink({ url, children, label, animate }) {
   const [ref, inView] = useInView();
   const scrollDirection = useScrollDirection();
 
   const waveStyles = classNames("wave", {
-    moving: get(scrollDirection, "velocity.y") !== 0 && inView,
+    moving: get(scrollDirection, "velocity.y") !== 0 && inView && animate,
   });
   const waveDarkStyles = classNames("wave darker", {
-    moving: get(scrollDirection, "velocity.y") !== 0 && inView,
+    moving: get(scrollDirection, "velocity.y") !== 0 && inView && animate,
   });
 
   return (
@@ -44,10 +44,12 @@ WavyLink.propTypes = {
   url: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   label: PropTypes.string,
+  animate: PropTypes.bool,
 };
 
 WavyLink.defaultProps = {
   label: "",
+  animate: true,
 };
 
 export default WavyLink;

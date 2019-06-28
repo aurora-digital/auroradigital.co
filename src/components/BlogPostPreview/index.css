@@ -1,0 +1,29 @@
+@import "../../styles/all.css";
+
+.root {
+  text-decoration: none;
+}
+
+.author {
+  margin-top: $spacing-20;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-12;
+  }
+}
+
+.title {
+  margin-top: $spacing-32;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-20;
+  }
+}
+
+.description {
+  margin-top: $spacing-20;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-12;
+  }
+}
