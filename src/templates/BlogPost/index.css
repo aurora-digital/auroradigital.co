@@ -101,4 +101,15 @@
   a {
     border-bottom: 1px solid $klein-blue;
   }
+
+  figcaption {
+    margin-top: $spacing-32;
+
+    color: $oxford-blue;
+    opacity: 0.52;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-20;
+    }
+  }
 }

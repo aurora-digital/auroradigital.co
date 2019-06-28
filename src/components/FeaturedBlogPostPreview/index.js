@@ -20,11 +20,9 @@ function FeaturedBlogPostPreview({
   return (
     <div styleName="root">
       <div styleName="copy">
-        <div styleName="author">
-          <Typography variant="small-body" color="oxford-blue">
-            {author.name} | {date}
-          </Typography>
-        </div>
+        <Typography variant="small-body" color="oxford-blue">
+          {author.name} | {date}
+        </Typography>
 
         <div styleName="title">
           <Typography weight="medium" color="oxford-blue">
