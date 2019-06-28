@@ -1,11 +1,11 @@
 @import "../styles/all.css";
 
 .root {
-  margin-top: $spacing-136;
+  margin-top: $spacing-84;
   margin-bottom: $spacing-224;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-52;
+    margin-top: 0;
     margin-bottom: $spacing-136;
   }
 }

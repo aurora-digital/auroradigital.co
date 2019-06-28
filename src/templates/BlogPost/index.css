@@ -88,6 +88,8 @@
   }
 
   blockquote {
+    position: relative;
+
     max-width: $four-columns;
     margin: $spacing-84 auto;
 
@@ -98,8 +100,24 @@
     }
   }
 
+  blockquote::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 100%;
+    z-index: -1;
+
+    width: 384px;
+    height: 140px;
+
+    background: url(../../assets/images/blog-wave.svg) no-repeat;
+
+    transform: translateX(-35%);
+  }
+
   a {
-    border-bottom: 1px solid $klein-blue;
+    border-bottom: 1px solid $oxford-blue;
   }
 
   figcaption {

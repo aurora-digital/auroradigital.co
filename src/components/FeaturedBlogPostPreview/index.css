@@ -69,20 +69,14 @@
 
   @include Breakpoint-mobileOnly {
     width: $three-columns;
+    height: 84px;
     margin-top: $spacing-32;
+    margin-right: -$gutter;
     margin-left: auto;
 
-    * > *:last-child {
-      transform: translate(-20%, -20%) scale(0.6);
+    & > * > *:last-child {
+      transform: translateY(-25%) translateX(-25%) scale(0.6);
     }
-  }
-
-  * {
-    transform: translateY(0);
-  }
-
-  * > *:last-child {
-    width: $three-columns;
   }
 
   div {
