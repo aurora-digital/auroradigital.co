@@ -1,0 +1,56 @@
+$font-family-visuelt: "visuelt", "Helvetica", sans-serif;
+$font-family-fira-mono: "Fira Mono", monospace;
+
+$font-size-h1: responsive 52px 136px;
+$line-height-h1: 1.24;
+$font-size-h2: responsive 32px 84px;
+$line-height-h2: 1.34;
+$font-size-h3: responsive 32px 52px;
+$line-height-h3: 1.38;
+$font-size-body: responsive 20px 32px;
+$line-height-body: 1.618;
+$font-size-body-small: responsive 16px 20px;
+$line-height-body-small: 1.618;
+
+$min-responsive-font-screen: 320px;
+$max-responsive-font-screen: 1440px;
+
+@mixin font-min-max {
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
+}
+
+@mixin h1-responsive-font {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+
+  @include font-min-max;
+}
+
+@mixin h2-responsive-font {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+
+  @include font-min-max;
+}
+
+@mixin h3-responsive-font {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+
+  @include font-min-max;
+}
+
+@mixin body-responsive-font {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+
+  @include font-min-max;
+}
+
+@mixin body-small-responsive-font {
+  font-size: $font-size-body-small;
+  line-height: $line-height-body-small;
+
+  @include font-min-max;
+}

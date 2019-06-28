@@ -1,0 +1,51 @@
+@import "../styles/all.css";
+
+.root {
+  margin-top: $spacing-84;
+  margin-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: 0;
+    margin-bottom: $spacing-136;
+  }
+}
+
+.featured-blog-preview {
+  width: 100%;
+
+  margin-bottom: calc($spacing-224 - $spacing-136);
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: calc($spacing-136 - $spacing-84);
+  }
+}
+
+.blog-preview {
+  width: calc(50% - calc($spacing-32 / 2));
+
+  margin-top: $spacing-136;
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+
+    margin-top: $spacing-84;
+  }
+}
+
+.blog-preview:nth-child(even) {
+  margin-right: $spacing-32;
+
+  @include Breakpoint-mobileOnly {
+    margin-right: 0;
+  }
+}
+
+.more-coming-soon {
+  margin-top: $spacing-224;
+
+  text-align: center;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+}
