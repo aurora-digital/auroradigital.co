@@ -26,7 +26,7 @@ function FeaturedBlogPostPreview({
 
         <div styleName="title">
           <Typography weight="medium" color="oxford-blue">
-            {title}
+            <Link to={`/blog/articles/${path}`}>{title}</Link>
           </Typography>
         </div>
 
