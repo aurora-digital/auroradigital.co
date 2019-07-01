@@ -58,6 +58,7 @@ export default class TeamElement extends Component {
       <button styleName="root" type="button">
         <FadeUpOnScroll>
           <Img
+            fadeIn={false}
             styleName="image"
             alt={`${name.toLowerCase()} photo`}
             fluid={image}

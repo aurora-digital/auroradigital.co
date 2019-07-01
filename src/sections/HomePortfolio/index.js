@@ -148,7 +148,11 @@ function HomePortfolio({ data }) {
           </div>
           <FadeUpOnScroll>
             <div styleName="left-image">
-              <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
+              <Img
+                fadeIn={false}
+                fluid={data.lyftonomie1.image.fluid}
+                objectFit="cover"
+              />
             </div>
           </FadeUpOnScroll>
         </div>
