@@ -3,11 +3,7 @@
 .root {
   position: relative;
 
-  margin-bottom: $spacing-136;
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-84;
-  }
+  margin-bottom: calc($spacing-136 * -1);
 }
 
 .wave-desktop {

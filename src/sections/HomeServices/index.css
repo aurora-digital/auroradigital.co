@@ -236,11 +236,7 @@
 }
 
 .copy-our-work {
-  margin-top: $spacing-224;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
-  }
+  margin-top: calc($spacing-136 * -1);
 
   .title {
     width: $six-columns;

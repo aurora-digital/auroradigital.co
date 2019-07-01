@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
-
+import { Parallax } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import FadeUpOnScroll from "root/components/FadeUpOnScroll";
@@ -53,7 +53,7 @@ function HomeServices({ data }) {
           </div>
         </FadeUpOnScroll>
 
-        <div styleName="copy-services">
+        <Parallax styleName="copy-services" y={[0, -40]}>
           <div styleName="copy-services-background">
             <BackgroundWave />
           </div>
@@ -64,76 +64,64 @@ function HomeServices({ data }) {
 
           <div styleName="left-column">
             <div styleName="title" aria-hidden="true">
-              <FadeUpOnScroll>
-                <Typography weight="medium" color="baby-blue">
-                  Design
-                </Typography>
-              </FadeUpOnScroll>
+              <Typography weight="medium" color="baby-blue">
+                Design
+              </Typography>
             </div>
             <ul styleName="list" aria-label="Design Services">
-              <FadeUpOnScroll>
-                <li>
-                  <Typography>Research & Strategy</Typography>
-                </li>
-                <li>
-                  <Typography>Brand Identity</Typography>
-                </li>
-                <li>
-                  <Typography>Product Design</Typography>
-                </li>
-                <li>
-                  <Typography>User Testing</Typography>
-                </li>
-              </FadeUpOnScroll>
+              <li>
+                <Typography>Research & Strategy</Typography>
+              </li>
+              <li>
+                <Typography>Brand Identity</Typography>
+              </li>
+              <li>
+                <Typography>Product Design</Typography>
+              </li>
+              <li>
+                <Typography>User Testing</Typography>
+              </li>
             </ul>
           </div>
 
           <div styleName="right-column">
             <div styleName="title" aria-hidden="true">
-              <FadeUpOnScroll>
-                <Typography weight="medium" color="baby-blue">
-                  Development
-                </Typography>
-              </FadeUpOnScroll>
+              <Typography weight="medium" color="baby-blue">
+                Development
+              </Typography>
             </div>
             <ul styleName="list" aria-label="Development Services">
-              <FadeUpOnScroll>
-                <li>
-                  <Typography>Hosting Solutions</Typography>
-                </li>
-                <li>
-                  <Typography>Software Development</Typography>
-                </li>
-                <li>
-                  <Typography>Technology Implementation</Typography>
-                </li>
-                <li>
-                  <Typography>System Integration</Typography>
-                </li>
-              </FadeUpOnScroll>
+              <li>
+                <Typography>Hosting Solutions</Typography>
+              </li>
+              <li>
+                <Typography>Software Development</Typography>
+              </li>
+              <li>
+                <Typography>Technology Implementation</Typography>
+              </li>
+              <li>
+                <Typography>System Integration</Typography>
+              </li>
             </ul>
           </div>
-        </div>
+        </Parallax>
 
         <div styleName="copy-our-work">
-          <FadeUpOnScroll>
-            <div styleName="title">
-              <Typography variant="h3" weight="medium" color="oxford-blue">
-                Our work goes far beyond what you actually see
-              </Typography>
-            </div>
-          </FadeUpOnScroll>
+          <div styleName="title">
+            <Typography variant="h3" weight="medium" color="oxford-blue">
+              Our work goes far beyond what you actually see
+            </Typography>
+          </div>
 
-          <FadeUpOnScroll>
-            <div styleName="copy">
-              <Typography color="oxford-blue">
-                We specialize in web-based products - from blazing fast websites
-                to carefully crafted mobile-first web apps, our main goal is to
-                use the power of the fantastic web technologies out there to
-                give you the best work possible.
-              </Typography>
-            </div>
-          </FadeUpOnScroll>
+          <div styleName="copy">
+            <Typography color="oxford-blue">
+              We specialize in web-based products - from blazing fast websites
+              to carefully crafted mobile-first web apps, our main goal is to
+              use the power of the fantastic web technologies out there to give
+              you the best work possible.
+            </Typography>
+          </div>
         </div>
       </div>
     </Section>
