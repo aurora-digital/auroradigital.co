@@ -10,6 +10,7 @@ import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 import Footer from "root/components/Footer";
 import ParallaxEffect from "root/components/ParallaxEffect";
+import Comments from "root/components/Comments";
 
 import "./index.css";
 
@@ -79,7 +80,10 @@ function BlogPost({ data, pageContext }) {
         <div styleName="content">
           <MDXRenderer>{code.body}</MDXRenderer>
         </div>
+
+        <Comments />
       </article>
+
       <Footer />
     </Layout>
   );
