@@ -12,7 +12,7 @@ function Comments({ path, title }) {
   const disqusConfig = {
     url:
       process.env.NODE_ENV === "development"
-        ? `http://${disqusShortname}${path}`
+        ? `http://${disqusShortname}.disqus.com/${path}`
         : window.location.toString(),
     identifier: path,
     title,

@@ -81,7 +81,7 @@ function BlogPost({ data, pageContext }) {
           <MDXRenderer>{code.body}</MDXRenderer>
         </div>
 
-        <Comments />
+        <Comments path={frontmatter.path} title={frontmatter.title} />
       </article>
 
       <Footer />
