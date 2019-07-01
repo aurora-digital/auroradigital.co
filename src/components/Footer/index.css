@@ -7,11 +7,11 @@
   flex-direction: row;
   align-items: baseline;
 
-  margin-bottom: $spacing-52;
+  margin-bottom: calc($spacing-136 + $spacing-32 + $spacing-8);
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
-    margin-bottom: $spacing-20;
+    margin-bottom: calc($spacing-32 + $spacing-12);
   }
 }
 
@@ -20,10 +20,6 @@
 
   @include Breakpoint-tabletOnly {
     margin-right: $spacing-52;
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-52;
   }
 }
 
@@ -35,6 +31,10 @@
   @include Breakpoint-tabletOnly {
     width: $two-columns;
   }
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-52;
+  }
 }
 
 .addresses {
@@ -43,6 +43,10 @@
 
   @include Breakpoint-tabletOnly {
     justify-content: space-between;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-52;
   }
 }
 
