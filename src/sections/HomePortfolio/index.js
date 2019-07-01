@@ -29,7 +29,7 @@ function HomePortfolio({ data }) {
   );
 
   const renderLink = project => (
-    <>
+    <div>
       <div styleName="link">
         <WavyLink
           url={projectUrls[project]}
@@ -52,7 +52,7 @@ function HomePortfolio({ data }) {
           View Project
         </Typography>
       </a>
-    </>
+    </div>
   );
 
   return (
@@ -62,91 +62,81 @@ function HomePortfolio({ data }) {
           <Typography weight="medium" variant="h3" color="oxford-blue">
             Portfolio
           </Typography>
-        </FadeUpOnScroll>
 
-        <div styleName="project sioslife">
-          <div styleName="title-image">
-            <div styleName="title">
-              <FadeUpOnScroll>
+          <div styleName="project sioslife">
+            <div styleName="title-image">
+              <div styleName="title">
                 <Typography color="oxford-blue" weight="medium">
                   siosLIFE
                 </Typography>
-              </FadeUpOnScroll>
-              <FadeUpOnScroll>
+
                 <Typography color="oxford-blue">For younger spirits</Typography>
-              </FadeUpOnScroll>
+              </div>
+
+              <div styleName="right-image-wrapper">
+                {renderLink("siosLife")}
+
+                <div styleName="right-image">
+                  {renderParallaxEffect(data.sioslife2.image.fluid)}
+                </div>
+              </div>
             </div>
 
-            <FadeUpOnScroll styleName="right-image-wrapper">
-              {renderLink("siosLife")}
-
-              <div styleName="right-image">
-                {renderParallaxEffect(data.sioslife2.image.fluid)}
-              </div>
-            </FadeUpOnScroll>
-          </div>
-
-          <FadeUpOnScroll>
             <div styleName="left-image">
               {renderParallaxEffect(data.sioslife1.image.fluid)}
             </div>
-          </FadeUpOnScroll>
-        </div>
+          </div>
+        </FadeUpOnScroll>
 
-        <div styleName="project oncostats">
-          <div styleName="title-image">
-            <div styleName="title">
-              <FadeUpOnScroll>
+        <FadeUpOnScroll>
+          <div styleName="project oncostats">
+            <div styleName="title-image">
+              <div styleName="title">
                 <Typography color="oxford-blue" weight="medium">
                   Oncostats
                 </Typography>
-              </FadeUpOnScroll>
-              <FadeUpOnScroll>
+
                 <Typography color="oxford-blue">
                   Defeating a common enemy, cancer
                 </Typography>
-              </FadeUpOnScroll>
+              </div>
+
+              <div styleName="right-image-wrapper">
+                {renderLink("oncostats")}
+
+                <div styleName="right-image">
+                  {renderParallaxEffect(data.oncostats2.image.fluid)}
+                </div>
+              </div>
             </div>
 
-            <FadeUpOnScroll styleName="right-image-wrapper">
-              {renderLink("oncostats")}
-
-              <div styleName="right-image">
-                {renderParallaxEffect(data.oncostats2.image.fluid)}
-              </div>
-            </FadeUpOnScroll>
-          </div>
-
-          <FadeUpOnScroll>
             <div styleName="left-image">
               {renderParallaxEffect(data.oncostats1.image.fluid)}
             </div>
-          </FadeUpOnScroll>
-        </div>
+          </div>
+        </FadeUpOnScroll>
 
-        <div styleName="project lyftonomie">
-          <div styleName="title-image">
-            <div styleName="title">
-              <FadeUpOnScroll>
+        <FadeUpOnScroll>
+          <div styleName="project lyftonomie">
+            <div styleName="title-image">
+              <div styleName="title">
                 <Typography color="oxford-blue" weight="medium">
                   Lyftonomie
                 </Typography>
-              </FadeUpOnScroll>
-              <FadeUpOnScroll>
+
                 <Typography color="oxford-blue">
                   Vitamins. Done right
                 </Typography>
-              </FadeUpOnScroll>
+              </div>
+
+              <div styleName="right-image-wrapper">
+                {renderLink("lyftonomie")}
+                <div styleName="right-image">
+                  {renderParallaxEffect(data.lyftonomie2.image.fluid)}
+                </div>
+              </div>
             </div>
 
-            <FadeUpOnScroll styleName="right-image-wrapper">
-              {renderLink("lyftonomie")}
-              <div styleName="right-image">
-                {renderParallaxEffect(data.lyftonomie2.image.fluid)}
-              </div>
-            </FadeUpOnScroll>
-          </div>
-          <FadeUpOnScroll>
             <div styleName="left-image">
               <Img
                 fadeIn={false}
@@ -154,8 +144,8 @@ function HomePortfolio({ data }) {
                 objectFit="cover"
               />
             </div>
-          </FadeUpOnScroll>
-        </div>
+          </div>
+        </FadeUpOnScroll>
       </div>
     </Section>
   );
