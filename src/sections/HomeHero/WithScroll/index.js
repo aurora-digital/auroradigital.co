@@ -18,7 +18,7 @@ function HomeHeroWithScroll() {
       <Controller>
         <Scene duration={1500} triggerHook="0">
           {progress => (
-            <div styleName="root" ref={ref}>
+            <div styleName="root">
               <Navbar theme="secondary" />
 
               <Section verticalSpacing={false}>

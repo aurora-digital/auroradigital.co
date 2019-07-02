@@ -4,7 +4,6 @@ import Img from "gatsby-image/withIEPolyfill";
 import { Parallax } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
-import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 import ParallaxEffect from "root/components/ParallaxEffect";
 
 import BackgroundWave from "root/assets/images/home-services-wave.inline.svg";
