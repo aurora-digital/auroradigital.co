@@ -2,90 +2,76 @@
 
 $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
+$Breakpoint-parallax: 768px;
 
 .root {
-  padding-bottom: calc($wave-height / 2);
+  position: relative;
+
+  padding-bottom: calc($wave-height - 0.2 * $wave-height);
+  overflow: hidden;
 
   background-color: $klein-blue;
-
-  * {
-    animation-play-state: paused !important;
-  }
-}
-
-.root.animate {
-  * {
-    animation-play-state: running !important;
-  }
 }
 
 .background {
-  height: 100%;
+  position: absolute;
+  z-index: 3;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: white;
+
+  animation: slide 1750ms ease-in;
+  animation-fill-mode: forwards;
 }
 
-.title-wrapper {
-  position: relative;
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
 
-  height: calc(1em * $line-height-h1);
-
-  margin: $spacing-224 0;
-
-  @include h1-responsive-font;
-
-  @include Breakpoint-tabletAndBelow {
-    height: 100%;
-
-    margin: $spacing-84 0;
+  to {
+    transform: translateX(100%);
   }
 }
 
 .title {
-  position: absolute;
-  left: 0;
+  margin-top: calc($spacing-224 - $navbar-height);
+  margin-bottom: $spacing-84;
 
-  width: 100%;
-
-  white-space: nowrap;
-
-  animation: enter 2s ease-in-out;
-  animation-fill-mode: forwards;
-
-  @include Breakpoint-tabletAndBelow {
-    position: static;
-
-    white-space: normal;
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-84;
+    margin-bottom: $spacing-52;
   }
 }
 
-@keyframes enter {
-  0% {
-    transform: translateX(0vw);
-  }
+.parallax-container {
+  position: relative;
 
-  15% {
-    transform: translateX(2.5vw);
-  }
+  height: calc(2em * $line-height-h1);
 
-  75% {
-    transform: translateX(-20vw);
-  }
+  @include h1-responsive-font;
 
-  100% {
-    transform: translate(-16.5vw);
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
   }
 }
 
 .overlay {
   position: absolute;
   left: 0;
-  z-index: 1;
 
   width: 100%;
   height: $wave-height;
 
   overflow: hidden;
-
-  transform: translateY(-25%);
 }
 
 .wave {
@@ -100,6 +86,11 @@ $wave-offset: calc(($wave-height / 2));
   perspective: 1000;
 
   animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation-play-state: paused;
+}
+
+.wave.animate {
+  animation-play-state: running;
 }
 
 @keyframes wave {
@@ -112,7 +103,7 @@ $wave-offset: calc(($wave-height / 2));
 }
 
 .copy {
-  position: relative;
+  position: absolute;
 
   z-index: 2;
 
