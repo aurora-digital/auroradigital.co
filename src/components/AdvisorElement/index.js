@@ -49,6 +49,7 @@ export default class AdvisorElement extends Component {
       <div styleName="root">
         <FadeUpOnScroll>
           <Img
+            fadeIn={false}
             styleName="image"
             alt={`${name.toLowerCase()} photo`}
             fluid={image}

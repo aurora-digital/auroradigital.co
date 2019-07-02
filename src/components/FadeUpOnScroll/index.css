@@ -4,7 +4,7 @@
   opacity: 0;
 
   animation: fadeUp 2s;
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
   animation-play-state: paused;
   animation-fill-mode: forwards;
 }
