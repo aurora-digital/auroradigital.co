@@ -28,30 +28,26 @@ function HomeServices({ data }) {
   return (
     <Section>
       <div styleName="root">
-        <FadeUpOnScroll>
-          <div styleName="images">
-            <div styleName="image left-image">
-              {renderParallaxEffect(data.left.image.fluid)}
-            </div>
-            <div styleName="image right-image">
-              {renderParallaxEffect(data.right.image.fluid)}
-            </div>
+        <div styleName="images">
+          <div styleName="image left-image">
+            {renderParallaxEffect(data.left.image.fluid)}
           </div>
-        </FadeUpOnScroll>
-
-        <FadeUpOnScroll>
-          <div styleName="copy-working-together">
-            <Typography variant="h3" weight="medium" color="oxford-blue">
-              Working together to achieve your goals
-            </Typography>
-
-            <Typography color="oxford-blue">
-              We’ll work alongside you from the early stages of product research
-              and design to development and deployment, all while continuously
-              delivering you product updates.
-            </Typography>
+          <div styleName="image right-image">
+            {renderParallaxEffect(data.right.image.fluid)}
           </div>
-        </FadeUpOnScroll>
+        </div>
+
+        <div styleName="copy-working-together">
+          <Typography variant="h3" weight="medium" color="oxford-blue">
+            Working together to achieve your goals
+          </Typography>
+
+          <Typography color="oxford-blue">
+            We’ll work alongside you from the early stages of product research
+            and design to development and deployment, all while continuously
+            delivering you product updates.
+          </Typography>
+        </div>
 
         <Parallax styleName="copy-services" y={[0, -40]}>
           <div styleName="copy-services-background">

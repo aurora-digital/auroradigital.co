@@ -19,7 +19,7 @@ function BlogPostPreview({
   return (
     <Link styleName="root" to={`/blog/articles/${path}`}>
       <ParallaxEffect parallaxAmount={0.1}>
-        <Img fluid={featuredImage.image.fluid} />
+        <Img fadeIn={false} fluid={featuredImage.image.fluid} />
       </ParallaxEffect>
 
       <div styleName="author">

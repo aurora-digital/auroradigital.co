@@ -47,7 +47,11 @@ function FeaturedBlogPostPreview({
 
       <div styleName="image">
         <ParallaxEffect parallaxAmount={0.1}>
-          <Img fluid={featuredImage.image.fluid} style={{ height: "100%" }} />
+          <Img
+            fadeIn={false}
+            fluid={featuredImage.image.fluid}
+            style={{ height: "100%" }}
+          />
         </ParallaxEffect>
       </div>
     </div>

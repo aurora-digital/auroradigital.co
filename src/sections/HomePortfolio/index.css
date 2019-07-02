@@ -18,10 +18,6 @@
   }
 }
 
-.project:first-child {
-  margin-top: $spacing-136;
-}
-
 .title-image {
   position: relative;
 

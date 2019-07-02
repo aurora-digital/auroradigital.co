@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "root/components/Section";
-import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 import Typography from "root/components/Typography";
 import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
@@ -23,34 +22,29 @@ const renderParallaxEffect = image => (
 const CompanyMedtechRevolution = ({ data }) => (
   <Section verticalSpacing={false}>
     <div styleName="root">
-      <FadeUpOnScroll>
-        <div styleName="container-top">
-          <div styleName="text">
-            <Typography variant="body" color="oxford-blue">
-              We want to be a part of the new medtech revolution, we want
-              software to be accessible and readily available to everyone in the
-              world.
-            </Typography>
-          </div>
-          <div styleName="right-image">
-            {renderParallaxEffect(data.teamtalk.image.fluid)}
-          </div>
+      <div styleName="container-top">
+        <div styleName="text">
+          <Typography variant="body" color="oxford-blue">
+            We want to be a part of the new medtech revolution, we want software
+            to be accessible and readily available to everyone in the world.
+          </Typography>
         </div>
-      </FadeUpOnScroll>
+        <div styleName="right-image">
+          {renderParallaxEffect(data.teamtalk.image.fluid)}
+        </div>
+      </div>
 
-      <FadeUpOnScroll>
-        <div styleName="container-bottom">
-          <div styleName="left-image">
-            {renderParallaxEffect(data.teamwork.image.fluid)}
-          </div>
-          <div styleName="text">
-            <Typography variant="body" color="oxford-blue">
-              Most importantly, we want technology to improve people&apos;s
-              lives, guiding them to a healthier and more sustainable lifestyle.
-            </Typography>
-          </div>
+      <div styleName="container-bottom">
+        <div styleName="left-image">
+          {renderParallaxEffect(data.teamwork.image.fluid)}
         </div>
-      </FadeUpOnScroll>
+        <div styleName="text">
+          <Typography variant="body" color="oxford-blue">
+            Most importantly, we want technology to improve people&apos;s lives,
+            guiding them to a healthier and more sustainable lifestyle.
+          </Typography>
+        </div>
+      </div>
     </div>
   </Section>
 );
