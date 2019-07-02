@@ -1,54 +1,62 @@
-import React, { useState, useLayoutEffect } from "react";
-import PropTypes from "prop-types";
-import { withController } from "react-scroll-parallax";
-import { Controller, Scene } from "react-scrollmagic";
+import React from "react";
+import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
+import { Controller, Scene } from "react-scrollmagic";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
-import useDetectJavascript from "root/hooks/useDetectJavascript";
+import "../common.css";
 
-import "./index.css";
-
-function HomeHeroWithScroll({ parallaxController }) {
-  const hasJavascript = useDetectJavascript();
-  const [animate, setAnimate] = useState(false);
-  const waveStyles = classNames("root", { animate });
-
-  useLayoutEffect(() => {
-    if (parallaxController && hasJavascript) parallaxController.update();
-
-    if (!animate) setAnimate(true);
-  });
+function HomeHeroWithScroll() {
+  const [ref, inView] = useInView();
+  const waveStyles = classNames("wave", { animate: inView });
 
   return (
-    <div>
+    <div ref={ref}>
       <Controller>
-        <Scene triggerHook="0" duration={2000} pin>
+        <Scene duration={1500} triggerHook="0">
           {progress => (
-            <div>
-              <div styleName={waveStyles}>
-                <Navbar theme="secondary" />
-                <Section verticalSpacing={false}>
-                  <div styleName="title-wrapper">
-                    <div styleName="title">
+            <div styleName="root" ref={ref}>
+              <Navbar theme="secondary" />
+
+              <Section verticalSpacing={false}>
+                <div styleName="title">
+                  <div styleName="parallax-container" aria-hidden="true">
+                    <div>
                       <div
                         style={{
-                          transform: `translateX(${progress * -100}%)`,
+                          transform: `translate3d(${progress * 100}%, 0, 0)`,
                         }}
                       >
                         <Typography weight="bold" variant="h1">
-                          Nurturing digital healthcare
+                          Nurturing digital
+                        </Typography>
+                      </div>
+                      <div
+                        style={{
+                          transform: `translate3d(${progress * -100}%, 0, 0)`,
+                        }}
+                      >
+                        <Typography weight="bold" variant="h1">
+                          healthcare
                         </Typography>
                       </div>
                     </div>
                   </div>
 
-                  <div styleName="overlay">
-                    <div styleName="wave" />
+                  <div styleName="parallax-fallback" aria-hidden="true">
+                    <Typography color="oxford-blue" weight="bold" variant="h1">
+                      Nurturing digital healthcare
+                    </Typography>
+                  </div>
+                </div>
 
+                <div styleName="overlay">
+                  <div styleName={waveStyles} />
+
+                  <Section verticalSpacing={false}>
                     <div styleName="copy">
                       <Typography color="baby-blue">
                         We design and develop thoughtful web and mobile
@@ -56,9 +64,9 @@ function HomeHeroWithScroll({ parallaxController }) {
                         anytime.
                       </Typography>
                     </div>
-                  </div>
-                </Section>
-              </div>
+                  </Section>
+                </div>
+              </Section>
             </div>
           )}
         </Scene>
@@ -67,8 +75,4 @@ function HomeHeroWithScroll({ parallaxController }) {
   );
 }
 
-HomeHeroWithScroll.propTypes = {
-  parallaxController: PropTypes.shape({}).isRequired,
-};
-
-export default withController(HomeHeroWithScroll);
+export default HomeHeroWithScroll;

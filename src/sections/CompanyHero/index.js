@@ -11,10 +11,7 @@ const CompanyHero = () => (
     <Navbar currentPage="company" theme="primary" />
     <Section verticalSpacing={false}>
       <div styleName="title">
-        <div
-          styleName="parallax-container"
-          aria-label="Striving for better healthcare"
-        >
+        <div styleName="parallax-container" aria-hidden="true">
           <Parallax styleName="parallax" x={[-78, 20]} tagOuter="figure">
             <Typography color="oxford-blue" weight="bold" variant="h1">
               Striving for
@@ -28,10 +25,7 @@ const CompanyHero = () => (
           </Parallax>
         </div>
 
-        <div
-          styleName="parallax-fallback"
-          aria-label="Striving for better healthcare"
-        >
+        <div styleName="parallax-fallback" aria-hidden="true">
           <Typography color="oxford-blue" weight="bold" variant="h1">
             Striving for better healthcare
           </Typography>
