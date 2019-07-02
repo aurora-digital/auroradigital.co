@@ -7,7 +7,7 @@ import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
-import "./index.css";
+import "../common.css";
 
 function HomeHeroNoScroll() {
   const [ref, inView] = useInView();

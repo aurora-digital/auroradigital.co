@@ -1,4 +1,4 @@
-@import "../../../styles/all.css";
+@import "../../styles/all.css";
 
 $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
@@ -12,7 +12,6 @@ $Breakpoint-parallax: 768px;
 
   background-color: $klein-blue;
 }
-
 
 .title {
   margin-top: calc($spacing-224 - $navbar-height);
@@ -58,7 +57,7 @@ $Breakpoint-parallax: 768px;
   width: 6400px;
   height: $wave-height;
 
-  background: url(../../../assets/images/white-wave.svg) repeat-x;
+  background: url(../../assets/images/white-wave.svg) repeat-x;
 
   backface-visibility: hidden;
   perspective: 1000;
