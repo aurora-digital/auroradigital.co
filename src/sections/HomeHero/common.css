@@ -1,7 +1,8 @@
-@import "../../../styles/all.css";
+@import "../../styles/all.css";
 
 $wave-height: 370px;
 $wave-offset: calc(($wave-height / 2));
+$Breakpoint-parallax: 768px;
 
 .root {
   position: relative;
@@ -12,29 +13,6 @@ $wave-offset: calc(($wave-height / 2));
   background-color: $klein-blue;
 }
 
-.background {
-  position: absolute;
-  z-index: 3;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-color: white;
-
-  animation: slide 1750ms ease-in;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
 .title {
   margin-top: calc($spacing-224 - $navbar-height);
   margin-bottom: $spacing-84;
@@ -42,6 +20,24 @@ $wave-offset: calc(($wave-height / 2));
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
     margin-bottom: $spacing-52;
+  }
+}
+
+.parallax-container {
+  position: relative;
+
+  height: calc(2em * $line-height-h1);
+
+  @include h1-responsive-font;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
   }
 }
 
@@ -61,7 +57,7 @@ $wave-offset: calc(($wave-height / 2));
   width: 6400px;
   height: $wave-height;
 
-  background: url(../../../assets/images/white-wave.svg) repeat-x;
+  background: url(../../assets/images/white-wave.svg) repeat-x;
 
   backface-visibility: hidden;
   perspective: 1000;
@@ -76,10 +72,10 @@ $wave-offset: calc(($wave-height / 2));
 
 @keyframes wave {
   0% {
-    transform: translateX(0px);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-2115px);
+    transform: translate3d(-2115px, 0, 0);
   }
 }
 
