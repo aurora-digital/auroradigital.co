@@ -12,29 +12,6 @@ $wave-offset: calc(($wave-height / 2));
   background-color: $klein-blue;
 }
 
-.background {
-  position: absolute;
-  z-index: 3;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-color: white;
-
-  animation: slide 1750ms ease-in;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
 .title {
   margin-top: calc($spacing-224 - $navbar-height);
   margin-bottom: $spacing-84;
@@ -76,10 +53,10 @@ $wave-offset: calc(($wave-height / 2));
 
 @keyframes wave {
   0% {
-    transform: translateX(0px);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-2115px);
+    transform: translate3d(-2115px, 0, 0);
   }
 }
 

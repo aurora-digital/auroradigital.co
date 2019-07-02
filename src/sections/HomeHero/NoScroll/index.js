@@ -16,8 +16,8 @@ function HomeHeroNoScroll() {
   return (
     <div ref={ref}>
       <div styleName="root">
-        <div styleName="background" />
         <Navbar theme="secondary" />
+
         <Section verticalSpacing={false}>
           <div styleName="title">
             <Typography weight="bold" variant="h1">
