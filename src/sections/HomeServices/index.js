@@ -112,24 +112,20 @@ function HomeServices({ data }) {
         </div>
 
         <div styleName="copy-our-work">
-          <FadeUpOnScroll>
-            <div styleName="title">
-              <Typography variant="h3" weight="medium" color="oxford-blue">
-                Our work goes far beyond what you actually see
-              </Typography>
-            </div>
-          </FadeUpOnScroll>
+          <div styleName="title">
+            <Typography variant="h3" weight="medium" color="oxford-blue">
+              Our work goes far beyond what you actually see
+            </Typography>
+          </div>
 
-          <FadeUpOnScroll>
-            <div styleName="copy">
-              <Typography color="oxford-blue">
-                We specialize in web-based products - from blazing fast websites
-                to carefully crafted mobile-first web apps, our main goal is to
-                use the power of the fantastic web technologies out there to
-                give you the best work possible.
-              </Typography>
-            </div>
-          </FadeUpOnScroll>
+          <div styleName="copy">
+            <Typography color="oxford-blue">
+              We specialize in web-based products - from blazing fast websites
+              to carefully crafted mobile-first web apps, our main goal is to
+              use the power of the fantastic web technologies out there to give
+              you the best work possible.
+            </Typography>
+          </div>
         </div>
       </div>
     </Section>
