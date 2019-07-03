@@ -8,8 +8,6 @@ import "./index.css";
 function HomeHero() {
   return (
     <>
-      <div styleName="shutter" />
-
       <div styleName="no-scroll">
         <HomeHeroNoScroll />
       </div>
