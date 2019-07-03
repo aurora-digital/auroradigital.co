@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
 
-import "./index.css";
 import useDetectJavascript from "root/hooks/useDetectJavascript";
+import Noscript from "root/components/Noscript";
+
+import "./index.css";
 
 const FadeUpOnScroll = ({ children, className }) => {
   const hasJavascript = useDetectJavascript();
@@ -15,15 +17,18 @@ const FadeUpOnScroll = ({ children, className }) => {
     hide: !hasJavascript,
   });
 
-  useEffect(() => {
-    if (inView) setReadyToAnimate(true);
-  }, [inView]);
+  useEffect(
+    () => {
+      if (inView) setReadyToAnimate(true);
+    },
+    [inView],
+  );
 
   return (
     <>
-      <noscript>
+      <Noscript>
         <div styleName="noscript">{children}</div>
-      </noscript>
+      </Noscript>
       <div className={className} ref={ref} styleName={styles}>
         {children}
       </div>
