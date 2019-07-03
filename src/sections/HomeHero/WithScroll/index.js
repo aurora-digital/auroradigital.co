@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { withController } from "react-scroll-parallax";
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 import { Controller, Scene } from "react-scrollmagic";
@@ -9,9 +11,13 @@ import Typography from "root/components/Typography";
 
 import "../common.css";
 
-function HomeHeroWithScroll() {
+function HomeHeroWithScroll({ parallaxController }) {
   const [ref, inView] = useInView();
   const waveStyles = classNames("wave", { animate: inView });
+
+  useEffect(() => {
+    parallaxController.update();
+  }, [inView]);
 
   return (
     <div ref={ref}>
@@ -75,4 +81,8 @@ function HomeHeroWithScroll() {
   );
 }
 
-export default HomeHeroWithScroll;
+HomeHeroWithScroll.propTypes = {
+  parallaxController: PropTypes.object.isRequired,
+};
+
+export default withController(HomeHeroWithScroll);

@@ -1,5 +1,4 @@
 import React from "react";
-import { withController } from "react-scroll-parallax";
 import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
@@ -41,4 +40,4 @@ function HomeHeroNoScroll() {
   );
 }
 
-export default withController(HomeHeroNoScroll);
+export default HomeHeroNoScroll;
