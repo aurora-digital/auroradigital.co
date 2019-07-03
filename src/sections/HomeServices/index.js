@@ -100,6 +100,10 @@ function HomeServices({ data }) {
               </li>
             </ul>
           </div>
+
+          <noscript>
+            <div styleName="whitespace-noscript" />
+          </noscript>
         </Parallax>
 
         <div styleName="copy-our-work">

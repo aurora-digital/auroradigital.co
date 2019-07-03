@@ -261,3 +261,7 @@
     }
   }
 }
+
+.whitespace-noscript {
+  height: $spacing-224;
+}

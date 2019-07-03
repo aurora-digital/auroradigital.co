@@ -9,8 +9,18 @@
   animation-fill-mode: forwards;
 }
 
+.hide {
+  display: none;
+}
+
 .animate {
   animation-play-state: running;
+}
+
+.noscript {
+  opacity: 1 !important;
+
+  animation: none !important;
 }
 
 @keyframes fadeUp {
