@@ -98,3 +98,7 @@
     margin-bottom: $spacing-32;
   }
 }
+
+.whitespace-noscript {
+  height: $spacing-224;
+}
