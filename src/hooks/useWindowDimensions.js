@@ -16,19 +16,16 @@ export default function useWindowDimensions() {
     updateDimensions();
   }, []);
 
-  useLayoutEffect(
-    () => {
-      window.addEventListener("resize", updateDimensions);
+  useLayoutEffect(() => {
+    window.addEventListener("resize", updateDimensions);
 
-      return () => {
-        window.removeEventListener("resize", updateDimensions);
-      };
-    },
-    [
-      document.documentElement.clientWidth,
-      document.documentElement.clientHeight,
-    ],
-  );
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, [
+    document.documentElement.clientWidth,
+    document.documentElement.clientHeight,
+  ]);
 
   return dimensions;
 }

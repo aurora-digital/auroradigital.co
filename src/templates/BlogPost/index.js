@@ -48,9 +48,7 @@ function BlogPost({ data, pageContext }) {
       <Helmet>
         <meta
           property="og:image"
-          content={`https://auroradigital.co${
-            frontmatter.featuredImage.image.fluid.src
-          }`}
+          content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
       </Helmet>
 
@@ -94,7 +92,7 @@ BlogPost.propTypes = {
     mdx: PropTypes.shape(),
   }).isRequired,
   pageContext: PropTypes.shape({
-    author: PropTypes.shape({}).isRequired,
+    author: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired,
   }).isRequired,
 };
 

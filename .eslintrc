@@ -67,12 +67,12 @@
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/forbid-prop-types": "off",
     "import/no-unresolved": [
       2,
       {
         "ignore": ["root/"]
       }
-    ],
-    "import/extensions": ["ignorePackages"]
+    ]
   }
 }

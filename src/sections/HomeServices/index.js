@@ -124,7 +124,7 @@ function HomeServices({ data }) {
 }
 
 HomeServices.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default withQuery(HomeServices);

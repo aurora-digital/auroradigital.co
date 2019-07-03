@@ -12,12 +12,9 @@ const FadeUpOnScroll = ({ children, className }) => {
     animate: readyToAnimate,
   });
 
-  useEffect(
-    () => {
-      if (inView) setReadyToAnimate(true);
-    },
-    [inView],
-  );
+  useEffect(() => {
+    if (inView) setReadyToAnimate(true);
+  }, [inView]);
 
   return (
     <div className={className} ref={ref} styleName={styles}>
