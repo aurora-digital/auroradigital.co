@@ -18,14 +18,15 @@ $Breakpoint-parallax: 768px;
   display: flex;
   flex-direction: column;
 
-  margin: $spacing-136 0;
+  margin-top: calc($spacing-224 - $navbar-height);
+  margin-bottom: $spacing-136;
 
   background-image: url("../../assets/images/wave-company-hero.svg");
   background-position: center center;
   background-repeat: no-repeat;
 
   @include Breakpoint-tabletOnly {
-    margin: $spacing-84 0;
+    margin-bottom: $spacing-84;
 
     background-size: $spacing-584 $spacing-224;
   }
