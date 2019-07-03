@@ -44,6 +44,9 @@ const CompanyValues = () => (
         </div>
       </Section>
     </div>
+    <noscript>
+      <div styleName="whitespace-noscript" />
+    </noscript>
   </Parallax>
 );
 
