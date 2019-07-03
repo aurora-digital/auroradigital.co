@@ -51,7 +51,7 @@ BlogPostPreview.propTypes = {
   }).isRequired,
   date: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
-  featuredImage: PropTypes.shape({}).isRequired,
+  featuredImage: PropTypes.object.isRequired,
 };
 
 export default BlogPostPreview;
