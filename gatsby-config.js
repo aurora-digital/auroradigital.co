@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://example.com",
+    siteUrl: "https://auroradigital.co",
     title: "Aurora Digital's Website",
     author: "Aurora Digital's Website",
   },
@@ -30,6 +30,7 @@ module.exports = {
       resolve: "gatsby-mdx",
       options: {
         gatsbyRemarkPlugins: [
+          "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
