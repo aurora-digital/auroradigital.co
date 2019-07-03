@@ -152,7 +152,7 @@ function HomePortfolio({ data }) {
 }
 
 HomePortfolio.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default withQuery(HomePortfolio);
