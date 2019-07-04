@@ -66,10 +66,10 @@
   }
 }
 
-.root:hover,
-.root:focus,
-.root:active {
-  @media (hover: hover) {
+@include Breakpoint-withHover {
+  .root:hover,
+  .root:focus,
+  .root:active {
     .image {
       img {
         filter: grayscale(0%);

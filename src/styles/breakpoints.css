@@ -30,3 +30,9 @@ $Breakpoint-desktop: 1268px;
     @content;
   }
 }
+
+@mixin Breakpoint-withHover {
+  @media not all and (hover: none) {
+    @content;
+  }
+}
