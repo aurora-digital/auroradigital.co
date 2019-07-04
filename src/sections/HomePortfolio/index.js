@@ -29,7 +29,7 @@ function HomePortfolio({ data }) {
   );
 
   const renderLink = project => (
-    <div>
+    <>
       <div styleName="link">
         <WavyLink
           url={projectUrls[project]}
@@ -52,7 +52,7 @@ function HomePortfolio({ data }) {
           View Project
         </Typography>
       </a>
-    </div>
+    </>
   );
 
   return (
