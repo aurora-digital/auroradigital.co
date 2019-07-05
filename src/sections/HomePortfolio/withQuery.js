@@ -19,7 +19,7 @@ const query = graphql`
       }
     }
 
-    oncostats1: file(relativePath: { eq: "images/oncostats1.png" }) {
+    oncostats1: file(relativePath: { eq: "images/oncostats1.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
