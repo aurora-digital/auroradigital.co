@@ -131,14 +131,18 @@
   }
 }
 
-.parallax:hover,
-.parallax:hover {
-  img {
-    filter: grayscale(0%);
+@include Breakpoint-tabletAndAbove {
+  .parallax:hover {
+    img {
+      filter: grayscale(0%);
+    }
+  }
+
+  .parallax:hover::after {
+    opacity: 0;
   }
 }
 
-.parallax::after,
 .parallax::after {
   content: "";
 
@@ -155,9 +159,4 @@
   opacity: 1;
 
   transition: opacity 500ms;
-}
-
-.parallax:hover::after,
-.parallax:hover::after {
-  opacity: 0;
 }
