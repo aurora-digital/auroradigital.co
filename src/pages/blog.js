@@ -42,10 +42,6 @@ function Blog({
     allMdx: { edges },
   },
 }) {
-  const getAuthorInfo = node =>
-    // eslint-disable-next-line
-    require(`../../blog/authors/${node.frontmatter.author}.json`);
-
   return (
     <Layout title="Blog | Aurora" description="Aurora's Blog">
       <Navbar currentPage="blog" theme="primary" />
