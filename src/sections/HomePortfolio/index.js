@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Img from "gatsby-image/withIEPolyfill";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
-import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 import ParallaxEffect from "root/components/ParallaxEffect";
 import withQuery from "./withQuery";
 
@@ -58,94 +57,86 @@ function HomePortfolio({ data }) {
   return (
     <Section>
       <div styleName="root">
-        <FadeUpOnScroll>
-          <Typography weight="medium" variant="h3" color="oxford-blue">
-            Portfolio
-          </Typography>
+        <Typography weight="medium" variant="h3" color="oxford-blue">
+          Portfolio
+        </Typography>
 
-          <div styleName="project sioslife">
-            <div styleName="title-image">
-              <div styleName="title">
-                <Typography color="oxford-blue" weight="medium">
-                  siosLIFE
-                </Typography>
+        <div styleName="project sioslife">
+          <div styleName="title-image">
+            <div styleName="title">
+              <Typography color="oxford-blue" weight="medium">
+                siosLIFE
+              </Typography>
 
-                <Typography color="oxford-blue">For younger spirits</Typography>
-              </div>
-
-              <div styleName="right-image-wrapper">
-                {renderLink("siosLife")}
-
-                <div styleName="right-image">
-                  {renderParallaxEffect(data.sioslife2.image.fluid)}
-                </div>
-              </div>
+              <Typography color="oxford-blue">For younger spirits</Typography>
             </div>
 
-            <div styleName="left-image">
-              {renderParallaxEffect(data.sioslife1.image.fluid)}
+            <div styleName="right-image-wrapper">
+              {renderLink("siosLife")}
+
+              <div styleName="right-image">
+                {renderParallaxEffect(data.sioslife2.image.fluid)}
+              </div>
             </div>
           </div>
-        </FadeUpOnScroll>
 
-        <FadeUpOnScroll>
-          <div styleName="project oncostats">
-            <div styleName="title-image">
-              <div styleName="title">
-                <Typography color="oxford-blue" weight="medium">
-                  Oncostats
-                </Typography>
+          <div styleName="left-image">
+            {renderParallaxEffect(data.sioslife1.image.fluid)}
+          </div>
+        </div>
 
-                <Typography color="oxford-blue">
-                  Defeating a common enemy, cancer
-                </Typography>
-              </div>
+        <div styleName="project oncostats">
+          <div styleName="title-image">
+            <div styleName="title">
+              <Typography color="oxford-blue" weight="medium">
+                Oncostats
+              </Typography>
 
-              <div styleName="right-image-wrapper">
-                {renderLink("oncostats")}
-
-                <div styleName="right-image">
-                  {renderParallaxEffect(data.oncostats2.image.fluid)}
-                </div>
-              </div>
+              <Typography color="oxford-blue">
+                Defeating a common enemy, cancer
+              </Typography>
             </div>
 
-            <div styleName="left-image">
-              {renderParallaxEffect(data.oncostats1.image.fluid)}
+            <div styleName="right-image-wrapper">
+              {renderLink("oncostats")}
+
+              <div styleName="right-image">
+                {renderParallaxEffect(data.oncostats2.image.fluid)}
+              </div>
             </div>
           </div>
-        </FadeUpOnScroll>
 
-        <FadeUpOnScroll>
-          <div styleName="project lyftonomie">
-            <div styleName="title-image">
-              <div styleName="title">
-                <Typography color="oxford-blue" weight="medium">
-                  Lyftonomie
-                </Typography>
+          <div styleName="left-image">
+            {renderParallaxEffect(data.oncostats1.image.fluid)}
+          </div>
+        </div>
 
-                <Typography color="oxford-blue">
-                  Vitamins. Done right
-                </Typography>
-              </div>
+        <div styleName="project lyftonomie">
+          <div styleName="title-image">
+            <div styleName="title">
+              <Typography color="oxford-blue" weight="medium">
+                Lyftonomie
+              </Typography>
 
-              <div styleName="right-image-wrapper">
-                {renderLink("lyftonomie")}
-                <div styleName="right-image">
-                  {renderParallaxEffect(data.lyftonomie2.image.fluid)}
-                </div>
-              </div>
+              <Typography color="oxford-blue">Vitamins. Done right</Typography>
             </div>
 
-            <div styleName="left-image">
-              <Img
-                fadeIn={false}
-                fluid={data.lyftonomie1.image.fluid}
-                objectFit="cover"
-              />
+            <div styleName="right-image-wrapper">
+              {renderLink("lyftonomie")}
+              <div styleName="right-image">
+                {renderParallaxEffect(data.lyftonomie2.image.fluid)}
+              </div>
             </div>
           </div>
-        </FadeUpOnScroll>
+
+          <div styleName="left-image">
+            <Img
+              fadeIn={false}
+              fluid={data.lyftonomie1.image.fluid}
+              objectFit="cover"
+            />
+          </div>
+        </div>
       </div>
     </Section>
   );
