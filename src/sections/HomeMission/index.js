@@ -1,16 +1,23 @@
-import React from "react";
-import { Parallax } from "react-scroll-parallax";
-
+import React, { useEffect } from "react";
+import { Parallax, withController } from "react-scroll-parallax";
+import { useInView } from "react-intersection-observer";
+import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
 import Section from "root/components/Section";
 
 import "./index.css";
 
-export default function HomeMission() {
+function HomeMission({ parallaxController }) {
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    parallaxController.update();
+  }, [inView]);
+
   return (
     <Section verticalSpacing={false}>
       <div styleName="title">
-        <div styleName="parallax-container-wrapper">
+        <div styleName="parallax-container-wrapper" ref={ref}>
           <div
             styleName="parallax-container"
             aria-label="Creating the best possible experiencies"
@@ -57,3 +64,9 @@ export default function HomeMission() {
     </Section>
   );
 }
+
+HomeMission.propTypes = {
+  parallaxController: PropTypes.object.isRequired,
+};
+
+export default withController(HomeMission);

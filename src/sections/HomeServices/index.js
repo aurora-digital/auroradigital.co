@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Parallax, withController } from "react-scroll-parallax";
+import { useInView } from "react-intersection-observer";
 import PropTypes from "prop-types";
 
-import { Parallax } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ParallaxEffect from "root/components/ParallaxEffect";
 
 import BackgroundWave from "root/assets/images/home-services-wave.inline.svg";
 import BackgroundWaveMobile from "root/assets/images/home-services-wave-mobile.inline.svg";
-
-import "./index.css";
 import withQuery from "./withQuery";
 
-function HomeServices({ data }) {
+import "./index.css";
+
+const HomeServices = ({ data, parallaxController }) => {
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    parallaxController.update();
+  }, [inView]);
+
   return (
     <Section>
-      <div styleName="root">
+      <div styleName="root" ref={ref}>
         <div styleName="images">
           <div styleName="image left-image">
             <ParallaxEffect image={data.left.image.fluid} />
@@ -37,63 +44,65 @@ function HomeServices({ data }) {
           </Typography>
         </div>
 
-        <Parallax styleName="copy-services" y={[0, -40]}>
-          <div styleName="copy-services-background">
-            <BackgroundWave />
-          </div>
-
-          <div styleName="copy-services-background-mobile">
-            <BackgroundWaveMobile />
-          </div>
-
-          <div styleName="left-column">
-            <div styleName="title" aria-hidden="true">
-              <Typography weight="medium" color="baby-blue">
-                Design
-              </Typography>
+        <div>
+          <Parallax styleName="copy-services" y={[0, -40]}>
+            <div styleName="copy-services-background">
+              <BackgroundWave />
             </div>
-            <ul styleName="list" aria-label="Design Services">
-              <li>
-                <Typography>Research & Strategy</Typography>
-              </li>
-              <li>
-                <Typography>Brand Identity</Typography>
-              </li>
-              <li>
-                <Typography>Product Design</Typography>
-              </li>
-              <li>
-                <Typography>User Testing</Typography>
-              </li>
-            </ul>
-          </div>
 
-          <div styleName="right-column">
-            <div styleName="title" aria-hidden="true">
-              <Typography weight="medium" color="baby-blue">
-                Development
-              </Typography>
+            <div styleName="copy-services-background-mobile">
+              <BackgroundWaveMobile />
             </div>
-            <ul styleName="list" aria-label="Development Services">
-              <li>
-                <Typography>Hosting Solutions</Typography>
-              </li>
-              <li>
-                <Typography>Software Development</Typography>
-              </li>
-              <li>
-                <Typography>Technology Implementation</Typography>
-              </li>
-              <li>
-                <Typography>System Integration</Typography>
-              </li>
-            </ul>
-          </div>
 
-          <noscript>
-            <div styleName="whitespace-noscript" />
-          </noscript>
-        </Parallax>
+            <div styleName="left-column">
+              <div styleName="title" aria-hidden="true">
+                <Typography weight="medium" color="baby-blue">
+                  Design
+                </Typography>
+              </div>
+              <ul styleName="list" aria-label="Design Services">
+                <li>
+                  <Typography>Research & Strategy</Typography>
+                </li>
+                <li>
+                  <Typography>Brand Identity</Typography>
+                </li>
+                <li>
+                  <Typography>Product Design</Typography>
+                </li>
+                <li>
+                  <Typography>User Testing</Typography>
+                </li>
+              </ul>
+            </div>
+
+            <div styleName="right-column">
+              <div styleName="title" aria-hidden="true">
+                <Typography weight="medium" color="baby-blue">
+                  Development
+                </Typography>
+              </div>
+              <ul styleName="list" aria-label="Development Services">
+                <li>
+                  <Typography>Hosting Solutions</Typography>
+                </li>
+                <li>
+                  <Typography>Software Development</Typography>
+                </li>
+                <li>
+                  <Typography>Technology Implementation</Typography>
+                </li>
+                <li>
+                  <Typography>System Integration</Typography>
+                </li>
+              </ul>
+            </div>
+
+            <noscript>
+              <div styleName="whitespace-noscript" />
+            </noscript>
+          </Parallax>
+        </div>
 
         <div styleName="copy-our-work">
           <div styleName="title">
@@ -114,10 +123,11 @@ function HomeServices({ data }) {
       </div>
     </Section>
   );
-}
+};
 
 HomeServices.propTypes = {
   data: PropTypes.object.isRequired,
+  parallaxController: PropTypes.object.isRequired,
 };
 
-export default withQuery(HomeServices);
+export default withQuery(withController(HomeServices));

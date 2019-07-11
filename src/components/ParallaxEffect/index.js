@@ -18,8 +18,8 @@ function ParallaxEffect({ image, parallaxAmount = 0.1, parallaxController }) {
           children: (
             <Img
               fadeIn={false}
-              styleName="parallax"
               style={{ height: "100%" }}
+              styleName="parallax"
               fluid={image}
               onLoad={handleLoad}
             />
