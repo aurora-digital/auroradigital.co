@@ -16,17 +16,6 @@ function HomePortfolio({ data }) {
     lyftonomie: "https://lyftonomie.fr/",
   };
 
-  const renderParallaxEffect = image => (
-    <ParallaxEffect parallaxAmount={0.1}>
-      <Img
-        fadeIn={false}
-        styleName="parallax"
-        style={{ height: "100%" }}
-        fluid={image}
-      />
-    </ParallaxEffect>
-  );
-
   const renderLink = project => (
     <>
       <div styleName="link">
@@ -75,13 +64,13 @@ function HomePortfolio({ data }) {
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                {renderParallaxEffect(data.sioslife2.image.fluid)}
+                <ParallaxEffect image={data.sioslife2.image.fluid} />
               </div>
             </div>
           </div>
 
           <div styleName="left-image">
-            {renderParallaxEffect(data.sioslife1.image.fluid)}
+            <ParallaxEffect image={data.sioslife1.image.fluid} />
           </div>
         </div>
 
@@ -101,13 +90,13 @@ function HomePortfolio({ data }) {
               {renderLink("oncostats")}
 
               <div styleName="right-image">
-                {renderParallaxEffect(data.oncostats2.image.fluid)}
+                <ParallaxEffect image={data.oncostats2.image.fluid} />
               </div>
             </div>
           </div>
 
           <div styleName="left-image">
-            {renderParallaxEffect(data.oncostats1.image.fluid)}
+            <ParallaxEffect image={data.oncostats1.image.fluid} />
           </div>
         </div>
 
@@ -124,7 +113,7 @@ function HomePortfolio({ data }) {
             <div styleName="right-image-wrapper">
               {renderLink("lyftonomie")}
               <div styleName="right-image">
-                {renderParallaxEffect(data.lyftonomie2.image.fluid)}
+                <ParallaxEffect image={data.lyftonomie2.image.fluid} />
               </div>
             </div>
           </div>

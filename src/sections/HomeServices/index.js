@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image/withIEPolyfill";
+
 import { Parallax } from "react-scroll-parallax";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
@@ -13,26 +13,15 @@ import "./index.css";
 import withQuery from "./withQuery";
 
 function HomeServices({ data }) {
-  const renderParallaxEffect = image => (
-    <ParallaxEffect parallaxAmount={0.1}>
-      <Img
-        fadeIn={false}
-        styleName="parallax"
-        style={{ height: "100%" }}
-        fluid={image}
-      />
-    </ParallaxEffect>
-  );
-
   return (
     <Section>
       <div styleName="root">
         <div styleName="images">
           <div styleName="image left-image">
-            {renderParallaxEffect(data.left.image.fluid)}
+            <ParallaxEffect image={data.left.image.fluid} />
           </div>
           <div styleName="image right-image">
-            {renderParallaxEffect(data.right.image.fluid)}
+            <ParallaxEffect image={data.right.image.fluid} />
           </div>
         </div>
 

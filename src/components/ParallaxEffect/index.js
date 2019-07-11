@@ -1,14 +1,29 @@
 import React from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { ParallaxBanner, withController } from "react-scroll-parallax";
+import Img from "gatsby-image/withIEPolyfill";
 
 import PropTypes from "prop-types";
 
-export default function ParallaxEffect({ children, parallaxAmount }) {
+import "./index.css";
+
+function ParallaxEffect({ image, parallaxAmount = 0.1, parallaxController }) {
+  const handleLoad = () => {
+    parallaxController.update();
+  };
+
   return (
     <ParallaxBanner
       layers={[
         {
-          children: <div style={{ height: "100%" }}>{children}</div>,
+          children: (
+            <Img
+              fadeIn={false}
+              styleName="parallax"
+              style={{ height: "100%" }}
+              fluid={image}
+              onLoad={handleLoad}
+            />
+          ),
           amount: parallaxAmount,
         },
       ]}
@@ -20,10 +35,13 @@ export default function ParallaxEffect({ children, parallaxAmount }) {
 }
 
 ParallaxEffect.propTypes = {
-  children: PropTypes.node.isRequired,
+  parallaxController: PropTypes.object.isRequired,
+  image: PropTypes.node.isRequired,
   parallaxAmount: PropTypes.number,
 };
 
 ParallaxEffect.defaultProps = {
-  parallaxAmount: 0.2,
+  parallaxAmount: 0.1,
 };
+
+export default withController(ParallaxEffect);
