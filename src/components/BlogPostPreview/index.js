@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
 import { Link } from "gatsby";
 
 import ParallaxEffect from "root/components/ParallaxEffect";
@@ -18,10 +17,7 @@ function BlogPostPreview({
 }) {
   return (
     <Link styleName="root" to={`/blog/articles/${path}`}>
-      <ParallaxEffect parallaxAmount={0.1}>
-        <Img fadeIn={false} fluid={featuredImage.image.fluid} />
-      </ParallaxEffect>
-
+      <ParallaxEffect image={featuredImage.image.fluid} parallaxAmount={0.1} />
       <div styleName="author">
         <Typography variant="small-body" color="oxford-blue">
           {author.name} | {date}

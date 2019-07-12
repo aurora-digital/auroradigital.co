@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
-import FadeUpOnScroll from "root/components/FadeUpOnScroll";
 import Img from "gatsby-image";
 import Social from "root/components/Social";
 import classNames from "classnames";
@@ -47,34 +46,28 @@ export default class AdvisorElement extends Component {
 
     return (
       <div styleName="root">
-        <FadeUpOnScroll>
-          <Img
-            fadeIn={false}
-            styleName="image"
-            alt={`${name.toLowerCase()} photo`}
-            fluid={image}
-            objectFit="cover"
-          />
-          <div styleName={descStyles}>
-            <div styleName="name">
-              <Typography
-                weight="bold"
-                variant="small-body"
-                color="oxford-blue"
-              >
-                {name}
-              </Typography>
-            </div>
-            <Social
-              name={name}
-              github={github}
-              linkedin={linkedin}
-              twitter={twitter}
-              instagram={instagram}
-              behance={behance}
-            />
+        <Img
+          fadeIn={false}
+          styleName="image"
+          alt={`${name.toLowerCase()} photo`}
+          fluid={image}
+          objectFit="cover"
+        />
+        <div styleName={descStyles}>
+          <div styleName="name">
+            <Typography weight="bold" variant="small-body" color="oxford-blue">
+              {name}
+            </Typography>
           </div>
-        </FadeUpOnScroll>
+          <Social
+            name={name}
+            github={github}
+            linkedin={linkedin}
+            twitter={twitter}
+            instagram={instagram}
+            behance={behance}
+          />
+        </div>
       </div>
     );
   }

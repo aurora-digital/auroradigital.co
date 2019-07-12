@@ -1,14 +1,17 @@
 import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
+import Img from "gatsby-image/withIEPolyfill";
 
 import PropTypes from "prop-types";
 
-export default function ParallaxEffect({ children, parallaxAmount }) {
+function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
   return (
     <ParallaxBanner
       layers={[
         {
-          children: <div style={{ height: "100%" }}>{children}</div>,
+          children: (
+            <Img fadeIn={false} style={{ height: "100%" }} fluid={image} />
+          ),
           amount: parallaxAmount,
         },
       ]}
@@ -20,10 +23,12 @@ export default function ParallaxEffect({ children, parallaxAmount }) {
 }
 
 ParallaxEffect.propTypes = {
-  children: PropTypes.node.isRequired,
+  image: PropTypes.node.isRequired,
   parallaxAmount: PropTypes.number,
 };
 
 ParallaxEffect.defaultProps = {
-  parallaxAmount: 0.2,
+  parallaxAmount: 0.1,
 };
+
+export default ParallaxEffect;

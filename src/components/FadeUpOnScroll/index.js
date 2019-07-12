@@ -17,12 +17,9 @@ const FadeUpOnScroll = ({ children, className }) => {
     hide: !hasJavascript,
   });
 
-  useEffect(
-    () => {
-      if (inView) setReadyToAnimate(true);
-    },
-    [inView],
-  );
+  useEffect(() => {
+    if (inView) setReadyToAnimate(true);
+  }, [inView]);
 
   return (
     <>
