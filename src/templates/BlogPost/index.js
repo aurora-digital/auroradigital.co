@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import Img from "gatsby-image/withIEPolyfill";
 import Helmet from "react-helmet";
 
 import Layout from "root/components/Layout";
@@ -55,13 +54,10 @@ function BlogPost({ data, pageContext }) {
       <Navbar theme="primary" />
 
       <div styleName="banner">
-        <ParallaxEffect parallaxAmount={0.1}>
-          <Img
-            fadeIn={false}
-            style={{ height: "100%" }}
-            fluid={frontmatter.featuredImage.image.fluid}
-          />
-        </ParallaxEffect>
+        <ParallaxEffect
+          image={frontmatter.featuredImage.image.fluid}
+          parallaxAmount={0.1}
+        />
       </div>
 
       <article styleName="root">

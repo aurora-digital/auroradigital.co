@@ -1,5 +1,6 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
+
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";

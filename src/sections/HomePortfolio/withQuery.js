@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    sioslife1: file(relativePath: { eq: "images/sioslife1.png" }) {
+    sioslife1: file(relativePath: { eq: "images/sioslife1.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
@@ -11,7 +11,7 @@ const query = graphql`
       }
     }
 
-    sioslife2: file(relativePath: { eq: "images/sioslife2.png" }) {
+    sioslife2: file(relativePath: { eq: "images/sioslife2.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
@@ -35,7 +35,7 @@ const query = graphql`
       }
     }
 
-    lyftonomie1: file(relativePath: { eq: "images/lyftonomie1.png" }) {
+    lyftonomie1: file(relativePath: { eq: "images/lyftonomie1.jpg" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 95) {
           ...GatsbyImageSharpFluid_withWebp
