@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { Parallax, withController } from "react-scroll-parallax";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { Parallax } from "react-scroll-parallax";
+
 import PropTypes from "prop-types";
 
 import Section from "root/components/Section";
@@ -13,121 +13,112 @@ import withQuery from "./withQuery";
 
 import "./index.css";
 
-const HomeServices = ({ data, parallaxController }) => {
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    parallaxController.update();
-  }, [inView]);
-
-  return (
-    <Section>
-      <div styleName="root" ref={ref}>
-        <div styleName="images">
-          <div styleName="image left-image">
-            <ParallaxEffect image={data.left.image.fluid} />
-          </div>
-          <div styleName="image right-image">
-            <ParallaxEffect image={data.right.image.fluid} />
-          </div>
+const HomeServices = ({ data }) => (
+  <Section>
+    <div styleName="root">
+      <div styleName="images">
+        <div styleName="image left-image">
+          <ParallaxEffect image={data.left.image.fluid} />
         </div>
-
-        <div styleName="copy-working-together">
-          <Typography variant="h3" weight="medium" color="oxford-blue">
-            Working together to achieve your goals
-          </Typography>
-
-          <Typography color="oxford-blue">
-            We’ll work alongside you from the early stages of product research
-            and design to development and deployment, all while continuously
-            delivering you product updates.
-          </Typography>
-        </div>
-
-        <div>
-          <Parallax styleName="copy-services" y={[0, -40]}>
-            <div styleName="copy-services-background">
-              <BackgroundWave />
-            </div>
-
-            <div styleName="copy-services-background-mobile">
-              <BackgroundWaveMobile />
-            </div>
-
-            <div styleName="left-column">
-              <div styleName="title" aria-hidden="true">
-                <Typography weight="medium" color="baby-blue">
-                  Design
-                </Typography>
-              </div>
-              <ul styleName="list" aria-label="Design Services">
-                <li>
-                  <Typography>Research & Strategy</Typography>
-                </li>
-                <li>
-                  <Typography>Brand Identity</Typography>
-                </li>
-                <li>
-                  <Typography>Product Design</Typography>
-                </li>
-                <li>
-                  <Typography>User Testing</Typography>
-                </li>
-              </ul>
-            </div>
-
-            <div styleName="right-column">
-              <div styleName="title" aria-hidden="true">
-                <Typography weight="medium" color="baby-blue">
-                  Development
-                </Typography>
-              </div>
-              <ul styleName="list" aria-label="Development Services">
-                <li>
-                  <Typography>Hosting Solutions</Typography>
-                </li>
-                <li>
-                  <Typography>Software Development</Typography>
-                </li>
-                <li>
-                  <Typography>Technology Implementation</Typography>
-                </li>
-                <li>
-                  <Typography>System Integration</Typography>
-                </li>
-              </ul>
-            </div>
-
-            <noscript>
-              <div styleName="whitespace-noscript" />
-            </noscript>
-          </Parallax>
-        </div>
-
-        <div styleName="copy-our-work">
-          <div styleName="title">
-            <Typography variant="h3" weight="medium" color="oxford-blue">
-              Our work goes far beyond what you actually see
-            </Typography>
-          </div>
-
-          <div styleName="copy">
-            <Typography color="oxford-blue">
-              We specialize in web-based products - from blazing fast websites
-              to carefully crafted mobile-first web apps, our main goal is to
-              use the power of the fantastic web technologies out there to give
-              you the best work possible.
-            </Typography>
-          </div>
+        <div styleName="image right-image">
+          <ParallaxEffect image={data.right.image.fluid} />
         </div>
       </div>
-    </Section>
-  );
-};
+
+      <div styleName="copy-working-together">
+        <Typography variant="h3" weight="medium" color="oxford-blue">
+          Working together to achieve your goals
+        </Typography>
+
+        <Typography color="oxford-blue">
+          We’ll work alongside you from the early stages of product research and
+          design to development and deployment, all while continuously
+          delivering you product updates.
+        </Typography>
+      </div>
+
+      <div>
+        <Parallax styleName="copy-services" y={[0, -40]}>
+          <div styleName="copy-services-background">
+            <BackgroundWave />
+          </div>
+
+          <div styleName="copy-services-background-mobile">
+            <BackgroundWaveMobile />
+          </div>
+
+          <div styleName="left-column">
+            <div styleName="title" aria-hidden="true">
+              <Typography weight="medium" color="baby-blue">
+                Design
+              </Typography>
+            </div>
+            <ul styleName="list" aria-label="Design Services">
+              <li>
+                <Typography>Research & Strategy</Typography>
+              </li>
+              <li>
+                <Typography>Brand Identity</Typography>
+              </li>
+              <li>
+                <Typography>Product Design</Typography>
+              </li>
+              <li>
+                <Typography>User Testing</Typography>
+              </li>
+            </ul>
+          </div>
+
+          <div styleName="right-column">
+            <div styleName="title" aria-hidden="true">
+              <Typography weight="medium" color="baby-blue">
+                Development
+              </Typography>
+            </div>
+            <ul styleName="list" aria-label="Development Services">
+              <li>
+                <Typography>Hosting Solutions</Typography>
+              </li>
+              <li>
+                <Typography>Software Development</Typography>
+              </li>
+              <li>
+                <Typography>Technology Implementation</Typography>
+              </li>
+              <li>
+                <Typography>System Integration</Typography>
+              </li>
+            </ul>
+          </div>
+
+          <noscript>
+            <div styleName="whitespace-noscript" />
+          </noscript>
+        </Parallax>
+      </div>
+
+      <div styleName="copy-our-work">
+        <div styleName="title">
+          <Typography variant="h3" weight="medium" color="oxford-blue">
+            Our work goes far beyond what you actually see
+          </Typography>
+        </div>
+
+        <div styleName="copy">
+          <Typography color="oxford-blue">
+            We specialize in web-based products - from blazing fast websites to
+            carefully crafted mobile-first web apps, our main goal is to use the
+            power of the fantastic web technologies out there to give you the
+            best work possible.
+          </Typography>
+        </div>
+      </div>
+    </div>
+  </Section>
+);
 
 HomeServices.propTypes = {
   data: PropTypes.object.isRequired,
-  parallaxController: PropTypes.object.isRequired,
 };
 
-export default withQuery(withController(HomeServices));
+export default withQuery(HomeServices);

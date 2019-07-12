@@ -1,24 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import PropTypes from "prop-types";
 import ParallaxEffect from "root/components/ParallaxEffect";
-import { withController } from "react-scroll-parallax";
-import { useInView } from "react-intersection-observer";
+
 import withQuery from "./withQuery";
 
 import "./index.css";
 
-const CompanyMedtechRevolution = ({ data, parallaxController }) => {
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    parallaxController.update();
-  }, [inView]);
-
+const CompanyMedtechRevolution = ({ data }) => {
   return (
     <Section verticalSpacing={false}>
-      <div styleName="root" ref={ref}>
+      <div styleName="root">
         <div styleName="container-top">
           <div styleName="text">
             <Typography variant="body" color="oxford-blue">
@@ -49,7 +42,6 @@ const CompanyMedtechRevolution = ({ data, parallaxController }) => {
 };
 
 CompanyMedtechRevolution.propTypes = {
-  parallaxController: PropTypes.object.isRequired,
   data: PropTypes.shape({
     teamtalk: PropTypes.shape({
       image: PropTypes.shape({
@@ -64,4 +56,4 @@ CompanyMedtechRevolution.propTypes = {
   }).isRequired,
 };
 
-export default withQuery(withController(CompanyMedtechRevolution));
+export default withQuery(CompanyMedtechRevolution);

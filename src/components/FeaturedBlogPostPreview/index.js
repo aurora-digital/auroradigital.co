@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
 import { Link } from "gatsby";
 
 import Typography from "root/components/Typography";
@@ -46,13 +45,10 @@ function FeaturedBlogPostPreview({
       </div>
 
       <div styleName="image">
-        <ParallaxEffect parallaxAmount={0.1}>
-          <Img
-            fadeIn={false}
-            fluid={featuredImage.image.fluid}
-            style={{ height: "100%" }}
-          />
-        </ParallaxEffect>
+        <ParallaxEffect
+          image={featuredImage.image.fluid}
+          parallaxAmount={0.1}
+        />
       </div>
     </div>
   );
