@@ -17,7 +17,12 @@ function BlogPostPreview({
 }) {
   return (
     <Link styleName="root" to={`/blog/articles/${path}`}>
-      <ParallaxEffect image={featuredImage.image.fluid} parallaxAmount={0.1} />
+      <div styleName="image">
+        <ParallaxEffect
+          image={featuredImage.image.fluid}
+          parallaxAmount={0.1}
+        />
+      </div>
       <div styleName="author">
         <Typography variant="small-body" color="oxford-blue">
           {author.name} | {date}

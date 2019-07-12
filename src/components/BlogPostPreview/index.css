@@ -4,6 +4,15 @@
   text-decoration: none;
 }
 
+.image {
+  height: 352px;
+
+  @include Breakpoint-mobileOnly {
+    height: 136px;
+    max-width: 100%;
+  }
+}
+
 .author {
   margin-top: $spacing-20;
 

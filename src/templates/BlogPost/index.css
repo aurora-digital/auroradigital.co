@@ -130,4 +130,14 @@
       margin-top: $spacing-20;
     }
   }
+
+  strong {
+    font-weight: 700;
+  }
+
+  ul {
+    margin-left: 18px;
+
+    list-style: disc;
+  }
 }
