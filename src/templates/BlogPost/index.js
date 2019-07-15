@@ -49,6 +49,10 @@ function BlogPost({ data, pageContext }) {
           property="og:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
+        <meta
+          property="twitter:image"
+          content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
+        />
       </Helmet>
 
       <Navbar theme="primary" />
