@@ -279,6 +279,11 @@
   .left-image {
     width: $three-columns;
 
+    @include Breakpoint-desktopOnly {
+      margin-left: calc(calc($column-spacing + $spacing-20 + $spacing-20 + $spacing-8) * -1);
+    }
+
+
     @include Breakpoint-tabletOnly {
       width: calc(20vw + $spacing-136);
       margin-top: -$spacing-136;
