@@ -5,9 +5,11 @@
 }
 
 .container {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
-
+    
   padding: $spacing-52 0;
 
   a {
@@ -22,9 +24,10 @@
 .brand {
   @include Breakpoint-tabletAndAbove {
     position: absolute;
-    left: 50%;
-
-    transform: translate(-50%, -25%);
+    
+    width: 100%;
+    
+    text-align: center;
   }
 }
 
