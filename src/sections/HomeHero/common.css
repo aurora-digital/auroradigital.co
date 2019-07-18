@@ -60,10 +60,13 @@ $Breakpoint-parallax: 768px;
   background: url(../../assets/images/white-wave.svg) repeat-x;
 
   backface-visibility: hidden;
-  perspective: 1000;
 
   animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   animation-play-state: paused;
+
+  @include Breakpoint-tabletAndAbove {
+    perspective: 1000;
+  }
 }
 
 .wave.animate {
