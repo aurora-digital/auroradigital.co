@@ -49,9 +49,20 @@ function BlogPost({ data, pageContext }) {
           property="og:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@AuroraDigitalH1" />
         <meta
           property="twitter:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
+        />
+        <meta
+          property="twitter:url"
+          content={`https://auroradigital.co${frontmatter.path}`}
+        />
+        <meta property="twitter:title" content={frontmatter.title} />
+        <meta
+          property="twitter:description"
+          content={frontmatter.description}
         />
       </Helmet>
 
