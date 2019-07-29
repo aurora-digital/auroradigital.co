@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Helmet from "react-helmet";
-import Img from "gatsby-image/withIEPolyfill";
 
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
