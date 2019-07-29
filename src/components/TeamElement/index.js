@@ -61,6 +61,8 @@ export default class TeamElement extends Component {
           fluid={image}
           objectFit="cover"
           loading="eager"
+          critical
+          fadeIn={false}
         />
         <div styleName={descStyles}>
           <div styleName="name">

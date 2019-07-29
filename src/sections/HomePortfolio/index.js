@@ -123,6 +123,7 @@ function HomePortfolio({ data }) {
               fluid={data.lyftonomie1.image.fluid}
               objectFit="cover"
               loading="eager"
+              critical
             />
           </div>
         </div>

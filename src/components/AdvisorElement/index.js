@@ -52,6 +52,8 @@ export default class AdvisorElement extends Component {
           fluid={image}
           objectFit="cover"
           loading="eager"
+          critical
+          fadeIn={false}
         />
         <div styleName={descStyles}>
           <div styleName="name">
