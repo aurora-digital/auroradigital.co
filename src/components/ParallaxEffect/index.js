@@ -9,7 +9,9 @@ function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
     <ParallaxBanner
       layers={[
         {
-          children: <Img style={{ height: "100%" }} fluid={image} />,
+          children: (
+            <Img style={{ height: "100%" }} fluid={image} loading="eager" />
+          ),
           amount: parallaxAmount,
         },
       ]}

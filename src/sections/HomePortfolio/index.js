@@ -119,7 +119,11 @@ function HomePortfolio({ data }) {
           </div>
 
           <div styleName="left-image">
-            <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
+            <Img
+              fluid={data.lyftonomie1.image.fluid}
+              objectFit="cover"
+              loading="eager"
+            />
           </div>
         </div>
       </div>
