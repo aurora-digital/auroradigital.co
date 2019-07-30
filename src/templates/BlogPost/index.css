@@ -141,3 +141,21 @@
     list-style: disc;
   }
 }
+
+:global {
+  .gatsby-resp-image-figure {
+    margin: $spacing-52 0;
+
+    @include Breakpoint-mobileOnly {
+      margin: $spacing-32 0;
+    }
+  }
+
+  .gatsby-resp-image-background-image {
+    padding-bottom: 0 !important;
+  }
+
+  .gatsby-resp-image-image {
+    width: 100%;
+  }
+}

@@ -27,7 +27,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-mdx",
+      resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
           "gatsby-remark-unwrap-images",
@@ -36,7 +36,6 @@ module.exports = {
             options: {
               maxWidth: 824,
               linkImagesToOriginal: false,
-              wrapperStyle: "margin: 56px 0;",
               withWebp: true,
               quality: 100,
               showCaptions: true,
