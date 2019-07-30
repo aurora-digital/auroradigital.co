@@ -120,9 +120,10 @@ function HomePortfolio({ data }) {
 
           <div styleName="left-image">
             <Img
-              fadeIn={false}
               fluid={data.lyftonomie1.image.fluid}
               objectFit="cover"
+              loading="eager"
+              critical
             />
           </div>
         </div>

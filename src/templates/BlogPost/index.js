@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Helmet from "react-helmet";
 
 import Layout from "root/components/Layout";
@@ -16,9 +16,7 @@ import "./index.css";
 export const pageQuery = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         path
         date(formatString: "MMMM DD, YYYY")
@@ -38,7 +36,7 @@ export const pageQuery = graphql`
 
 function BlogPost({ data, pageContext }) {
   const {
-    mdx: { code, frontmatter },
+    mdx: { body, frontmatter },
   } = data;
   const { author } = pageContext;
 
@@ -87,7 +85,7 @@ function BlogPost({ data, pageContext }) {
         </Typography>
 
         <div styleName="content">
-          <MDXRenderer>{code.body}</MDXRenderer>
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
 
         <Comments path={frontmatter.path} title={frontmatter.title} />

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
-import Img from "gatsby-image";
+import Img from "gatsby-image/withIEPolyfill";
 import Social from "root/components/Social";
 import classNames from "classnames";
 
@@ -47,11 +47,13 @@ export default class AdvisorElement extends Component {
     return (
       <div styleName="root">
         <Img
-          fadeIn={false}
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
           fluid={image}
           objectFit="cover"
+          loading="eager"
+          critical
+          fadeIn={false}
         />
         <div styleName={descStyles}>
           <div styleName="name">

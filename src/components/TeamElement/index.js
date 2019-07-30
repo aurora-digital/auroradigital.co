@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
-import Img from "gatsby-image";
+import Img from "gatsby-image/withIEPolyfill";
 import classNames from "classnames";
 import Social from "root/components/Social";
 
@@ -56,11 +56,13 @@ export default class TeamElement extends Component {
     return (
       <button styleName="root" type="button">
         <Img
-          fadeIn={false}
           styleName="image"
           alt={`${name.toLowerCase()} photo`}
           fluid={image}
           objectFit="cover"
+          loading="eager"
+          critical
+          fadeIn={false}
         />
         <div styleName={descStyles}>
           <div styleName="name">

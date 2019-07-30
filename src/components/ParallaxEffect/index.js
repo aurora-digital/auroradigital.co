@@ -10,7 +10,12 @@ function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
       layers={[
         {
           children: (
-            <Img fadeIn={false} style={{ height: "100%" }} fluid={image} />
+            <Img
+              style={{ height: "100%" }}
+              fluid={image}
+              loading="eager"
+              critical
+            />
           ),
           amount: parallaxAmount,
         },
