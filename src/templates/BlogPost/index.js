@@ -43,24 +43,54 @@ function BlogPost({ data, pageContext }) {
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
       <Helmet>
+        <meta name="author" property="og:author" content={author} />
         <meta
+          name="description"
+          property="og:description"
+          content={frontmatter.description}
+        />
+        <meta
+          name="image"
           property="og:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
-        <meta property="twitter:card" content="summary" />
-        <meta property="twitter:site" content="@AuroraDigitalH1" />
+        <meta name="title" property="og:title" content={frontmatter.title} />
+        <meta name="type" property="og:type" content="article" />
         <meta
+          name="url"
+          property="og:url"
+          content={`https://auroradigital.co${frontmatter.path}`}
+        />
+        <meta name="twitter:card" property="twitter:card" content="summary" />
+        <meta
+          name="twitter:creator"
+          property="twitter:creator"
+          content={`@${author.twitter}`}
+        />
+        <meta
+          name="twitter:description"
+          property="twitter:description"
+          content={frontmatter.description}
+        />
+        <meta
+          name="twitter:image"
           property="twitter:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
         <meta
+          name="twitter:site"
+          property="twitter:site"
+          content="@AuroraDigitalH1"
+        />
+        <meta
+          name="twitter:title"
+          property="twitter:title"
+          content={frontmatter.title}
+        />
+        <meta
+          name="twitter:url"
           property="twitter:url"
           content={`https://auroradigital.co${frontmatter.path}`}
-        />
-        <meta property="twitter:title" content={frontmatter.title} />
-        <meta
-          property="twitter:description"
-          content={frontmatter.description}
         />
       </Helmet>
 
@@ -101,7 +131,10 @@ BlogPost.propTypes = {
     mdx: PropTypes.shape(),
   }).isRequired,
   pageContext: PropTypes.shape({
-    author: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired,
+    author: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      twitter: PropTypes.string,
+    }).isRequired,
   }).isRequired,
 };
 
