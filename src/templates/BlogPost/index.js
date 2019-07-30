@@ -43,7 +43,7 @@ function BlogPost({ data, pageContext }) {
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
       <Helmet>
-        <meta name="author" property="og:author" content={author} />
+        <meta name="author" property="og:author" content={author.name} />
         <meta
           name="description"
           property="og:description"
@@ -61,11 +61,15 @@ function BlogPost({ data, pageContext }) {
           property="og:url"
           content={`https://auroradigital.co${frontmatter.path}`}
         />
-        <meta name="twitter:card" property="twitter:card" content="summary" />
+        <meta
+          name="twitter:card"
+          property="twitter:card"
+          content="summary_large_image"
+        />
         <meta
           name="twitter:creator"
           property="twitter:creator"
-          content={`@${author.twitter}`}
+          content={author.twitter}
         />
         <meta
           name="twitter:description"
@@ -76,6 +80,11 @@ function BlogPost({ data, pageContext }) {
           name="twitter:image"
           property="twitter:image"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
+        />
+        <meta
+          name="twitter:image:alt"
+          property="twitter:image:alt"
+          content={`${frontmatter.title} preview`}
         />
         <meta
           name="twitter:site"
@@ -134,6 +143,7 @@ BlogPost.propTypes = {
     author: PropTypes.shape({
       name: PropTypes.string.isRequired,
       twitter: PropTypes.string,
+      twitterid: PropTypes.string,
     }).isRequired,
   }).isRequired,
 };
