@@ -51,9 +51,6 @@ export default class AdvisorElement extends Component {
           alt={`${name.toLowerCase()} photo`}
           fluid={image}
           objectFit="cover"
-          loading="eager"
-          critical
-          fadeIn={false}
         />
         <div styleName={descStyles}>
           <div styleName="name">
