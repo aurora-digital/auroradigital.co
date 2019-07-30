@@ -22,10 +22,14 @@
 
   margin: 0;
 
-  img {
+  & > picture > img {
     filter: grayscale(100%);
 
-    transition: filter 500ms;
+    transition: filter 500ms ease-out;
+  }
+
+  & > img {
+    filter: grayscale(100%);
   }
 
   @include Breakpoint-tabletOnly {
@@ -41,12 +45,12 @@
   }
 }
 
-.image div {
-  position: absolute;
+.image::after {
+  content: "";
 
+  position: absolute;
   top: 0;
   left: 0;
-
   z-index: 1;
 
   width: 100%;
@@ -57,7 +61,7 @@
   background-color: color($klein-blue alpha(52%));
   opacity: 0.52;
 
-  transition: opacity 500ms;
+  transition: opacity 500ms ease-out;
 
   @supports not (mix-blend-mode: difference) {
     display: none;
@@ -68,14 +72,12 @@
   .root:hover,
   .root:focus,
   .root:active {
-    .image {
-      img {
-        filter: grayscale(0%);
-      }
+    .image > picture > img {
+      filter: grayscale(0%);
+    }
 
-      div {
-        opacity: 0;
-      }
+    .image::after {
+      opacity: 0;
     }
   }
 }
