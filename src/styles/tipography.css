@@ -11,6 +11,8 @@ $font-size-body: responsive 20px 32px;
 $line-height-body: 1.618;
 $font-size-body-small: responsive 16px 20px;
 $line-height-body-small: 1.618;
+$font-size-body-xsmall: responsive 12px 16px;
+$line-height-body-xsmall: 1.618;
 
 $min-responsive-font-screen: 320px;
 $max-responsive-font-screen: 1440px;
@@ -51,6 +53,13 @@ $max-responsive-font-screen: 1440px;
 @mixin body-small-responsive-font {
   font-size: $font-size-body-small;
   line-height: $line-height-body-small;
+
+  @include font-min-max;
+}
+
+@mixin body-xsmall-responsive-font {
+  font-size: $font-size-body-xsmall;
+  line-height: $line-height-body-xsmall;
 
   @include font-min-max;
 }

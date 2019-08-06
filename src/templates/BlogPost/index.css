@@ -65,6 +65,20 @@
     margin-bottom: $spacing-32;
   }
 
+  h3 {
+    @include body-small-responsive-font;
+
+    margin-bottom: $spacing-20;
+
+    font-weight: bold;
+
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-20;
+    }
+  }
+
+
   code {
     background-color: $code-grey;
 
@@ -93,10 +107,20 @@
     max-width: $four-columns;
     margin: $spacing-84 auto;
 
-    color: $klein-blue;
-
     @include Breakpoint-mobileOnly {
       margin: $spacing-52 auto;
+    }
+
+    p:first-child {
+      color: $klein-blue;
+
+    }
+
+    p:nth-child(2) {
+      color: color($oxford-blue alpha(52%));
+
+      @include body-xsmall-responsive-font;
+
     }
   }
 
@@ -140,6 +164,60 @@
 
     list-style: disc;
   }
+
+  table {
+    width: 100%;
+    margin-top: $spacing-52;
+    margin-bottom: $spacing-20;
+
+  }
+
+  thead {
+    padding: $spacing-20 0;
+
+    border-top: 2px solid color($baby-blue alpha(52%));
+    border-bottom: 2px solid color($baby-blue alpha(52%));
+
+    font-weight: bold;
+
+    tr {
+      display: table-row;
+
+      text-align: left;
+
+      th {
+        padding: $spacing-20;
+
+      }
+    }
+  }
+
+  tbody {
+    display: table-row-group;
+
+    vertical-align: middle;
+
+    tr {
+
+      border-bottom: 1px solid color($baby-blue alpha(52%));
+
+
+      text-align: left;
+
+
+
+      td {
+        padding: $spacing-20;
+      }
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    margin: $spacing-84 0;
+  }
+
 }
 
 :global {
@@ -149,6 +227,12 @@
     @include Breakpoint-mobileOnly {
       margin: $spacing-32 0;
     }
+  }
+
+  .gatsby-resp-image-figcaption {
+    margin-top: $spacing-20 !important;
+
+    @include body-xsmall-responsive-font;
   }
 
   .gatsby-resp-image-background-image {
