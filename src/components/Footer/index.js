@@ -50,7 +50,7 @@ const SOCIAL_LINKS = [
   {
     name: "Md",
     ariaLabel: "Medium",
-    link: "https://medium.com/@auroradigitalhealth",
+    link: "https://medium.com/auroradigitalhealth",
   },
   {
     name: "Git",
