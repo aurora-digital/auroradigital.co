@@ -246,7 +246,6 @@
 
     @include Breakpoint-mobileOnly {
       margin-top: $spacing-52;
-      margin-bottom: $spacing-8;
     }
   }
 
