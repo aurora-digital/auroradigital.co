@@ -54,7 +54,7 @@ function CompanyTeam({ data }) {
             name="Tânia Rocha"
             position="Software Developer"
             linkedin="https://www.linkedin.com/in/tanisharocha"
-            instagram="https://www.instagram.com/tanisharocha"
+            twitter="https://twitter.com/tanishaprocha"
             nameMargin
           />
         </div>

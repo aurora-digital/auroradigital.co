@@ -107,6 +107,10 @@
     max-width: $four-columns;
     margin: $spacing-84 auto;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     @include Breakpoint-mobileOnly {
       margin: $spacing-52 auto;
     }
@@ -220,6 +224,8 @@
 
 }
 
+
+
 :global {
   .gatsby-resp-image-figure {
     margin: $spacing-52 0;
@@ -241,5 +247,23 @@
 
   .gatsby-resp-image-image {
     width: 100%;
+  }
+
+  .references {
+    margin-bottom: $spacing-12 !important;
+
+    color: $oxford-blue;
+    opacity: 0.52;
+
+    @include body-xsmall-responsive-font;
+
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-8;
+    }
+  }
+
+  .references:first-child {
+    padding-top: $spacing-84 !important;
   }
 }
