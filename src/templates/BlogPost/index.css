@@ -72,12 +72,10 @@
 
     font-weight: bold;
 
-
     @include Breakpoint-mobileOnly {
       margin-bottom: $spacing-20;
     }
   }
-
 
   code {
     background-color: $code-grey;
@@ -107,17 +105,12 @@
     max-width: $four-columns;
     margin: $spacing-84 auto;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     @include Breakpoint-mobileOnly {
       margin: $spacing-52 auto;
     }
 
     p:first-child {
       color: $klein-blue;
-
     }
 
     p:nth-child(2) {
@@ -125,6 +118,9 @@
 
       @include body-xsmall-responsive-font;
 
+      a {
+        border-bottom: 1px solid color($oxford-blue alpha(52%));
+      }
     }
   }
 
@@ -173,7 +169,6 @@
     width: 100%;
     margin-top: $spacing-52;
     margin-bottom: $spacing-20;
-
   }
 
   thead {
@@ -191,7 +186,6 @@
 
       th {
         padding: $spacing-20;
-
       }
     }
   }
@@ -202,13 +196,9 @@
     vertical-align: middle;
 
     tr {
-
       border-bottom: 1px solid color($baby-blue alpha(52%));
 
-
       text-align: left;
-
-
 
       td {
         padding: $spacing-20;
@@ -221,10 +211,7 @@
     height: 400px;
     margin: $spacing-84 0;
   }
-
 }
-
-
 
 :global {
   .gatsby-resp-image-figure {
@@ -250,20 +237,24 @@
   }
 
   .references {
-    margin-bottom: $spacing-12 !important;
+    margin-top: $spacing-84;
 
     color: $oxford-blue;
     opacity: 0.52;
 
     @include body-xsmall-responsive-font;
 
-
     @include Breakpoint-mobileOnly {
+      margin-top: $spacing-52;
       margin-bottom: $spacing-8;
     }
   }
 
-  .references:first-child {
-    padding-top: $spacing-84 !important;
+  .references > *:not(:last-child) {
+    margin-bottom: 12px;
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-8;
+    }
   }
 }
