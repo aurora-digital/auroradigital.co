@@ -1,6 +1,9 @@
 @import "../styles/all.css";
 
 .root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: $spacing-84;
   margin-bottom: $spacing-224;
 
@@ -37,15 +40,5 @@
 
   @include Breakpoint-mobileOnly {
     margin-right: 0;
-  }
-}
-
-.more-coming-soon {
-  margin-top: $spacing-224;
-
-  text-align: center;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
   }
 }
