@@ -110,7 +110,13 @@
     }
 
     p:first-child {
+      margin-bottom: $spacing-20;
+
       color: $klein-blue;
+
+      @include Breakpoint-mobileOnly {
+        mrgin-bottom: $spacing-12;
+      }
     }
 
     p:nth-child(2) {
