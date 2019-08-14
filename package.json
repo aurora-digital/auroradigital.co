@@ -24,7 +24,8 @@
     "lint": "eslint --fix src && stylelint 'src/**/*.css'",
     "lint-fix": "eslint --fix src && stylelint --fix 'src/**/*.css'",
     "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\"",
-    "lint-styles-fix": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --fix"
+    "lint-styles-fix": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --fix",
+    "optimize-jpg": "find src blog -type f -name \"*.jpg\" -o -name \"*.JPG\" | xargs jpegoptim -m100 -f --strip-all"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",
