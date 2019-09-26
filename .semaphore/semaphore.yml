@@ -25,6 +25,12 @@ global_job_config:
       - cache store
 
 blocks:
+  - name: Setup
+    task:
+      jobs:
+        - name: Node dependencies
+          commands:
+            - yarn install
   - name: Linters
     task:
       jobs:
@@ -34,4 +40,3 @@ blocks:
         - name: Stylelint
           commands:
             - yarn lint-styles
-            
