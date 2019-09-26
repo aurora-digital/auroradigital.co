@@ -1,0 +1,42 @@
+version: v1.0
+
+name: Aurora Digital's Website & Blog
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+auto_cancel:
+  running:
+    when: "branch != 'master'"
+
+fail_fast:
+  stop:
+    when: "true"
+
+global_job_config:
+  prologue:
+    commands:
+      - checkout
+      - cache restore
+      - sem-version node $(cat .tool-versions | grep nodejs | cut -d ' ' -f 2)
+      - yarn install
+      - cache store
+
+blocks:
+  - name: Setup
+    task:
+      jobs:
+        - name: Node dependencies
+          commands:
+            - yarn install
+  - name: Linters
+    task:
+      jobs:
+        - name: ESLint
+          commands:
+            - yarn lint
+        - name: Stylelint
+          commands:
+            - yarn lint-styles
