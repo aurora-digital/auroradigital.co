@@ -28,7 +28,7 @@
     "optimize-jpg": "find src blog -type f -name \"*.jpg\" -o -name \"*.JPG\" | xargs jpegoptim -m100 -f --strip-all"
   },
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
     "autoprefixer": "^9.6.1",
