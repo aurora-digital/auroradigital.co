@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useLayoutEffect } from "react";
 
 export default function useWindowDimensions() {

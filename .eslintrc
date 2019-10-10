@@ -1,6 +1,12 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "react-hooks"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,17 +22,48 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "curly": ["error", "multi-line"],
+    "curly": [
+      "error",
+      "multi-line"
+    ],
     "padding-line-between-statements": [
       "error",
-      { "blankLine": "always", "prev": "*", "next": "return" },
-      { "blankLine": "always", "prev": "*", "next": "if" },
-      { "blankLine": "always", "prev": "if", "next": "*" },
-      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "if"
+      },
+      {
+        "blankLine": "always",
+        "prev": "if",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
       {
         "blankLine": "any",
-        "prev": ["const", "let", "var"],
-        "next": ["const", "let", "var"]
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
       }
     ],
     "no-param-reassign": [
@@ -47,10 +84,17 @@
     "id-length": [
       "error",
       {
-        "exceptions": ["_", "x", "y"]
+        "exceptions": [
+          "_",
+          "x",
+          "y"
+        ]
       }
     ],
-    "no-use-before-define": ["error", "nofunc"],
+    "no-use-before-define": [
+      "error",
+      "nofunc"
+    ],
     "no-unused-vars": [
       "error",
       {
@@ -60,8 +104,12 @@
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": ["Link"],
-        "specialLink": ["to"]
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to"
+        ]
       }
     ],
     "react/jsx-filename-extension": "off",
@@ -71,8 +119,14 @@
     "import/no-unresolved": [
       2,
       {
-        "ignore": ["root/"]
+        "ignore": [
+          "root/"
+        ]
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/static-property-placement": "off",
+    "react/state-in-constructor": "off",
+    "react-hooks/rules-of-hooks": "error"
   }
 }
