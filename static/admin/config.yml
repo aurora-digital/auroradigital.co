@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  repo: aurora-digital/auroradigital.co
+  branch: netlify-cms
 media_folder: static/assets
 public_folder: assets
 publish_mode: editorial_workflow
