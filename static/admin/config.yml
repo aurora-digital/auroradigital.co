@@ -1,14 +1,17 @@
 backend:
   name: git-gateway
   branch: master
+media_folder: static/assets
+public_folder: assets
 publish_mode: editorial_workflow
+media_folder_relative: true
 collections:
   - name: "blog"
     label: "Blog"
     folder: "blog/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{author}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    slug: "{{year}}-{{month}}-{{day}}-{{author}}-{{slug}}"
+    fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "featuredImage", widget: "image"}

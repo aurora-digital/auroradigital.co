@@ -7,6 +7,7 @@ module.exports = {
     author: "Aurora Digital's Website",
   },
   plugins: [
+    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
     {
