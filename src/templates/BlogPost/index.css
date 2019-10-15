@@ -166,9 +166,18 @@
   }
 
   ul {
+    margin-bottom: $spacing-32;
     margin-left: 18px;
 
     list-style: disc;
+
+    @include Breakpoint-mobileOnly {
+      margin-bottom: $spacing-20;
+    }
+  }
+
+  li {
+    @include body-small-responsive-font;
   }
 
   table {
