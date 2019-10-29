@@ -58,6 +58,7 @@
     }
   }
 
+  h1,
   h2 {
     @include body-responsive-font;
 
