@@ -31,6 +31,13 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow",
+            },
+          },
           "gatsby-remark-relative-images",
           "gatsby-remark-unwrap-images",
           {
