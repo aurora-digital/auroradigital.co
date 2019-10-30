@@ -1,8 +1,7 @@
 @import "../../styles/all.css";
 
 :global {
-  html,
-  body {
+  #___gatsby {
     @include Breakpoint-tabletAndAbove {
       overflow-x: hidden;
     }
