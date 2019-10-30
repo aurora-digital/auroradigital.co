@@ -1,19 +1,25 @@
 const path = require("path");
 
 const query = `
-{
-  allMdx {
-    edges {
-      node {
-        id
-        frontmatter {
-          path
-          author
+  {
+    allMdx {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            author {
+              childAuthorsJson {
+                name
+                twitter
+                position
+              }
+            }
+          }
         }
       }
     }
   }
-}
 `;
 
 module.exports = async (graphql, actions) => {
@@ -31,7 +37,7 @@ module.exports = async (graphql, actions) => {
       component: path.resolve(`./src/templates/BlogPost/index.js`),
       context: {
         id: node.id,
-        author: require(`../blog/authors/${node.frontmatter.author}.json`), //eslint-disable-line
+        author: node.frontmatter.author.childAuthorsJson,
       },
     });
   });

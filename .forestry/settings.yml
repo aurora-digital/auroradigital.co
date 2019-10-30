@@ -1,13 +1,29 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: ''
 webhook_url: 
-sections: 
-upload_dir: uploads
-public_path: "/uploads"
+sections:
+- type: directory
+  path: blog/posts
+  label: Blog Posts
+  create: documents
+  match: "**/*.mdx"
+  new_doc_ext: mdx
+  templates:
+  - blog-post
+- type: directory
+  path: blog/authors
+  label: Authors
+  create: all
+  match: "**/*.json"
+  new_doc_ext: json
+  templates:
+  - author
+upload_dir: blog/images
+public_path: blog/images
 front_matter_path: ''
-use_front_matter_path: false
+use_front_matter_path: 
 file_template: ":filename:"
 build:
   preview_output_directory: public
@@ -15,4 +31,4 @@ build:
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: yarn dev
+  instant_preview_command: yarn forestry-preview

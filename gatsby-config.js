@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "assets",
         path: `${__dirname}/src/assets/`,
+        name: "assets",
       },
     },
     {
@@ -25,11 +25,13 @@ module.exports = {
     },
 
     "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
+          "gatsby-remark-relative-images",
           "gatsby-remark-unwrap-images",
           {
             resolve: `gatsby-remark-images`,

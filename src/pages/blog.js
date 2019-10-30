@@ -19,7 +19,13 @@ export const query = graphql`
         node {
           frontmatter {
             path
-            author
+            author {
+              childAuthorsJson {
+                name
+                twitter
+                position
+              }
+            }
             date(formatString: "MMMM DD, YYYY")
             title
             description
@@ -48,8 +54,7 @@ function Blog({
       <Section verticalSpacing={false}>
         <div styleName="root">
           {edges.map(({ node }, index) => {
-            // eslint-disable-next-line
-            const author = require(`../../blog/authors/${node.frontmatter.author}.json`);
+            const author = node.frontmatter.author.childAuthorsJson;
 
             if (index === 0) {
               return (
