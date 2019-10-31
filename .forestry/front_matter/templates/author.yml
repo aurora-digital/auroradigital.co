@@ -18,3 +18,5 @@ fields:
   label: twitter
   config:
     required: true
+pages:
+- blog/authors/team.json
