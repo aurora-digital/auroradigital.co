@@ -46,7 +46,7 @@ module.exports = {
               maxWidth: 824,
               linkImagesToOriginal: false,
               withWebp: true,
-              quality: 100,
+              quality: 75,
               showCaptions: true,
             },
           },
