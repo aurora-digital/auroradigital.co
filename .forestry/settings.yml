@@ -27,7 +27,7 @@ use_front_matter_path:
 file_template: ":filename:"
 build:
   preview_output_directory: public
-  install_dependencies_command: yarn install && yarn build
+  install_dependencies_command: yarn add && yarn build
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
