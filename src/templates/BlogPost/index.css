@@ -58,7 +58,7 @@
     }
   }
 
-  h2 {
+  h1, h2 {
     @include body-responsive-font;
 
     margin-top: $spacing-84;
