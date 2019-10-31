@@ -2,7 +2,7 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url: 
+webhook_url:
 sections:
 - type: directory
   path: blog/posts
@@ -23,11 +23,11 @@ sections:
 upload_dir: blog/images
 public_path: blog/images
 front_matter_path: ''
-use_front_matter_path: 
+use_front_matter_path:
 file_template: ":filename:"
 build:
   preview_output_directory: public
-  install_dependencies_command: yarn add && yarn build
+  install_dependencies_command: yarn forestry-install
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"

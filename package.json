@@ -20,6 +20,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
+    "forestry-install": "yarn install && yarn build",
     "forestry-preview": "gatsby develop --port 8080 --host 0.0.0.0",
     "build": "gatsby build",
     "lint": "eslint --fix src && stylelint 'src/**/*.css'",
