@@ -52,6 +52,11 @@ function BlogPost({ data, pageContext }) {
         <meta
           name="image"
           property="og:image"
+          content={`http://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
+        />
+        <meta
+          name="image"
+          property="og:image:secure_url"
           content={`https://auroradigital.co${frontmatter.featuredImage.image.fluid.src}`}
         />
         <meta name="title" property="og:title" content={frontmatter.title} />
