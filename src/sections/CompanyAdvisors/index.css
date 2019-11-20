@@ -57,8 +57,7 @@ $tabletColumns: calc($tabletSpace / 2);
   }
 }
 
-.advisor-element:nth-child(2),
-.advisor-element:nth-child(4) {
+.advisor-element:nth-child(even) {
   @include Breakpoint-tabletAndAbove {
     margin-top: $spacing-84;
   }

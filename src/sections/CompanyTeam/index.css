@@ -49,19 +49,17 @@ $tabletColumns: calc($tabletSpace / 3);
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-52;
-    margin-left: calc(-1 * $gutter);
+    margin-left: calc(-1 * $mobile-padding);
   }
 }
 
-.element:nth-child(2),
-.element:nth-child(5) {
+.element:nth-child(3n + 2) {
   @include Breakpoint-tabletAndAbove {
     margin-top: $spacing-84;
   }
 }
-.element:nth-child(2),
-.element:nth-child(4) {
+.element:nth-child(even) {
   @include Breakpoint-mobileOnly {
-    margin: $spacing-52 calc(-1 * $gutter) 0 auto;
+    margin: $spacing-52 calc(-1 * $mobile-padding) 0 auto;
   }
 }

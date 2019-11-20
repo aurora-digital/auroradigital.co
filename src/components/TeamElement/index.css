@@ -92,9 +92,9 @@
   }
 }
 
-.description.margin {
+.root:nth-child(odd) > .description {
   @include Breakpoint-mobileOnly {
-    padding-left: $gutter;
+    padding-left: calc($gutter / 2);
   }
 }
 
