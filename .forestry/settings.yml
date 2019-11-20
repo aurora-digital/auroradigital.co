@@ -2,7 +2,7 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: ''
-webhook_url:
+webhook_url: 
 sections:
 - type: directory
   path: data/posts
@@ -23,7 +23,7 @@ sections:
 upload_dir: data/images
 public_path: data/images
 front_matter_path: ''
-use_front_matter_path:
+use_front_matter_path: 
 file_template: ":filename:"
 build:
   preview_output_directory: public

@@ -27,8 +27,8 @@ fields:
     source:
       type: pages
       section: authors
-      file:
-      path:
+      file: 
+      path: 
   label: author
 - type: text
   name: description

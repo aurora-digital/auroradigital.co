@@ -8,16 +8,36 @@ fields:
   label: name
   config:
     required: true
+- name: photo
+  type: file
+  config:
+    maxSize: '10'
+  label: photo
 - type: text
   name: position
   label: position
   config:
     required: true
+- name: instagram
+  type: text
+  config:
+    required: false
+  label: instagram
 - type: text
   name: twitter
   label: twitter
   config:
     required: true
+- name: linkedin
+  type: text
+  config:
+    required: false
+  label: linkedin
+- name: github
+  type: text
+  config:
+    required: false
+  label: github
 - type: boolean
   name: showOnTeam
   label: Show on Team?
