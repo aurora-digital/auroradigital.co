@@ -27,7 +27,7 @@ fields:
   name: twitter
   label: twitter
   config:
-    required: true
+    required: false
 - name: linkedin
   type: text
   config:
