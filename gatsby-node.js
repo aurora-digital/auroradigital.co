@@ -14,21 +14,25 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
+function makeRelative(string) {
+  return string.replace(/^\/{0,1}data\//, "../");
+}
+
 // Replace absolute paths from Forestry with relative paths
 exports.onCreateNode = ({ node }) => {
+  /* eslint-disable no-param-reassign */
+  if (node.photo) {
+    node.photo = makeRelative(node.photo);
+  }
+
   if (node.frontmatter) {
-    // eslint-disable-next-line no-param-reassign
-    node.frontmatter.featuredImage = node.frontmatter.featuredImage.replace(
-      /^\/{0,1}blog\//,
-      "../",
+    node.frontmatter.featuredImage = makeRelative(
+      node.frontmatter.featuredImage,
     );
 
-    // eslint-disable-next-line no-param-reassign
-    node.frontmatter.author = node.frontmatter.author.replace(
-      /^\/{0,1}blog\//,
-      "../",
-    );
+    node.frontmatter.author = makeRelative(node.frontmatter.author);
   }
+  /* eslint-enable no-param-reassign */
 };
 
 exports.createPages = async ({ graphql, actions }) => {

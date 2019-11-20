@@ -18,5 +18,9 @@ fields:
   label: twitter
   config:
     required: true
+- type: boolean
+  name: showOnTeam
+  label: Show on Team?
+  default: true
 pages:
-- blog/authors/team.json
+- data/authors/team.json
