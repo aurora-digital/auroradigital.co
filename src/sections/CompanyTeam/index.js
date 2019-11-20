@@ -8,7 +8,7 @@ import "./index.css";
 const query = graphql`
   query AuthorsQuery {
     allAuthorsJson(
-      filter: { showOnTeam: { eq: "true" } }
+      filter: { showOnTeam: { eq: true } }
       sort: { fields: name, order: ASC }
     ) {
       edges {
