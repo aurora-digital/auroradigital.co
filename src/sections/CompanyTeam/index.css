@@ -24,6 +24,7 @@ $tabletColumns: calc($tabletSpace / 3);
       grid-column-gap: $column;
       grid-template-columns: repeat(3, $desktopColumns);
     }
+
     @include Breakpoint-tabletOnly {
       display: grid;
       grid-column-gap: $gutter;
@@ -43,13 +44,8 @@ $tabletColumns: calc($tabletSpace / 3);
 .element {
   display: flex;
 
-  @include Breakpoint-tabletAndAbove {
-    margin-top: calc($spacing-84 * -1);
-  }
-
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-52;
-    margin-left: calc(-1 * $mobile-padding);
   }
 }
 
@@ -58,8 +54,17 @@ $tabletColumns: calc($tabletSpace / 3);
     margin-top: $spacing-84;
   }
 }
-.element:nth-child(even) {
-  @include Breakpoint-mobileOnly {
+
+@include Breakpoint-mobileOnly {
+  .element:nth-child(even) {
     margin: $spacing-52 calc(-1 * $mobile-padding) 0 auto;
+  }
+
+  .element:nth-child(odd) {
+    :global {
+      .gatsby-image-wrapper {
+        margin-left: calc(-1 * $mobile-padding) !important;
+      }
+    }
   }
 }
