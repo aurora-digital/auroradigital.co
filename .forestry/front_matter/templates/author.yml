@@ -43,4 +43,5 @@ fields:
   label: Show on Team?
   default: true
 pages:
+- data/authors/luis.json
 - data/authors/team.json
