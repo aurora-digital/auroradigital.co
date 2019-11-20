@@ -31,8 +31,6 @@ exports.onCreateNode = ({ node }) => {
     );
 
     node.frontmatter.author = makeRelative(node.frontmatter.author);
-
-    console.log(node.frontmatter)
   }
   /* eslint-enable no-param-reassign */
 };
