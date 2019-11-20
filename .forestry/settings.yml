@@ -5,7 +5,7 @@ admin_path: ''
 webhook_url:
 sections:
 - type: directory
-  path: blog/posts
+  path: data/posts
   label: Blog Posts
   create: documents
   match: "**/*.mdx"
@@ -13,15 +13,15 @@ sections:
   templates:
   - blog-post
 - type: directory
-  path: blog/authors
+  path: data/authors
   label: Authors
   create: all
   match: "**/*.json"
   new_doc_ext: json
   templates:
   - author
-upload_dir: blog/images
-public_path: blog/images
+upload_dir: data/images
+public_path: data/images
 front_matter_path: ''
 use_front_matter_path:
 file_template: ":filename:"

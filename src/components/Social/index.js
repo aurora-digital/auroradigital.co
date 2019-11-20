@@ -36,7 +36,7 @@ export default class Social extends Component {
             rel="noopener noreferrer"
             target="_blank"
             styleName="link"
-            href={linkedin}
+            href={`https://linkedin.com/in/${linkedin}`}
             aria-label={`${name}', Linkedin`}
           >
             <Typography variant="small-body" color="klein-blue">
@@ -49,7 +49,7 @@ export default class Social extends Component {
             rel="noopener noreferrer"
             target="_blank"
             styleName="link"
-            href={twitter}
+            href={`https://twitter.com/${twitter}`}
             aria-label={`${name}', Twitter`}
           >
             <Typography variant="small-body" color="klein-blue">
@@ -62,7 +62,7 @@ export default class Social extends Component {
             rel="noopener noreferrer"
             target="_blank"
             styleName="link"
-            href={github}
+            href={`https://github.com/${github}`}
             aria-label={`${name}', Github`}
           >
             <Typography variant="small-body" color="klein-blue">
@@ -76,7 +76,7 @@ export default class Social extends Component {
             rel="noopener noreferrer"
             target="_blank"
             styleName="link"
-            href={instagram}
+            href={`https://instagram.com/${instagram}`}
             aria-label={`${name}', Instagram`}
           >
             <Typography variant="small-body" color="klein-blue">
@@ -90,7 +90,7 @@ export default class Social extends Component {
             rel="noopener noreferrer"
             target="_blank"
             styleName="link"
-            href={behance}
+            href={`https://www.behance.net/${behance}`}
             aria-label={`${name}', Behance`}
           >
             <Typography variant="small-body" color="klein-blue">
