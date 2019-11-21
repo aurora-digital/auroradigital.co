@@ -59,11 +59,10 @@
   mix-blend-mode: overlay;
 
   background-color: color($klein-blue alpha(52%));
-  opacity: 0.52;
 
   transition: opacity 500ms ease-out;
 
-  @supports not (mix-blend-mode: difference) {
+  @supports not (mix-blend-mode: overlay) {
     display: none;
   }
 }

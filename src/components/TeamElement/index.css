@@ -3,14 +3,9 @@
 .root {
   position: relative;
 
-  display: block;
-
-  width: 100%;
-
   margin-top: 0;
 
   background: none;
-
   outline: none;
 
   @include Breakpoint-tabletAndAbove {
@@ -22,6 +17,7 @@
   position: relative;
 
   height: $spacing-352;
+
   margin: 0;
 
   & > picture > img {
@@ -61,11 +57,10 @@
   mix-blend-mode: overlay;
 
   background-color: color($klein-blue alpha(52%));
-  opacity: 0.52;
 
   transition: opacity 500ms ease-out;
 
-  @supports not (mix-blend-mode: difference) {
+  @supports not (mix-blend-mode: overlay) {
     display: none;
   }
 }
@@ -92,9 +87,9 @@
   }
 }
 
-.description.margin {
+.description.nameMargin {
   @include Breakpoint-mobileOnly {
-    padding-left: $gutter;
+    padding-left: calc($gutter / 2);
   }
 }
 
