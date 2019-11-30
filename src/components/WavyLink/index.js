@@ -21,15 +21,19 @@ function WavyLink({ url, children, label, animate }) {
 
   return (
     <div styleName="root" ref={ref}>
-      <a
-        styleName="children"
-        rel="noopener noreferrer"
-        target="_blank"
-        href={url}
-        aria-label={label}
-      >
-        {children}
-      </a>
+      {url ? (
+        <a
+          styleName="children"
+          rel="noopener noreferrer"
+          target="_blank"
+          href={url}
+          aria-label={label}
+        >
+          {children}
+        </a>
+      ) : (
+        <span styleName="children">{children}</span>
+      )}
 
       <div styleName="wave-wrapper">
         <div styleName={waveStyles} />
@@ -41,15 +45,17 @@ function WavyLink({ url, children, label, animate }) {
 }
 
 WavyLink.propTypes = {
-  url: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  url: PropTypes.string,
+  children: PropTypes.node,
   label: PropTypes.string,
   animate: PropTypes.bool,
 };
 
 WavyLink.defaultProps = {
+  url: null,
   label: "",
   animate: true,
+  children: null,
 };
 
 export default WavyLink;

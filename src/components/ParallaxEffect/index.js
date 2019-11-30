@@ -21,7 +21,7 @@ function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
 }
 
 ParallaxEffect.propTypes = {
-  image: PropTypes.node.isRequired,
+  image: PropTypes.object.isRequired,
   parallaxAmount: PropTypes.number,
 };
 

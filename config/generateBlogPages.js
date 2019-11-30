@@ -6,13 +6,30 @@ const query = `
       edges {
         node {
           id
+          body
           frontmatter {
-            path
             author {
               childAuthorsJson {
                 name
                 twitter
                 position
+              }
+            }
+            path
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            featuredImage {
+              image: childImageSharp {
+                fluid(maxWidth: 1024, quality: 75) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                }
               }
             }
           }
@@ -36,8 +53,7 @@ module.exports = async (graphql, actions) => {
       path: `/blog/articles/${node.frontmatter.path}`,
       component: path.resolve(`./src/templates/BlogPost/index.js`),
       context: {
-        id: node.id,
-        author: node.frontmatter.author.childAuthorsJson,
+        blogPost: node,
       },
     });
   });
