@@ -13,6 +13,7 @@ const query = graphql`
     ) {
       edges {
         author: node {
+          id
           name
           photo {
             childImageSharp {
@@ -39,7 +40,7 @@ export default function CompanyTeam() {
     <Section verticalSpacing={false}>
       <div styleName="root">
         {data.allAuthorsJson.edges.map(({ author }) => (
-          <div styleName="element">
+          <div key={author.id} styleName="element">
             <TeamElement
               image={author.photo.childImageSharp.fluid}
               name={author.name}

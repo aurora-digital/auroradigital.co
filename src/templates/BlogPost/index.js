@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Helmet from "react-helmet";
 
@@ -13,32 +12,9 @@ import Comments from "root/components/Comments";
 
 import "./index.css";
 
-export const pageQuery = graphql`
-  query($id: String) {
-    mdx(id: { eq: $id }) {
-      body
-      frontmatter {
-        path
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        featuredImage {
-          image: childImageSharp {
-            fluid(maxWidth: 1024, quality: 75) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-function BlogPost({ data, pageContext }) {
-  const {
-    mdx: { body, frontmatter },
-  } = data;
-  const { author } = pageContext;
+function BlogPost({ pageContext }) {
+  const { frontmatter, body } = pageContext.blogPost;
+  const author = frontmatter.author.childAuthorsJson;
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -141,15 +117,24 @@ function BlogPost({ data, pageContext }) {
 }
 
 BlogPost.propTypes = {
-  data: PropTypes.shape({
-    mdx: PropTypes.shape(),
-  }).isRequired,
   pageContext: PropTypes.shape({
-    author: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      twitter: PropTypes.string,
-      twitterid: PropTypes.string,
-    }).isRequired,
+    blogPost: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        featuredImage: PropTypes.object.isRequired,
+        author: PropTypes.shape({
+          childAuthorsJson: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            twitter: PropTypes.string,
+            twitterid: PropTypes.string,
+          }).isRequired,
+        }).isRequired,
+      }).isRequired,
+      body: PropTypes.string.isRequired,
+    }),
   }).isRequired,
 };
 

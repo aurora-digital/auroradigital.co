@@ -1,17 +1,9 @@
 {
-  "name": "gatsby-base-starter",
-  "description": "My base gatsby starter",
+  "name": "aurora-digital",
+  "description": "Aurora Digital's Website",
   "version": "1.0.0",
-  "author": "José Francisco",
+  "author": "Aurora Digital",
   "homepage": "https://auroradigital.co",
-  "keywords": [
-    "gatsby",
-    "starter",
-    "postcss",
-    "modules",
-    "analytics",
-    "linters"
-  ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -23,10 +15,8 @@
     "forestry-install": "yarn install && yarn build",
     "forestry-preview": "gatsby develop --port 8080 --host 0.0.0.0",
     "build": "gatsby build",
-    "lint": "eslint --fix src && stylelint 'src/**/*.css'",
-    "lint-fix": "eslint --fix src && stylelint --fix 'src/**/*.css'",
+    "lint": "eslint --fix src config *.js",
     "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\"",
-    "lint-styles-fix": "stylelint \"src/**/*.css\" \"src/**/*.scss\" --fix",
     "optimize-jpg": "find src blog -type f -name \"*.jpg\" -o -name \"*.JPG\" | xargs jpegoptim -m100 -f --strip-all"
   },
   "dependencies": {
@@ -38,7 +28,7 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
-    "core-js": "^3.2.1",
+    "core-js": "^2.6.10",
     "disqus-react": "^1.0.7",
     "gatsby": "^2.15.32",
     "gatsby-image": "^2.2.24",

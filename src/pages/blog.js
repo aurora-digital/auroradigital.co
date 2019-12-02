@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "root/components/Layout";
-
 import Navbar from "root/components/Navbar";
 import Section from "root/components/Section";
 import Footer from "root/components/Footer";

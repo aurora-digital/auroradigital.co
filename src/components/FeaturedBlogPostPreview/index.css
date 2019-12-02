@@ -95,11 +95,13 @@
     }
   }
 
+  span {
+    transform: translateY(125%);
+  }
+
   a {
     margin-right: 0;
     margin-left: $spacing-20;
-
-    transform: translateY(125%);
 
     @include Breakpoint-mobileOnly {
       margin-right: $spacing-32;
