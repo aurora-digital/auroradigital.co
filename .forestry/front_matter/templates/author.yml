@@ -43,6 +43,6 @@ fields:
   label: Show on Team?
   default: true
 pages:
-- data/authors/catarina.json
-- data/authors/team.json
 - data/authors/luis.json
+- data/authors/team.json
+- data/authors/catarina.json
