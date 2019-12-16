@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+set -e
+. "./bin/functions"
+
+pp_info "setup" "Installing required languages..."
+
+if not_installed "asdf"; then
+  pp_error "setup" "
+    We are using asdf (https://github.com/asdf-vm/asdf) to manage tool
+    dependencies, since it was not found on your system we cannot ensure that you
+    are using the correct versions of all the tools. Please install it and run
+    this script again, or proceed at your own peril.
+  "
+
+  ensure_confirmation
+else
+  set +e
+  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git 2>/dev/null
+  set -e
+
+  printf "Importing nodejs release team keyring... "
+  bin/helpers/import-nodejs-keys
+  echo "Done!"
+
+  asdf install
+fi
+
+if not_installed "yarn"; then
+  pp_error "error" "yarn was not detected on this system, you need it to install frontend dependencies"
+
+  exit -1
+fi
+
+pp_info "setup" "Installing node dependencies..."
+yarn install
+
+echo ""
+pp_success "setup" "You're good to go! Run bin/server to get the development server running."
