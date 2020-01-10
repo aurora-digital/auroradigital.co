@@ -39,4 +39,5 @@ fields:
   name: featuredImage
   label: featuredImage
 pages:
+- data/posts/a-primer-on-the-jamstack.mdx
 - data/posts/aurora-s-reading-list.mdx
