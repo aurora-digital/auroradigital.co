@@ -9,7 +9,7 @@ The setup is automated and you can do it with three easy commands:
 ```bash
 $ git clone https://github.com/aurora-digital/auroradigital.co
 
-$ cd time_capsule
+$ cd auroradigital.co
 
 $ bin/setup
 ```
