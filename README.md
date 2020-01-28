@@ -42,6 +42,6 @@ We recommend getting familiar with Gatsby before peeking at this code base.
 
 ## About
 
-This starter kit is maintained by [Aurora](http://auroradigital.co).
+This repository is maintained by [Aurora](http://auroradigital.co).
 
 If you need to contact the maintainer use or <a href="mailto:contact@auroradigital.co">reach out to us</a> if you don't have access.
