@@ -14,6 +14,23 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
+// Suppress warnings order from MiniCssExtractPlugin
+// We are using CSS Modules so CSS order should not matter
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+  if (stage === "build-javascript") {
+    const config = getConfig();
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === "MiniCssExtractPlugin",
+    );
+
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
+  }
+};
+
 function makeRelative(string) {
   return string.replace(/^\/{0,1}data\//, "../");
 }
