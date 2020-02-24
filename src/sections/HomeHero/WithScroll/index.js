@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { withController } from "react-scroll-parallax";
+import React from "react";
 import { useInView } from "react-intersection-observer";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import classNames from "classnames";
-import { Controller, Scene } from "react-scrollmagic";
 
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
@@ -11,78 +9,56 @@ import Typography from "root/components/Typography";
 
 import "../common.css";
 
-function HomeHeroWithScroll({ parallaxController }) {
+function HomeHeroWithScroll() {
   const [ref, inView] = useInView();
+  const { scrollYProgress } = useViewportScroll();
+  const scrollPositive = useTransform(scrollYProgress, value => value * 3500);
+  const scrollNegative = useTransform(scrollYProgress, value => value * -3500);
   const waveStyles = classNames("wave", { animate: inView });
-
-  useEffect(() => {
-    parallaxController.update();
-  }, [inView]);
 
   return (
     <div ref={ref}>
-      <Controller>
-        <Scene duration={1500} triggerHook="0">
-          {progress => (
-            <div styleName="root">
-              <Navbar theme="secondary" />
+      <div styleName="root">
+        <Navbar theme="secondary" />
 
-              <Section verticalSpacing={false}>
-                <div styleName="title">
-                  <div styleName="parallax-container" aria-hidden="true">
-                    <div>
-                      <div
-                        style={{
-                          transform: `translate3d(${progress * 100}%, 0, 0)`,
-                        }}
-                      >
-                        <Typography weight="bold" variant="h1">
-                          Nurturing digital
-                        </Typography>
-                      </div>
-                      <div
-                        style={{
-                          transform: `translate3d(${progress * -100}%, 0, 0)`,
-                        }}
-                      >
-                        <Typography weight="bold" variant="h1">
-                          healthcare
-                        </Typography>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div styleName="parallax-fallback" aria-hidden="true">
-                    <Typography color="oxford-blue" weight="bold" variant="h1">
-                      Nurturing digital healthcare
-                    </Typography>
-                  </div>
-                </div>
-
-                <div styleName="overlay">
-                  <div styleName={waveStyles} />
-
-                  <Section verticalSpacing={false}>
-                    <div styleName="copy">
-                      <Typography color="baby-blue">
-                        We design and develop thoughtful web and mobile
-                        healthcare solutions, accessible to anyone, anywhere, at
-                        anytime.
-                      </Typography>
-                    </div>
-                  </Section>
-                </div>
-              </Section>
+        <Section verticalSpacing={false}>
+          <div styleName="title">
+            <div styleName="parallax-container" aria-hidden="true">
+              <motion.div style={{ translateX: scrollPositive }}>
+                <Typography weight="bold" variant="h1">
+                  Nurturing digital
+                </Typography>
+              </motion.div>
+              <motion.div style={{ translateX: scrollNegative }}>
+                <Typography weight="bold" variant="h1">
+                  healthcare
+                </Typography>
+              </motion.div>
             </div>
-          )}
-        </Scene>
-      </Controller>
+
+            <div styleName="parallax-fallback" aria-hidden="true">
+              <Typography color="oxford-blue" weight="bold" variant="h1">
+                Nurturing digital healthcare
+              </Typography>
+            </div>
+          </div>
+
+          <div styleName="overlay">
+            <div styleName={waveStyles} />
+
+            <Section verticalSpacing={false}>
+              <div styleName="copy">
+                <Typography color="baby-blue">
+                  We design and develop thoughtful web and mobile healthcare
+                  solutions, accessible to anyone, anywhere, at anytime.
+                </Typography>
+              </div>
+            </Section>
+          </div>
+        </Section>
+      </div>
     </div>
   );
 }
 
-HomeHeroWithScroll.propTypes = {
-  parallaxController: PropTypes.object.isRequired,
-};
-
-export default withController(HomeHeroWithScroll);
+export default HomeHeroWithScroll;

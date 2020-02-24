@@ -30,6 +30,7 @@
     "classnames": "^2.2.6",
     "core-js": "^2.6.11",
     "disqus-react": "^1.0.7",
+    "framer-motion": "^1.8.4",
     "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-google-analytics": "^2.1.35",
@@ -62,7 +63,6 @@
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.25.3",
     "react-scroll-parallax": "^2.3.1",
-    "react-scrollmagic": "^2.1.1",
     "tornis": "^0.3.0"
   },
   "devDependencies": {
