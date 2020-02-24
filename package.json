@@ -62,8 +62,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.25.3",
-    "react-scroll-parallax": "^2.3.1",
-    "tornis": "^0.3.0"
+    "react-scroll-parallax": "^2.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
