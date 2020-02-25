@@ -28,6 +28,8 @@ $Breakpoint-parallax: 768px;
 
   height: calc(2em * $line-height-h1);
 
+  white-space: nowrap;
+
   @include h1-responsive-font;
 
   @media screen and (width < $Breakpoint-parallax) {
