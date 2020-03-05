@@ -50,7 +50,7 @@
     "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-sharp": "^2.3.14",
     "intersection-observer": "^0.7.0",
-    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
     "postcss-color-function": "^4.1.0",
     "postcss-import": "^12.0.1",
     "postcss-modules": "^1.5.0",
