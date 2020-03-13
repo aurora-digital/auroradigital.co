@@ -18,10 +18,16 @@ const HomeServices = ({ data }) => (
     <div styleName="root">
       <div styleName="images">
         <div styleName="image left-image">
-          <ParallaxEffect image={data.left.image.fluid} />
+          <ParallaxEffect
+            image={data.left.image.fluid}
+            alt="our team on a meeting"
+          />
         </div>
         <div styleName="image right-image">
-          <ParallaxEffect image={data.right.image.fluid} />
+          <ParallaxEffect
+            image={data.right.image.fluid}
+            alt="developers working on a whiteboard"
+          />
         </div>
       </div>
 

@@ -21,13 +21,19 @@ const CompanyMedtechRevolution = ({ data }) => {
             </Typography>
           </div>
           <div styleName="right-image">
-            <ParallaxEffect image={data.teamtalk.image.fluid} />
+            <ParallaxEffect
+              image={data.teamtalk.image.fluid}
+              alt="team discussing important business"
+            />
           </div>
         </div>
 
         <div styleName="container-bottom">
           <div styleName="left-image">
-            <ParallaxEffect image={data.teamwork.image.fluid} />
+            <ParallaxEffect
+              image={data.teamwork.image.fluid}
+              alt="developers pair programming on a laptop"
+            />
           </div>
           <div styleName="text">
             <Typography variant="body" color="oxford-blue">
