@@ -4,10 +4,11 @@ import Img from "gatsby-image/withIEPolyfill";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ParallaxEffect from "root/components/ParallaxEffect";
+import WavyLink from "root/components/WavyLink";
 import withQuery from "./withQuery";
 
 import "./index.css";
-import WavyLink from "../../components/WavyLink";
+
 
 function HomePortfolio({ data }) {
   const projectUrls = {
@@ -64,13 +65,19 @@ function HomePortfolio({ data }) {
               {renderLink("siosLife")}
 
               <div styleName="right-image">
-                <ParallaxEffect image={data.sioslife2.image.fluid} />
+                <ParallaxEffect
+                  image={data.sioslife2.image.fluid}
+                  alt="elderly person using sioslife virtual reality software"
+                />
               </div>
             </div>
           </div>
 
           <div styleName="left-image">
-            <ParallaxEffect image={data.sioslife1.image.fluid} />
+            <ParallaxEffect
+              image={data.sioslife1.image.fluid}
+              alt="elders using sioslife"
+            />
           </div>
         </div>
 
@@ -90,13 +97,19 @@ function HomePortfolio({ data }) {
               {renderLink("oncostats")}
 
               <div styleName="right-image">
-                <ParallaxEffect image={data.oncostats2.image.fluid} />
+                <ParallaxEffect
+                  image={data.oncostats2.image.fluid}
+                  alt="a doctor using oncostats"
+                />
               </div>
             </div>
           </div>
 
           <div styleName="left-image">
-            <ParallaxEffect image={data.oncostats1.image.fluid} />
+            <ParallaxEffect
+              image={data.oncostats1.image.fluid}
+              alt="a laptop with the oncostats app"
+            />
           </div>
         </div>
 
@@ -113,13 +126,20 @@ function HomePortfolio({ data }) {
             <div styleName="right-image-wrapper">
               {renderLink("lyftonomie")}
               <div styleName="right-image">
-                <ParallaxEffect image={data.lyftonomie2.image.fluid} />
+                <ParallaxEffect
+                  image={data.lyftonomie2.image.fluid}
+                  alt="lyftonomie pill bottle"
+                />
               </div>
             </div>
           </div>
 
           <div styleName="left-image">
-            <Img fluid={data.lyftonomie1.image.fluid} objectFit="cover" />
+            <Img
+              fluid={data.lyftonomie1.image.fluid}
+              objectFit="cover"
+              alt="another lyftonomie pill bottle"
+            />
           </div>
         </div>
       </div>

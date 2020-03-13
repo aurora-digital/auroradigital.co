@@ -4,12 +4,12 @@ import Img from "gatsby-image/withIEPolyfill";
 
 import PropTypes from "prop-types";
 
-function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
+function ParallaxEffect({ image, parallaxAmount = 0.1, alt }) {
   return (
     <ParallaxBanner
       layers={[
         {
-          children: <Img style={{ height: "100%" }} fluid={image} />,
+          children: <Img style={{ height: "100%" }} fluid={image} alt={alt} />,
           amount: parallaxAmount,
         },
       ]}
@@ -22,6 +22,7 @@ function ParallaxEffect({ image, parallaxAmount = 0.1 }) {
 
 ParallaxEffect.propTypes = {
   image: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
   parallaxAmount: PropTypes.number,
 };
 
