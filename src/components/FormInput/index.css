@@ -1,0 +1,23 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-32;
+
+  textarea {
+    padding: $spacing-12 $spacing-20;
+    margin-top: $spacing-8;
+
+    background-color: $alice-blue;
+    border: none;
+  }
+
+  input {
+    padding: $spacing-12 $spacing-20;
+    margin-top: $spacing-8;
+
+    background-color: $alice-blue;
+    border: none;
+  }
+}

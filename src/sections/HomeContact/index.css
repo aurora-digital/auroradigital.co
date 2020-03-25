@@ -10,71 +10,72 @@
   margin-bottom: calc($spacing-224 + (0.7 * 140px));
 
   @include Breakpoint-mobileOnly {
-    display: grid;
-    grid-row-gap: $spacing-20;
-    grid-template-columns: 55% 1fr;
+    flex-direction: column;
 
     margin-bottom: $spacing-136;
   }
 }
 
-.lets-talk {
-  min-width: $four-columns;
+.left {
+  width: 50%;
+}
 
-  margin-right: $column-spacing;
+.right {
+  width: 50%;
+}
+
+.reach {
+  max-width: $four-columns;
+}
+
+.lets-talk {
+  margin-bottom: $spacing-52;
 
   @include Breakpoint-tabletOnly {
-    min-width: auto;
-
-    margin-right: $column;
+    margin-bottom: $spacing-32;
   }
 
   @include Breakpoint-mobileOnly {
-    order: 1;
+    margin-bottom: $spacing-32;
   }
 }
 
 .link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin-top: $spacing-32;
+  margin-bottom: $spacing-32;
 
   span {
-    margin-right: $spacing-20;
-
     font-size: $font-size-body;
-  }
-
-  @include Breakpoint-mobileOnly {
-    order: 3;
   }
 }
 
-.wave {
+.wave-desktop {
   position: relative;
 
-  flex-grow: 1;
+  display: block;
 
   height: 100%;
 
-  margin-right: calc($column-spacing * -1);
+  margin-left: calc(75% * -1);
 
   * > *:last-child {
-    transform: translateY(-30%);
+    transform: translateY(0);
   }
 
   @include Breakpoint-mobileOnly {
-    order: 2;
+    display: none;
+  }
+}
 
-    margin-right: 0;
+.wave-mobile {
+  margin-right: 0;
 
-    * {
-      z-index: -1;
-    }
+  * {
+    z-index: -1;
+  }
 
-    * > *:last-child {
-      transform: translate(-20%, -20%) scale(0.6);
-    }
+  * > *:last-child {
+    transform: translate(-20%, -20%) scale(0.6);
   }
 }
 
