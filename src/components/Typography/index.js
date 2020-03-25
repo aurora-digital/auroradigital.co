@@ -7,7 +7,14 @@ import "./index.css";
 export default class Typography extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    variant: PropTypes.oneOf(["h1", "h2", "h3", "body", "small-body"]),
+    variant: PropTypes.oneOf([
+      "h1",
+      "h2",
+      "h3",
+      "body",
+      "small-body",
+      "xsmall-body",
+    ]),
     fontFamily: PropTypes.oneOf(["visuelt"]),
     color: PropTypes.oneOf([
       "oxford-blue",
@@ -33,6 +40,7 @@ export default class Typography extends React.Component {
       case "body":
         return "p";
       case "small-body":
+      case "xsmall-body":
         return "small";
       default:
         return variant;

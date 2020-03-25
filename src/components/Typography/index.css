@@ -44,6 +44,14 @@
   upper-font-range: $max-responsive-font-screen;
 }
 
+.xsmall-body {
+  font-size: $font-size-body-xsmall;
+  line-height: $line-height-body-xsmall;
+
+  lower-font-range: $min-responsive-font-screen;
+  upper-font-range: $max-responsive-font-screen;
+}
+
 .visuelt {
   font-family: $font-family-visuelt;
 }

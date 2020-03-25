@@ -3,78 +3,115 @@
 .root {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
 
   width: 100%;
 
-  margin-bottom: calc($spacing-224 + (0.7 * 140px));
+  margin-bottom: $spacing-224;
 
   @include Breakpoint-mobileOnly {
-    display: grid;
-    grid-row-gap: $spacing-20;
-    grid-template-columns: 55% 1fr;
+    flex-direction: column;
 
     margin-bottom: $spacing-136;
   }
 }
 
-.lets-talk {
-  min-width: $four-columns;
+.left {
+  width: 50%;
 
-  margin-right: $column-spacing;
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+  }
+}
+
+.right {
+  width: 50%;
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+  }
+
+  form {
+    margin-top: calc($spacing-52 + 7px);
+  }
+}
+
+.reach {
+  max-width: $four-columns;
+
+  @include Breakpoint-tabletAndBelow {
+    max-width: $three-columns;
+  }
+}
+
+.lets-talk {
+  position: relative;
+
+  margin-bottom: $spacing-52;
 
   @include Breakpoint-tabletOnly {
-    min-width: auto;
-
-    margin-right: $column;
+    margin-bottom: $spacing-32;
   }
 
   @include Breakpoint-mobileOnly {
-    order: 1;
+    margin-bottom: $spacing-32;
   }
 }
 
 .link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin-top: $spacing-32;
+  margin-bottom: $spacing-32;
 
   span {
-    margin-right: $spacing-20;
-
     font-size: $font-size-body;
-  }
-
-  @include Breakpoint-mobileOnly {
-    order: 3;
   }
 }
 
-.wave {
+.wave-desktop {
   position: relative;
 
-  flex-grow: 1;
+  display: block;
 
   height: 100%;
 
-  margin-right: calc($column-spacing * -1);
+  margin-left: calc($column-spacing * -1);
 
   * > *:last-child {
-    transform: translateY(-30%);
+    transform: translate(-5%, 0);
+  }
+
+  * > *:first-child {
+    max-width: 260px;
+    overflow: hidden;
+  }
+
+  @include Breakpoint-largeDesktopOnly {
+    margin-left: calc($column-spacing * -1.5);
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-left: calc($column-spacing * -1);
   }
 
   @include Breakpoint-mobileOnly {
-    order: 2;
+    display: none;
+  }
+}
 
-    margin-right: 0;
+.wave-mobile {
+  position: absolute;
+  top: 0;
+  right: $two-columns;
 
-    * {
-      z-index: -1;
-    }
+  display: block;
 
-    * > *:last-child {
-      transform: translate(-20%, -20%) scale(0.6);
-    }
+  height: 100%;
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+
+  * > *:last-child {
+    transform: translate(-20%, -20%) scale(0.6);
   }
 }
 

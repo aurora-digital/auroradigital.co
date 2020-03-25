@@ -1,5 +1,6 @@
 $Breakpoint-mobile: 800px;
 $Breakpoint-desktop: 1268px;
+$Breakpoint-largeDesktop: 1400px;
 
 @mixin Breakpoint-mobileOnly {
   @media screen and (width <= $Breakpoint-mobile) {
@@ -27,6 +28,12 @@ $Breakpoint-desktop: 1268px;
 
 @mixin Breakpoint-desktopOnly {
   @media screen and (width >= $Breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin Breakpoint-largeDesktopOnly {
+  @media screen and (width >= $Breakpoint-largeDesktop) {
     @content;
   }
 }
