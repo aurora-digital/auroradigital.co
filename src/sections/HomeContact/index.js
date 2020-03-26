@@ -18,6 +18,9 @@ export default function HomeContact() {
             <Typography variant="h2" weight="bold" color="klein-blue">
               Let&apos;s talk?
             </Typography>
+            <div styleName="wave-mobile">
+              <WavyLink />
+            </div>
           </div>
           <div styleName="reach">
             <Typography color="klein-blue">
@@ -25,25 +28,29 @@ export default function HomeContact() {
             </Typography>
           </div>
           <div styleName="link">
-            <Contact>
+            <Contact underlineColor="klein-blue">
               <Typography color="klein-blue">
                 contact@auroradigital.co
               </Typography>
             </Contact>
           </div>
-
           <div styleName="wave-desktop">
             <WavyLink />
           </div>
         </div>
         <div styleName="right">
-          <form netlify>
-            <InputForm title="Name" id="name" />
+          <form
+            id="email-form"
+            name="email-form"
+            data-name="Email Form"
+            netlify
+          >
+            <InputForm title="Name" id="name" type="email" />
             <InputForm title="Email" id="email" />
             <InputForm title="Message" id="message" multiline />
-            <Button typeButton="submit">
-              <Typography color="white">Send</Typography>
-            </Button>
+            <div styleName="button">
+              <Button typeButton="submit">Send</Button>
+            </div>
           </form>
         </div>
       </div>

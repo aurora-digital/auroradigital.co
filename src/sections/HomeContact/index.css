@@ -3,11 +3,10 @@
 .root {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
 
   width: 100%;
 
-  margin-bottom: calc($spacing-224 + (0.7 * 140px));
+  margin-bottom: $spacing-224;
 
   @include Breakpoint-mobileOnly {
     flex-direction: column;
@@ -18,17 +17,39 @@
 
 .left {
   width: 50%;
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+  }
 }
 
 .right {
   width: 50%;
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+  }
+
+  form {
+    margin-top: $spacing-52;
+  }
+
+  .button {
+    text-align: right;
+  }
 }
 
 .reach {
   max-width: $four-columns;
+
+  @include Breakpoint-tabletAndBelow {
+    max-width: $three-columns;
+  }
 }
 
 .lets-talk {
+  position: relative;
+
   margin-bottom: $spacing-52;
 
   @include Breakpoint-tabletOnly {
@@ -56,10 +77,14 @@
 
   height: 100%;
 
-  margin-left: calc(75% * -1);
+  margin-left: calc((100% - $column-spacing) * -1);
 
   * > *:last-child {
-    transform: translateY(0);
+    transform: translate(-5%, 0);
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-left: calc((100% - $column-spacing) * -1);
   }
 
   @include Breakpoint-mobileOnly {
@@ -68,10 +93,16 @@
 }
 
 .wave-mobile {
-  margin-right: 0;
+  position: absolute;
+  top: 0;
+  right: $column-spacing;
 
-  * {
-    z-index: -1;
+  display: block;
+
+  height: 100%;
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
   }
 
   * > *:last-child {

@@ -4,13 +4,13 @@ import Typography from "root/components/Typography";
 
 import "./index.css";
 
-function FormInput({ title, id, multiline }) {
+function FormInput({ title, id, multiline, type }) {
   const renderInput = () => {
     if (multiline) {
-      return <textarea name={id} id={id} rows="5" />;
+      return <textarea name={id} id={id} rows="5" data-name={title} />;
     }
 
-    return <input type="text" name={id} id={id} />;
+    return <input type={type} name={id} id={id} data-name={title} />;
   };
 
   return (
@@ -27,10 +27,12 @@ FormInput.propTypes = {
   multiline: PropTypes.bool,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["email", "text"]),
 };
 
 FormInput.defaultProps = {
   multiline: false,
+  type: "text",
 };
 
 export default FormInput;

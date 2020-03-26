@@ -6,11 +6,21 @@
   margin-bottom: $spacing-32;
 
   textarea {
+    max-width: calc($five-columns - $spacing-20);
+
     padding: $spacing-12 $spacing-20;
     margin-top: $spacing-8;
 
     background-color: $alice-blue;
     border: none;
+    color: $oxford-blue;
+    outline: none;
+
+    @include body-small-responsive-font;
+
+    @include Breakpoint-mobileOnly {
+      max-width: 100%;
+    }
   }
 
   input {
@@ -19,5 +29,10 @@
 
     background-color: $alice-blue;
     border: none;
+    color: $oxford-blue;
+
+    outline: none;
+
+    @include body-small-responsive-font;
   }
 }

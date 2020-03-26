@@ -1,9 +1,9 @@
 @import "../../styles/all.css";
 
-$box-shadow: calc($spacing-16/2);
-
 .root {
-  background-color: transparent;
+  padding: $spacing-8 $spacing-32;
+
+  background-color: $klein-blue;
 
   cursor: pointer;
   outline: none;
@@ -11,55 +11,6 @@ $box-shadow: calc($spacing-16/2);
   text-decoration: none;
 }
 
-.content {
-  border-radius: 4px;
-
-  outline: none;
-}
-
-.primary {
-  .content {
-    background-color: $baby-blue;
-    border: 2px solid $baby-blue;
-    box-shadow: 8px 8px 28px color(black alpha(8%));
-
-    color: white;
-
-    transition: background-color 0.2s ease-out, color 0.2s ease-out;
-  }
-}
-
-.secondary {
-  .content {
-    background-color: white;
-    border: 2px solid $baby-blue;
-
-    color: $baby-blue;
-  }
-}
-
-.small {
-  .content {
-    padding: $spacing-16 $spacing-28;
-  }
-}
-
-.medium {
-  .content {
-    padding: $spacing-16 calc($spacing-16 * 2);
-  }
-}
-
-.root:hover {
-  .content {
-    background-color: white;
-    border: 2px solid $baby-blue;
-
-    transition: background-color 0.2s ease-in;
-  }
-  * {
-    color: $baby-blue;
-
-    transition: color 0.2s ease-in;
-  }
+.root:hover > * {
+  color: $baby-blue;
 }
