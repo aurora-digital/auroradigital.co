@@ -1,0 +1,41 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $six-columns;
+
+  background-color: white;
+
+  @include Breakpoint-mobileOnly {
+    width: calc(100% - $spacing-32);
+  }
+}
+
+.container {
+  width: $four-columns;
+  padding: $spacing-52 0;
+
+  text-align: left;
+
+  @include Breakpoint-mobileOnly {
+    padding: $spacing-32;
+  }
+}
+
+.title {
+  margin-bottom: $spacing-20;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-12;
+  }
+}
+
+.button {
+  margin-top: $spacing-20;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-12;
+  }
+}
