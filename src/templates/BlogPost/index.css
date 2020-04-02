@@ -36,7 +36,26 @@
   }
 }
 
+.share {
+  position: absolute;
+  z-index: 3;
+
+  margin-left: calc(($two-columns + $gutter) * -1);
+}
+
+.mobile-share {
+  display: flex;
+  flex-direction: row;
+  margin-top: $spacing-32;
+
+  p {
+    margin-right: calc($spacing-20 - 2px);
+  }
+}
+
 .content {
+  position: relative;
+
   margin-top: $spacing-84;
   margin-bottom: $spacing-136;
 

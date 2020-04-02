@@ -1,0 +1,26 @@
+@import "../../styles/all.css";
+
+.root {
+  display: block;
+
+  @include Breakpoint-tabletAndBelow {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.button button {
+  outline: none;
+}
+
+.button p {
+  margin-bottom: $spacing-8 !important;
+
+  @include Breakpoint-tabletAndBelow {
+    margin-right: $spacing-12;
+  }
+}
+
+.button:last-child p {
+  margin-bottom: 0 !important;
+}

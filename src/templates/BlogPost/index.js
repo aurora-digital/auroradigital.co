@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import Helmet from "react-helmet";
+import { motion } from "framer-motion";
 
 import Layout from "root/components/Layout";
 import Navbar from "root/components/Navbar";
@@ -9,12 +10,93 @@ import Typography from "root/components/Typography";
 import Footer from "root/components/Footer";
 import ParallaxEffect from "root/components/ParallaxEffect";
 import Comments from "root/components/Comments";
+import ShareButtons from "root/components/ShareButtons";
+import useScroll from "root/hooks/useScroll";
+import updateDimensions from "root/hooks/useWindowDimensions";
 
 import "./index.css";
+
+const shareButtonsHeight = 120;
+const breakpointDesktop = 1268;
 
 function BlogPost({ pageContext }) {
   const { frontmatter, body } = pageContext.blogPost;
   const author = frontmatter.author.childAuthorsJson;
+  const scrollPos = useScroll();
+  const articleRef = useRef();
+  const dimensions = updateDimensions();
+
+  const getAnimationConfig = () => {
+    const maxScroll = articleRef.current ? articleRef.current.offsetHeight : 0;
+
+    let animate = scrollPos > 760 ? "centered" : "initial";
+
+    if (maxScroll > 0 && scrollPos >= maxScroll) {
+      animate = "final";
+    }
+
+    return {
+      animation: animate,
+      variants: {
+        initial: {
+          position: "absolute",
+          top: "0",
+          display: "block",
+          height: "auto",
+        },
+        centered: {
+          position: "fixed",
+          top: "0",
+          height: `${window.innerHeight}px`,
+          display: "flex",
+          alignItems: "center",
+          transition: { duration: 0.5 },
+        },
+        final: {
+          position: "absolute",
+          top: `${maxScroll - shareButtonsHeight}px`,
+          display: "block",
+          height: "auto",
+          transition: { duration: 0 },
+        },
+      },
+    };
+  };
+
+  const renderMobileShareButtons = () => {
+    if (typeof window === "undefined") {
+      return null;
+    }
+
+    return (
+      <div styleName="mobile-share">
+        <Typography color="oxford-blue" weight="bold">
+          Share
+        </Typography>
+        <ShareButtons url={window.location.toString()} />
+      </div>
+    );
+  };
+
+  const renderAnimatedShareButtons = () => {
+    if (typeof window === "undefined") {
+      return null;
+    }
+
+    const { variants, animation } = getAnimationConfig();
+
+    return (
+      <motion.div
+        key="share"
+        initial="initial"
+        animate={animation}
+        variants={variants}
+        styleName="share"
+      >
+        <ShareButtons url={window.location.toString()} />
+      </motion.div>
+    );
+  };
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -104,8 +186,11 @@ function BlogPost({ pageContext }) {
           {frontmatter.title}
         </Typography>
 
-        <div styleName="content">
+        <div styleName="content" ref={articleRef}>
           <MDXRenderer>{body}</MDXRenderer>
+          {dimensions.width > breakpointDesktop
+            ? renderAnimatedShareButtons()
+            : renderMobileShareButtons()}
         </div>
 
         <Comments path={frontmatter.path} title={frontmatter.title} />

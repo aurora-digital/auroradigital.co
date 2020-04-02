@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+/* Versions 1.0.7 and 1.0.8 of disqus-react freaking out with scroll position, please mantain 1.0.6. */
 import { DiscussionEmbed } from "disqus-react";
 import useDetectJavascript from "root/hooks/useDetectJavascript";
 
