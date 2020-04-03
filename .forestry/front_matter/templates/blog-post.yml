@@ -38,9 +38,6 @@ fields:
 - type: file
   name: featuredImage
   label: featuredImage
-- name: publish
-  type: boolean
-  label: Publish
 pages:
 - data/posts/a-primer-on-the-jamstack.mdx
 - data/posts/aurora-s-reading-list.mdx
