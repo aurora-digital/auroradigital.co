@@ -18,6 +18,7 @@ import "./index.css";
 
 const shareButtonsHeight = 120;
 const breakpointDesktop = 1268;
+const headerHeight = 760;
 
 function BlogPost({ pageContext }) {
   const { frontmatter, body } = pageContext.blogPost;
@@ -29,11 +30,13 @@ function BlogPost({ pageContext }) {
   const getAnimationConfig = () => {
     const maxScroll = articleRef.current ? articleRef.current.offsetHeight : 0;
 
-    let animate = scrollPos > 760 ? "centered" : "initial";
+    let animate = scrollPos > headerHeight ? "centered" : "initial";
 
-    if (maxScroll > 0 && scrollPos >= maxScroll) {
+    if (maxScroll > 0 && scrollPos >= maxScroll + headerHeight / 2) {
       animate = "final";
     }
+
+    console.log(animate, maxScroll, scrollPos);
 
     return {
       animation: animate,
@@ -42,22 +45,22 @@ function BlogPost({ pageContext }) {
           position: "absolute",
           top: "0",
           display: "block",
-          height: "auto",
+          transition: { duration: 0, ease: "linear" },
         },
         centered: {
           position: "fixed",
-          top: "0",
-          height: `${window.innerHeight}px`,
-          display: "flex",
-          alignItems: "center",
-          transition: { duration: 0.5 },
+          top: `${window.innerHeight / 2 - shareButtonsHeight / 2}px`,
+          transition: { duration: 0 },
         },
         final: {
           position: "absolute",
           top: `${maxScroll - shareButtonsHeight}px`,
           display: "block",
-          height: "auto",
-          transition: { duration: 0 },
+          transition: {
+            from: `${maxScroll}px`,
+            duration: 0,
+            ease: "linear",
+          },
         },
       },
     };

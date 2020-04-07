@@ -37,7 +37,6 @@
 }
 
 .share {
-  position: absolute;
   z-index: 3;
 
   margin-left: calc(($two-columns + $gutter) * -1);
