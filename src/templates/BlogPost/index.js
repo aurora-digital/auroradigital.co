@@ -16,8 +16,9 @@ import updateDimensions from "root/hooks/useWindowDimensions";
 
 import "./index.css";
 
-const shareButtonsHeight = 120;
 const breakpointDesktop = 1268;
+const navbarHeight = 133;
+const bannerHeight = 352;
 
 function BlogPost({ pageContext }) {
   const { frontmatter, body } = pageContext.blogPost;
@@ -29,7 +30,8 @@ function BlogPost({ pageContext }) {
   const getAnimationConfig = () => {
     const maxScroll = articleRef.current ? articleRef.current.offsetHeight : 0;
 
-    let animate = scrollPos > 760 ? "centered" : "initial";
+    let animate =
+      scrollPos > navbarHeight + bannerHeight * 0.5 ? "centered" : "initial";
 
     if (maxScroll > 0 && scrollPos >= maxScroll) {
       animate = "final";
@@ -39,25 +41,26 @@ function BlogPost({ pageContext }) {
       animation: animate,
       variants: {
         initial: {
-          position: "absolute",
-          top: "0",
-          display: "block",
-          height: "auto",
-        },
-        centered: {
           position: "fixed",
-          top: "0",
-          height: `${window.innerHeight}px`,
           display: "flex",
           alignItems: "center",
-          transition: { duration: 0.5 },
+          top: "-30px",
+          height: `${window.innerHeight}px`,
+          opacity: 0,
+          transition: { duration: 0.8 },
+        },
+        centered: {
+          height: `${window.innerHeight}px`,
+          transition: { duration: 0.8 },
+          opacity: 1,
+          top: 0,
         },
         final: {
-          position: "absolute",
-          top: `${maxScroll - shareButtonsHeight}px`,
-          display: "block",
-          height: "auto",
-          transition: { duration: 0 },
+          top: "30px",
+          opacity: 0,
+          transition: {
+            duration: 0.8,
+          },
         },
       },
     };

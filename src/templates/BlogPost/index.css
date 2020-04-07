@@ -12,6 +12,9 @@
 }
 
 .banner {
+  position: relative;
+  z-index: 2;
+
   height: 352px;
   max-width: $ten-columns;
   margin: 0 auto;
@@ -38,7 +41,8 @@
 
 .share {
   position: absolute;
-  z-index: 3;
+  top: 0;
+  z-index: 1;
 
   margin-left: calc(($two-columns + $gutter) * -1);
 }
