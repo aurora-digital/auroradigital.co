@@ -48,9 +48,8 @@
 
 .copy {
   position: relative;
-
-  margin: $spacing-352 auto 0 auto;
   max-width: $eight-columns;
+  margin: $spacing-352 auto 0 auto;
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-84;
@@ -63,14 +62,14 @@
     margin-left: calc(-1 * $column-spacing);
   }
   @include Breakpoint-mobileOnly {
-    transform: rotateY(-180deg) scaleY(0.3) scaleX(0.3);
     margin-top: calc(-1 * $spacing-84);
     margin-right: calc(-1 * ($spacing-136 + 2 * $spacing-20));
+    transform: rotateY(-180deg) scaleY(0.3) scaleX(0.3);
   }
 
   @include Breakpoint-tabletOnly {
-    transform: rotateY(-180deg) scaleY(0.8) scaleX(0.8);
     margin-top: calc(-1 * $spacing-84);
     margin-right: calc(-1 * ($spacing-136 + $spacing-8));
+    transform: rotateY(-180deg) scaleY(0.8) scaleX(0.8);
   }
 }
