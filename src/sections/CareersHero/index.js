@@ -3,7 +3,7 @@ import React from "react";
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
-import Wave from "../../assets/images/wave-careers-hero.inline.svg";
+import Wave from "root/assets/images/wave-careers-hero.inline.svg";
 
 import "./index.css";
 
