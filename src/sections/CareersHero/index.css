@@ -48,6 +48,7 @@
 
 .copy {
   position: relative;
+
   max-width: $eight-columns;
   margin: $spacing-352 auto 0 auto;
 
@@ -64,12 +65,14 @@
   @include Breakpoint-mobileOnly {
     margin-top: calc(-1 * $spacing-84);
     margin-right: calc(-1 * ($spacing-136 + 2 * $spacing-20));
+
     transform: rotateY(-180deg) scaleY(0.3) scaleX(0.3);
   }
 
   @include Breakpoint-tabletOnly {
     margin-top: calc(-1 * $spacing-84);
     margin-right: calc(-1 * ($spacing-136 + $spacing-8));
+
     transform: rotateY(-180deg) scaleY(0.8) scaleX(0.8);
   }
 }
