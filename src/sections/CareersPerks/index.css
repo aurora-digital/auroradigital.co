@@ -1,0 +1,101 @@
+@import "../../styles/all.css";
+
+.root {
+  position: relative;
+
+  padding-top: calc($spacing-84 + 40px);
+}
+
+.background {
+  z-index: 0;
+
+  width: calc(100% + 2 * $column-spacing);
+
+  margin-left: calc(-1 * $column-spacing);
+
+  svg {
+    width: 100%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.background-mobile {
+  width: calc(100% + $gutter + $gutter);
+  height: 685px;
+
+  margin-top: $spacing-84;
+
+  margin-left: calc(-1 * $gutter);
+
+  svg {
+    width: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  width: 100%;
+  max-width: $content-width-desktop;
+  margin-top: $spacing-224;
+
+  @include Breakpoint-tabletOnly {
+    width: 100vw;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: block;
+    margin-top: $spacing-136;
+  }
+}
+
+.title-container {
+  width: 20%;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: 0;
+  }
+}
+
+.list1 {
+  width: 40%;
+  margin-top: calc($spacing-52 + $spacing-52 + $spacing-20);
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+    margin-top: $spacing-32;
+  }
+}
+
+.list2 {
+  width: 40%;
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+    margin-top: $spacing-52;
+  }
+
+  .more {
+    margin-top: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-20;
+    }
+  }
+}
+
+.whitespace-noscript {
+  height: $spacing-224;
+}

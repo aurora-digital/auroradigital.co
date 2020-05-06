@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Layout from "root/components/Layout";
 import Footer from "root/components/Footer";
-import CareersHero from "../sections/CareersHero";
-import CareersHappiness from "../sections/CareersHappiness";
-import CareersJoin from "../sections/CareersJoin";
+import CareersHero from "root/sections/CareersHero";
+import CareersHappiness from "root/sections/CareersHappiness";
+import CareersJoin from "root/sections/CareersJoin";
+import CareersPerks from "root/sections/CareersPerks";
+import LetsTalk from "root/sections/LetsTalk";
 
 export default class CareersPage extends Component {
   render() {
@@ -15,6 +17,8 @@ export default class CareersPage extends Component {
         <CareersHero />
         <CareersHappiness />
         <CareersJoin />
+        <CareersPerks />
+        <LetsTalk />
         <Footer />
       </Layout>
     );

@@ -52,7 +52,6 @@ $Breakpoint-parallax: 1020px;
   display: flex;
 
   margin-top: $spacing-224;
-  margin-bottom: $spacing-84;
 
   @include Breakpoint-mobileOnly {
     display: block;
