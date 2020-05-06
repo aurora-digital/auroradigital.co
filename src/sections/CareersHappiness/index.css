@@ -1,0 +1,94 @@
+@import "../../styles/all.css";
+
+.root {
+  display: flex;
+  padding-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    display: block;
+
+    padding-bottom: $spacing-136;
+  }
+}
+
+.image {
+  height: $spacing-584;
+
+  @include Breakpoint-tabletOnly {
+    height: $spacing-352;
+  }
+}
+
+.container-left {
+  width: $six-columns;
+
+  @include Breakpoint-desktopOnly {
+    margin-right: $column-spacing;
+  }
+  @include Breakpoint-tabletOnly {
+    width: 60%;
+    margin-right: $column;
+  }
+
+  .image {
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      margin-left: calc($gutter * -1);
+    }
+    @include Breakpoint-mobileOnly {
+      width: 80vw;
+      height: 70vw;
+      margin-left: calc($gutter * -1);
+    }
+  }
+}
+
+.container-right {
+  @include Breakpoint-desktopOnly {
+    width: $three-columns;
+  }
+
+  @include Breakpoint-tabletOnly {
+    width: 40%;
+  }
+
+  .image {
+    margin-top: $spacing-352;
+    margin-right: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      margin-right: calc($gutter * -1);
+    }
+    @include Breakpoint-mobileOnly {
+      width: 75vw;
+      height: 75vw;
+      margin: $spacing-52 calc($gutter * -1) 0 auto;
+    }
+  }
+}
+
+.text-desktop {
+  margin-top: $spacing-84;
+
+  .we {
+    margin-top: $spacing-52;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.text-mobile {
+  max-width: 80vw;
+  margin-top: $spacing-52;
+
+  .we {
+    margin-top: $spacing-32;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}

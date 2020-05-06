@@ -31,7 +31,7 @@
 .title-mobile {
   max-width: 80vw;
   @include Breakpoint-mobileOnly {
-    margin: $spacing-84 0;
+    margin: calc($spacing-84 - $spacing-52) 0;
   }
 
   @include Breakpoint-tabletAndAbove {
@@ -54,11 +54,11 @@
   margin: $spacing-136 auto 0 auto;
 
   @include Breakpoint-tabletOnly {
-    margin-top: $spacing-84;
+    margin: $spacing-84 auto 0 auto;
   }
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-32;
+    margin: $spacing-12 auto 0 auto;
   }
 }
 
@@ -76,7 +76,7 @@
   }
 
   @include Breakpoint-mobileOnly {
-    margin-top: calc(-1 * ($spacing-136 + $spacing-20));
+    margin-top: calc(-1 * ($spacing-136 - $spacing-20));
     margin-right: calc(-1 * ($spacing-136 + 2 * $spacing-20));
 
     transform: rotateY(-180deg) scaleY(0.3) scaleX(0.3);
