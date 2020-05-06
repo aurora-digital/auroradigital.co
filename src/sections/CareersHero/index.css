@@ -12,7 +12,7 @@
   }
 }
 
-.title-desktop {
+.title-desktopAndTablet {
   display: flex;
   flex-direction: column;
 
@@ -30,8 +30,9 @@
 
 .title-mobile {
   max-width: 80vw;
+
   @include Breakpoint-mobileOnly {
-    margin: calc($spacing-84 - $spacing-52) 0;
+    margin: $spacing-136 0;
   }
 
   @include Breakpoint-tabletAndAbove {
@@ -43,8 +44,85 @@
   text-align: left;
 }
 
-.second-text {
+.second-text-tablet {
   text-align: right;
+
+  @include Breakpoint-desktopOnly {
+    display: none;
+  }
+}
+
+.second-text {
+  position: relative;
+
+  margin-top: calc($spacing-136 + $spacing-52);
+
+  .hide-career-letter {
+    position: absolute;
+    top: -$spacing-52;
+    right: -140px;
+
+    width: 200px;
+    height: 120px;
+
+    background-color: white;
+
+    transform: rotate(24deg);
+  }
+
+  svg {
+    z-index: 0;
+
+    margin-top: calc(-1 * $spacing-32 - 40px);
+
+    margin-left: -$spacing-136;
+
+    overflow: visible;
+
+    text {
+      fill: $oxford-blue;
+
+      font-family: $font-family-visuelt;
+      font-size: $font-size-h1;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: $line-height-h1;
+
+      lower-font-range: $min-responsive-font-screen;
+      upper-font-range: $max-responsive-font-screen;
+
+      transform: scale(1.07);
+    }
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    display: none;
+  }
+}
+
+.wave-desktop {
+  margin-top: calc(-1 * $spacing-224 + 110px);
+
+  margin-left: calc(-1 * $column-spacing + 80px);
+
+  .visible-wave {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hide-wave {
+    position: absolute;
+    top: calc(-1 * $spacing-84 - $spacing-12);
+    left: -$spacing-84;
+    z-index: 1;
+
+    svg {
+      path {
+        stroke: white;
+        stroke-width: 200;
+      }
+    }
+  }
 }
 
 .copy {
@@ -63,9 +141,10 @@
 }
 
 .wave {
+  position: relative;
+
   @include Breakpoint-desktopOnly {
-    margin-top: calc(-1 * ($spacing-224 + $spacing-20));
-    margin-left: calc(-1 * $column-spacing);
+    display: none;
   }
 
   @include Breakpoint-tabletOnly {
