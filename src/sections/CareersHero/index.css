@@ -12,19 +12,29 @@
   }
 }
 
-.title {
+.title-desktop {
   display: flex;
   flex-direction: column;
 
   margin-top: calc($spacing-224 - $navbar-height);
   margin-bottom: $spacing-136;
 
+  @include Breakpoint-tabletAndBelow {
+    display: none;
+  }
+}
+
+.title-mobile {
   @include Breakpoint-tabletOnly {
     margin-bottom: $spacing-84;
   }
 
   @include Breakpoint-mobileOnly {
     margin: $spacing-84 0;
+  }
+
+  @include Breakpoint-desktopOnly {
+    display: none;
   }
 }
 
@@ -34,7 +44,6 @@
 
 .second-text {
   text-align: right;
-  padding-right: 12%;
 }
 
 .copy {
@@ -44,12 +53,24 @@
   max-width: $eight-columns;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
+    margin-top: $spacing-84;
   }
 }
 
 .wave {
-  position: absolute;
-  top: 60%;
-  left: 0%;
+  @include Breakpoint-desktopOnly {
+    margin-top: calc(-1 * ($spacing-224 + $spacing-20));
+    margin-left: calc(-1 * $column-spacing);
+  }
+  @include Breakpoint-mobileOnly {
+    transform: rotateY(-180deg) scaleY(0.3) scaleX(0.3);
+    margin-top: calc(-1 * $spacing-84);
+    margin-right: calc(-1 * ($spacing-136 + 2 * $spacing-20));
+  }
+
+  @include Breakpoint-tabletOnly {
+    transform: rotateY(-180deg) scaleY(0.8) scaleX(0.8);
+    margin-top: calc(-1 * $spacing-84);
+    margin-right: calc(-1 * ($spacing-136 + $spacing-8));
+  }
 }
