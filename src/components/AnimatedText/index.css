@@ -1,0 +1,37 @@
+@import "../../styles/all.css";
+
+.root {
+  overflow: hidden;
+
+  text-align: right;
+}
+
+/*@keyframes change {
+  0%,
+  13% {
+    transform: translate3d(0, 0, 0);
+  }
+  17%,
+  30% {
+    transform: translate3d(0, -25%, 0);
+  }
+  34%,
+  46% {
+    transform: translate3d(0, -50%, 0);
+  }
+  50%,
+  63% {
+    transform: translate3d(0, -75%, 0);
+  }
+  67%,
+  80% {
+    transform: translate3d(0, -50%, 0);
+  }
+  84%,
+  96% {
+    transform: translate3d(0, -25%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}*/
