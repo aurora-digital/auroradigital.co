@@ -74,20 +74,22 @@ function AnimatedText() {
   }, [scrollPosition]);
 
   const renderWords = () => {
-    if (textHeight) {
-      const words = Math.ceil(maxScroll / textHeight);
-      const reversedWords = reverse(allWords);
+    const words = Math.ceil(maxScroll / textHeight);
+    const reversedWords = reverse(allWords);
 
-      return times(words, index => {
-        return (
-          <div key={index}>
-            <Typography color="oxford-blue" weight="bold" variant="h1">
-              {reversedWords[index >= reversedWords.length ? 0 : index]}
-            </Typography>
-          </div>
-        );
-      });
+    if (!textHeight) {
+      return null;
     }
+
+    return times(words, index => {
+      return (
+        <div key={index}>
+          <Typography color="oxford-blue" weight="bold" variant="h1">
+            {reversedWords[index >= reversedWords.length ? 0 : index]}
+          </Typography>
+        </div>
+      );
+    });
   };
 
   return (
