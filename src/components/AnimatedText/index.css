@@ -1,0 +1,67 @@
+@import "../../styles/all.css";
+
+.root {
+  overflow: hidden;
+
+  text-align: right;
+}
+
+span {
+  position: relative;
+  :after,
+  :before {
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.animation-container {
+  display: flex;
+  margin: 0 2px;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+  animation-name: change;
+}
+
+@keyframes change {
+  0%,
+  13% {
+    transform: translate3d(0, 0, 0);
+  }
+  17%,
+  30% {
+    transform: translate3d(-25%, 0, 0);
+  }
+  34%,
+  46% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  50%,
+  63% {
+    transform: translate3d(-75%, 0, 0);
+  }
+  67%,
+  80% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  84%,
+  96% {
+    transform: translate3d(-25%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Don't work */
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

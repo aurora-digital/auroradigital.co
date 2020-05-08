@@ -4,6 +4,7 @@ import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 import Wave from "../../assets/images/wave-careers-hero.inline.svg";
+import AnimatedText from "root/components/AnimatedText";
 
 import "./index.css";
 
@@ -17,11 +18,7 @@ const CareersHero = () => (
             Raising your
           </Typography>
         </div>
-        <div styleName="second-text">
-          <Typography color="oxford-blue" weight="bold" variant="h1">
-            growth
-          </Typography>
-        </div>
+        <AnimatedText words={["growth", "careers", "growth", "careers"]} />
       </div>
       <div styleName="title-mobile">
         <Typography color="oxford-blue" weight="bold" variant="h1">
