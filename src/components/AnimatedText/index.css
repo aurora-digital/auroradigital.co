@@ -1,67 +1,81 @@
 @import "../../styles/all.css";
 
 .root {
-  overflow: hidden;
+
 
   text-align: right;
+
 }
 
-span {
-  position: relative;
-  :after,
-  :before {
-    animation-name: opacity;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
-}
 
 .animation-container {
   display: flex;
-  margin: 0 2px;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
+  overflow: hidden;
 
-  animation-name: change;
+  position: relative;
+
 }
 
-@keyframes change {
-  0%,
-  13% {
-    transform: translate3d(0, 0, 0);
+.word {
+  opacity: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.word.isVisible {
+  opacity: 1;
+  z-index: 1;
+  -webkit-animation: push-in 0.6s;
+  -moz-animation: push-in 0.6s;
+  animation: push-in 0.6s;
+}
+
+.word.isHidden {
+  z-index: 0;
+  -webkit-animation: push-out 0.6s;
+  -moz-animation: push-out 0.6s;
+  animation: push-out 0.6s;
+}
+
+
+
+@keyframes push-in {
+  0% {
+    opacity: 0;
+
+    transform: translateX(-100%);
   }
-  17%,
-  30% {
-    transform: translate3d(-25%, 0, 0);
+
+  60% {
+    opacity: 1;
+
+    transform: translateX(10%);
   }
-  34%,
-  46% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  50%,
-  63% {
-    transform: translate3d(-75%, 0, 0);
-  }
-  67%,
-  80% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  84%,
-  96% {
-    transform: translate3d(-25%, 0, 0);
-  }
+
   100% {
-    transform: translate3d(0, 0, 0);
+    opacity: 1;
+
+    transform: translateX(0);
   }
 }
 
-/* Don't work */
-@keyframes opacity {
-  0%,
+@keyframes push-out {
+  0% {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+  60% {
+    opacity: 0;
+
+    transform: translateX(110%);
+  }
+
   100% {
     opacity: 0;
-  }
-  50% {
-    opacity: 1;
+
+    transform: translateX(100%);
   }
 }

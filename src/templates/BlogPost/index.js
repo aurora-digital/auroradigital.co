@@ -23,7 +23,7 @@ const bannerHeight = 352;
 function BlogPost({ pageContext }) {
   const { frontmatter, body } = pageContext.blogPost;
   const author = frontmatter.author.childAuthorsJson;
-  const scrollPos = useScroll();
+  const { scrollPosition } = useScroll();
   const articleRef = useRef();
   const dimensions = updateDimensions();
 
@@ -31,9 +31,11 @@ function BlogPost({ pageContext }) {
     const maxScroll = articleRef.current ? articleRef.current.offsetHeight : 0;
 
     let animate =
-      scrollPos > navbarHeight + bannerHeight * 0.5 ? "centered" : "initial";
+      scrollPosition > navbarHeight + bannerHeight * 0.5
+        ? "centered"
+        : "initial";
 
-    if (maxScroll > 0 && scrollPos >= maxScroll) {
+    if (maxScroll > 0 && scrollPosition >= maxScroll) {
       animate = "final";
     }
 
