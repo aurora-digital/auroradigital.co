@@ -9,25 +9,19 @@ function AnimatedText() {
   const wordRef = useRef();
   const containerRef = useRef();
   const [textHeight, setTextHeight] = useState(null);
-  const { scrollPosition, lastScrollPosition } = useScroll();
+  const scrollPosition = useScroll();
   const [word, setWord] = useState(0);
   const [oldWord, setOldWord] = useState(2);
-
-  const animationY = [0, -25, -50, -75, -50, -25, 0];
-  const scrollY = [0, 83, 166, 249, 332, 415, 500];
-  const increment = 71;
 
   useLayoutEffect(() => {
     const { current } = wordRef;
 
     setTextHeight({ height: `${current.offsetHeight}px` });
 
-    console.log(scrollPosition);
-
-    if (scrollPosition > 0) {
+    if (scrollPosition > 0 && scrollPosition < 400) {
       setTimeout(() => {
         const nextWord = word === 1 ? 0 : word + 1;
-        console.log("set word ", word, nextWord);
+
         setOldWord(word);
         setWord(nextWord);
       }, 2000);
