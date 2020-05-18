@@ -3,8 +3,8 @@ import React from "react";
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
-import Wave from "../../assets/images/wave-careers-hero.inline.svg";
 import AnimatedText from "root/components/AnimatedText";
+import Wave from "../../assets/images/wave-careers-hero.inline.svg";
 
 import "./index.css";
 
@@ -18,7 +18,7 @@ const CareersHero = () => (
             Raising your
           </Typography>
         </div>
-        <AnimatedText words={["growth", "careers", "growth", "careers"]} />
+        <AnimatedText />
       </div>
       <div styleName="title-mobile">
         <Typography color="oxford-blue" weight="bold" variant="h1">
