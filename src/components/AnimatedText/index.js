@@ -39,7 +39,7 @@ function AnimatedText() {
   });
 
   return (
-    <div styleName="root">
+    <div>
       <div
         styleName="animation-container"
         style={textHeight}
