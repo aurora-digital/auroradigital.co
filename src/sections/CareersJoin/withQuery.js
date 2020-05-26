@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    meeting: file(relativePath: { eq: "images/meeting.png" }) {
+    summercamp: file(relativePath: { eq: "images/team-summercamp.png" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp

@@ -61,7 +61,7 @@ const CareersJoin = ({ data }) => (
       </div>
 
       <div styleName="image">
-        <ParallaxEffect image={data.meeting.image.fluid} alt="meeting" />
+        <ParallaxEffect image={data.summercamp.image.fluid} alt="meeting" />
         <div styleName="link-mobile">
           <a href="/company">
             <Typography variant="small-body" weight="bold" color="klein-blue">
@@ -76,7 +76,7 @@ const CareersJoin = ({ data }) => (
 
 CareersJoin.propTypes = {
   data: PropTypes.shape({
-    meeting: PropTypes.shape({
+    summercamp: PropTypes.shape({
       image: PropTypes.shape({
         fluid: PropTypes.shape({}).isRequired,
       }).isRequired,
