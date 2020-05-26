@@ -1,13 +1,20 @@
 @import "../../styles/all.css";
 
-.root {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
+$Breakpoint-parallax: 1020px;
 
+.root {
   width: 100%;
 
   margin-bottom: calc($spacing-224 + $spacing-84);
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-136;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
 
   @include Breakpoint-mobileOnly {
     position: relative;
@@ -19,74 +26,152 @@
   }
 }
 
-.challenge {
-  min-width: $four-columns;
+.left {
+  width: 50%;
 
-  margin-right: $column;
+  .title,
+  .description {
+    width: $four-columns;
 
-  @include Breakpoint-tabletOnly {
-    min-width: auto;
+    white-space: pre-wrap;
+
+    @include Breakpoint-mobileOnly {
+      width: 100%;
+    }
+  }
+
+  .description {
+    margin-top: $spacing-52;
+
+    @include Breakpoint-tabletOnly {
+      width: 90%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-32;
+      margin-bottom: $spacing-32;
+    }
   }
 
   @include Breakpoint-mobileOnly {
-    min-width: auto;
-    margin-right: 0;
-    margin-bottom: $spacing-52;
+    width: 100%;
   }
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
+.right {
+  position: relative;
 
-  * {
-    @include body-responsive-font;
+  width: 50%;
+
+  .image {
+    z-index: 1;
+
+    width: $five-columns;
+    height: $spacing-584;
+
+    margin-left: calc($column + $gutter + $gutter);
+
+    @include Breakpoint-tabletOnly {
+      margin-left: $column;
+    }
+    @include Breakpoint-mobileOnly {
+      width: 80vw;
+      height: 70vw;
+      margin-left: -$gutter;
+    }
   }
-}
-
-.cv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  margin-bottom: $spacing-20;
 
   @include Breakpoint-mobileOnly {
-    margin-bottom: $spacing-12;
-  }
-
-  *:first-child {
-    margin-right: $spacing-8;
+    width: 100%;
   }
 }
 
 .wave {
-  position: relative;
+  position: absolute;
 
-  flex-grow: 1;
+  top: calc($spacing-352 + $spacing-84);
+  left: calc(-1 * (($column * 2) + $gutter));
+  z-index: 0;
 
-  margin-right: calc($column-spacing * -1);
-
-  * > *:last-child {
-    transform: translateY(0%);
-  }
+  width: calc($three-columns + $column);
 
   @include Breakpoint-mobileOnly {
-    position: absolute;
-
-    right: $spacing-84;
+    top: calc(70vw * 0.5);
+    right: -$gutter;
+    left: auto;
 
     width: $three-columns;
 
-    * > *:last-child {
-      transform: translateY(50%) scale(0.6);
+    a {
+      display: none;
     }
   }
 }
 
-.wave > *:last-child {
-  @include Breakpoint-tabletAndAbove {
-    width: 100%;
+.link-mobile {
+  padding-top: $spacing-20;
+
+  text-align: right;
+
+  a {
+    cursor: pointer;
+
+    text-decoration: none;
   }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.small-team-title {
+  position: relative;
+
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    max-width: 85%;
+    margin-top: $spacing-136;
+  }
+}
+
+.parallax-container-wrapper {
+  position: relative;
+
+  height: calc(2em * $line-height-h1);
+
+  @include h2-responsive-font;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-container {
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax:last-child {
+  align-self: flex-end;
+}
+
+.parallax {
+  position: absolute;
+
+  white-space: nowrap;
+}
+
+.parallax:last-child {
+  top: calc(1em * $line-height-h1);
+
+  text-align: right;
 }
