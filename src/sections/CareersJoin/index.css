@@ -1,0 +1,140 @@
+@import "../../styles/all.css";
+
+$Breakpoint-parallax: 1020px;
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.parallax-container-wrapper {
+  position: relative;
+
+  height: calc(2em * $line-height-h1);
+
+  @include h2-responsive-font;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-container {
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax:last-child {
+  align-self: flex-end;
+}
+
+.parallax {
+  position: absolute;
+
+  white-space: nowrap;
+}
+
+.parallax:last-child {
+  top: calc(1em * $line-height-h1);
+
+  text-align: right;
+}
+
+.content {
+  display: flex;
+
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    display: block;
+    margin-top: $spacing-136;
+  }
+
+  .image {
+    width: $six-columns;
+    height: $spacing-584;
+    margin-right: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      width: calc(50% + $gutter);
+      margin-right: calc($gutter * -1);
+    }
+    @include Breakpoint-mobileOnly {
+      width: 80vw;
+      height: 75vw;
+      margin-top: $spacing-52;
+      margin-left: calc($gutter * -1);
+    }
+  }
+
+  .text {
+    width: $five-columns;
+
+    @include Breakpoint-tabletOnly {
+      width: 50%;
+    }
+    @include Breakpoint-mobileOnly {
+    }
+  }
+
+  .you-will {
+    margin-top: $spacing-52;
+
+    white-space: pre-wrap;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-32;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+}
+
+.link-container {
+  position: relative;
+}
+.link {
+  position: absolute;
+  top: $spacing-84;
+  left: $two-columns;
+
+  span {
+    margin-right: $spacing-12;
+
+    font-size: $font-size-body-small;
+  }
+
+  @include Breakpoint-mobileOnly {
+    transform: translate(-100%, calc(-100% + $spacing-136));
+
+    a {
+      display: none;
+    }
+  }
+}
+
+.link-mobile {
+  padding-top: $spacing-20;
+
+  text-align: right;
+
+  a {
+    cursor: pointer;
+
+    text-decoration: none;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}

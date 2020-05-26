@@ -8,7 +8,7 @@ import ContactForm from "root/components/ContactForm";
 
 import "./index.css";
 
-export default function HomeContact() {
+export default function LetsTalk() {
   return (
     <Section verticalSpacing={false}>
       <div styleName="root">

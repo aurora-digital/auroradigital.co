@@ -7,7 +7,7 @@ import useScrollingDetector from "./useScrollingDetector";
 
 import "./index.css";
 
-function WavyLink({ url, children, label, animate }) {
+function WavyLink({ url, children, label, animate, target }) {
   const [ref, inView] = useInView();
   const isScrolling = useScrollingDetector();
 
@@ -24,7 +24,7 @@ function WavyLink({ url, children, label, animate }) {
         <a
           styleName="children"
           rel="noopener noreferrer"
-          target="_blank"
+          target={`_${target}`}
           href={url}
           aria-label={label}
         >
@@ -48,6 +48,7 @@ WavyLink.propTypes = {
   children: PropTypes.node,
   label: PropTypes.string,
   animate: PropTypes.bool,
+  target: PropTypes.oneOf(["blank", "self"]),
 };
 
 WavyLink.defaultProps = {
@@ -55,6 +56,7 @@ WavyLink.defaultProps = {
   label: "",
   animate: true,
   children: null,
+  target: "self",
 };
 
 export default WavyLink;

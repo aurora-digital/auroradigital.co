@@ -6,7 +6,7 @@ import HomeHero from "root/sections/HomeHero";
 import HomePortfolio from "root/sections/HomePortfolio";
 import HomeMission from "root/sections/HomeMission";
 import HomeServices from "root/sections/HomeServices";
-import HomeContact from "root/sections/HomeContact";
+import LetsTalk from "root/sections/LetsTalk";
 
 export default class IndexPage extends Component {
   render() {
@@ -19,7 +19,7 @@ export default class IndexPage extends Component {
         <HomePortfolio />
         <HomeMission />
         <HomeServices />
-        <HomeContact />
+        <LetsTalk />
         <Footer />
       </Layout>
     );
