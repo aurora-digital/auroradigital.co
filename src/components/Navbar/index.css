@@ -1,41 +1,130 @@
 @import "../../styles/all.css";
 
 .root {
+  position: relative;
+
   height: $navbar-height;
 }
 
-.container {
+.container-desktop-and-tablet {
   position: relative;
 
   display: flex;
+
   justify-content: space-between;
-    
+
   padding: $spacing-52 0;
 
   a {
     text-decoration: none;
   }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
 }
 
-.container > * {
-  align-self: center;
+.container-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $spacing-32;
+    padding-right: $mobile-padding;
+    padding-left: $mobile-padding;
+    -webkit-tap-highlight-color: transparent;
+
+    button {
+      background: none;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.container-mobile.open {
+  position: fixed;
+
+  height: 100vh;
+
+  background-color: $klein-blue;
+}
+
+.container-mobile nav {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-84 $mobile-padding 0 $mobile-padding;
+
+  background-color: $klein-blue;
+
+  a {
+    padding: $spacing-20 0;
+
+    border-bottom: 1px solid $baby-blue;
+  }
+}
+
+.container-mobile .wave {
+  position: absolute;
+  top: 65%;
+  left: 0;
+
+  transform: scale(1.2);
 }
 
 .brand {
+  z-index: 0;
+
+  align-self: center;
+
   @include Breakpoint-tabletAndAbove {
     position: absolute;
-    
+
     width: 100%;
-    
+
     text-align: center;
   }
 }
 
-.navigation {
-  display: flex;
-  align-items: flex-end;
+.navigation-left {
+  z-index: 1;
 
-  margin-left: auto;
+  align-self: center;
+  display: flex;
+
+  a:not(:last-child) {
+    margin-right: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-right: $spacing-12;
+    }
+  }
+}
+
+.navigation-right {
+  z-index: 1;
+
+  align-self: center;
+  display: flex;
+
+  .content {
+    margin-right: 0;
+    margin-left: auto;
+  }
 
   a:not(:last-child) {
     margin-right: $spacing-32;
