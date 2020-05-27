@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { capitalize } from "lodash-es";
-
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import Logo from "root/components/Logo";
 import Link from "root/components/Link";
+import Wave from "root/assets/images/wave-mobile-menu-background.inline.svg";
+import classNames from "classnames";
 
 import "./index.css";
 
@@ -28,18 +29,19 @@ const Navbar = ({ currentPage, theme }) => {
 
   const { color, underlineColor, logoColor } = colors();
   const [open, openMenu] = useState(false);
+  const openColor = "white";
 
   const renderBrand = () => {
     return (
       <div styleName="brand">
         <Link to="/" label="Aurora's homepage">
-          <Logo color={logoColor} />
+          <Logo color={open ? openColor : logoColor} />
         </Link>
       </div>
     );
   };
 
-  const renderPageLink = (pageName, mobile) => {
+  const renderPageLink = pageName => {
     const url = pageName === "home" ? `/` : `/${pageName}`;
 
     return (
@@ -50,7 +52,7 @@ const Navbar = ({ currentPage, theme }) => {
         hover
         label={`Aurora's ${pageName}`}
       >
-        <Typography variant="small-body" color={mobile ? "white" : color}>
+        <Typography variant="small-body" color={open ? openColor : color}>
           {capitalize(pageName)}
         </Typography>
       </Link>
@@ -90,10 +92,10 @@ const Navbar = ({ currentPage, theme }) => {
           styleName="container-mobile"
           style={open ? { height: "100vh" } : null}
         >
-          <header>
+          <header styleName={classNames("header", { open })}>
             {renderBrand()}
             <button type="button" onClick={handleMenu}>
-              <Typography variant="small-body" color={color}>
+              <Typography variant="small-body" color={open ? openColor : color}>
                 {open ? "Close" : "Menu"}
               </Typography>
             </button>
@@ -104,9 +106,12 @@ const Navbar = ({ currentPage, theme }) => {
               aria-expanded="false"
               aria-label="Navigation Menu"
             >
-              {renderPageLink("careers", true)}
-              {renderPageLink("company", true)}
-              {renderPageLink("blog", true)}
+              {renderPageLink("careers")}
+              {renderPageLink("company")}
+              {renderPageLink("blog")}
+              <div styleName="wave">
+                <Wave />
+              </div>
             </nav>
           ) : null}
         </div>

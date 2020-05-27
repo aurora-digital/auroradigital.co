@@ -32,13 +32,12 @@
 
   width: 100%;
 
-  padding-top: $spacing-32;
+  overflow: hidden;
 
-  header {
+  .header {
     display: flex;
-
     justify-content: space-between;
-
+    padding-top: $spacing-32;
     padding-right: $mobile-padding;
     padding-left: $mobile-padding;
 
@@ -47,10 +46,14 @@
       outline: none;
     }
   }
+  .header.open {
+    background-color: $klein-blue;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - $navbar-height);
     padding: $spacing-84 $mobile-padding 0 $mobile-padding;
 
     background-color: $klein-blue;
@@ -58,12 +61,27 @@
     a {
       padding: $spacing-20 0;
 
-      border-bottom: 0.5px solid $baby-blue;
+      border-bottom: 1px solid $baby-blue;
     }
   }
 
   @include Breakpoint-tabletAndAbove {
     display: none;
+  }
+}
+
+.container-mobile nav {
+  position: relative;
+
+  .wave {
+    position: absolute;
+    top: 70%;
+    left: 0;
+
+    transform: scale(1.2);
+
+    svg {
+    }
   }
 }
 
