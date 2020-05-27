@@ -1,41 +1,111 @@
 @import "../../styles/all.css";
 
 .root {
+  position: relative;
+
   height: $navbar-height;
 }
 
-.container {
+.container-desktop-and-tablet {
   position: relative;
 
   display: flex;
+
   justify-content: space-between;
-    
+
   padding: $spacing-52 0;
 
   a {
     text-decoration: none;
   }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
 }
 
-.container > * {
-  align-self: center;
+.container-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  width: 100%;
+
+  padding-top: $spacing-32;
+
+  header {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-right: $mobile-padding;
+    padding-left: $mobile-padding;
+
+    button {
+      background: none;
+      outline: none;
+    }
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: $spacing-84 $mobile-padding 0 $mobile-padding;
+
+    background-color: $klein-blue;
+
+    a {
+      padding: $spacing-20 0;
+
+      border-bottom: 0.5px solid $baby-blue;
+    }
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
 }
 
 .brand {
+  z-index: 0;
+
+  align-self: center;
+
   @include Breakpoint-tabletAndAbove {
     position: absolute;
-    
+
     width: 100%;
-    
+
     text-align: center;
   }
 }
 
-.navigation {
-  display: flex;
-  align-items: flex-end;
+.navigation-left {
+  z-index: 1;
 
-  margin-left: auto;
+  align-self: center;
+  display: flex;
+
+  a:not(:last-child) {
+    margin-right: $spacing-32;
+
+    @include Breakpoint-mobileOnly {
+      margin-right: $spacing-12;
+    }
+  }
+}
+
+.navigation-right {
+  z-index: 1;
+
+  align-self: center;
+  display: flex;
+
+  .content {
+    margin-right: 0;
+    margin-left: auto;
+  }
 
   a:not(:last-child) {
     margin-right: $spacing-32;

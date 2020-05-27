@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { capitalize } from "lodash-es";
 
@@ -9,38 +9,27 @@ import Link from "root/components/Link";
 
 import "./index.css";
 
-const COLOR_THEME_PRIMARY = {
-  color: "klein-blue",
-  underlineColor: "klein-blue",
-  logoColor: "klein-blue",
-};
+const Navbar = ({ currentPage, theme }) => {
+  const colors = () => {
+    const COLOR_THEME_PRIMARY = {
+      color: "klein-blue",
+      underlineColor: "klein-blue",
+      logoColor: "klein-blue",
+    };
 
-const COLOR_THEME_SECONDARY = {
-  color: "baby-blue",
-  underlineColor: "baby-blue",
-  logoColor: "white",
-};
-
-export default class Navbar extends Component {
-  static propTypes = {
-    currentPage: PropTypes.oneOf(["home", "company", "blog", "careers"]),
-    theme: PropTypes.oneOf(["primary", "secondary"]),
-  };
-
-  static defaultProps = {
-    currentPage: "home",
-    theme: "primary",
-  };
-
-  get colors() {
-    const { theme } = this.props;
+    const COLOR_THEME_SECONDARY = {
+      color: "baby-blue",
+      underlineColor: "baby-blue",
+      logoColor: "white",
+    };
 
     return theme === "primary" ? COLOR_THEME_PRIMARY : COLOR_THEME_SECONDARY;
-  }
+  };
 
-  renderBrand = () => {
-    const { logoColor } = this.colors;
+  const { color, underlineColor, logoColor } = colors();
+  const [open, openMenu] = useState(false);
 
+  const renderBrand = () => {
     return (
       <div styleName="brand">
         <Link to="/" label="Aurora's homepage">
@@ -50,9 +39,7 @@ export default class Navbar extends Component {
     );
   };
 
-  renderPageLink = pageName => {
-    const { currentPage } = this.props;
-    const { color, underlineColor } = this.colors;
+  const renderPageLink = (pageName, mobile) => {
     const url = pageName === "home" ? `/` : `/${pageName}`;
 
     return (
@@ -63,33 +50,79 @@ export default class Navbar extends Component {
         hover
         label={`Aurora's ${pageName}`}
       >
-        <Typography variant="small-body" color={color}>
+        <Typography variant="small-body" color={mobile ? "white" : color}>
           {capitalize(pageName)}
         </Typography>
       </Link>
     );
   };
 
-  render() {
-    return (
-      <div styleName="root">
-        <Section verticalSpacing={false}>
-          <header styleName="container">
-            {this.renderBrand()}
+  const handleMenu = () => {
+    return open ? openMenu(false) : openMenu(true);
+  };
 
+  return (
+    <div styleName="root">
+      <Section verticalSpacing={false}>
+        <header styleName="container-desktop-and-tablet">
+          <nav
+            styleName="navigation-left"
+            role="navigation"
+            aria-expanded="false"
+            aria-label="Navigation Menu"
+          >
+            <div styleName="content">{renderPageLink("careers")}</div>
+          </nav>
+          {renderBrand()}
+          <nav
+            styleName="navigation-right"
+            role="navigation"
+            aria-expanded="false"
+            aria-label="Navigation Menu"
+          >
+            <div styleName="content">
+              {renderPageLink("company")}
+              {renderPageLink("blog")}
+            </div>
+          </nav>
+        </header>
+        <div
+          styleName="container-mobile"
+          style={open ? { height: "100vh" } : null}
+        >
+          <header>
+            {renderBrand()}
+            <button type="button" onClick={handleMenu}>
+              <Typography variant="small-body" color={color}>
+                {open ? "Close" : "Menu"}
+              </Typography>
+            </button>
+          </header>
+          {open ? (
             <nav
-              styleName="navigation"
               role="navigation"
               aria-expanded="false"
               aria-label="Navigation Menu"
             >
-              {this.renderPageLink("company")}
-
-              {this.renderPageLink("blog")}
+              {renderPageLink("careers", true)}
+              {renderPageLink("company", true)}
+              {renderPageLink("blog", true)}
             </nav>
-          </header>
-        </Section>
-      </div>
-    );
-  }
-}
+          ) : null}
+        </div>
+      </Section>
+    </div>
+  );
+};
+
+Navbar.propTypes = {
+  currentPage: PropTypes.oneOf(["home", "company", "blog", "careers"]),
+  theme: PropTypes.oneOf(["primary", "secondary"]),
+};
+
+Navbar.defaultProps = {
+  currentPage: "home",
+  theme: "primary",
+};
+
+export default Navbar;
