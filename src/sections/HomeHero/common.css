@@ -1,25 +1,28 @@
 @import "../../styles/all.css";
 
-$wave-height: 370px;
+$wave-height: 278px;
 $wave-offset: calc(($wave-height / 2));
 $Breakpoint-parallax: 768px;
 
 .root {
   position: relative;
 
-  padding-bottom: calc($wave-height - 0.2 * $wave-height);
-  overflow: hidden;
+  padding-bottom: calc($wave-height + 2 * $wave-height);
 
   background-color: $klein-blue;
+
+  @include Breakpoint-mobileOnly {
+    padding-bottom: calc($wave-height + 1.2 * $wave-height);
+  }
 }
 
 .title {
   margin-top: calc($spacing-224 - $navbar-height);
-  margin-bottom: $spacing-84;
+  margin-bottom: $spacing-8;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-84;
-    margin-bottom: $spacing-52;
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-8;
   }
 }
 
@@ -83,8 +86,17 @@ $Breakpoint-parallax: 768px;
 
 .copy {
   position: absolute;
+  left: 0;
+  z-index: 0;
 
-  z-index: 2;
+  width: 100%;
+  height: calc($wave-height * 2);
 
-  max-width: $six-columns;
+  margin-top: $wave-height;
+
+  background-color: $white;
+
+  @include Breakpoint-mobileOnly {
+    height: calc($wave-height + 0.2 * $wave-height);
+  }
 }
