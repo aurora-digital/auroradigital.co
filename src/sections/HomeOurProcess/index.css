@@ -1,0 +1,131 @@
+@import "../../styles/all.css";
+
+$Breakpoint-parallax: 1020px;
+
+.parallax-container-wrapper {
+  position: relative;
+
+  height: calc(2em * $line-height-h1);
+
+  @include h2-responsive-font;
+
+  @media screen and (width < $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax-container {
+  position: absolute;
+  left: 0;
+
+  width: 100vw;
+}
+
+.parallax-fallback {
+  @media screen and (width > $Breakpoint-parallax) {
+    display: none;
+  }
+}
+
+.parallax:last-child {
+  align-self: flex-end;
+}
+
+.parallax {
+  position: absolute;
+
+  white-space: nowrap;
+}
+
+.parallax:last-child {
+  top: calc(1em * $line-height-h1);
+
+  text-align: right;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin-top: $spacing-224;
+
+  .image {
+    width: $five-columns;
+    height: $spacing-584;
+    margin-right: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      width: calc(50% + $gutter);
+      margin-right: calc($gutter * -1);
+    }
+    @include Breakpoint-mobileOnly {
+      width: 80vw;
+      height: 75vw;
+      margin-top: $spacing-52;
+      margin-right: calc($gutter * -1);
+      margin-left: auto;
+    }
+  }
+
+  .text {
+    width: $six-columns;
+
+    @include Breakpoint-tabletOnly {
+      width: 50%;
+    }
+    @include Breakpoint-mobileOnly {
+      width: 100%;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    margin-top: $spacing-136;
+  }
+}
+
+.description {
+  margin-top: $spacing-52;
+
+  white-space: pre-wrap;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-32;
+  }
+}
+
+.link-container {
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  top: $spacing-84;
+  left: calc($two-columns + $gutter);
+
+  @include Breakpoint-mobileOnly {
+    top: 40vh;
+    left: -$mobile-padding;
+
+    a {
+      display: none;
+    }
+  }
+}
+
+.link-mobile {
+  position: relative;
+
+  z-index: 2;
+
+  padding-top: $spacing-20;
+
+  a {
+    cursor: pointer;
+
+    text-decoration: none;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
