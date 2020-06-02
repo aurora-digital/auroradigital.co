@@ -1,0 +1,79 @@
+@import "../../styles/all.css";
+
+.copy-section {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: row;
+
+  width: 100%;
+  height: calc($spacing-52 + ($spacing-52 / 2) + $spacing-136);
+
+  max-width: $content-width-desktop;
+  margin: $spacing-224 auto 0;
+
+  @include Breakpoint-tabletOnly {
+    margin: 0 $gutter;
+    margin-top: $spacing-224;
+  }
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 $mobile-padding;
+    margin: auto 0;
+    margin-top: $spacing-136;
+  }
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $eight-columns;
+
+  @include Breakpoint-mobileOnly {
+    justify-content: space-between;
+    width: 100%;
+    height: calc($spacing-52 + ($spacing-52 / 2) + $spacing-136);
+  }
+}
+
+.lines {
+  position: relative;
+
+  width: $three-columns;
+
+  @include Breakpoint-mobileOnly {
+    height: calc($spacing-52 * 3 + $spacing-32 * 3);
+  }
+}
+
+.line-klein-blue {
+  --top: 0;
+  position: absolute;
+  top: calc($spacing-52 / 2 + var(--top) * $spacing-32);
+
+  width: calc($column + $gutter);
+  height: $spacing-20;
+
+  background-color: $white;
+  border-top: 2px solid $klein-blue;
+  cursor: pointer;
+  outline: none;
+}
+
+.line-baby-blue {
+  --top: 0;
+  position: absolute;
+  top: calc($spacing-52 / 2 + var(--top) * $spacing-32);
+
+  width: $column;
+  height: $spacing-20;
+
+  background-color: $white;
+  border-top: 2px solid $baby-blue;
+  cursor: pointer;
+  outline: none;
+}
