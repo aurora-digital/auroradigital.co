@@ -21,59 +21,109 @@
 
   height: $spacing-584;
 
+  cursor: pointer;
+
+  img {
+    filter: grayscale(0%);
+
+    transition: filter 500ms ease-out;
+  }
+
   @include Breakpoint-mobileOnly {
     height: $spacing-224;
   }
 }
 
+.image:hover img,
+.image:focus img,
+.image:active img {
+  filter: grayscale(100%);
+}
+
+.image:hover:after,
+.image:focus:after,
+.image:active:after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  mix-blend-mode: overlay;
+
+  background-color: color($klein-blue alpha(52%));
+
+  transition: opacity 500ms ease-out;
+
+  @supports not (mix-blend-mode: overlay) {
+    display: none;
+  }
+}
+
 .concept-stategy {
+  display: flex;
+  flex-direction: row;
+}
+
+.concept {
+  width: 50%;
+  padding-top: calc(6 * $spacing-20);
+
   .concept-image {
-    width: calc($four-columns + $gutter);
+    width: calc($five-columns + $gutter);
 
     margin-left: calc(-1 * $column-spacing);
-
-    transform: translateY($spacing-224);
-
-    @include Breakpoint-tabletOnly {
-      width: 35vw;
-
-      margin-left: -$gutter;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: auto;
-
-      margin-top: $spacing-84;
-      margin-right: $spacing-84;
-      margin-left: -$mobile-padding;
-
-      transform: none;
-    }
   }
+}
+.strategy {
+  width: 50%;
 
   .stategy-image {
-    width: calc($seven-columns + $gutter);
-
-    margin-right: calc(-1 * $column-spacing);
-    margin-left: auto;
+    width: calc($six-columns + $gutter);
 
     @include Breakpoint-tabletOnly {
       width: 53vw;
 
       margin-right: -$gutter;
     }
-
-    @include Breakpoint-mobileOnly {
-      width: auto;
-
-      margin-right: -$mobile-padding;
-      margin-left: $spacing-84;
-    }
   }
 }
 
 .code-design-growth {
+  display: flex;
+  flex-direction: row;
+}
+
+.code {
+  padding-top: $spacing-136;
+
   .code-image {
+    width: $five-columns;
+  }
+}
+
+.design-growth {
+  padding-top: calc($spacing-8 * 2);
+
+  .design-image {
+    width: $four-columns;
+    height: $spacing-352;
+
+    margin-bottom: $spacing-136;
+
+    margin-left: $column-spacing;
+  }
+
+  .growth-image {
+    width: $four-columns;
+    height: $spacing-352;
+
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
   }
 }
 

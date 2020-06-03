@@ -13,18 +13,22 @@ import withQuery from "./withQuery";
 
 import "./index.css";
 
-const HomeServices = ({ data }) => (
-  <Section>
-    <div styleName="root">
-      <div styleName="concept-stategy">
-        <div>
-          <div styleName="image concept-image">
-            <ParallaxEffect
-              image={data.concept.image.fluid}
-              alt="our team on a meeting"
-            />
+const HomeServices = ({ data }) => {
+  console.log(data);
+
+  return (
+    <Section>
+      <div styleName="root">
+        <div styleName="concept-stategy">
+          <div styleName="concept">
+            <div styleName="image concept-image">
+              <ParallaxEffect
+                image={data.concept.image.fluid}
+                alt="our team on a meeting"
+              />
+            </div>
           </div>
-          <div>
+          <div styleName="strategy">
             <div styleName="image stategy-image">
               <ParallaxEffect
                 image={data.stategy.image.fluid}
@@ -34,19 +38,33 @@ const HomeServices = ({ data }) => (
           </div>
         </div>
         <div styleName="code-design-growth">
-          <div>
+          <div styleName="code">
             <div styleName="image code-image">
               <ParallaxEffect
-                image={data.concept.image.fluid}
+                image={data.code.image.fluid}
+                alt="our team on a meeting"
+              />
+            </div>
+          </div>
+          <div styleName="design-growth">
+            <div styleName="image design-image">
+              <ParallaxEffect
+                image={data.design.image.fluid}
+                alt="our team on a meeting"
+              />
+            </div>
+            <div styleName="image growth-image">
+              <ParallaxEffect
+                image={data.growth.image.fluid}
                 alt="our team on a meeting"
               />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </Section>
-);
+    </Section>
+  );
+};
 
 HomeServices.propTypes = {
   data: PropTypes.shape({
