@@ -1,18 +1,19 @@
 @import "../../styles/all.css";
 
-.root {
-}
+.concept-strategy,
+.code-design-growth {
+  position: relative;
 
-.images {
   display: flex;
   flex-direction: row;
 
   @include Breakpoint-tabletOnly {
-    padding-bottom: $spacing-136;
   }
 
   @include Breakpoint-mobileOnly {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    width: calc(100% + $mobile-padding + $mobile-padding);
+    margin-left: -$mobile-padding;
   }
 }
 
@@ -21,205 +22,496 @@
 
   height: $spacing-584;
 
-  @include Breakpoint-mobileOnly {
-    height: $spacing-224;
-  }
-}
+  outline: none;
 
-.left-image {
-  width: calc($four-columns + $gutter);
+  img {
+    filter: grayscale(0%);
 
-  margin-left: calc(-1 * $column-spacing);
-
-  transform: translateY($spacing-224);
-
-  @include Breakpoint-tabletOnly {
-    width: 35vw;
-
-    margin-left: -$gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: auto;
-
-    margin-top: $spacing-84;
-    margin-right: $spacing-84;
-    margin-left: -$mobile-padding;
-
-    transform: none;
-  }
-}
-
-.right-image {
-  width: calc($seven-columns + $gutter);
-
-  margin-right: calc(-1 * $column-spacing);
-  margin-left: auto;
-
-  @include Breakpoint-tabletOnly {
-    width: 53vw;
-
-    margin-right: -$gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: auto;
-
-    margin-right: -$mobile-padding;
-    margin-left: $spacing-84;
-  }
-}
-
-.copy-working-together {
-  max-width: $six-columns;
-
-  margin-top: $spacing-84;
-  margin-left: auto;
-
-  @include Breakpoint-tabletOnly {
-    max-width: calc(53vw - $gutter);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-52;
-  }
-}
-
-.copy-working-together > *:last-child {
-  margin-top: $spacing-52;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-32;
-  }
-}
-
-.copy-services {
-  position: relative;
-
-  padding-top: $spacing-84;
-
-  .left-column {
-    position: absolute;
-    top: 34.5%;
-    z-index: 1;
-
-    display: flex;
-    flex-direction: row;
-
-    @include Breakpoint-tabletOnly {
-      top: 26%;
-    }
-
-    @include Breakpoint-mobileOnly {
-      position: static;
-
-      flex-direction: column;
-
-      padding-top: $spacing-136;
-      margin-top: $spacing-84;
-    }
-  }
-
-  .right-column {
-    position: absolute;
-    bottom: 22%;
-    left: 50%;
-    z-index: 1;
-
-    display: inline-flex;
-    flex-direction: row;
-
-    @include Breakpoint-tabletOnly {
-      right: 0;
-      bottom: 26%;
-      left: auto;
-    }
-
-    @include Breakpoint-mobileOnly {
-      position: static;
-
-      flex-direction: column;
-
-      padding-bottom: $spacing-136;
-      margin-top: $spacing-52;
-    }
-  }
-
-  .title {
-    margin-right: $spacing-32;
-  }
-
-  .list {
-    display: inline-flex;
-    flex-direction: column;
-
-    white-space: nowrap;
-
-    @include Breakpoint-mobileOnly {
-      margin-top: $spacing-20;
-      margin-left: calc($gutter / 2);
-    }
-  }
-}
-
-.copy-services-background {
-  width: calc($twelve-columns + $column);
-  height: 100%;
-
-  margin-left: calc(-1 * $column-spacing);
-
-  @include Breakpoint-mobileOnly {
-    display: none;
-  }
-}
-
-.copy-services-background-mobile {
-  position: absolute;
-
-  z-index: -1;
-
-  width: 100vw;
-  height: 100%;
-
-  margin-left: -$mobile-padding;
-
-  svg {
-    width: 100%;
-    height: 100%;
+    transition: filter 500ms ease-out;
   }
 
   @include Breakpoint-tabletAndAbove {
+    cursor: pointer;
+  }
+
+  @include Breakpoint-tabletOnly {
+    height: $spacing-352;
+  }
+
+  @include Breakpoint-mobileOnly {
+  }
+}
+
+.concept {
+  order: 1;
+
+  width: calc($content-width-desktop * 0.5);
+  padding-top: calc(6 * $spacing-20);
+
+  .concept-image {
+    width: calc($five-columns + $gutter);
+
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      width: calc($four-columns + $gutter);
+      margin-left: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 90vw;
+      height: 35vh;
+      margin-top: calc($spacing-224 + $spacing-136);
+      margin-left: -$gutter;
+    }
+  }
+
+  @include Breakpoint-tabletOnly {
+    width: 50%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    order: 2;
+
+    width: 100%;
+    padding-top: $spacing-32;
+  }
+}
+
+.strategy {
+  order: 2;
+
+  width: calc($content-width-desktop * 0.5);
+
+  .strategy-image {
+    width: calc($six-columns + $gutter + $gutter);
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
+
+    @include Breakpoint-tabletOnly {
+      width: calc($five-columns + $gutter);
+      margin-right: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 80vw;
+      height: 50vh;
+      margin-left: 20vw;
+    }
+  }
+
+  @include Breakpoint-tabletOnly {
+    width: 50%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    order: 1;
+
+    width: 100%;
+  }
+}
+
+.code {
+  padding-top: $spacing-136;
+
+  .code-image {
+    width: $five-columns;
+
+    @include Breakpoint-tabletOnly {
+      width: $four-columns;
+    }
+
+    @include Breakpoint-mobileOnly {
+      display: none;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+    padding-top: $spacing-32;
+  }
+}
+
+.design-growth {
+  display: flex;
+  flex-direction: column;
+  padding-top: calc($spacing-8 * 2);
+
+  .design-image {
+    width: $four-columns;
+    height: $spacing-352;
+
+    margin-bottom: $spacing-136;
+
+    margin-left: $column-spacing;
+
+    @include Breakpoint-tabletOnly {
+      width: $three-columns;
+      margin-left: $gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 55vw;
+      height: 30vh;
+      margin: calc($spacing-224 + $spacing-136) 0 0 auto;
+    }
+  }
+
+  .growth-image {
+    width: $four-columns;
+    height: $spacing-352;
+
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
+
+    @include Breakpoint-tabletOnly {
+      width: $three-columns;
+      margin-right: calc(-1 * $gutter);
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 55vw;
+      height: 30vh;
+
+      margin-top: calc($spacing-224 + $spacing-136 + $spacing-52);
+      margin-right: -$mobile-padding;
+      margin-left: auto;
+    }
+  }
+
+  .code-image {
+    width: $five-columns;
+
+    @include Breakpoint-tabletAndAbove {
+      display: none;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 55vw;
+      height: 30vh;
+
+      margin-top: calc($spacing-224 + $spacing-136 + $spacing-52);
+      margin-left: -$mobile-padding;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    padding-top: $spacing-32;
+  }
+}
+
+.image:hover img {
+  @include Breakpoint-tabletAndAbove {
+    filter: grayscale(100%);
+  }
+}
+
+.image:hover:after {
+  @include Breakpoint-tabletAndAbove {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    mix-blend-mode: overlay;
+
+    background-color: color($klein-blue alpha(52%));
+
+    transition: opacity 500ms ease-out;
+  }
+  @supports not (mix-blend-mode: overlay) {
     display: none;
   }
 }
 
-.copy-our-work {
-  margin-top: calc($spacing-136 * -1);
+.block {
+  z-index: 5;
 
-  .title {
-    width: $six-columns;
+  width: $five-columns;
+
+  padding-top: $spacing-84;
+  padding-bottom: $spacing-84;
+
+  background-color: $klein-blue;
+
+  .block-content {
+    width: $three-columns;
+    margin: 0 auto;
+
+    text-align: left;
+
+    h3 {
+      margin-top: $spacing-20;
+      margin-bottom: $spacing-32;
+    }
+
+    .points {
+      display: flex;
+      flex-direction: column;
+      margin-left: $spacing-52;
+    }
 
     @include Breakpoint-mobileOnly {
-      width: 100%;
+      width: 75vw;
     }
   }
 
-  .copy {
-    width: $seven-columns;
-    margin-top: $spacing-52;
-    margin-left: auto;
+  @include Breakpoint-tabletAndAbove {
+    position: absolute;
 
-    @include Breakpoint-tabletOnly {
-      width: $six-columns;
-    }
+    top: $spacing-84;
 
-    @include Breakpoint-mobileOnly {
-      width: 100%;
-      margin-left: 0;
-    }
+    visibility: hidden;
+
+    opacity: 0;
+  }
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+
+    width: 90vw;
+  }
+}
+
+.concept-image:hover .block {
+  @include Breakpoint-tabletAndAbove {
+    left: $three-columns;
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: left 1s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+}
+
+.strategy-image:hover .block {
+  @include Breakpoint-tabletAndAbove {
+    left: calc(-1 * $three-columns);
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: left 1.2s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+}
+
+.code-image:hover .block {
+  @include Breakpoint-tabletAndAbove {
+    left: $three-columns;
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: left 1.1s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+}
+
+.design-image:hover .block {
+  @include Breakpoint-tabletAndAbove {
+    left: calc(-1 * $three-columns);
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: left 1.2s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+}
+
+.growth-image:hover .block {
+  @include Breakpoint-tabletAndAbove {
+    left: calc(-1 * $three-columns);
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: left 1s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+}
+
+.concept-image .block {
+  @include Breakpoint-tabletAndAbove {
+    left: calc(-1 * $five-columns);
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-delay: 0s, 0.2s, 0.6s;
+    transition-duration: 0.6s, 0.6s, 0s;
+    transition-property: left, opacity, visibility;
+    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
+  }
+
+  @include Breakpoint-mobileOnly {
+    visibility: visible;
+
+    margin-top: -$spacing-84;
+    margin-left: 20vw;
+
+    opacity: 1;
+  }
+}
+
+.strategy-image .block {
+  @include Breakpoint-tabletAndAbove {
+    left: 100%;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-delay: 0s, 0.2s, 0.6s;
+    transition-duration: 0.6s, 0.6s, 0s;
+    transition-property: left, opacity, visibility;
+    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
+  }
+
+  @include Breakpoint-mobileOnly {
+    visibility: visible;
+
+    margin-top: -$spacing-136;
+    margin-left: -20vw;
+
+    opacity: 1;
+
+    transition: none;
+  }
+}
+
+.growth-image .block {
+  @include Breakpoint-tabletAndAbove {
+    left: 100%;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-delay: 0s, 0.2s, 0.6s;
+    transition-duration: 0.6s, 0.6s, 0s;
+    transition-property: left, opacity, visibility;
+    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
+  }
+
+  @include Breakpoint-mobileOnly {
+    visibility: visible;
+
+    margin-top: -$spacing-52;
+    margin-left: -50vw;
+
+    opacity: 1;
+  }
+}
+
+.design-image .block {
+  @include Breakpoint-tabletAndAbove {
+    left: 130%;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-delay: 0s, 0.2s, 0.6s;
+    transition-duration: 0.6s, 0.6s, 0s;
+    transition-property: left, opacity, visibility;
+    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
+  }
+
+  @include Breakpoint-mobileOnly {
+    visibility: visible;
+
+    margin-top: -$spacing-84;
+
+    margin-left: -45vw;
+
+    opacity: 1;
+  }
+}
+
+.code-image .block {
+  @include Breakpoint-tabletAndAbove {
+    left: calc(-1 * $six-columns);
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-delay: 0s, 0.2s, 0.6s;
+    transition-duration: 0.6s, 0.6s, 0s;
+    transition-property: left, opacity, visibility;
+    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
+  }
+
+  @include Breakpoint-mobileOnly {
+    visibility: visible;
+
+    margin-top: -$spacing-84;
+    margin-left: 15vw;
+
+    opacity: 1;
   }
 }
 
 .whitespace-noscript {
   height: $spacing-224;
+}
+
+.copy {
+  position: relative;
+
+  max-width: $eight-columns;
+  margin: $spacing-224 auto 0 auto;
+
+  @include Breakpoint-tabletOnly {
+    max-width: $seven-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-352 + $spacing-136);
+  }
+
+  .above-text {
+    z-index: 0;
+
+    background-image: url(../../assets/images/wave-animation-mobile.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-size: 50% 100%;
+
+    background-clip: text;
+    color: transparent;
+
+    font-family: $font-family-visuelt;
+
+    font-weight: 400;
+
+    white-space: pre-wrap;
+
+    @include body-responsive-font;
+
+    @include Breakpoint-tabletAndAbove {
+      background-image: url(../../assets/images/wave-animation-low.gif);
+    }
+  }
+
+  .under-text {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    white-space: pre-wrap;
+  }
 }

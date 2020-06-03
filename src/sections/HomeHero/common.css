@@ -9,6 +9,8 @@ $Breakpoint-parallax: 768px;
 
   padding-bottom: calc($wave-height + 2 * $wave-height);
 
+  overflow: hidden;
+
   background-color: $klein-blue;
 
   @include Breakpoint-mobileOnly {

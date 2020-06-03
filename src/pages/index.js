@@ -17,10 +17,10 @@ export default class IndexPage extends Component {
         description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
       >
         <HomeHero />
+        <HomeServices />
         <HomeOurProcess />
         <HomePortfolio />
         <HomeMission />
-        <HomeServices />
         <LetsTalk />
         <Footer />
       </Layout>
