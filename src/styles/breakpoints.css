@@ -1,6 +1,13 @@
+$Breakpoint-smallMobile: 370px;
 $Breakpoint-mobile: 800px;
 $Breakpoint-desktop: 1268px;
 $Breakpoint-largeDesktop: 1400px;
+
+@mixin Breakpoint-smallMobileOnly {
+  @media screen and (width < $Breakpoint-smallMobile) {
+    @content;
+  }
+}
 
 @mixin Breakpoint-mobileOnly {
   @media screen and (width <= $Breakpoint-mobile) {

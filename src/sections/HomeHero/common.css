@@ -14,7 +14,7 @@ $Breakpoint-parallax: 768px;
   background-color: $klein-blue;
 
   @include Breakpoint-mobileOnly {
-    padding-bottom: calc($wave-height + 1.2 * $wave-height);
+    padding-bottom: calc($wave-height + 1.1 * $wave-height);
   }
 }
 
@@ -79,24 +79,25 @@ $Breakpoint-parallax: 768px;
 
 @keyframes wave {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-2115px, 0, 0);
   }
   100% {
-    transform: translate3d(-2115px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .copy {
   position: absolute;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 
   width: 100%;
-  height: calc($wave-height * 2);
+  height: calc($wave-height * 2 + $spacing-8);
 
-  margin-top: $wave-height;
+  margin-top: calc($wave-height - 1px);
 
   background-color: $white;
+  /*border: 2px solid black;*/
 
   @include Breakpoint-mobileOnly {
     height: calc($wave-height + 0.2 * $wave-height);
