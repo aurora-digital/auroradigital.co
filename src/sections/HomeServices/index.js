@@ -16,107 +16,32 @@ import "./index.css";
 const HomeServices = ({ data }) => (
   <Section>
     <div styleName="root">
-      <div styleName="images">
-        <div styleName="image left-image">
-          <ParallaxEffect
-            image={data.left.image.fluid}
-            alt="our team on a meeting"
-          />
-        </div>
-        <div styleName="image right-image">
-          <ParallaxEffect
-            image={data.right.image.fluid}
-            alt="developers working on a whiteboard"
-          />
-        </div>
-      </div>
-
-      <div styleName="copy-working-together">
-        <Typography variant="h3" weight="medium" color="oxford-blue">
-          Working together to achieve your goals
-        </Typography>
-
-        <Typography color="oxford-blue">
-          We’ll work alongside you from the early stages of product research and
-          design to development and deployment, all while continuously
-          delivering you product updates.
-        </Typography>
-      </div>
-
-      <div>
-        <Parallax styleName="copy-services" y={[0, -40]}>
-          <div styleName="copy-services-background">
-            <BackgroundWave />
+      <div styleName="concept-stategy">
+        <div>
+          <div styleName="image concept-image">
+            <ParallaxEffect
+              image={data.concept.image.fluid}
+              alt="our team on a meeting"
+            />
           </div>
-
-          <div styleName="copy-services-background-mobile">
-            <BackgroundWaveMobile />
-          </div>
-
-          <div styleName="left-column">
-            <div styleName="title" aria-hidden="true">
-              <Typography weight="medium" color="baby-blue">
-                Design
-              </Typography>
+          <div>
+            <div styleName="image stategy-image">
+              <ParallaxEffect
+                image={data.stategy.image.fluid}
+                alt="developers working on a whiteboard"
+              />
             </div>
-            <ul styleName="list" aria-label="Design Services">
-              <li>
-                <Typography>Research & Strategy</Typography>
-              </li>
-              <li>
-                <Typography>Brand Identity</Typography>
-              </li>
-              <li>
-                <Typography>Product Design</Typography>
-              </li>
-              <li>
-                <Typography>User Testing</Typography>
-              </li>
-            </ul>
           </div>
-
-          <div styleName="right-column">
-            <div styleName="title" aria-hidden="true">
-              <Typography weight="medium" color="baby-blue">
-                Development
-              </Typography>
-            </div>
-            <ul styleName="list" aria-label="Development Services">
-              <li>
-                <Typography>Hosting Solutions</Typography>
-              </li>
-              <li>
-                <Typography>Software Development</Typography>
-              </li>
-              <li>
-                <Typography>Technology Implementation</Typography>
-              </li>
-              <li>
-                <Typography>System Integration</Typography>
-              </li>
-            </ul>
-          </div>
-
-          <noscript>
-            <div styleName="whitespace-noscript" />
-          </noscript>
-        </Parallax>
-      </div>
-
-      <div styleName="copy-our-work">
-        <div styleName="title">
-          <Typography variant="h3" weight="medium" color="oxford-blue">
-            Our work goes far beyond what you actually see
-          </Typography>
         </div>
-
-        <div styleName="copy">
-          <Typography color="oxford-blue">
-            We specialize in web-based products - from blazing fast websites to
-            carefully crafted mobile-first web apps, our main goal is to use the
-            power of the fantastic web technologies out there to give you the
-            best work possible.
-          </Typography>
+        <div styleName="code-design-growth">
+          <div>
+            <div styleName="image code-image">
+              <ParallaxEffect
+                image={data.concept.image.fluid}
+                alt="our team on a meeting"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +49,33 @@ const HomeServices = ({ data }) => (
 );
 
 HomeServices.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    concept: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+    stategy: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+    code: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+    design: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+    growth: PropTypes.shape({
+      image: PropTypes.shape({
+        fluid: PropTypes.shape({}).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default withQuery(HomeServices);
