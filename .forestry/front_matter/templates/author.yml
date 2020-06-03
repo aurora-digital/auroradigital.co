@@ -45,4 +45,5 @@ fields:
 pages:
 - data/authors/catarina.json
 - data/authors/luis.json
+- data/authors/pedro.json
 - data/authors/team.json
