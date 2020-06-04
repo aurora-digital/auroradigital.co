@@ -4,7 +4,10 @@ require("./src/styles/fonts.css");
 
 // eslint-disable-next-line import/prefer-default-export
 export const onClientEntry = async () => {
-  if (typeof IntersectionObserver === "undefined") {
+  if (
+    typeof window.IntersectionObserver === "undefined" ||
+    typeof IntersectionObserver === "undefined"
+  ) {
     await import("intersection-observer");
   }
 

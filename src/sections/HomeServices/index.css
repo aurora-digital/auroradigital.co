@@ -34,15 +34,11 @@
   }
 }
 
-.image:hover img,
-.image:focus img,
-.image:active img {
+.image.selected img {
   filter: grayscale(100%);
 }
 
-.image:hover:after,
-.image:focus:after,
-.image:active:after {
+.image.selected:after {
   content: "";
 
   position: absolute;
@@ -64,6 +60,68 @@
   }
 }
 
+.block {
+  position: absolute;
+
+  top: $spacing-84;
+  left: 0;
+
+  z-index: 5;
+
+  visibility: hidden;
+
+  width: $five-columns;
+
+  padding-top: $spacing-84;
+  padding-bottom: $spacing-84;
+
+  background-color: $klein-blue;
+
+  .block-content {
+    width: $three-columns;
+    margin: 0 auto;
+
+    white-space: pre-wrap;
+
+    h3 {
+      margin-top: $spacing-20;
+      margin-bottom: $spacing-32;
+    }
+  }
+}
+
+.concept-image .block {
+  left: 0;
+
+  visibility: hidden;
+
+  transition: all 0.5s;
+}
+
+.concept-image.selected .block {
+  left: $three-columns;
+
+  visibility: visible;
+
+  transition: all 0.5s;
+}
+
+.stategy-image.selected .block {
+  left: calc(-1 * $three-columns);
+
+  visibility: visible;
+
+  transition: all 0.5s;
+}
+
+.stategy-image .block {
+  left: 100%;
+
+  visibility: hidden;
+
+  transition: all 0.5s;
+}
+
 .concept-stategy {
   display: flex;
   flex-direction: row;
@@ -79,11 +137,13 @@
     margin-left: calc(-1 * $column-spacing);
   }
 }
+
 .strategy {
   width: 50%;
 
   .stategy-image {
     width: calc($six-columns + $gutter);
+    /*margin-top: calc(-6 * $spacing-20);*/
 
     @include Breakpoint-tabletOnly {
       width: 53vw;
