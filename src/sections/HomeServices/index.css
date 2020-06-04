@@ -66,7 +66,6 @@
   position: absolute;
 
   top: $spacing-84;
-  opacity: 0;
 
   z-index: 5;
 
@@ -76,6 +75,8 @@
   padding-bottom: $spacing-84;
 
   background-color: $klein-blue;
+
+  opacity: 0;
 
   .block-content {
     width: $three-columns;
@@ -96,22 +97,7 @@
   }
 }
 
-.concept-image:hover .block {
-  left: $three-columns;
-
-  opacity: 1;
-
-  transition: left 1s;
-}
-
-.stategy-image:hover .block {
-  left: calc(-1 * $three-columns);
-
-  opacity: 1;
-
-  transition: left 1s;
-}
-
+.concept-image:hover .block,
 .code-image:hover .block {
   left: $three-columns;
 
@@ -120,14 +106,8 @@
   transition: left 1s;
 }
 
-.design-image:hover .block {
-  left: calc(-1 * $three-columns);
-
-  opacity: 1;
-
-  transition: left 1s;
-}
-
+.stategy-image:hover .block,
+.design-image:hover .block,
 .growth-image:hover .block {
   left: calc(-1 * $three-columns);
 
@@ -146,7 +126,9 @@
   transition-property: left, opacity;
 }
 
-.stategy-image .block {
+.stategy-image .block,
+.design-image .block,
+.growth-image .block {
   left: 100%;
 
   opacity: 0;
@@ -158,26 +140,6 @@
 
 .code-image .block {
   left: 0;
-
-  opacity: 0;
-
-  transition-delay: 0s, 0.7s;
-  transition-duration: 0.8s, 0.2s;
-  transition-property: left, opacity;
-}
-
-.design-image .block {
-  left: 100%;
-
-  opacity: 0;
-
-  transition-delay: 0s, 0.7s;
-  transition-duration: 0.8s, 0.2s;
-  transition-property: left, opacity;
-}
-
-.growth-image .block {
-  left: 100%;
 
   opacity: 0;
 
