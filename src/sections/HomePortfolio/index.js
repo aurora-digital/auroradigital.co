@@ -9,7 +9,6 @@ import withQuery from "./withQuery";
 
 import "./index.css";
 
-
 function HomePortfolio({ data }) {
   const projectUrls = {
     siosLife: "https://sioslife.com/",

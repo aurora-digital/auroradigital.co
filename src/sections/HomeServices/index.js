@@ -1,12 +1,12 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import useScroll from "root/hooks/useScroll";
-import { pull, push, indexOf, isEmpty, cloneDeep } from "lodash-es";
+import { pull, indexOf, isEmpty, cloneDeep } from "lodash-es";
 
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ParallaxEffect from "root/components/ParallaxEffect";
-import { useInView, InView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import classNames from "classnames";
 import withQuery from "./withQuery";
 
@@ -30,9 +30,6 @@ const renderBlock = (title, subtitle, points) => {
   );
 };
 
-const strategyThreshold = [0.2, 0.3];
-const conceptThreshold = [0.8, 1];
-
 const HomeServices = ({ data }) => {
   const [inView, setInView] = useState([]);
   const [blockVisible, setBlockVisible] = useState(null);
@@ -41,7 +38,7 @@ const HomeServices = ({ data }) => {
   const strategyRef = useRef();
 
   const handleClickConcept = () => {
-    //setInView({ service: "concept" });
+    // setInView({ service: "concept" });
   };
 
   const handleChangeConcept = intersecting => {
@@ -77,8 +74,6 @@ const HomeServices = ({ data }) => {
     const end = initial + ref.current.node.offsetHeight * percentage;
 
     if (scrollPosition >= initial && scrollPosition < end) {
-      console.log("entrou ", initial, end);
-
       return true;
     }
 

@@ -143,7 +143,6 @@
 
   .stategy-image {
     width: calc($six-columns + $gutter);
-    /*margin-top: calc(-6 * $spacing-20);*/
 
     @include Breakpoint-tabletOnly {
       width: 53vw;
