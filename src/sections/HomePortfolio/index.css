@@ -298,3 +298,75 @@
     }
   }
 }
+
+
+.new-project {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-136;
+  }
+}
+
+.new-title-image {
+  position: relative;
+  /*display: flex;
+  flex-direction: row;*/
+  /*margin-bottom: $spacing-84;*/
+  width: $four-columns;
+  /*left: $seven-columns;*/
+
+  @include Breakpoint-tabletAndBelow {
+    flex-direction: column;
+  }
+}
+
+.new-title {
+  position: absolute;
+  top: 0;
+  /*margin-bottom: $spacing-52;*/
+
+  @include Breakpoint-tabletOnly {
+    margin-bottom: 0;
+
+    transform: translateY(100%);
+  }
+}
+
+.new-image {
+  width: $five-columns;
+  margin-left: calc($column-spacing * -1);
+
+  @include Breakpoint-desktopOnly {
+    /*margin-top: calc($spacing-224 * -1 - $spacing-20);*/
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    /*margin-top: -$spacing-84;*/
+    margin-left: calc($gutter * -1);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: 0;
+    margin-left: -$mobile-padding;
+  }
+}
+
+.new-link {
+  /*left: $ten-columns;*/
+  width: $three-columns;
+
+  @include Breakpoint-tabletOnly {
+    left: calc(($two-columns * -1) - $gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    left: -60vw;
+  }
+}
+
