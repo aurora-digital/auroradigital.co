@@ -61,7 +61,7 @@ function HomePortfolio({ data }) {
                 Lyftonomie
               </Typography>
 
-              <Typography color="oxford-blue">
+              <Typography variant="small-body" color="oxford-blue">
                 Content Strategy
                 <br />
                 UX/UI Design
@@ -70,6 +70,7 @@ function HomePortfolio({ data }) {
           </div>
 
           {renderLink("lyftonomie")}
+
         </div>
 
         <div styleName="project lyftonomie">
