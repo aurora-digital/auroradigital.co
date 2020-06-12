@@ -1,397 +1,284 @@
 @import "../../styles/all.css";
 
 .root {
+  width: 100%;
   @include Breakpoint-desktopOnly {
     margin-top: calc(calc($spacing-224 - $spacing-84) * -1);
   }
 }
 
-.project {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  margin-top: $spacing-224;
+.project-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 0;
 
   @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
+    grid-template-columns: 100%;
+  }
+
+  @include Breakpoint-tabletOnly {
+    column-gap: 0;
   }
 }
 
-.title-image {
+.project-column-right {
+  position: relative;
+
+  grid-column: 2 / span 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc($spacing-352 + $spacing-584);
+  margin-top: calc($spacing-20 * 2);
+  margin-left: calc($column-spacing);
+
+  @include Breakpoint-mobileOnly {
+    grid-column: 1 / span 1;
+    height: calc($spacing-584 + $spacing-52);
+    margin-top: $spacing-84;
+    margin-left: 0;
+  }
+
+  @include Breakpoint-tabletOnly {
+  }
+}
+
+.project-column-left {
+  position: absolute;
+
+  grid-column: 1 / span 1;
+  display: flex;
+  flex-direction: column;
+  /*width: 100%;*/
+  height: 500px;
+  margin-top: $spacing-224;
+  margin-left: calc($column-spacing - $gutter / 2);
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+
+    margin-top: $spacing-84;
+    margin-left: 0;
+  }
+  @include Breakpoint-tabletOnly {
+    margin-left: $column;
+  }
+}
+
+.project-row {
   position: relative;
 
   display: flex;
   flex-direction: row;
-  margin-bottom: $spacing-84;
+  width: 100%;
+  margin-top: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    margin-top: $spacing-136;
+  }
+}
+
+.image-row {
+  position: relative;
+
+  width: calc($five-columns + $gutter);
+  height: $spacing-352;
+  margin-left: calc($column-spacing * -1);
 
   @include Breakpoint-tabletAndBelow {
-    flex-direction: column;
+    margin-left: calc($gutter * -1);
   }
+
+  @include Breakpoint-mobileOnly {
+    width: calc(80vw);
+    height: $spacing-224;
+    margin-top: 0;
+    margin-left: calc($mobile-padding * 4);
+  }
+}
+
+.image-right {
+  position: relative;
+  right: 0;
+
+  width: 100%;
+  height: $spacing-352;
+
+  @include Breakpoint-tabletOnly {
+    right: 0;
+
+    width: calc($four-columns + $gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: calc(80vw);
+    height: $spacing-224;
+
+    margin-top: 0;
+    margin-left: calc($mobile-padding * -1);
+  }
+}
+
+.image-left {
+  position: relative;
+
+  width: calc($four-columns);
+  height: $spacing-352;
+
+  @include Breakpoint-tabletOnly {
+    position: relative;
+
+    width: 85%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: calc(80vw);
+    height: $spacing-224;
+    margin-top: 0;
+    margin-left: calc($mobile-padding * 4);
+  }
+}
+
+.content-lyftonomie {
+  position: relative;
+
+  width: calc($four-columns + $gutter);
+  height: $spacing-352;
+
+  @include Breakpoint-tabletAndBelow {
+    width: 100%;
+    height: $spacing-224;
+  }
+}
+
+.content-oncostats {
+  position: relative;
+
+  width: calc($four-columns + $gutter);
+  height: $spacing-352;
+
+  @include Breakpoint-tabletAndBelow {
+    width: 100%;
+    height: $spacing-352;
+  }
+}
+
+.content-sioslife {
+  position: relative;
+
+  width: calc($four-columns + $gutter);
+  height: $spacing-352;
+
+  @include Breakpoint-tabletAndBelow {
+    width: 100%;
+    height: $spacing-224;
+  }
+}
+
+.title-description {
+  margin-top: $spacing-20;
 }
 
 .title {
-  margin-bottom: $spacing-52;
-
-  @include Breakpoint-tabletOnly {
-    margin-bottom: 0;
-
-    transform: translateY(100%);
-  }
-}
-
-.title > *:last-child {
-  margin-top: $spacing-20;
-}
-
-.right-image-wrapper {
   position: relative;
-
-  display: flex;
-  flex-direction: row;
-
-  margin-left: auto;
-
-  @include Breakpoint-mobileOnly {
-    flex-direction: column-reverse;
-  }
-}
-
-.link {
-  position: absolute;
-  top: 0;
-
-  align-self: center;
-
-  @include Breakpoint-desktopOnly {
-    transform: translateY(
-      calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
-    );
-  }
-
-  @include Breakpoint-tabletOnly {
-    transform: translateY(calc(-100% + $spacing-224));
-  }
-
-  span {
-    margin-right: $spacing-12;
-
-    font-size: $font-size-body-small;
-  }
-
-  @include Breakpoint-mobileOnly {
-    transform: translate(-100%, calc(-100% + $spacing-84));
-
-    a {
-      display: none;
-    }
-  }
-}
-
-.link-mobile {
-  align-self: flex-start;
-
-  margin: $spacing-20 0 0 0;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  span {
-    margin-right: $spacing-12;
-  }
-
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
-}
-
-.right-image,
-.left-image {
-  position: relative;
-}
-
-.right-image {
-  max-height: $spacing-584;
-
-  margin-right: calc($column-spacing * -1);
-
-  @include Breakpoint-tabletAndBelow {
-    margin-right: calc($gutter * -1);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-right: -$mobile-padding;
-  }
-}
-
-.left-image {
-  margin-left: calc($column-spacing * -1);
-
-  @include Breakpoint-desktopOnly {
-    margin-top: calc($spacing-224 * -1 - $spacing-20);
-  }
-
-  @include Breakpoint-tabletAndBelow {
-    margin-top: -$spacing-84;
-    margin-left: calc($gutter * -1);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: 0;
-    margin-left: -$mobile-padding;
-  }
-}
-
-.project.sioslife {
-  margin-top: $spacing-136;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-52;
-  }
-
-  .link {
-    left: calc(($three-columns * -1) - $gutter - $gutter);
-
-    @include Breakpoint-tabletOnly {
-      left: calc(($two-columns * -1) - $gutter);
-    }
-  }
-
-  .right-image {
-    width: calc($four-columns + $gutter);
-    height: $spacing-584;
-
-    @include Breakpoint-tabletOnly {
-      width: calc(50vw + $gutter);
-      height: $spacing-352;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(70vw + $mobile-padding);
-      height: $spacing-224;
-    }
-  }
-
-  .left-image {
-    width: calc($six-columns + $gutter);
-    height: $spacing-352;
-
-    @include Breakpoint-tabletOnly {
-      width: calc(28vw + $gutter);
-      height: $spacing-352;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(70vw + $mobile-padding);
-      height: $spacing-224;
-    }
-  }
-}
-
-.project.oncostats {
-  .link {
-    left: calc(($four-columns * -1) - $gutter - $gutter);
-
-    @include Breakpoint-tabletOnly {
-      left: calc(($three-columns * -1) - $gutter);
-    }
-
-    @include Breakpoint-mobileOnly {
-      left: 100vw;
-
-      transform: translate(100%, calc(-100% + $spacing-84)) rotate(180deg);
-    }
-  }
-
-  .right-image-wrapper {
-    @include Breakpoint-mobileOnly {
-      width: calc(70vw + $mobile-padding);
-      margin-left: -$mobile-padding;
-
-      .link-mobile {
-        margin-right: $spacing-20;
-        margin-left: auto;
-      }
-    }
-  }
-
-  .right-image {
-    width: calc($five-columns + $gutter);
-    height: $spacing-584;
-
-    @include Breakpoint-tabletOnly {
-      width: calc(30vw + $gutter);
-      height: $spacing-352;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(70vw + $mobile-padding);
-      height: $spacing-224;
-    }
-  }
-
-  .left-image {
-    width: calc($five-columns + $gutter);
-    height: $spacing-352;
-
-    @include Breakpoint-tabletOnly {
-      width: calc(48vw + $gutter);
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(70vw + $mobile-padding);
-      height: $spacing-224;
-      margin-right: -$mobile-padding;
-      margin-left: auto;
-    }
-  }
-}
-
-.project.lyftonomie {
-  .link {
-    left: calc(($three-columns * -1) - $gutter - $gutter);
-
-    @include Breakpoint-tabletOnly {
-      left: calc(($two-columns * -1) - $gutter);
-    }
-
-    @include Breakpoint-mobileOnly {
-      left: -60vw;
-    }
-  }
-
-  .right-image {
-    width: calc($seven-columns + $gutter);
-    height: $spacing-584;
-
-    @include Breakpoint-tabletOnly {
-      width: calc(58vw + $gutter);
-      height: $spacing-352;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(49vw + $mobile-padding);
-      height: $spacing-224;
-    }
-  }
-
-  .left-image {
-    width: $three-columns;
-
-    @include Breakpoint-desktopOnly {
-      margin-left: calc(calc($column-spacing + $spacing-20 + $spacing-20 + $spacing-8) * -1);
-    }
-
-
-    @include Breakpoint-tabletOnly {
-      width: calc(20vw + $spacing-136);
-      margin-top: -$spacing-136;
-      margin-left: -$spacing-136;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: calc(24vw + $spacing-52);
-      height: auto;
-      margin-top: -$spacing-136;
-      margin-left: -$spacing-52;
-    }
-  }
-}
-
-
-.new-project {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-
-  margin-top: $spacing-224;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-136;
-  }
-}
-
-.new-image {
-  width: calc($five-columns + $gutter);
-  margin-left: calc($column-spacing * -1);
-
-  @include Breakpoint-desktopOnly {
-    /*margin-top: calc($spacing-224 * -1 - $spacing-20);*/
-  }
-
-  @include Breakpoint-tabletAndBelow {
-    /*margin-top: -$spacing-84;*/
-    margin-left: calc($gutter * -1);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: 0;
-    margin-left: -$mobile-padding;
-  }
-}
-
-.new-title-image {
-  position: relative;
-  /*display: flex;
-  flex-direction: column;
-  margin-bottom: $spacing-84;*/
-  width: calc($four-columns + $gutter);
-  /*left: $seven-columns;*/
-
-  @include Breakpoint-tabletAndBelow {
-    flex-direction: row;
-  }
-}
-
-.new-title > *:last-child {
-  margin-top: $spacing-20;
-}
-
-.new-title {
-  position: absolute;
-  width: $three-columns;
-  margin-left: $column-spacing;
   top: $spacing-52;
-  /*margin-bottom: $spacing-52;*/
+  left: $column-spacing;
 
-  @include Breakpoint-tabletOnly {
-    margin-bottom: 0;
-
-    transform: translateY(100%);
-  }
-}
-
-.new-link {
-  position: relative;
-  /*left: calc($four-columns + $gutter);*/
   width: $three-columns;
-  top: calc($spacing-52 * 2 + $spacing-20);
 
   @include Breakpoint-tabletOnly {
-    transform: translateY(
-        calc(-100% + $spacing-224 + $spacing-52 + $spacing-12)
-    );
-    left: calc($four-columns + $gutter);
-  }
-
-  @include Breakpoint-tabletOnly {
-    transform: translateY(calc(-100% + $spacing-224));
-  }
-
-  span {
-    margin-right: $spacing-12;
-
-    font-size: $font-size-body-small;
+    left: $column;
   }
 
   @include Breakpoint-mobileOnly {
-    left: -60vw;
-    transform: translate(-100%, calc(-100% + $spacing-84));
+    left: $mobile-padding;
 
-    a {
-      display: none;
-    }
+    width: 100%;
+  }
+}
+
+.link-row {
+  position: relative;
+  left: calc($column-spacing);
+
+  width: calc($three-columns + $gutter);
+  height: $spacing-224;
+  overflow: hidden;
+
+  @include Breakpoint-tabletOnly {
+    left: calc($gutter);
+
+    width: calc($four-columns + $gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    left: 0;
+
+    width: 50%;
+    height: calc($spacing-84 + $spacing-20);
+  }
+}
+
+.link-right {
+  position: relative;
+  left: calc($column-spacing + $column + $gutter / 2);
+
+  width: calc($three-columns);
+  height: $spacing-224;
+  overflow: hidden;
+
+  @include Breakpoint-tabletOnly {
+    left: calc($column  + $gutter / 2);
+
+    width: calc($three-columns + $gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    left: 0;
+
+    width: 50%;
+    height: calc($spacing-84 + $spacing-20);
+  }
+}
+
+.link-left {
+  position: absolute;
+  top: calc($spacing-584);
+
+  width: calc($three-columns);
+  height: calc($spacing-224 + $spacing-84);
+  margin-left: calc($column-spacing * -1);
+  overflow: hidden;
+
+  @include Breakpoint-tabletOnly {
+    left: calc($gutter);
+  }
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+    top: 0;
+
+    width: 50%;
+    height: $spacing-136;
+    margin-left: 0;
+  }
+}
+
+.wave-link-row {
+  position: absolute;
+  top: calc($spacing-52 * 2 + 2 * $spacing-20 + $spacing-12);
+
+  @include Breakpoint-mobileOnly {
+    top: calc($spacing-52);
+  }
+}
+
+.wave-link-right {
+  position: relative;
+  top: calc($spacing-52 * 2);
+
+  @include Breakpoint-mobileOnly {
+    top: calc($spacing-52);
   }
 }
