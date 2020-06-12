@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image/withIEPolyfill";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ParallaxEffect from "root/components/ParallaxEffect";
