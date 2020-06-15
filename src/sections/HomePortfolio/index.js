@@ -15,12 +15,13 @@ function HomePortfolio({ data }) {
     lyftonomie: "https://lyftonomie.fr/",
   };
 
-  const renderLink = (project, style) => (
+  const renderLink = (project, style, position) => (
     <>
       <div styleName={style}>
         <WavyLink
           url={projectUrls[project]}
           label={`View Project, ${project} `}
+          position={position}
         >
           <Typography variant="small-body" weight="bold" color="klein-blue">
             View Project
@@ -62,7 +63,7 @@ function HomePortfolio({ data }) {
           </div>
 
           <div styleName="link-row">
-            {renderLink("lyftonomie", "wave-link-row")}
+            {renderLink("lyftonomie", "wave-link-row", "right")}
           </div>
         </div>
 
@@ -87,9 +88,7 @@ function HomePortfolio({ data }) {
                     <br />
                     Technical Strategy
                     <br />
-                    Full Stack
-                    <br />
-                    Development
+                    Full Stack Development
                     <br />
                     Product Management
                     <br />
@@ -100,7 +99,7 @@ function HomePortfolio({ data }) {
             </div>
 
             <div styleName="link-right">
-              {renderLink("lyftonomie", "wave-link-right")}
+              {renderLink("lyftonomie", "wave-link-right", "right")}
             </div>
           </div>
 
@@ -120,16 +119,16 @@ function HomePortfolio({ data }) {
 
                 <div styleName="title-description">
                   <Typography variant="small-body" color="oxford-blue">
-                    Content Strategy
+                    Mobile Development
                     <br />
-                    UX/UI Design
+                    Website Development
                   </Typography>
                 </div>
               </div>
             </div>
 
             <div styleName="link-left">
-              {renderLink("siosLife", "wave-link-right")}
+              {renderLink("siosLife", "wave-link-right", "left")}
             </div>
           </div>
         </div>

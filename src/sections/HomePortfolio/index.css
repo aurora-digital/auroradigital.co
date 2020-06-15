@@ -8,48 +8,45 @@
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  column-gap: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   @include Breakpoint-mobileOnly {
-    grid-template-columns: 100%;
-  }
-
-  @include Breakpoint-tabletOnly {
-    column-gap: 0;
+    flex-direction: column;
   }
 }
 
 .project-column-right {
   position: relative;
 
-  grid-column: 2 / span 1;
+  order: 2;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
   height: calc($spacing-352 + $spacing-584);
   margin-top: calc($spacing-20 * 2);
   margin-left: calc($column-spacing);
 
   @include Breakpoint-mobileOnly {
-    grid-column: 1 / span 1;
+    order: 1;
     height: calc($spacing-584 + $spacing-52);
     margin-top: $spacing-84;
     margin-left: 0;
   }
 
   @include Breakpoint-tabletOnly {
+    margin-left: calc($column);
   }
 }
 
 .project-column-left {
-  position: absolute;
+  position: relative;
 
-  grid-column: 1 / span 1;
+  order: 1;
   display: flex;
   flex-direction: column;
-  /*width: 100%;*/
+  width: 50%;
   height: 500px;
   margin-top: $spacing-224;
   margin-left: calc($column-spacing - $gutter / 2);
@@ -57,11 +54,12 @@
   @include Breakpoint-mobileOnly {
     position: relative;
 
+    order: 2;
     margin-top: $spacing-84;
     margin-left: 0;
   }
   @include Breakpoint-tabletOnly {
-    margin-left: $column;
+    margin-left: calc($gutter * 2);
   }
 }
 
@@ -102,13 +100,11 @@
   position: relative;
   right: 0;
 
-  width: 100%;
+  width: calc(100% + $column - $gutter/2.5);
   height: $spacing-352;
 
   @include Breakpoint-tabletOnly {
     right: 0;
-
-    width: calc($four-columns + $gutter);
   }
 
   @include Breakpoint-mobileOnly {
@@ -209,35 +205,35 @@
   @include Breakpoint-tabletOnly {
     left: calc($gutter);
 
-    width: calc($four-columns + $gutter);
+    width: calc($four-columns + $gutter * 2 + $column);
   }
 
   @include Breakpoint-mobileOnly {
-    left: 0;
+    left: calc(20vw - $mobile-padding);
 
-    width: 50%;
+    width: calc(80vw);
     height: calc($spacing-84 + $spacing-20);
   }
 }
 
 .link-right {
   position: relative;
-  left: calc($column-spacing + $column + $gutter / 2);
+  left: calc(100% - $three-columns + $gutter * 1.25);
 
-  width: calc($three-columns);
+  width: calc($three-columns + $gutter);
   height: $spacing-224;
   overflow: hidden;
 
   @include Breakpoint-tabletOnly {
-    left: calc($column  + $gutter / 2);
+    left: calc( 100% - $three-columns);
 
     width: calc($three-columns + $gutter);
   }
 
   @include Breakpoint-mobileOnly {
-    left: 0;
+    left: calc(20vw - $mobile-padding);
 
-    width: 50%;
+    width: calc(80vw);
     height: calc($spacing-84 + $spacing-20);
   }
 }
@@ -248,7 +244,7 @@
 
   width: calc($three-columns);
   height: calc($spacing-224 + $spacing-84);
-  margin-left: calc($column-spacing * -1);
+  margin-left: calc($column-spacing * -1 - $column-spacing + $gutter / 2);
   overflow: hidden;
 
   @include Breakpoint-tabletOnly {
@@ -257,17 +253,18 @@
 
   @include Breakpoint-mobileOnly {
     position: relative;
-    top: 0;
+    top: $spacing-32;
+    left: calc($mobile-padding * -1);
 
-    width: 50%;
+    width: calc(80vw);
     height: $spacing-136;
     margin-left: 0;
   }
 }
 
 .wave-link-row {
-  position: absolute;
-  top: calc($spacing-52 * 2 + 2 * $spacing-20 + $spacing-12);
+  position: relative;
+  top: calc($spacing-52 * 2 + 2 * $spacing-20 + $spacing-8);
 
   @include Breakpoint-mobileOnly {
     top: calc($spacing-52);
