@@ -41,7 +41,7 @@ function HomePortfolio({ data }) {
         <div styleName="project-row">
           <div styleName="image-row">
             <ParallaxEffect
-              image={data.lyftonomie2.image.fluid}
+              image={data.lyftonomie.image.fluid}
               alt="another lyftonomie pill bottle"
             />
           </div>
@@ -71,7 +71,7 @@ function HomePortfolio({ data }) {
           <div styleName="project-column-right">
             <div styleName="image-right">
               <ParallaxEffect
-                image={data.oncostats2.image.fluid}
+                image={data.oncostats.image.fluid}
                 alt="a doctor using oncostats"
               />
             </div>
@@ -106,7 +106,7 @@ function HomePortfolio({ data }) {
           <div styleName="project-column-left">
             <div styleName="image-left">
               <ParallaxEffect
-                image={data.sioslife2.image.fluid}
+                image={data.sioslife.image.fluid}
                 alt="elderly person using sioslife virtual reality software"
               />
             </div>
