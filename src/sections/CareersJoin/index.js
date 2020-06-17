@@ -61,7 +61,11 @@ const CareersJoin = ({ data }) => (
       </div>
 
       <div styleName="image">
-        <ParallaxEffect image={data.summercamp.image.fluid} alt="meeting" />
+        <ParallaxEffect
+          parallaxAmount={-0.03}
+          image={data.summercamp.image.fluid}
+          alt="meeting"
+        />
         <div styleName="link-mobile">
           <a href="/company">
             <Typography variant="small-body" weight="bold" color="klein-blue">
