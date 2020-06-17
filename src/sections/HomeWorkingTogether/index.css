@@ -1,0 +1,192 @@
+@import "../../styles/all.css";
+
+$topSpacing: calc($spacing-224 - $spacing-8 * 0.5);
+
+.root {
+  position: relative;
+
+  padding-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    padding-bottom: $spacing-136;
+  }
+}
+
+.background {
+  z-index: 0;
+
+  width: calc(100% + 2 * $column-spacing);
+
+  margin-left: calc(-1 * $column-spacing);
+
+  svg {
+    width: 100%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    display: none;
+  }
+}
+
+.background-mobile {
+  width: calc(100% + $gutter + $gutter);
+  height: 590px;
+
+  margin-top: $spacing-84;
+
+  margin-left: calc(-1 * $gutter);
+
+  svg {
+    width: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    display: none;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  max-width: $content-width-desktop;
+  margin-top: calc($spacing-224 + $spacing-84);
+
+  .title {
+    width: $five-columns;
+
+    @include Breakpoint-desktopOnly {
+      white-space: pre-wrap;
+    }
+
+    @include Breakpoint-tabletOnly {
+      width: 45%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 95%;
+    }
+  }
+
+  .description {
+    width: $six-columns;
+    margin-top: $spacing-52;
+    margin-left: $four-columns;
+
+    @include Breakpoint-tabletOnly {
+      width: 55%;
+      margin-left: 41%;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 100%;
+      margin-top: $spacing-32;
+      margin-left: 0;
+    }
+  }
+
+  @include Breakpoint-tabletOnly {
+    width: 100%;
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: 100%;
+    margin-top: $spacing-136;
+  }
+}
+
+.container-images {
+  display: flex;
+  flex-direction: row;
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+  }
+}
+
+.left {
+  max-width: $six-columns;
+
+  .image-left {
+    width: calc($seven-columns + $gutter);
+    height: $spacing-584;
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      width: $six-columns;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 85vw;
+      height: $spacing-224;
+      margin-left: -$gutter;
+    }
+  }
+
+  @include Breakpoint-tabletOnly {
+    max-width: 60%;
+  }
+}
+
+.right {
+  max-width: $four-columns;
+  padding-top: $topSpacing;
+
+  .image-right {
+    width: calc($four-columns + $gutter);
+    height: $spacing-584;
+    margin-left: $column-spacing;
+
+    @include Breakpoint-tabletOnly {
+      width: $four-columns;
+      margin-left: $column;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 60vw;
+      height: $spacing-136;
+      margin-left: 40vw;
+    }
+  }
+
+  @include Breakpoint-tabletOnly {
+    max-width: 40%;
+    padding-top: $spacing-136;
+  }
+
+  @include Breakpoint-mobileOnly {
+    padding-top: $spacing-52;
+  }
+}
+
+.we-deliver {
+  max-width: $six-columns;
+  margin-top: calc($spacing-84 - $topSpacing);
+
+  @include Breakpoint-desktopOnly {
+    white-space: pre-wrap;
+  }
+
+  @include Breakpoint-tabletOnly {
+    margin-top: calc($spacing-84 - $spacing-136);
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: $spacing-52;
+  }
+
+  .description {
+    margin-top: $spacing-52;
+
+    @include Breakpoint-mobileOnly {
+      margin-top: $spacing-32;
+    }
+  }
+}
+
+.whitespace-noscript {
+  height: $spacing-224;
+}
