@@ -32,7 +32,7 @@ function HomePortfolio({ data }) {
   );
 
   return (
-    <Section>
+    <Section verticalSpacing={false}>
       <div styleName="root">
         <Typography weight="medium" variant="h3" color="oxford-blue">
           Portfolio

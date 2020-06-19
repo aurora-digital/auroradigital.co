@@ -7,7 +7,6 @@ import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
 import "../common.css";
-import HeroCopyElement from "root/components/HeroCopyElement";
 
 function HomeHeroNoScroll() {
   const [ref, inView] = useInView();
@@ -27,10 +26,6 @@ function HomeHeroNoScroll() {
 
           <div styleName="overlay">
             <div styleName={waveStyles} />
-          </div>
-
-          <div styleName="copy">
-            <HeroCopyElement />
           </div>
         </Section>
       </div>

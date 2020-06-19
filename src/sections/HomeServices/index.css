@@ -3,7 +3,6 @@
 .services {
   display: flex;
   flex-direction: column;
-  margin-top: $spacing-224;
 
   @include Breakpoint-mobileOnly {
     margin-top: $spacing-136;

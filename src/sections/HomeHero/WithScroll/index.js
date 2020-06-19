@@ -2,13 +2,11 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import classNames from "classnames";
-
 import Section from "root/components/Section";
 import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
 import "../common.css";
-import HeroCopyElement from "root/components/HeroCopyElement";
 
 function HomeHeroWithScroll() {
   const [ref, inView] = useInView();
@@ -46,10 +44,6 @@ function HomeHeroWithScroll() {
 
           <div styleName="overlay">
             <div styleName={waveStyles} />
-          </div>
-
-          <div styleName="copy">
-            <HeroCopyElement />
           </div>
         </Section>
       </div>

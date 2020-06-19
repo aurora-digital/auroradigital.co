@@ -17,3 +17,9 @@ $Breakpoint-scroll: 2160px;
     display: none;
   }
 }
+
+.copy {
+  width: 100%;
+
+  background-color: $white;
+}

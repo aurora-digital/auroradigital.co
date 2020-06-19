@@ -142,8 +142,6 @@ function HeroCopyElement() {
                 <Typography color="oxford-blue">{text.message}</Typography>
               </motion.div>
 
-              <div styleName="hide-message" />
-
               <motion.div
                 styleName="message-title"
                 transition={transitionTitle}

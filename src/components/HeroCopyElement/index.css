@@ -8,7 +8,7 @@
   flex-direction: row;
 
   width: 100%;
-  height: calc($spacing-52 + ($spacing-52) + $spacing-136);
+  height: calc($spacing-52 + $spacing-352 + $spacing-8);
 
   max-width: $content-width-desktop;
   margin: $spacing-224 auto 0;
@@ -22,6 +22,7 @@
     flex-direction: column;
     justify-content: flex-start;
     width: calc(100% - 2 * $mobile-padding);
+    height: calc($spacing-52 + $spacing-136);
     padding-left: $mobile-padding;
     margin: auto 0;
     margin-top: $spacing-136;
@@ -37,15 +38,33 @@
 
 .message-content {
   position: relative;
+  z-index: 0;
 
   width: $eight-columns;
 
   @include Breakpoint-mobileOnly {
     --left: 0;
-    position: absolute;
     left: calc(100% * var(--left));
 
     width: 100%;
+  }
+
+  .hide-message {
+    @include Breakpoint-mobileOnly {
+      position: absolute;
+      top: 75px;
+      left: 0;
+      z-index: 2;
+
+      width: 100%;
+      height: 90px;
+
+      background-color: white;
+    }
+
+    @include Breakpoint-tabletAndAbove {
+      display: none;
+    }
   }
 }
 
@@ -145,27 +164,15 @@
   }
 }
 
-.hide-message {
-  position: absolute;
-  top: 75px;
-  left: 0;
-  z-index: 1;
-
-  width: 100%;
-  height: 90px;
-
-  background-color: $white;
-}
-
 .hide-title {
   position: absolute;
-  bottom: -$spacing-84;
+  bottom: $spacing-84;
   z-index: 3;
 
   width: 100%;
   height: $spacing-136;
 
-  background-color: $white;
+  background-color: white;
 
   @include Breakpoint-mobileOnly {
     top: calc($spacing-84 + $spacing-20);

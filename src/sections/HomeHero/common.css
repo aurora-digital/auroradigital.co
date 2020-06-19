@@ -7,14 +7,14 @@ $Breakpoint-parallax: 768px;
 .root {
   position: relative;
 
-  padding-bottom: calc($wave-height + 2 * $wave-height);
+  padding-bottom: $wave-height;
 
   overflow: hidden;
 
   background-color: $klein-blue;
 
   @include Breakpoint-mobileOnly {
-    padding-bottom: calc($wave-height + 1.1 * $wave-height);
+    padding-bottom: $wave-height;
   }
 }
 
@@ -83,23 +83,5 @@ $Breakpoint-parallax: 768px;
   }
   100% {
     transform: translate3d(0, 0, 0);
-  }
-}
-
-.copy {
-  position: absolute;
-  left: 0;
-  z-index: 1;
-
-  width: 100%;
-  height: calc($wave-height * 2 + $spacing-8);
-
-  margin-top: calc($wave-height - 1px);
-
-  background-color: $white;
-  /*border: 2px solid black;*/
-
-  @include Breakpoint-mobileOnly {
-    height: calc($wave-height + 0.2 * $wave-height);
   }
 }

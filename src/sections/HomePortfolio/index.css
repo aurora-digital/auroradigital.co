@@ -1,9 +1,10 @@
 @import "../../styles/all.css";
 
 .root {
-  width: 100%;
-  @include Breakpoint-desktopOnly {
-    margin-top: calc(calc($spacing-224 - $spacing-84) * -1);
+  margin-bottom: $spacing-224;
+
+  @include Breakpoint-mobileOnly {
+    margin-bottom: $spacing-136;
   }
 }
 
@@ -225,7 +226,7 @@
   overflow: hidden;
 
   @include Breakpoint-tabletOnly {
-    left: calc( 100% - $three-columns);
+    left: calc(100% - $three-columns);
 
     width: calc($three-columns + $gutter);
   }
