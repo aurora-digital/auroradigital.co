@@ -7,6 +7,7 @@ import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
 import "../common.css";
+import HeroCopyElement from "root/components/HeroCopyElement";
 
 function HomeHeroNoScroll() {
   const [ref, inView] = useInView();
@@ -20,19 +21,16 @@ function HomeHeroNoScroll() {
         <Section verticalSpacing={false}>
           <div styleName="title">
             <Typography weight="bold" variant="h1">
-              Nurturing digital healthcare
-            </Typography>
-          </div>
-
-          <div styleName="copy">
-            <Typography color="baby-blue">
-              We design and develop thoughtful web and mobile healthcare
-              solutions, accessible to anyone, anywhere, at anytime.
+              We move health forward
             </Typography>
           </div>
 
           <div styleName="overlay">
             <div styleName={waveStyles} />
+          </div>
+
+          <div styleName="copy">
+            <HeroCopyElement />
           </div>
         </Section>
       </div>

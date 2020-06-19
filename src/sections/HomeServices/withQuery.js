@@ -3,17 +3,41 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    left: file(relativePath: { eq: "images/home-services-left-image.jpg" }) {
+    concept: file(relativePath: { eq: "images/home-services-concept.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 1000, quality: 85) {
+        fluid(maxWidth: 1000, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
 
-    right: file(relativePath: { eq: "images/home-services-right-image.jpg" }) {
+    strategy: file(relativePath: { eq: "images/home-services-strategy.png" }) {
       image: childImageSharp {
-        fluid(maxWidth: 1000, quality: 85) {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    code: file(relativePath: { eq: "images/home-services-code.png" }) {
+      image: childImageSharp {
+        fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    design: file(relativePath: { eq: "images/home-services-design.png" }) {
+      image: childImageSharp {
+        fluid(maxWidth: 1000, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    growth: file(relativePath: { eq: "images/home-services-growth.png" }) {
+      image: childImageSharp {
+        fluid(maxWidth: 1000, quality: 90) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "root/components/Typography";
-import Img from "gatsby-image/withIEPolyfill";
 import classNames from "classnames";
 import Social from "root/components/Social";
+import ParallaxEffect from "root/components/ParallaxEffect";
 
 import "./index.css";
 
@@ -55,12 +55,13 @@ export default class TeamElement extends Component {
 
     return (
       <div styleName="root">
-        <Img
-          styleName="image"
-          alt={`${name.toLowerCase()} photo`}
-          fluid={image}
-          objectFit="cover"
-        />
+        <div styleName="image">
+          <ParallaxEffect
+            parallaxAmount={-0.1}
+            image={image}
+            alt={`${name.toLowerCase()} photo`}
+          />
+        </div>
         <div styleName={descStyles}>
           <div styleName="name">
             <Typography weight="bold" variant="small-body" color="oxford-blue">

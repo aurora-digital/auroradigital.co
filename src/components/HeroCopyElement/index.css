@@ -1,0 +1,177 @@
+@import "../../styles/all.css";
+
+.copy-section {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: row;
+
+  width: 100%;
+  height: calc($spacing-52 + ($spacing-52) + $spacing-136);
+
+  max-width: $content-width-desktop;
+  margin: $spacing-224 auto 0;
+
+  @include Breakpoint-tabletOnly {
+    margin: 0 $gutter;
+    margin-top: $spacing-224;
+  }
+
+  @include Breakpoint-mobileOnly {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: calc(100% - 2 * $mobile-padding);
+    padding-left: $mobile-padding;
+    margin: auto 0;
+    margin-top: $spacing-136;
+    overflow: hidden;
+  }
+}
+
+.slider {
+  position: relative;
+
+  width: 100%;
+}
+
+.message-content {
+  position: relative;
+
+  width: $eight-columns;
+
+  @include Breakpoint-mobileOnly {
+    --left: 0;
+    position: absolute;
+    left: calc(100% * var(--left));
+
+    width: 100%;
+  }
+}
+
+.message {
+  position: relative;
+  z-index: 0;
+}
+
+.message-title {
+  position: relative;
+  z-index: 2;
+
+  padding-top: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    z-index: 2;
+
+    padding-top: $spacing-20;
+  }
+}
+
+.message-title {
+  position: relative;
+  z-index: 2;
+
+  padding-top: $spacing-52;
+
+  @include Breakpoint-mobileOnly {
+    z-index: 2;
+
+    padding-top: $spacing-20;
+  }
+}
+
+.lines {
+  position: relative;
+  z-index: 1;
+
+  width: $three-columns;
+
+  @include Breakpoint-mobileOnly {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    height: $spacing-52;
+    column-gap: $mobile-padding;
+  }
+}
+
+.line-klein-blue {
+  position: absolute;
+
+  width: calc($column + $gutter);
+  height: $spacing-20;
+
+  border-top: 2px solid $klein-blue;
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+
+    width: 100%;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    --top: 0;
+    top: calc($spacing-52 / 2 + var(--top) * $spacing-32);
+
+    background-color: $white;
+
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.line-baby-blue {
+  position: absolute;
+
+  width: $column !important;
+  height: $spacing-20;
+
+  border-top: 2px solid $baby-blue;
+
+  @include Breakpoint-mobileOnly {
+    position: relative;
+
+    width: 100% !important;
+  }
+
+  @include Breakpoint-tabletAndAbove {
+    --top: 0;
+    top: calc($spacing-52 / 2 + var(--top) * $spacing-32);
+
+    background-color: $white;
+
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.hide-message {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 90px;
+
+  background-color: $white;
+}
+
+.hide-title {
+  position: absolute;
+  bottom: -$spacing-84;
+  z-index: 3;
+
+  width: 100%;
+  height: $spacing-136;
+
+  background-color: $white;
+
+  @include Breakpoint-mobileOnly {
+    top: calc($spacing-84 + $spacing-20);
+  }
+
+  @include Breakpoint-smallMobileOnly {
+    top: calc($spacing-84 + $spacing-20 * 2 + $spacing-8);
+  }
+}

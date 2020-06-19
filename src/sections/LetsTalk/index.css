@@ -11,6 +11,8 @@
   @include Breakpoint-mobileOnly {
     flex-direction: column;
 
+    padding-top: $spacing-20;
+
     margin-bottom: $spacing-136;
   }
 }
@@ -99,8 +101,8 @@
 
 .wave-mobile {
   position: absolute;
-  top: 0;
-  right: $two-columns;
+  top: -$spacing-20;
+  right: 45vw;
 
   display: block;
 
@@ -108,6 +110,10 @@
 
   @include Breakpoint-tabletAndAbove {
     display: none;
+  }
+
+  @include Breakpoint-smallMobileOnly {
+    right: 30vw;
   }
 
   * > *:last-child {

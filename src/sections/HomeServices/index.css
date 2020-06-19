@@ -1,225 +1,295 @@
 @import "../../styles/all.css";
 
-.root {
-}
-
-.images {
+.services {
   display: flex;
-  flex-direction: row;
-
-  @include Breakpoint-tabletOnly {
-    padding-bottom: $spacing-136;
-  }
+  flex-direction: column;
+  margin-top: $spacing-224;
 
   @include Breakpoint-mobileOnly {
-    flex-direction: column-reverse;
+    margin-top: $spacing-136;
   }
 }
 
 .image {
-  position: relative;
+  > div:first-child {
+    position: relative;
+
+    z-index: 0;
+  }
 
   height: $spacing-584;
-
-  @include Breakpoint-mobileOnly {
-    height: $spacing-224;
-  }
 }
 
-.left-image {
-  width: calc($four-columns + $gutter);
+.strategy {
+  width: 100%;
 
-  margin-left: calc(-1 * $column-spacing);
-
-  transform: translateY($spacing-224);
-
-  @include Breakpoint-tabletOnly {
-    width: 35vw;
-
-    margin-left: -$gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: auto;
-
-    margin-top: $spacing-84;
-    margin-right: $spacing-84;
-    margin-left: -$mobile-padding;
-
-    transform: none;
-  }
-}
-
-.right-image {
-  width: calc($seven-columns + $gutter);
-
-  margin-right: calc(-1 * $column-spacing);
-  margin-left: auto;
-
-  @include Breakpoint-tabletOnly {
-    width: 53vw;
-
-    margin-right: -$gutter;
-  }
-
-  @include Breakpoint-mobileOnly {
-    width: auto;
-
-    margin-right: -$mobile-padding;
-    margin-left: $spacing-84;
-  }
-}
-
-.copy-working-together {
-  max-width: $six-columns;
-
-  margin-top: $spacing-84;
-  margin-left: auto;
-
-  @include Breakpoint-tabletOnly {
-    max-width: calc(53vw - $gutter);
-  }
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-52;
-  }
-}
-
-.copy-working-together > *:last-child {
-  margin-top: $spacing-52;
-
-  @include Breakpoint-mobileOnly {
-    margin-top: $spacing-32;
-  }
-}
-
-.copy-services {
-  position: relative;
-
-  padding-top: $spacing-84;
-
-  .left-column {
-    position: absolute;
-    top: 34.5%;
-    z-index: 1;
-
-    display: flex;
-    flex-direction: row;
-
-    @include Breakpoint-tabletOnly {
-      top: 26%;
-    }
-
-    @include Breakpoint-mobileOnly {
-      position: static;
-
-      flex-direction: column;
-
-      padding-top: $spacing-136;
-      margin-top: $spacing-84;
-    }
-  }
-
-  .right-column {
-    position: absolute;
-    bottom: 22%;
-    left: 50%;
-    z-index: 1;
-
-    display: inline-flex;
-    flex-direction: row;
-
-    @include Breakpoint-tabletOnly {
-      right: 0;
-      bottom: 26%;
-      left: auto;
-    }
-
-    @include Breakpoint-mobileOnly {
-      position: static;
-
-      flex-direction: column;
-
-      padding-bottom: $spacing-136;
-      margin-top: $spacing-52;
-    }
-  }
-
-  .title {
-    margin-right: $spacing-32;
-  }
-
-  .list {
-    display: inline-flex;
-    flex-direction: column;
-
-    white-space: nowrap;
-
-    @include Breakpoint-mobileOnly {
-      margin-top: $spacing-20;
-      margin-left: calc($gutter / 2);
-    }
-  }
-}
-
-.copy-services-background {
-  width: calc($twelve-columns + $column);
-  height: 100%;
-
-  margin-left: calc(-1 * $column-spacing);
-
-  @include Breakpoint-mobileOnly {
-    display: none;
-  }
-}
-
-.copy-services-background-mobile {
-  position: absolute;
-
-  z-index: -1;
-
-  width: 100vw;
-  height: 100%;
-
-  margin-left: -$mobile-padding;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  @include Breakpoint-tabletAndAbove {
-    display: none;
-  }
-}
-
-.copy-our-work {
-  margin-top: calc($spacing-136 * -1);
-
-  .title {
-    width: $six-columns;
-
-    @include Breakpoint-mobileOnly {
-      width: 100%;
-    }
-  }
-
-  .copy {
-    width: $seven-columns;
-    margin-top: $spacing-52;
+  .strategy-image {
+    width: calc($four-columns + $gutter);
+    margin-right: calc(-1 * $column-spacing);
     margin-left: auto;
 
     @include Breakpoint-tabletOnly {
-      width: $six-columns;
+      margin-right: -$gutter;
     }
 
     @include Breakpoint-mobileOnly {
-      width: 100%;
-      margin-left: 0;
+      width: 80vw;
+      height: 50vh;
+      margin-left: 20vw;
     }
+  }
+}
+
+.concept {
+  margin-top: -$spacing-136;
+
+  .concept-image {
+    width: calc($four-columns + $gutter);
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      margin-left: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 90vw;
+      height: 35vh;
+      margin-left: -$gutter;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-52);
+  }
+}
+
+.design {
+  width: 100%;
+
+  .design-image {
+    width: calc($four-columns + $gutter);
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
+
+    @include Breakpoint-tabletOnly {
+      margin-right: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 55vw;
+      height: 30vh;
+      margin-right: -$mobile-padding;
+      margin-left: auto;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-84);
+  }
+}
+
+.code {
+  width: 100%;
+
+  .code-image {
+    width: $four-columns;
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      margin-left: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 65vw;
+      height: 30vh;
+      margin-left: -$mobile-padding;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-84);
+  }
+}
+
+.growth {
+  width: 100%;
+
+  .growth-image {
+    width: calc($four-columns + $gutter);
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
+
+    @include Breakpoint-tabletOnly {
+      margin-right: calc(-1 * $gutter);
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 55vw;
+      height: 30vh;
+      margin-right: -$mobile-padding;
+      margin-left: auto;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-84);
+  }
+}
+
+.block {
+  width: $five-columns;
+
+  padding-top: $spacing-84;
+  padding-bottom: $spacing-84;
+
+  background-color: $klein-blue;
+
+  .block-content {
+    width: $three-columns;
+    margin: 0 auto;
+
+    text-align: left;
+
+    h3 {
+      margin-top: $spacing-20;
+      margin-bottom: $spacing-32;
+
+      @include Breakpoint-mobileOnly {
+        margin-top: $spacing-12;
+        margin-bottom: $spacing-20;
+      }
+    }
+
+    .points {
+      display: flex;
+      flex-direction: column;
+      margin-left: $spacing-52;
+
+      @include Breakpoint-mobileOnly {
+        margin-left: $spacing-32;
+      }
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 75vw;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    width: 90vw;
+    padding-top: $spacing-52;
+    padding-bottom: $spacing-52;
+  }
+}
+
+.parallax-container {
+  position: relative;
+
+  z-index: 1;
+}
+
+.concept-image .block {
+  margin-top: -$spacing-224;
+  margin-left: $three-columns;
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-84;
+    margin-left: 20vw;
+  }
+}
+
+.strategy-image .block {
+  margin-top: calc(-1 * $spacing-352);
+  margin-left: calc(-1 * $three-columns);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-136;
+    margin-right: auto;
+    margin-left: calc(-1 * 20vw - $mobile-padding);
+  }
+}
+
+.design-image .block {
+  margin-top: calc(-1 * ($spacing-352 - $spacing-84));
+  margin-left: calc(-1 * $three-columns);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-84;
+    margin-left: -45vw;
+  }
+}
+
+.code-image .block {
+  margin-top: calc(-1 * $spacing-224 - $spacing-32);
+  margin-left: calc($two-columns + $gutter);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-84;
+    margin-left: 15vw;
+  }
+}
+
+.growth-image .block {
+  margin-top: calc(-1 * $spacing-224);
+  margin-left: calc(-1 * $three-columns);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-52;
+    margin-left: -45vw;
   }
 }
 
 .whitespace-noscript {
   height: $spacing-224;
+}
+
+.copy {
+  position: relative;
+
+  max-width: $eight-columns;
+  margin: calc($spacing-224 + $spacing-136) auto 0 auto;
+
+  @include Breakpoint-tabletOnly {
+    max-width: $seven-columns;
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-352 + $spacing-136);
+  }
+
+  .above-text {
+    z-index: 0;
+
+    background-image: url(../../assets/images/wave-animation-mobile.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-size: 50% 100%;
+
+    background-clip: text;
+    color: transparent;
+
+    font-family: $font-family-visuelt;
+
+    font-weight: 400;
+
+    white-space: pre-wrap;
+
+    @include body-responsive-font;
+
+    @include Breakpoint-tabletAndAbove {
+      background-image: url(../../assets/images/wave-animation-low.gif);
+    }
+  }
+
+  .under-text {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    white-space: pre-wrap;
+  }
 }

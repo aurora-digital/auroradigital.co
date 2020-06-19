@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query {
-    sioslife1: file(relativePath: { eq: "images/sioslife1.jpg" }) {
+    sioslife: file(relativePath: { eq: "images/sioslife.png" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
@@ -11,7 +11,7 @@ const query = graphql`
       }
     }
 
-    sioslife2: file(relativePath: { eq: "images/sioslife2.jpg" }) {
+    oncostats: file(relativePath: { eq: "images/oncostats.png" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp
@@ -19,31 +19,7 @@ const query = graphql`
       }
     }
 
-    oncostats1: file(relativePath: { eq: "images/oncostats1.jpg" }) {
-      image: childImageSharp {
-        fluid(maxWidth: 1000, quality: 85) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    oncostats2: file(relativePath: { eq: "images/oncostats2.jpg" }) {
-      image: childImageSharp {
-        fluid(maxWidth: 1000, quality: 85) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    lyftonomie1: file(relativePath: { eq: "images/lyftonomie1.jpg" }) {
-      image: childImageSharp {
-        fluid(maxWidth: 1000, quality: 85) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-
-    lyftonomie2: file(relativePath: { eq: "images/lyftonomie2.jpg" }) {
+    lyftonomie: file(relativePath: { eq: "images/lyftonomie.png" }) {
       image: childImageSharp {
         fluid(maxWidth: 1000, quality: 85) {
           ...GatsbyImageSharpFluid_withWebp

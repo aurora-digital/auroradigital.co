@@ -4,9 +4,10 @@ import Layout from "root/components/Layout";
 import Footer from "root/components/Footer";
 import HomeHero from "root/sections/HomeHero";
 import HomePortfolio from "root/sections/HomePortfolio";
-import HomeMission from "root/sections/HomeMission";
+import HomeWorkingTogether from "root/sections/HomeWorkingTogether";
 import HomeServices from "root/sections/HomeServices";
 import LetsTalk from "root/sections/LetsTalk";
+import HomeOurProcess from "root/sections/HomeOurProcess";
 
 export default class IndexPage extends Component {
   render() {
@@ -16,9 +17,10 @@ export default class IndexPage extends Component {
         description="We design and develop thoughtful web and mobile healthcare solutions, accessible to anyone, everywhere, at anytime."
       >
         <HomeHero />
-        <HomePortfolio />
-        <HomeMission />
         <HomeServices />
+        <HomeOurProcess />
+        <HomePortfolio />
+        <HomeWorkingTogether />
         <LetsTalk />
         <Footer />
       </Layout>

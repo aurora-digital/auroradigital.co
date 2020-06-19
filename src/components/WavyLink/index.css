@@ -7,6 +7,14 @@
   flex-direction: row;
 }
 
+.root-left {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .children:hover + .wave-wrapper > .wave.darker {
   max-width: 578px;
 }
@@ -16,6 +24,19 @@
   height: 100%;
 
   margin-right: $spacing-32;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.children-left {
+  display: inline;
+  height: 100%;
+
+  margin-left: $spacing-32;
 
   cursor: pointer;
 

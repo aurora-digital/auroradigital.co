@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image/withIEPolyfill";
 import Section from "root/components/Section";
 import Typography from "root/components/Typography";
 import ParallaxEffect from "root/components/ParallaxEffect";
@@ -9,7 +8,6 @@ import withQuery from "./withQuery";
 
 import "./index.css";
 
-
 function HomePortfolio({ data }) {
   const projectUrls = {
     siosLife: "https://sioslife.com/",
@@ -17,30 +15,19 @@ function HomePortfolio({ data }) {
     lyftonomie: "https://lyftonomie.fr/",
   };
 
-  const renderLink = project => (
+  const renderLink = (project, style, position) => (
     <>
-      <div styleName="link">
+      <div styleName={style}>
         <WavyLink
           url={projectUrls[project]}
           label={`View Project, ${project} `}
+          position={position}
         >
-          <span role="img" aria-label="finger-pointing-right">
-            👉
-          </span>
           <Typography variant="small-body" weight="bold" color="klein-blue">
             View Project
           </Typography>
         </WavyLink>
       </div>
-
-      <a styleName="link-mobile" href={projectUrls[project]}>
-        <span role="img" aria-label="finger-pointing-right">
-          👉
-        </span>
-        <Typography variant="small-body" weight="bold" color="klein-blue">
-          View Project
-        </Typography>
-      </a>
     </>
   );
 
@@ -51,95 +38,98 @@ function HomePortfolio({ data }) {
           Portfolio
         </Typography>
 
-        <div styleName="project sioslife">
-          <div styleName="title-image">
-            <div styleName="title">
-              <Typography color="oxford-blue" weight="medium">
-                siosLIFE
-              </Typography>
-
-              <Typography color="oxford-blue">For younger spirits</Typography>
-            </div>
-
-            <div styleName="right-image-wrapper">
-              {renderLink("siosLife")}
-
-              <div styleName="right-image">
-                <ParallaxEffect
-                  image={data.sioslife2.image.fluid}
-                  alt="elderly person using sioslife virtual reality software"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div styleName="left-image">
+        <div styleName="project-row">
+          <div styleName="image-row">
             <ParallaxEffect
-              image={data.sioslife1.image.fluid}
-              alt="elders using sioslife"
+              image={data.lyftonomie.image.fluid}
+              alt="another lyftonomie pill bottle"
             />
           </div>
-        </div>
 
-        <div styleName="project oncostats">
-          <div styleName="title-image">
-            <div styleName="title">
-              <Typography color="oxford-blue" weight="medium">
-                Oncostats
-              </Typography>
-
-              <Typography color="oxford-blue">
-                Defeating a common enemy, cancer
-              </Typography>
-            </div>
-
-            <div styleName="right-image-wrapper">
-              {renderLink("oncostats")}
-
-              <div styleName="right-image">
-                <ParallaxEffect
-                  image={data.oncostats2.image.fluid}
-                  alt="a doctor using oncostats"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div styleName="left-image">
-            <ParallaxEffect
-              image={data.oncostats1.image.fluid}
-              alt="a laptop with the oncostats app"
-            />
-          </div>
-        </div>
-
-        <div styleName="project lyftonomie">
-          <div styleName="title-image">
+          <div styleName="content-lyftonomie">
             <div styleName="title">
               <Typography color="oxford-blue" weight="medium">
                 Lyftonomie
               </Typography>
 
-              <Typography color="oxford-blue">Vitamins. Done right</Typography>
-            </div>
-
-            <div styleName="right-image-wrapper">
-              {renderLink("lyftonomie")}
-              <div styleName="right-image">
-                <ParallaxEffect
-                  image={data.lyftonomie2.image.fluid}
-                  alt="lyftonomie pill bottle"
-                />
+              <div styleName="title-description">
+                <Typography variant="small-body" color="oxford-blue">
+                  Content Strategy
+                  <br />
+                  UX/UI Design
+                </Typography>
               </div>
             </div>
           </div>
 
-          <div styleName="left-image">
-            <Img
-              fluid={data.lyftonomie1.image.fluid}
-              objectFit="cover"
-              alt="another lyftonomie pill bottle"
-            />
+          <div styleName="link-row">
+            {renderLink("lyftonomie", "wave-link-row", "right")}
+          </div>
+        </div>
+
+        <div styleName="project-grid">
+          <div styleName="project-column-right">
+            <div styleName="image-right">
+              <ParallaxEffect
+                image={data.oncostats.image.fluid}
+                alt="a doctor using oncostats"
+              />
+            </div>
+
+            <div styleName="content-oncostats">
+              <div styleName="title">
+                <Typography color="oxford-blue" weight="medium">
+                  Oncostats
+                </Typography>
+
+                <div styleName="title-description">
+                  <Typography variant="small-body" color="oxford-blue">
+                    Product Design
+                    <br />
+                    Technical Strategy
+                    <br />
+                    Full Stack Development
+                    <br />
+                    Product Management
+                    <br />
+                    DevOps
+                  </Typography>
+                </div>
+              </div>
+            </div>
+
+            <div styleName="link-right">
+              {renderLink("lyftonomie", "wave-link-right", "right")}
+            </div>
+          </div>
+
+          <div styleName="project-column-left">
+            <div styleName="image-left">
+              <ParallaxEffect
+                image={data.sioslife.image.fluid}
+                alt="elderly person using sioslife virtual reality software"
+              />
+            </div>
+
+            <div styleName="content-sioslife">
+              <div styleName="title">
+                <Typography color="oxford-blue" weight="medium">
+                  Sioslife
+                </Typography>
+
+                <div styleName="title-description">
+                  <Typography variant="small-body" color="oxford-blue">
+                    Mobile Development
+                    <br />
+                    Website Development
+                  </Typography>
+                </div>
+              </div>
+            </div>
+
+            <div styleName="link-left">
+              {renderLink("siosLife", "wave-link-right", "left")}
+            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import Navbar from "root/components/Navbar";
 import Typography from "root/components/Typography";
 
 import "../common.css";
+import HeroCopyElement from "root/components/HeroCopyElement";
 
 function HomeHeroWithScroll() {
   const [ref, inView] = useInView();
@@ -26,34 +27,29 @@ function HomeHeroWithScroll() {
             <div styleName="parallax-container" aria-hidden="true">
               <motion.div style={{ translateX: scrollPositive }}>
                 <Typography weight="bold" variant="h1">
-                  Nurturing digital
+                  We move health
                 </Typography>
               </motion.div>
               <motion.div style={{ translateX: scrollNegative }}>
                 <Typography weight="bold" variant="h1">
-                  healthcare
+                  forward
                 </Typography>
               </motion.div>
             </div>
 
             <div styleName="parallax-fallback" aria-hidden="true">
               <Typography color="oxford-blue" weight="bold" variant="h1">
-                Nurturing digital healthcare
+                We move health forward
               </Typography>
             </div>
           </div>
 
           <div styleName="overlay">
             <div styleName={waveStyles} />
+          </div>
 
-            <Section verticalSpacing={false}>
-              <div styleName="copy">
-                <Typography color="baby-blue">
-                  We design and develop thoughtful web and mobile healthcare
-                  solutions, accessible to anyone, anywhere, at anytime.
-                </Typography>
-              </div>
-            </Section>
+          <div styleName="copy">
+            <HeroCopyElement />
           </div>
         </Section>
       </div>

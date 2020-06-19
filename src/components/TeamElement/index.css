@@ -20,16 +20,6 @@
 
   margin: 0;
 
-  & > picture > img {
-    filter: grayscale(100%);
-
-    transition: filter 500ms ease-out;
-  }
-
-  & > img {
-    filter: grayscale(100%);
-  }
-
   @include Breakpoint-tabletOnly {
     max-height: $spacing-352;
     min-height: $spacing-224;
@@ -40,42 +30,6 @@
     height: 75vw;
 
     max-width: 80vw;
-  }
-}
-
-.image::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  width: 100%;
-  height: 100%;
-
-  mix-blend-mode: overlay;
-
-  background-color: color($klein-blue alpha(52%));
-
-  transition: opacity 500ms ease-out;
-
-  @supports not (mix-blend-mode: overlay) {
-    display: none;
-  }
-}
-
-@include Breakpoint-tabletAndAbove {
-  .root:hover,
-  .root:focus,
-  .root:active {
-    .image > picture > img {
-      filter: grayscale(0%);
-    }
-
-    .image::after {
-      opacity: 0;
-    }
   }
 }
 
