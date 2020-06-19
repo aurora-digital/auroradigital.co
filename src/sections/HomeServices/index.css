@@ -1,95 +1,34 @@
 @import "../../styles/all.css";
 
-.concept-strategy,
-.code-design-growth {
-  position: relative;
-
+.services {
   display: flex;
-  flex-direction: row;
-
-  @include Breakpoint-tabletOnly {
-  }
+  flex-direction: column;
+  margin-top: $spacing-224;
 
   @include Breakpoint-mobileOnly {
-    flex-direction: column;
-    width: calc(100% + $mobile-padding + $mobile-padding);
-    margin-left: -$mobile-padding;
+    margin-top: $spacing-136;
   }
 }
 
 .image {
-  position: relative;
+  > div:first-child {
+    position: relative;
+
+    z-index: 0;
+  }
 
   height: $spacing-584;
-
-  outline: none;
-
-  img {
-    filter: grayscale(0%);
-
-    transition: filter 500ms ease-out;
-  }
-
-  @include Breakpoint-tabletAndAbove {
-    cursor: pointer;
-  }
-
-  @include Breakpoint-tabletOnly {
-    height: $spacing-352;
-  }
-
-  @include Breakpoint-mobileOnly {
-  }
-}
-
-.concept {
-  order: 1;
-
-  width: calc($content-width-desktop * 0.5);
-  padding-top: calc(6 * $spacing-20);
-
-  .concept-image {
-    width: calc($five-columns + $gutter);
-
-    margin-left: calc(-1 * $column-spacing);
-
-    @include Breakpoint-tabletOnly {
-      width: calc($four-columns + $gutter);
-      margin-left: -$gutter;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: 90vw;
-      height: 35vh;
-      margin-top: calc($spacing-224 + $spacing-136);
-      margin-left: -$gutter;
-    }
-  }
-
-  @include Breakpoint-tabletOnly {
-    width: 50%;
-  }
-
-  @include Breakpoint-mobileOnly {
-    order: 2;
-
-    width: 100%;
-    padding-top: $spacing-32;
-  }
 }
 
 .strategy {
-  order: 2;
-
-  width: calc($content-width-desktop * 0.5);
+  width: 100%;
 
   .strategy-image {
-    width: calc($six-columns + $gutter + $gutter);
+    width: calc($four-columns + $gutter);
     margin-right: calc(-1 * $column-spacing);
     margin-left: auto;
 
     @include Breakpoint-tabletOnly {
-      width: calc($five-columns + $gutter);
       margin-right: -$gutter;
     }
 
@@ -99,139 +38,105 @@
       margin-left: 20vw;
     }
   }
-
-  @include Breakpoint-tabletOnly {
-    width: 50%;
-  }
-
-  @include Breakpoint-mobileOnly {
-    order: 1;
-
-    width: 100%;
-  }
 }
 
-.code {
-  padding-top: $spacing-136;
+.concept {
+  margin-top: -$spacing-136;
 
-  .code-image {
-    width: $five-columns;
+  .concept-image {
+    width: calc($four-columns + $gutter);
+    margin-left: calc(-1 * $column-spacing);
 
     @include Breakpoint-tabletOnly {
-      width: $four-columns;
+      margin-left: -$gutter;
     }
 
     @include Breakpoint-mobileOnly {
-      display: none;
+      width: 90vw;
+      height: 35vh;
+      margin-left: -$gutter;
     }
   }
 
   @include Breakpoint-mobileOnly {
-    display: none;
-    padding-top: $spacing-32;
+    margin-top: calc($spacing-224 + $spacing-52);
   }
 }
 
-.design-growth {
-  display: flex;
-  flex-direction: column;
-  padding-top: calc($spacing-8 * 2);
+.design {
+  width: 100%;
 
   .design-image {
-    width: $four-columns;
-    height: $spacing-352;
-
-    margin-bottom: $spacing-136;
-
-    margin-left: $column-spacing;
+    width: calc($four-columns + $gutter);
+    margin-right: calc(-1 * $column-spacing);
+    margin-left: auto;
 
     @include Breakpoint-tabletOnly {
-      width: $three-columns;
-      margin-left: $gutter;
+      margin-right: -$gutter;
     }
 
     @include Breakpoint-mobileOnly {
       width: 55vw;
       height: 30vh;
-      margin: calc($spacing-224 + $spacing-136) 0 0 auto;
+      margin-right: -$mobile-padding;
+      margin-left: auto;
     }
   }
 
-  .growth-image {
-    width: $four-columns;
-    height: $spacing-352;
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-84);
+  }
+}
 
+.code {
+  width: 100%;
+
+  .code-image {
+    width: $four-columns;
+    margin-left: calc(-1 * $column-spacing);
+
+    @include Breakpoint-tabletOnly {
+      margin-left: -$gutter;
+    }
+
+    @include Breakpoint-mobileOnly {
+      width: 65vw;
+      height: 30vh;
+      margin-left: -$mobile-padding;
+    }
+  }
+
+  @include Breakpoint-mobileOnly {
+    margin-top: calc($spacing-224 + $spacing-84);
+  }
+}
+
+.growth {
+  width: 100%;
+
+  .growth-image {
+    width: calc($four-columns + $gutter);
     margin-right: calc(-1 * $column-spacing);
     margin-left: auto;
 
     @include Breakpoint-tabletOnly {
-      width: $three-columns;
       margin-right: calc(-1 * $gutter);
     }
 
     @include Breakpoint-mobileOnly {
       width: 55vw;
       height: 30vh;
-
-      margin-top: calc($spacing-224 + $spacing-136 + $spacing-52);
       margin-right: -$mobile-padding;
       margin-left: auto;
     }
   }
 
-  .code-image {
-    width: $five-columns;
-
-    @include Breakpoint-tabletAndAbove {
-      display: none;
-    }
-
-    @include Breakpoint-mobileOnly {
-      width: 55vw;
-      height: 30vh;
-
-      margin-top: calc($spacing-224 + $spacing-136 + $spacing-52);
-      margin-left: -$mobile-padding;
-    }
-  }
-
   @include Breakpoint-mobileOnly {
-    padding-top: $spacing-32;
-  }
-}
-
-.image:hover img {
-  @include Breakpoint-tabletAndAbove {
-    filter: grayscale(100%);
-  }
-}
-
-.image:hover:after {
-  @include Breakpoint-tabletAndAbove {
-    content: "";
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    width: 100%;
-    height: 100%;
-
-    mix-blend-mode: overlay;
-
-    background-color: color($klein-blue alpha(52%));
-
-    transition: opacity 500ms ease-out;
-  }
-  @supports not (mix-blend-mode: overlay) {
-    display: none;
+    margin-top: calc($spacing-224 + $spacing-84);
   }
 }
 
 .block {
-  z-index: 5;
-
   width: $five-columns;
 
   padding-top: $spacing-84;
@@ -248,12 +153,21 @@
     h3 {
       margin-top: $spacing-20;
       margin-bottom: $spacing-32;
+
+      @include Breakpoint-mobileOnly {
+        margin-top: $spacing-12;
+        margin-bottom: $spacing-20;
+      }
     }
 
     .points {
       display: flex;
       flex-direction: column;
       margin-left: $spacing-52;
+
+      @include Breakpoint-mobileOnly {
+        margin-left: $spacing-32;
+      }
     }
 
     @include Breakpoint-mobileOnly {
@@ -261,203 +175,67 @@
     }
   }
 
-  @include Breakpoint-tabletAndAbove {
-    position: absolute;
-
-    top: $spacing-84;
-
-    visibility: hidden;
-
-    opacity: 0;
-  }
-
   @include Breakpoint-mobileOnly {
-    position: relative;
-
     width: 90vw;
+    padding-top: $spacing-52;
+    padding-bottom: $spacing-52;
   }
 }
 
-.concept-image:hover .block {
-  @include Breakpoint-tabletAndAbove {
-    left: $three-columns;
+.parallax-container {
+  position: relative;
 
-    visibility: visible;
-
-    opacity: 1;
-
-    transition: left 1s cubic-bezier(0.61, 1, 0.88, 1);
-  }
-}
-
-.strategy-image:hover .block {
-  @include Breakpoint-tabletAndAbove {
-    left: calc(-1 * $three-columns);
-
-    visibility: visible;
-
-    opacity: 1;
-
-    transition: left 1.2s cubic-bezier(0.61, 1, 0.88, 1);
-  }
-}
-
-.code-image:hover .block {
-  @include Breakpoint-tabletAndAbove {
-    left: $three-columns;
-
-    visibility: visible;
-
-    opacity: 1;
-
-    transition: left 1.1s cubic-bezier(0.61, 1, 0.88, 1);
-  }
-}
-
-.design-image:hover .block {
-  @include Breakpoint-tabletAndAbove {
-    left: calc(-1 * $three-columns);
-
-    visibility: visible;
-
-    opacity: 1;
-
-    transition: left 1.2s cubic-bezier(0.61, 1, 0.88, 1);
-  }
-}
-
-.growth-image:hover .block {
-  @include Breakpoint-tabletAndAbove {
-    left: calc(-1 * $three-columns);
-
-    visibility: visible;
-
-    opacity: 1;
-
-    transition: left 1s cubic-bezier(0.61, 1, 0.88, 1);
-  }
+  z-index: 1;
 }
 
 .concept-image .block {
-  @include Breakpoint-tabletAndAbove {
-    left: calc(-1 * $five-columns);
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition-delay: 0s, 0.2s, 0.6s;
-    transition-duration: 0.6s, 0.6s, 0s;
-    transition-property: left, opacity, visibility;
-    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
-  }
+  margin-top: -$spacing-224;
+  margin-left: $three-columns;
 
   @include Breakpoint-mobileOnly {
-    visibility: visible;
-
     margin-top: -$spacing-84;
     margin-left: 20vw;
-
-    opacity: 1;
   }
 }
 
 .strategy-image .block {
-  @include Breakpoint-tabletAndAbove {
-    left: 100%;
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition-delay: 0s, 0.2s, 0.6s;
-    transition-duration: 0.6s, 0.6s, 0s;
-    transition-property: left, opacity, visibility;
-    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
-  }
+  margin-top: calc(-1 * $spacing-352);
+  margin-left: calc(-1 * $three-columns);
 
   @include Breakpoint-mobileOnly {
-    visibility: visible;
-
     margin-top: -$spacing-136;
-    margin-left: -20vw;
-
-    opacity: 1;
-
-    transition: none;
-  }
-}
-
-.growth-image .block {
-  @include Breakpoint-tabletAndAbove {
-    left: 100%;
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition-delay: 0s, 0.2s, 0.6s;
-    transition-duration: 0.6s, 0.6s, 0s;
-    transition-property: left, opacity, visibility;
-    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
-  }
-
-  @include Breakpoint-mobileOnly {
-    visibility: visible;
-
-    margin-top: -$spacing-52;
-    margin-left: -50vw;
-
-    opacity: 1;
+    margin-right: auto;
+    margin-left: calc(-1 * 20vw - $mobile-padding);
   }
 }
 
 .design-image .block {
-  @include Breakpoint-tabletAndAbove {
-    left: 130%;
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition-delay: 0s, 0.2s, 0.6s;
-    transition-duration: 0.6s, 0.6s, 0s;
-    transition-property: left, opacity, visibility;
-    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
-  }
+  margin-top: calc(-1 * ($spacing-352 - $spacing-84));
+  margin-left: calc(-1 * $three-columns);
 
   @include Breakpoint-mobileOnly {
-    visibility: visible;
-
     margin-top: -$spacing-84;
-
     margin-left: -45vw;
-
-    opacity: 1;
   }
 }
 
 .code-image .block {
-  @include Breakpoint-tabletAndAbove {
-    left: calc(-1 * $six-columns);
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition-delay: 0s, 0.2s, 0.6s;
-    transition-duration: 0.6s, 0.6s, 0s;
-    transition-property: left, opacity, visibility;
-    transition-timing-function: cubic-bezier(0.61, 1, 0.88, 1), linear;
-  }
+  margin-top: calc(-1 * $spacing-224 - $spacing-32);
+  margin-left: calc($two-columns + $gutter);
 
   @include Breakpoint-mobileOnly {
-    visibility: visible;
-
     margin-top: -$spacing-84;
     margin-left: 15vw;
+  }
+}
 
-    opacity: 1;
+.growth-image .block {
+  margin-top: calc(-1 * $spacing-224);
+  margin-left: calc(-1 * $three-columns);
+
+  @include Breakpoint-mobileOnly {
+    margin-top: -$spacing-52;
+    margin-left: -45vw;
   }
 }
 
@@ -469,7 +247,7 @@
   position: relative;
 
   max-width: $eight-columns;
-  margin: $spacing-224 auto 0 auto;
+  margin: calc($spacing-224 + $spacing-136) auto 0 auto;
 
   @include Breakpoint-tabletOnly {
     max-width: $seven-columns;
