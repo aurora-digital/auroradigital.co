@@ -162,7 +162,7 @@ const HomeServices = ({ data }) => {
             data.growth.image.fluid,
             "We raise your",
             "Growth",
-            ["Product scaling", "Conversion improvment", "Performance"],
+            ["Product scaling", "Conversion improvement", "Performance"],
             null,
             dimensions.width > breakpointMobile ? [20, -20] : [10, -10],
           )}

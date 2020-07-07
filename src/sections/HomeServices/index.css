@@ -252,10 +252,6 @@
     max-width: $seven-columns;
   }
 
-  @include Breakpoint-mobileOnly {
-    margin-top: calc($spacing-352 + $spacing-136);
-  }
-
   .above-text {
     z-index: 0;
 
