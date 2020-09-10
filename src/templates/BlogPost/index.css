@@ -296,5 +296,20 @@
         margin-bottom: $spacing-8;
       }
     }
+
+    .tag {
+      padding: calc($spacing-8 * 0.5) $spacing-8;
+
+      margin-left: calc($spacing-8 * 2);
+
+      background-color: $klein-blue;
+      border-radius: calc($spacing-8 * 0.5);
+
+      color: white;
+
+      white-space: nowrap;
+
+      @include body-xsmall-responsive-font;
+    }
   }
 }
